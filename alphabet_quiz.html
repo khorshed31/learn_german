@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Learn German: Alphabet & Diphthongs - Quiz</title>
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #121821;
+      --muted: #7e8aa0;
+      --accent: #73d2ff;
+      --accent-2: #a2ff9b;
+      --text: #eaf2ff;
+      --ring: #2a3a50;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
+      background: linear-gradient(180deg, #0a0e13, #0c1118 35%, #0a0e13);
+      color: var(--text);
+    }
+    header {
+      max-width: 1100px;
+      margin: 24px auto 8px;
+      padding: 0 16px;
+    }
+    .title {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .title h1 {
+      margin: 0;
+      font-size: clamp(22px, 4vw, 32px);
+    }
+    .pill {
+      background: rgba(115, 210, 255, 0.12);
+      color: var(--accent);
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(115, 210, 255, 0.25);
+      font-size: 12px;
+    }
+    .controls {
+      margin: 16px 0;
+    }
+    .btn {
+      flex: 1 1 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--ring);
+      background: #0c121a;
+      color: #dfeaff;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .btn:hover {
+      background: var(--accent);
+    }
+    .quiz {
+      max-width: 1100px;
+      margin: -8px auto 40px;
+      padding: 0 16px;
+    }
+    .qbox {
+      background: var(--card);
+      border: 1px solid var(--ring);
+      border-radius: 16px;
+      padding: 14px;
+      display: grid;
+      gap: 12px;
+    }
+    .opt {
+      display: grid;
+      gap: 8px;
+    }
+    .opt button {
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--ring);
+      background: #0c121a;
+      color: #dfeaff;
+      cursor: pointer;
+    }
+    .opt button.correct {
+      outline: 2px solid #3bd17d;
+    }
+    .opt button.wrong {
+      outline: 2px solid #ff7b7b;
+    }
+    .small {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .list {
+      margin: 0.25rem 0 0.25rem 1rem;
+      padding: 0;
+      color: #cfe3ff;
+    }
+    .qFeedback {
+      font-size: 14px;
+      color: #d6e5ff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="title">
+    <h1>Learn German: Alphabet & Diphthongs Quiz</h1>
+    <span class="pill" id="voiceStatus">Checking German voice…</span>
+  </div>
+</header>
+
+<section class="quiz">
+  <div class="qbox">
+    <div id="question" class="question">
+      <h3>Question will appear here</h3>
+    </div>
+    <div class="opt" id="qOptions">
+      <!-- Options will be injected here -->
+    </div>
+    <div class="controls">
+      <button id="qNext" class="btn">Next Question</button>
+    </div>
+    <div id="qFeedback" class="qFeedback"></div>
+  </div>
+</section>
+
+<script>
+  /* ===================== Data ===================== */
+  const LETTERS = [
+    { glyph: "A a", name: "A", speak: "A", ipa: "[aː]", example: ["Apfel", "Apfel"] },
+    { glyph: "Ä ä", name: "Ä", speak: "Ä", ipa: "[ɛː]", example: ["Mädchen", "Mädchen"] },
+    { glyph: "B b", name: "Be", speak: "Be", ipa: "[beː]", example: ["Bahn", "Bahn"] },
+    { glyph: "C c", name: "Ce", speak: "Ce", ipa: "[tseː]", example: ["Cent", "Cent"] },
+    { glyph: "D d", name: "De", speak: "De", ipa: "[deː]", example: ["Dorf", "Dorf"] },
+    { glyph: "E e", name: "E", speak: "E", ipa: "[eː]", example: ["Esel", "Esel"] },
+    { glyph: "F f", name: "Ef", speak: "Ef", ipa: "[ɛf]", example: ["Fisch", "Fisch"] },
+    { glyph: "G g", name: "Ge", speak: "Ge", ipa: "[geː]", example: ["Garten", "Garten"] },
+    { glyph: "H h", name: "Ha", speak: "Ha", ipa: "[haː]", example: ["Haus", "Haus"] },
+    { glyph: "I i", name: "I", speak: "I", ipa: "[iː]", example: ["Igel", "Igel"] },
+    { glyph: "J j", name: "Jot", speak: "Jot", ipa: "[jɔt]", example: ["Jahr", "Jahr"] },
+    { glyph: "K k", name: "Ka", speak: "Ka", ipa: "[kaː]", example: ["Karte", "Karte"] },
+    { glyph: "L l", name: "El", speak: "El", ipa: "[ɛl]", example: ["Lampe", "Lampe"] },
+    { glyph: "M m", name: "Em", speak: "Em", ipa: "[ɛm]", example: ["Milch", "Milch"] },
+    { glyph: "N n", name: "En", speak: "En", ipa: "[ɛn]", example: ["Nase", "Nase"] },
+    { glyph: "O o", name: "O", speak: "O", ipa: "[oː]", example: ["Ofen", "Ofen"] },
+    { glyph: "Ö ö", name: "Ö", speak: "Ö", ipa: "[øː]", example: ["Öl", "Öl"] },
+    { glyph: "P p", name: "Pe", speak: "Pe", ipa: "[peː]", example: ["Pferd", "Pferd"] },
+    { glyph: "Q q", name: "Qu", speak: "Qu", ipa: "[kuː]", example: ["Quelle", "Quelle"] },
+    { glyph: "R r", name: "Er", speak: "Er", ipa: "[ɛʁ]", example: ["Rose", "Rose"] },
+    { glyph: "S s", name: "Es", speak: "Es", ipa: "[ɛs]", example: ["Sonne", "Sonne"] },
+    { glyph: "ß", name: "Eszett", speak: "Eszett", ipa: "[ɛsˈtsɛt]", example: ["Straße", "Straße"] },
+    { glyph: "T t", name: "Te", speak: "Te", ipa: "[teː]", example: ["Tisch", "Tisch"] },
+    { glyph: "U u", name: "U", speak: "U", ipa: "[uː]", example: ["Uhr", "Uhr"] },
+    { glyph: "Ü ü", name: "Ü", speak: "Ü", ipa: "[yː]", example: ["Tür", "Tür"] },
+    { glyph: "V v", name: "Vau", speak: "Vau", ipa: "[faʊ̯]", example: ["Vogel", "Vogel"] },
+    { glyph: "W w", name: "We", speak: "We", ipa: "[veː]", example: ["Wasser", "Wasser"] },
+    { glyph: "X x", name: "Ix", speak: "Ix", ipa: "[ɪks]", example: ["Xylophon", "Xylophon"] },
+    { glyph: "Y y", name: "Ypsilon", speak: "Ypsilon", ipa: "[ˈʏpsilɔn]", example: ["Yoga", "Yoga"] },
+    { glyph: "Z z", name: "Zet", speak: "Zet", ipa: "[t͡sɛt]", example: ["Zeit", "Zeit"] }
+  ];
+
+  const DIPHTHONGS = [
+    { glyph: "ei", ipa: "[aɪ̯]", cue: "EYE (আই)", bnHint: "যদি শব্দের আগে পরে ও মাঝে থাকে, উচ্চারণ EYE-এর মত", examples: ["nein", "dein", "ei", "Mai", "weil"] },
+    { glyph: "ai", ipa: "[aɪ̯]", cue: "EYE (আই)", bnHint: "'ei' এর মতোই ধ্বনি", examples: ["Mai"] },
+    { glyph: "ie", ipa: "[iː]", cue: "EE (ইই)", bnHint: "যদি শব্দের আগে পরে ও মাঝে থাকে, উচ্চারণ EE-এর মত", examples: ["die", "sie", "nie", "viel", "viele"] },
+    { glyph: "au", ipa: "[aʊ̯]", cue: "ow (আউ)", bnHint: "যদি শব্দের আগে পরে ও মাঝে থাকে, উচ্চারণ ow-এর মত", examples: ["auch", "aus", "Auge", "laufen"] },
+    { glyph: "eu", ipa: "[ɔʏ̯]", cue: "OY (অয়)", bnHint: "যদি শব্দের আগে পরে ও মাঝে থাকে, উচ্চারণ OY-এর মত", examples: ["neu", "Europa", "Euro", "Leute"] },
+    { glyph: "äu", ipa: "[ɔʏ̯]", cue: "OY (অয়)", bnHint: "PDF এ এটি eu এর সাথে একত্রে দেওয়া — একই ধ্বনি", examples: [] }
+  ];
+
+  /* ================= Quiz Functionality ================= */
+  let currentQuestion = 0;
+  const totalQuestions = 5;
+  const qFeedback = document.getElementById("qFeedback");
+  const qOptions = document.getElementById("qOptions");
+  const questionBox = document.getElementById("question");
+
+  // Shuffle and pick questions
+  const questions = [...LETTERS, ...DIPHTHONGS].sort(() => Math.random() - 0.5).slice(0, totalQuestions);
+
+  function nextQuestion() {
+    const question = questions[currentQuestion];
+    questionBox.innerHTML = `
+      <h3>What is the pronunciation of <b>${question.glyph}</b>?</h3>
+      <p class="ipa">${question.ipa}</p>
+    `;
+    
+    // Create options
+    const options = [question].concat(questions.filter(q => q !== question).slice(0, 3)).sort(() => Math.random() - 0.5);
+    qOptions.innerHTML = '';
+    options.forEach(option => {
+      const btn = document.createElement("button");
+      btn.className = "btn";
+      btn.textContent = option.glyph;
+      btn.onclick = () => handleAnswer(option, question);
+      qOptions.appendChild(btn);
+    });
+
+    qFeedback.innerHTML = '';
+  }
+
+  function handleAnswer(selectedOption, correctOption) {
+    if (selectedOption === correctOption) {
+      qFeedback.textContent = "Correct! Well done!";
+      qFeedback.style.color = "#3bd17d";
+    } else {
+      qFeedback.textContent = `Incorrect. The correct answer is ${correctOption.glyph}`;
+      qFeedback.style.color = "#ff7b7b";
+    }
+    currentQuestion = (currentQuestion + 1) % totalQuestions;
+    setTimeout(nextQuestion, 1500); // Move to next question after 1.5 seconds
+  }
+
+  nextQuestion(); // Start the quiz
+
+  document.getElementById('qNext').addEventListener("click", nextQuestion);
+</script>
+</body>
+</html>
