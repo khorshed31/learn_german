@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Learn German Numbers</title>
+
+    <link href="style.css" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root{
+            --bg-1: #071029;
+            --bg-2: #0f2540;
+            --card-bg: rgba(255,255,255,0.03);
+            --muted: #9bb0d6;
+            --accent: #66d9ff;
+            --glass: rgba(255,255,255,0.04);
+            --glass-border: rgba(255,255,255,0.06);
+            --card-radius: 16px;
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{
+            margin:0;
+            font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: linear-gradient(160deg, var(--bg-1) 0%, var(--bg-2) 60%);
+            color: #eaf6ff;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+
+        .main-container{max-width:1100px;margin:48px auto;padding:24px;}
+
+        /* Header / Hero */
+        .hero{
+            display:flex;
+            gap:20px;
+            align-items:center;
+            justify-content:space-between;
+            flex-wrap:wrap;
+        }
+        .hero-left h1{
+            margin:0;
+            font-size:1.9rem;
+            letter-spacing:-0.5px;
+            font-weight:800;
+            color: #fff;
+        }
+        .hero-left p{margin:6px 0 0;color:var(--muted);}
+        .hero-cta{display:flex;gap:10px;align-items:center}
+
+        /* Search Card */
+        .search-card{
+            margin-top:20px;
+            padding:18px;
+            border-radius:var(--card-radius);
+            background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            border:1px solid var(--glass-border);
+            box-shadow: 0 6px 30px rgba(2,6,23,0.5);
+        }
+        .number-display{
+            font-size:1.6rem;
+            font-weight:800;
+            color:var(--accent);
+            letter-spacing:0.6px;
+        }
+        .example-muted{color:var(--muted);font-weight:600}
+
+        /* Number cards grid */
+        #numbersContainer .card{
+            background:var(--card-bg);
+            border:1px solid var(--glass-border);
+            border-radius:14px;
+            transition:transform .18s ease, box-shadow .18s ease;
+            min-height:120px;
+        }
+        #numbersContainer .card:hover{
+            transform:translateY(-8px);
+            box-shadow: 0 18px 40px rgba(2,6,23,0.6);
+        }
+        .number-big{
+            font-size:1.4rem;
+            font-weight:800;
+            color:var(--accent);
+        }
+        .example-small{color:var(--muted);font-size:0.95rem}
+
+        /* Modal styling */
+        .modal-content.bg-dark{
+            background: linear-gradient(180deg, rgba(8,12,20,0.95), rgba(10,14,24,0.98));
+            border:1px solid rgba(255,255,255,0.03);
+            border-radius:12px;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width:576px){
+            .hero-left h1{font-size:1.4rem}
+            .number-display{font-size:1.2rem}
+        }
+
+        /* Utility */
+        .btn-accent{
+            background: linear-gradient(90deg, var(--accent), #7ef0ff);
+            color:#001826;
+            font-weight:700;
+            border:0;
+        }
+        .btn-accent-outline{
+            border:1px solid rgba(255,255,255,0.06);
+            color:var(--accent);
+            background:transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+
+        <!-- Hero -->
+        <header class="hero">
+            <div class="hero-left">
+                <h1>Learn German Numbers — 0 to Infinity</h1>
+                <p>Explore pronunciation, grammar-friendly spellings, and play audio. Mobile-first, responsive and modern design.</p>
+            </div>
+
+            <div class="hero-cta">
+                <button class="btn btn-accent btn-lg" data-bs-toggle="modal" data-bs-target="#guideModal">
+                    <i class="bi bi-book me-2"></i>Pronunciation Guide
+                </button>
+                <button class="btn btn-outline-light btn-accent-outline btn-lg" onclick="refreshNumbers()">
+                    <i class="bi bi-arrow-clockwise me-1"></i>Refresh
+                </button>
+            </div>
+        </header>
+
+        <!-- Search / Learn Any Number -->
+        <div class="search-card mt-4">
+            <div class="row g-3 align-items-center">
+                <div class="col-12 col-sm-7">
+                    <label class="form-label visually-hidden" for="searchNumber">Enter a number</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0 text-white"><i class="bi bi-search"></i></span>
+                        <input type="number" id="searchNumber" class="form-control form-control-lg bg-secondary text-white border-0" placeholder="Enter a number (e.g. 21)" min="0" oninput="searchNumber()">
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-5 text-sm-end">
+                    <button class="btn btn-accent btn-lg w-100 w-sm-auto" onclick="autoRandom()"><i class="bi bi-shuffle me-2"></i>Surprise Me</button>
+                </div>
+
+                <div id="searchResult" class="col-12" style="display:none;">
+                    <div class="d-flex align-items-center justify-content-between flex-column flex-sm-row gap-3">
+                        <div>
+                            <div class="number-display" id="germanNumber"></div>
+                            <div class="example-muted" id="englishMeaning"></div>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-light" id="playPronunciationBtn" onclick="speakNumber()"> <i class="bi bi-volume-up me-2"></i>Play</button>
+                            <button class="btn btn-outline-light" onclick="copyResult()"> <i class="bi bi-clipboard me-1"></i>Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Numbers List -->
+        <section id="numberList" class="mt-4">
+            <h2 class="h5 text-uppercase text-white">German Numbers — Sample 0 to 12</h2>
+
+            <div id="numbersContainer" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mt-2">
+                <!-- Cards injected here -->
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Pronunciation Guide Modal -->
+    <div class="modal fade" id="guideModal" tabindex="-1" aria-labelledby="guideModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="guideModalLabel"><i class="bi bi-chat-left-quote me-2"></i>Pronunciation Guide</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-2">Quick reference for common numbers. Use the audio buttons to hear native-like pronunciation.</p>
+
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <h6 class="mb-2">Basic (0–9)</h6>
+                            <ul class="list-unstyled mb-3">
+                                <li>0 — Null <button class="btn btn-sm btn-light ms-2" onclick="speakNumber('Null')"><i class="bi bi-volume-up"></i></button></li>
+                                <li>1 — Eins <button class="btn btn-sm btn-light ms-2" onclick="speakNumber('Eins')"><i class="bi bi-volume-up"></i></button></li>
+                                <li>2 — Zwei <button class="btn btn-sm btn-light ms-2" onclick="speakNumber('Zwei')"><i class="bi bi-volume-up"></i></button></li>
+                                <li>3 — Drei</li>
+                                <li>4 — Vier</li>
+                                <li>5 — Fünf</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <h6 class="mb-2">Teens & Tens</h6>
+                            <ul class="list-unstyled mb-3">
+                                <li>11 — Elf</li>
+                                <li>12 — Zwölf</li>
+                                <li>21 — Einundzwanzig <button class="btn btn-sm btn-light ms-2" onclick="speakNumber('Einundzwanzig')"><i class="bi bi-volume-up"></i></button></li>
+                                <li>30 — Dreißig</li>
+                                <li>40 — Vierzig</li>
+                                <li>90 — Neunzig</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <hr class="border-secondary">
+
+                    <p class="mb-0"><strong>Tip:</strong> German often writes combined numbers as one word. Use the pronunciation button to hear the correct word stress and flow.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer placeholder (loaded dynamically) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Improved German number generator with grammar-friendly joining (basic support)
+        function capitalize(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
+
+        function getGermanNumber(number){
+            if (isNaN(number) || number < 0) return null;
+
+            const unitsCap = ["Null","Eins","Zwei","Drei","Vier","Fünf","Sechs","Sieben","Acht","Neun"];
+            const unitsLower = ["null","ein","zwei","drei","vier","fünf","sechs","sieben","acht","neun"];
+            const teensCap = ["Elf","Zwölf","Dreizehn","Vierzehn","Fünfzehn","Sechzehn","Siebzehn","Achtzehn","Neunzehn"];
+            const tensCap = ["Zwanzig","Dreißig","Vierzig","Fünfzig","Sechzig","Siebzig","Achtzig","Neunzig"];
+
+            if (number === 0) return unitsCap[0];
+            if (number === 10) return "Zehn";
+            if (number >= 1 && number <= 9) return unitsCap[number];
+            if (number >= 11 && number <= 19) return teensCap[number - 11];
+            if (number >= 20 && number <= 99){
+                const unit = number % 10;
+                const ten = Math.floor(number / 10);
+                if (unit === 0) return tensCap[ten - 2];
+                // use lower-case 'ein' for compounds (einundzwanzig)
+                const unitStr = unitsLower[unit];
+                const tenStr = tensCap[ten - 2].toLowerCase();
+                return capitalize(unitStr + "und" + tenStr);
+            }
+            if (number >= 100 && number <= 999){
+                const hundred = Math.floor(number / 100);
+                const remainder = number % 100;
+                let hundredPart = (hundred === 1 ? "Einhundert" : unitsCap[hundred] + "hundert");
+                if (remainder !== 0) hundredPart += getGermanNumber(remainder).toLowerCase();
+                return hundredPart;
+            }
+            if (number >= 1000 && number <= 999999){
+                // basic thousands support: 1 -> eintausend, 2 -> zweetausend etc.
+                const thousand = Math.floor(number / 1000);
+                const remainder = number % 1000;
+                let thousandPart = (thousand === 1 ? "Eintausend" : getGermanNumber(thousand).toLowerCase() + "tausend");
+                if (remainder !== 0) thousandPart += getGermanNumber(remainder).toLowerCase();
+                return thousandPart;
+            }
+            return "Number too large for this implementation";
+        }
+
+        // Populate 0-12 sample cards
+        function displayNumbers(){
+            const container = document.getElementById('numbersContainer');
+            container.innerHTML = '';
+            for (let i = 0; i <= 12; i++){
+                const germanNumber = getGermanNumber(i);
+                const col = document.createElement('div');
+                col.className = 'col';
+                col.innerHTML = `
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="number-big">${germanNumber}</div>
+                                <div class="example-small mt-2">${i} — ${germanNumber}</div>
+                            </div>
+                            <div class="mt-3 d-flex gap-2">
+                                <button class="btn btn-sm btn-light w-100" onclick="speakNumber('${germanNumber}')"><i class="bi bi-volume-up me-1"></i>Play</button>
+                                <button class="btn btn-sm btn-outline-light w-100" onclick="copyText('${i} — ${germanNumber}')"><i class="bi bi-clipboard"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(col);
+            }
+        }
+
+        // Search and display single number
+        function searchNumber(){
+            const raw = document.getElementById('searchNumber').value;
+            if (raw === '') {
+                document.getElementById('searchResult').style.display = 'none';
+                return;
+            }
+            const n = parseInt(raw, 10);
+            if (isNaN(n) || n < 0) {
+                document.getElementById('searchResult').style.display = 'none';
+                return;
+            }
+            const german = getGermanNumber(n);
+            if (!german) {
+                document.getElementById('searchResult').style.display = 'none';
+                return;
+            }
+            document.getElementById('searchResult').style.display = 'block';
+            document.getElementById('germanNumber').innerText = german;
+            document.getElementById('englishMeaning').innerText = `${n} — ${german}`;
+            document.getElementById('playPronunciationBtn').onclick = function(){ speakNumber(german); };
+        }
+
+        // Play pronunciation (uses speech synthesis)
+        function speakNumber(text){
+            const toSpeak = (typeof text === 'string') ? text : document.getElementById('germanNumber').innerText || '';
+            if (!toSpeak) return;
+            if ("speechSynthesis" in window){
+                const u = new SpeechSynthesisUtterance(toSpeak);
+                u.lang = "de-DE";
+                // prefer female voice if available
+                const voices = speechSynthesis.getVoices();
+                if (voices && voices.length){
+                    const v = voices.find(x => x.lang && x.lang.startsWith('de')) || voices[0];
+                    if (v) u.voice = v;
+                }
+                window.speechSynthesis.cancel();
+                window.speechSynthesis.speak(u);
+            } else {
+                alert("Speech Synthesis is not supported in your browser.");
+            }
+        }
+
+        function refreshNumbers(){
+            document.getElementById('searchNumber').value = '';
+            document.getElementById('searchResult').style.display = 'none';
+            displayNumbers();
+        }
+
+        // copy helpers
+        function copyText(text){
+            navigator.clipboard?.writeText(text).then(()=>{/*copied*/});
+        }
+        function copyResult(){
+            const g = document.getElementById('germanNumber').innerText;
+            const m = document.getElementById('englishMeaning').innerText;
+            copyText(m || g);
+        }
+
+        // Surprise button: choose a random number within a reasonable range and show it
+        function autoRandom(){
+            const n = Math.floor(Math.random() * 999) + 0; // 0..998
+            document.getElementById('searchNumber').value = n;
+            searchNumber();
+        }
+
+        // Load navbar & footer if present (graceful)
+        fetch('navbar.html').then(r => r.ok ? r.text() : '').then(html => { if (html) document.body.insertAdjacentHTML('afterbegin', html); }).catch(()=>{});
+        fetch('footer.html').then(r => r.ok ? r.text() : '').then(html => { if (html) document.getElementById('footer-placeholder').innerHTML = html; }).catch(()=>{});
+
+        // initial render
+        window.addEventListener('load', function(){
+            displayNumbers();
+            // preload voices
+            if (speechSynthesis && speechSynthesis.getVoices().length === 0){
+                speechSynthesis.onvoiceschanged = function(){ /* noop - allows voice list to populate */ };
+            }
+        });
+    </script>
+</body>
+</html>

@@ -3,231 +3,619 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Learn German: Alphabet & Diphthongs - Quiz</title>
+  <title>Learn German: Alphabet, Diphthongs & Words</title>
+  <link href="style.css" rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
-    :root {
-      --bg: #0b0f14;
-      --card: #121821;
-      --muted: #7e8aa0;
-      --accent: #73d2ff;
-      --accent-2: #a2ff9b;
-      --text: #eaf2ff;
-      --ring: #2a3a50;
+    :root{
+      --accent-1: #5ee7df;
+      --accent-2: #6a82fb;
+      --glass: rgba(255,255,255,0.08);
+      --glass-strong: rgba(255,255,255,0.12);
+      --muted: rgba(255,255,255,0.75);
+      --card-radius: 1rem;
+      --focus-ring: 0 6px 30px rgba(106,130,251,0.18);
     }
-    * {
-      box-sizing: border-box;
+
+    html,body{
+      height:100%;
+      font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #091026 0%, #0b1222 50%, #071026 100%);
+      color: #f8fafc;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
-    body {
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
-      background: linear-gradient(180deg, #0a0e13, #0c1118 35%, #0a0e13);
-      color: var(--text);
+
+    /* Page container */
+    .site-wrap{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:3rem 1rem;
     }
-    header {
-      max-width: 1100px;
-      margin: 24px auto 8px;
-      padding: 0 16px;
+
+    /* Main card (glass) */
+    .main-card{
+      width:100%;
+      max-width:1100px;
+      border-radius: var(--card-radius);
+      background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      box-shadow: 0 10px 40px rgba(2,6,23,0.6);
+      border: 1px solid rgba(255,255,255,0.04);
+      overflow:hidden;
+      padding:1.5rem;
     }
+
+    .hero{
+      display:flex;
+      gap:1.25rem;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      padding:1rem 0.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .hero-left{
+      display:flex;
+      gap:1rem;
+      align-items:center;
+      min-width:0;
+    }
+
+    .logo-circle{
+      width:72px;
+      height:72px;
+      border-radius:14px;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: var(--focus-ring);
+      flex-shrink:0;
+    }
+    .logo-circle i{ color:#061025; font-size:1.45rem; }
+
     .title {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      justify-content: space-between;
+      min-width:0;
     }
-    .title h1 {
-      margin: 0;
-      font-size: clamp(22px, 4vw, 32px);
+    .title h1{
+      font-size:1.4rem;
+      margin:0;
+      font-weight:700;
+      letter-spacing:-0.2px;
+      color:#fff;
     }
-    .pill {
-      background: rgba(115, 210, 255, 0.12);
-      color: var(--accent);
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(115, 210, 255, 0.25);
-      font-size: 12px;
+    .title p{
+      margin:0;
+      margin-top:4px;
+      font-size:0.92rem;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
     }
-    .controls {
-      margin: 16px 0;
+
+    .btn.active {
+      background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+      color: white;
+      border: none;
     }
+
+    /* Add some styling to buttons for active state */
     .btn {
-      flex: 1 1 auto;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid var(--ring);
-      background: #0c121a;
-      color: #dfeaff;
-      cursor: pointer;
-      font-weight: 600;
+      transition: background 0.3s ease;
     }
+
+    /* Ensure button changes are smooth */
     .btn:hover {
-      background: var(--accent);
+      transform: translateY(-2px);
     }
-    .quiz {
-      max-width: 1100px;
-      margin: -8px auto 40px;
-      padding: 0 16px;
+
+    .score-badge{
+      background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      padding:0.5rem 0.9rem;
+      border-radius:999px;
+      font-weight:600;
+      color:#fff;
+      display:inline-flex;
+      gap:0.6rem;
+      align-items:center;
+      border:1px solid rgba(255,255,255,0.04);
     }
-    .qbox {
-      background: var(--card);
-      border: 1px solid var(--ring);
-      border-radius: 16px;
-      padding: 14px;
-      display: grid;
-      gap: 12px;
+    .score-badge .value { font-weight:700; color:var(--accent-1); }
+
+    /* Controls area */
+    .controls-area{
+      display:flex;
+      gap:1rem;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      padding:1.25rem 0.5rem;
     }
-    .opt {
-      display: grid;
-      gap: 8px;
+
+    .type-buttons{
+      display:flex;
+      gap:0.75rem;
+      flex-wrap:wrap;
+      align-items:center;
     }
-    .opt button {
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid var(--ring);
-      background: #0c121a;
-      color: #dfeaff;
-      cursor: pointer;
+
+    .type-buttons .btn{
+      border-radius:12px;
+      padding:0.65rem 1.05rem;
+      font-weight:600;
+      letter-spacing:0.6px;
+      color: #071026;
     }
-    .opt button.correct {
-      outline: 2px solid #3bd17d;
+    .type-buttons .btn.btn-primary{
+      background:linear-gradient(90deg,var(--accent-1),var(--accent-2));
+      border:none;
+      box-shadow: 0 6px 22px rgba(106,130,251,0.12);
     }
-    .opt button.wrong {
-      outline: 2px solid #ff7b7b;
+    .type-buttons .btn.btn-outline-light{
+      color:#e6eef5;
+      border-color: rgb(100 85 239);
+      background: #000000a1;
     }
-    .small {
-      font-size: 12px;
-      color: var(--muted);
+
+    /* Question card */
+    .question-card{
+      margin-top:1rem;
+      padding:1.25rem;
+      border-radius:12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03);
+      text-align:center;
     }
-    .list {
-      margin: 0.25rem 0 0.25rem 1rem;
-      padding: 0;
-      color: #cfe3ff;
+    .question-text{
+      font-size:1.18rem;
+      font-weight:700;
+      color:#fff;
+      margin-bottom:0.6rem;
     }
-    .qFeedback {
-      font-size: 14px;
-      color: #d6e5ff;
-      font-weight: bold;
+    .question-sub{
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    /* Start area */
+    .start-group{
+      margin-top:1rem;
+      display:flex;
+      gap:0.75rem;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .form-control{
+      border-radius:10px;
+      min-width:140px;
+      max-width:160px;
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.06);
+      color:#fff;
+      padding:0.6rem 0.9rem;
+    }
+    .start-btn{
+      border-radius:10px;
+      padding:0.6rem 1rem;
+      background:linear-gradient(90deg,var(--accent-2),var(--accent-1));
+      border:none;
+      color:#061025;
+      font-weight:700;
+      box-shadow: 0 8px 30px rgba(5,8,20,0.45);
+    }
+    .start-btn:focus, .start-btn:hover{ transform:translateY(-2px); }
+
+    /* Exercise options (answers) */
+    #exerciseOptions{
+      margin-top:1.25rem;
+      padding:1rem;
+      border-radius:12px;
+      background:linear-gradient(180deg, rgba(6,8,20,0.35), rgba(6,8,20,0.28));
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    #exerciseOptions h4{ color:#fff; font-weight:700; margin-bottom:1rem; text-align:center; }
+
+    .options-grid{
+      display:grid;
+      gap:0.75rem;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .options-grid .btn{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);
+      color:#fff;
+      padding:0.7rem 0.8rem;
+      border-radius:10px;
+      font-weight:600;
+      text-align:left;
+      display:flex;
+      gap:0.6rem;
+      align-items:center;
+      min-height:56px;
+    }
+    .options-grid .btn:hover{ transform:translateY(-3px); box-shadow: 0 12px 30px rgba(4,6,20,0.5); }
+
+    .option-german{ font-weight:700; color:#fff; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .option-english{ color:var(--muted); font-size:0.9rem; white-space:nowrap; }
+
+    .feedback{
+      margin-top:0.8rem;
+      text-align:center;
+      font-weight:700;
+      min-height:26px;
+    }
+
+    .replay-btn{
+      margin-top:0.8rem;
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.05);
+      color:#fff;
+      padding:0.5rem 0.9rem;
+      border-radius:10px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px){
+      .options-grid{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 576px){
+      .logo-circle{ width:56px; height:56px; border-radius:12px; }
+      .options-grid{ grid-template-columns: 1fr; }
+      .hero { gap:0.6rem; }
+      .hero-left { gap:0.6rem; }
+      .title h1 { font-size:1.05rem; }
+      .start-group { flex-direction:column; }
     }
   </style>
 </head>
 <body>
+  <div id="navbar-placeholder"></div>
 
-<header>
-  <div class="title">
-    <h1>Learn German: Alphabet & Diphthongs Quiz</h1>
-    <span class="pill" id="voiceStatus">Checking German voice…</span>
+  <div class="site-wrap">
+    <div class="main-card">
+      <div class="hero">
+        <div class="hero-left">
+          <div class="logo-circle" aria-hidden="true">
+            <i class="fas fa-language"></i>
+          </div>
+          <div class="title">
+            <h1>German Learning Hub</h1>
+            <p>Practice alphabet, diphthongs, and words — sharpen your pronunciation</p>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <div id="score" class="score-badge" aria-live="polite">
+            <span class="label">Score</span>
+            <span class="value">0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls-area">
+        <div class="type-buttons" role="tablist" aria-label="Practice type">
+          <button id="practiceAlphabet" class="btn btn-outline-light me-1" type="button" title="Practice Alphabet">
+            <i class="fas fa-font me-2"></i>
+            Alphabet
+          </button>
+
+          <button id="practiceDiphthongs" class="btn btn-outline-light me-1" type="button" title="Practice Diphthongs">
+            <i class="fas fa-wave-square me-2"></i>
+            Diphthongs
+          </button>
+
+          <button id="practiceWords" class="btn btn-outline-light" type="button" title="Practice Words">
+            <i class="fas fa-book-open me-2"></i>
+            Words
+          </button>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center start-group">
+          <input type="number" id="numTimes" class="form-control" placeholder="Questions" min="1" max="20" value="5" aria-label="Number of questions">
+          <button id="startExercise" class="start-btn" type="button" aria-pressed="false">
+            <i class="fas fa-play me-2"></i>Start
+          </button>
+        </div>
+      </div>
+
+      <div class="question-card">
+        <div id="question" class="question-text">Select a practice type and press Start</div>
+        <div class="question-sub">You will hear a German pronunciation — choose the correct answer.</div>
+      </div>
+
+      <div id="exerciseOptions" style="display:none;">
+        <h4>Choose the correct answer</h4>
+
+        <div class="options-grid" aria-live="polite" aria-atomic="true">
+          <!-- Buttons will be injected here by JS -->
+        </div>
+
+        <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+
+        <button id="replayPronunciation" class="replay-btn" type="button" aria-label="Replay pronunciation">
+          <i class="fas fa-volume-up me-2"></i>Replay Pronunciation
+        </button>
+      </div>
+    </div>
   </div>
-</header>
 
-<section class="quiz">
-  <div class="qbox">
-    <div id="question" class="question">
-      <h3>Question will appear here</h3>
-    </div>
-    <div class="opt" id="qOptions">
-      <!-- Options will be injected here -->
-    </div>
-    <div class="controls">
-      <button id="qNext" class="btn">Next Question</button>
-    </div>
-    <div id="qFeedback" class="qFeedback"></div>
-  </div>
-</section>
+  <div id="footer-placeholder"></div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const alphabet = [
+      {glyph: "A a", name: "A", speak: "A", ipa: "[aː]", example: ["Apfel", "Apple"]},
+      {glyph: "B b", name: "B", speak: "B", ipa: "[beː]", example: ["Bahn", "Train"]},
+      {glyph: "C c", name: "C", speak: "C", ipa: "[tseː]", example: ["Cent", "Cent"]},
+      {glyph: "D d", name: "D", speak: "D", ipa: "[deː]", example: ["Dorf", "Village"]},
+      {glyph: "E e", name: "E", speak: "E", ipa: "[eː]", example: ["Esel", "Donkey"]},
+      {glyph: "F f", name: "F", speak: "F", ipa: "[ɛf]", example: ["Fisch", "Fish"]},
+      {glyph: "G g", name: "G", speak: "G", ipa: "[geː]", example: ["Garten", "Garden"]},
+      {glyph: "H h", name: "H", speak: "H", ipa: "[haː]", example: ["Haus", "House"]},
+      {glyph: "I i", name: "I", speak: "I", ipa: "[iː]", example: ["Igel", "Hedgehog"]},
+      {glyph: "J j", name: "J", speak: "J", ipa: "[jɔt]", example: ["Jahr", "Year"]},
+      {glyph: "K k", name: "K", speak: "K", ipa: "[kaː]", example: ["Karte", "Card"]},
+      {glyph: "L l", name: "L", speak: "L", ipa: "[ɛl]", example: ["Lampe", "Lamp"]},
+      {glyph: "M m", name: "M", speak: "M", ipa: "[ɛm]", example: ["Milch", "Milk"]},
+      {glyph: "N n", name: "N", speak: "N", ipa: "[ɛn]", example: ["Nase", "Nose"]},
+      {glyph: "O o", name: "O", speak: "O", ipa: "[oː]", example: ["Ofen", "Oven"]},
+      {glyph: "P p", name: "P", speak: "P", ipa: "[peː]", example: ["Pferd", "Horse"]},
+      {glyph: "Q q", name: "Q", speak: "Q", ipa: "[kuː]", example: ["Quelle", "Source"]},
+      {glyph: "R r", name: "R", speak: "R", ipa: "[ɛʁ]", example: ["Rose", "Rose"]},
+      {glyph: "S s", name: "S", speak: "S", ipa: "[ɛs]", example: ["Sonne", "Sun"]},
+      {glyph: "T t", name: "T", speak: "T", ipa: "[teː]", example: ["Tisch", "Table"]},
+      {glyph: "U u", name: "U", speak: "U", ipa: "[uː]", example: ["Uhr", "Clock"]},
+      {glyph: "V v", name: "V", speak: "V", ipa: "[faʊ̯]", example: ["Vogel", "Bird"]},
+      {glyph: "W w", name: "W", speak: "W", ipa: "[veː]", example: ["Wasser", "Water"]},
+      {glyph: "X x", name: "X", speak: "X", ipa: "[ɪks]", example: ["Xylophon", "Xylophone"]},
+      {glyph: "Y y", name: "Y", speak: "Y", ipa: "[ˈʏpsilɔn]", example: ["Yoga", "Yoga"]},
+      {glyph: "Z z", name: "Z", speak: "Z", ipa: "[t͡sɛt]", example: ["Zeit", "Time"]}
+    ];
 
-<script>
-  /* ===================== Data ===================== */
-  const LETTERS = [
-    { glyph: "A a", name: "A", speak: "A", ipa: "[aː]", example: ["Apfel", "Apfel"] },
-    { glyph: "Ä ä", name: "Ä", speak: "Ä", ipa: "[ɛː]", example: ["Mädchen", "Mädchen"] },
-    { glyph: "B b", name: "Be", speak: "Be", ipa: "[beː]", example: ["Bahn", "Bahn"] },
-    { glyph: "C c", name: "Ce", speak: "Ce", ipa: "[tseː]", example: ["Cent", "Cent"] },
-    { glyph: "D d", name: "De", speak: "De", ipa: "[deː]", example: ["Dorf", "Dorf"] },
-    { glyph: "E e", name: "E", speak: "E", ipa: "[eː]", example: ["Esel", "Esel"] },
-    { glyph: "F f", name: "Ef", speak: "Ef", ipa: "[ɛf]", example: ["Fisch", "Fisch"] },
-    { glyph: "G g", name: "Ge", speak: "Ge", ipa: "[geː]", example: ["Garten", "Garten"] },
-    { glyph: "H h", name: "Ha", speak: "Ha", ipa: "[haː]", example: ["Haus", "Haus"] },
-    { glyph: "I i", name: "I", speak: "I", ipa: "[iː]", example: ["Igel", "Igel"] },
-    { glyph: "J j", name: "Jot", speak: "Jot", ipa: "[jɔt]", example: ["Jahr", "Jahr"] },
-    { glyph: "K k", name: "Ka", speak: "Ka", ipa: "[kaː]", example: ["Karte", "Karte"] },
-    { glyph: "L l", name: "El", speak: "El", ipa: "[ɛl]", example: ["Lampe", "Lampe"] },
-    { glyph: "M m", name: "Em", speak: "Em", ipa: "[ɛm]", example: ["Milch", "Milch"] },
-    { glyph: "N n", name: "En", speak: "En", ipa: "[ɛn]", example: ["Nase", "Nase"] },
-    { glyph: "O o", name: "O", speak: "O", ipa: "[oː]", example: ["Ofen", "Ofen"] },
-    { glyph: "Ö ö", name: "Ö", speak: "Ö", ipa: "[øː]", example: ["Öl", "Öl"] },
-    { glyph: "P p", name: "Pe", speak: "Pe", ipa: "[peː]", example: ["Pferd", "Pferd"] },
-    { glyph: "Q q", name: "Qu", speak: "Qu", ipa: "[kuː]", example: ["Quelle", "Quelle"] },
-    { glyph: "R r", name: "Er", speak: "Er", ipa: "[ɛʁ]", example: ["Rose", "Rose"] },
-    { glyph: "S s", name: "Es", speak: "Es", ipa: "[ɛs]", example: ["Sonne", "Sonne"] },
-    { glyph: "ß", name: "Eszett", speak: "Eszett", ipa: "[ɛsˈtsɛt]", example: ["Straße", "Straße"] },
-    { glyph: "T t", name: "Te", speak: "Te", ipa: "[teː]", example: ["Tisch", "Tisch"] },
-    { glyph: "U u", name: "U", speak: "U", ipa: "[uː]", example: ["Uhr", "Uhr"] },
-    { glyph: "Ü ü", name: "Ü", speak: "Ü", ipa: "[yː]", example: ["Tür", "Tür"] },
-    { glyph: "V v", name: "Vau", speak: "Vau", ipa: "[faʊ̯]", example: ["Vogel", "Vogel"] },
-    { glyph: "W w", name: "We", speak: "We", ipa: "[veː]", example: ["Wasser", "Wasser"] },
-    { glyph: "X x", name: "Ix", speak: "Ix", ipa: "[ɪks]", example: ["Xylophon", "Xylophon"] },
-    { glyph: "Y y", name: "Ypsilon", speak: "Ypsilon", ipa: "[ˈʏpsilɔn]", example: ["Yoga", "Yoga"] },
-    { glyph: "Z z", name: "Zet", speak: "Zet", ipa: "[t͡sɛt]", example: ["Zeit", "Zeit"] }
-  ];
+    const diphthongs = [
+      {glyph: "ei", ipa: "[aɪ̯]", cue: "EYE (like English 'eye')", example: ["nein", "no"], english: "No"},
+      {glyph: "au", ipa: "[aʊ̯]", cue: "OW (like English 'cow')", example: ["auch", "also"], english: "Also"},
+      {glyph: "eu", ipa: "[ɔʏ̯]", cue: "OY (like English 'boy')", example: ["neu", "new"], english: "New"},
+      {glyph: "ie", ipa: "[iː]", cue: "EE (like English 'see')", example: ["nie", "never"], english: "Never"},
+      {glyph: "äu", ipa: "[ɔʏ̯]", cue: "OY (like English 'boy')", example: ["hören", "hear"], english: "Hear"}
+    ];
 
-  const DIPHTHONGS = [
-    { glyph: "ei", ipa: "[aɪ̯]", cue: "EYE (আই)", bnHint: "যদি শব্দের আগে পরে ও মাঝে থাকে, উচ্চারণ EYE-এর মত", examples: ["nein", "dein", "ei", "Mai", "weil"] },
-    { glyph: "ai", ipa: "[aɪ̯]", cue: "EYE (আই)", bnHint: "'ei' এর মতোই ধ্বনি", examples: ["Mai"] },
-    { glyph: "ie", ipa: "[iː]", cue: "EE (ইই)", bnHint: "যদি শব্দের আগে পরে ও মাঝে থাকে, উচ্চারণ EE-এর মত", examples: ["die", "sie", "nie", "viel", "viele"] },
-    { glyph: "au", ipa: "[aʊ̯]", cue: "ow (আউ)", bnHint: "যদি শব্দের আগে পরে ও মাঝে থাকে, উচ্চারণ ow-এর মত", examples: ["auch", "aus", "Auge", "laufen"] },
-    { glyph: "eu", ipa: "[ɔʏ̯]", cue: "OY (অয়)", bnHint: "যদি শব্দের আগে পরে ও মাঝে থাকে, উচ্চারণ OY-এর মত", examples: ["neu", "Europa", "Euro", "Leute"] },
-    { glyph: "äu", ipa: "[ɔʏ̯]", cue: "OY (অয়)", bnHint: "PDF এ এটি eu এর সাথে একত্রে দেওয়া — একই ধ্বনি", examples: [] }
-  ];
+    const words = [
+  {word: "Haus", ipa: "[haʊs]", english: "House", example: ["Haus", "House"]},
+  {word: "Buch", ipa: "[bʊx]", english: "Book", example: ["Buch", "Book"]},
+  {word: "Auto", ipa: "[ˈaʊ̯to]", english: "Car", example: ["Auto", "Car"]},
+  {word: "Baum", ipa: "[baʊm]", english: "Tree", example: ["Baum", "Tree"]},
+  {word: "Tisch", ipa: "[tɪʃ]", english: "Table", example: ["Tisch", "Table"]},
+  {word: "Apfel", ipa: "[ˈapfəl]", english: "Apple", example: ["Apfel", "Apple"]},
+  {word: "Blume", ipa: "[ˈbluːmə]", english: "Flower", example: ["Blume", "Flower"]},
+  {word: "Fenster", ipa: "[ˈfɛnstɐ]", english: "Window", example: ["Fenster", "Window"]},
+  {word: "Schule", ipa: "[ˈʃuːlə]", english: "School", example: ["Schule", "School"]},
+  {word: "Straße", ipa: "[ˈʃtʁaːsə]", english: "Street", example: ["Straße", "Street"]},
+  {word: "Kaffee", ipa: "[ˈkafeː]", english: "Coffee", example: ["Kaffee", "Coffee"]},
+  {word: "Freund", ipa: "[fʁɔʏnt]", english: "Friend", example: ["Freund", "Friend"]},
+  {word: "Mutter", ipa: "[ˈmʊtɐ]", english: "Mother", example: ["Mutter", "Mother"]},
+  {word: "Vater", ipa: "[ˈfaːtɐ]", english: "Father", example: ["Vater", "Father"]},
+  {word: "Brot", ipa: "[bʁoːt]", english: "Bread", example: ["Brot", "Bread"]},
+  {word: "Stuhl", ipa: "[ʃtuːl]", english: "Chair", example: ["Stuhl", "Chair"]},
+  {word: "Lampe", ipa: "[ˈlampə]", english: "Lamp", example: ["Lampe", "Lamp"]},
+  {word: "Hund", ipa: "[hʊnt]", english: "Dog", example: ["Hund", "Dog"]},
+  {word: "Katze", ipa: "[ˈkatsə]", english: "Cat", example: ["Katze", "Cat"]},
+  {word: "Teller", ipa: "[ˈtɛlɐ]", english: "Plate", example: ["Teller", "Plate"]},
+  {word: "Zug", ipa: "[tsuːk]", english: "Train", example: ["Zug", "Train"]},
+  {word: "Flughafen", ipa: "[ˈfluːkˌhaːfən]", english: "Airport", example: ["Flughafen", "Airport"]},
+  {word: "Wasser", ipa: "[ˈvasɐ]", english: "Water", example: ["Wasser", "Water"]},
+  {word: "Himmel", ipa: "[ˈhɪməl]", english: "Sky", example: ["Himmel", "Sky"]},
+  {word: "Berg", ipa: "[bɛʁk]", english: "Mountain", example: ["Berg", "Mountain"]},
+  {word: "Meer", ipa: "[meːɐ̯]", english: "Sea", example: ["Meer", "Sea"]},
+  {word: "Nacht", ipa: "[naxt]", english: "Night", example: ["Nacht", "Night"]},
+  {word: "Tag", ipa: "[taːk]", english: "Day", example: ["Tag", "Day"]},
+  {word: "Sommer", ipa: "[ˈzɔmɐ]", english: "Summer", example: ["Sommer", "Summer"]},
+  {word: "Winter", ipa: "[ˈvɪntɐ]", english: "Winter", example: ["Winter", "Winter"]},
+  {word: "Apotheke", ipa: "[ˈapoteːkə]", english: "Pharmacy", example: ["Apotheke", "Pharmacy"]},
+  {word: "Krankenhaus", ipa: "[ˈkʁaŋkənˌhaʊs]", english: "Hospital", example: ["Krankenhaus", "Hospital"]},
+  {word: "Arzt", ipa: "[ʔaʁtst]", english: "Doctor", example: ["Arzt", "Doctor"]},
+  {word: "Schlüssel", ipa: "[ˈʃlʏsəl]", english: "Key", example: ["Schlüssel", "Key"]},
+  {word: "Tür", ipa: "[tyːɐ̯]", english: "Door", example: ["Tür", "Door"]},
+  {word: "Bett", ipa: "[bɛt]", english: "Bed", example: ["Bett", "Bed"]},
+  {word: "Bleistift", ipa: "[ˈblaɪ̯ʃtɪft]", english: "Pencil", example: ["Bleistift", "Pencil"]},
+  {word: "Papier", ipa: "[paˈpiːɐ]", english: "Paper", example: ["Papier", "Paper"]},
+  {word: "Büro", ipa: "[ˈbyːʁo]", english: "Office", example: ["Büro", "Office"]},
+  {word: "Bibliothek", ipa: "[ˌbɪblioˈteːk]", english: "Library", example: ["Bibliothek", "Library"]},
+  {word: "Straßenbahn", ipa: "[ˈʃtʁaːsənbahn]", english: "Tram", example: ["Straßenbahn", "Tram"]},
+  {word: "Flughafen", ipa: "[ˈfluːkˌhaːfən]", english: "Airport", example: ["Flughafen", "Airport"]},
+  {word: "Küche", ipa: "[ˈkʏçə]", english: "Kitchen", example: ["Küche", "Kitchen"]},
+  {word: "Wald", ipa: "[valt]", english: "Forest", example: ["Wald", "Forest"]},
+  {word: "Licht", ipa: "[lɪçt]", english: "Light", example: ["Licht", "Light"]},
+  {word: "Löffel", ipa: "[ˈlœfəl]", english: "Spoon", example: ["Löffel", "Spoon"]},
+  {word: "Gabel", ipa: "[ˈɡaːbəl]", english: "Fork", example: ["Gabel", "Fork"]},
+  {word: "Messer", ipa: "[ˈmɛsɐ]", english: "Knife", example: ["Messer", "Knife"]},
+  {word: "Glas", ipa: "[ɡlɑs]", english: "Glass", example: ["Glas", "Glass"]},
+  {word: "Becher", ipa: "[ˈbɛçɐ]", english: "Cup", example: ["Becher", "Cup"]},
+  {word: "Tasse", ipa: "[ˈtasə]", english: "Mug", example: ["Tasse", "Mug"]},
+  {word: "Zucker", ipa: "[ˈtsʊkɐ]", english: "Sugar", example: ["Zucker", "Sugar"]},
+  {word: "Salz", ipa: "[zalt͡s]", english: "Salt", example: ["Salz", "Salt"]},
+  {word: "Pfeffer", ipa: "[ˈpfɛfɐ]", english: "Pepper", example: ["Pfeffer", "Pepper"]},
+  {word: "Küche", ipa: "[ˈkʏçə]", english: "Kitchen", example: ["Küche", "Kitchen"]},
+  {word: "Park", ipa: "[paʁk]", english: "Park", example: ["Park", "Park"]},
+  {word: "Krankenhaus", ipa: "[ˈkʁaŋkənˌhaʊs]", english: "Hospital", example: ["Krankenhaus", "Hospital"]},
+  {word: "Arzt", ipa: "[ʔaʁtst]", english: "Doctor", example: ["Arzt", "Doctor"]},
+  {word: "Zahn", ipa: "[tsaːn]", english: "Tooth", example: ["Zahn", "Tooth"]},
+];
 
-  /* ================= Quiz Functionality ================= */
-  let currentQuestion = 0;
-  const totalQuestions = 5;
-  const qFeedback = document.getElementById("qFeedback");
-  const qOptions = document.getElementById("qOptions");
-  const questionBox = document.getElementById("question");
+    let currentQuestion, score = 0, totalQuestions = 0, numTimes = 5, exerciseType = 'alphabet';
 
-  // Shuffle and pick questions
-  const questions = [...LETTERS, ...DIPHTHONGS].sort(() => Math.random() - 0.5).slice(0, totalQuestions);
+    function speakGerman(text) {
+      if (!("speechSynthesis" in window)) return alert("Speech Synthesis not supported.");
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = "de-DE";
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(u);
+    }
 
-  function nextQuestion() {
-    const question = questions[currentQuestion];
-    questionBox.innerHTML = `
-      <h3>What is the pronunciation of <b>${question.glyph}</b>?</h3>
-      <p class="ipa">${question.ipa}</p>
-    `;
-    
-    // Create options
-    const options = [question].concat(questions.filter(q => q !== question).slice(0, 3)).sort(() => Math.random() - 0.5);
-    qOptions.innerHTML = '';
-    options.forEach(option => {
-      const btn = document.createElement("button");
-      btn.className = "btn";
-      btn.textContent = option.glyph;
-      btn.onclick = () => handleAnswer(option, question);
-      qOptions.appendChild(btn);
+    function randomAlphabet() {
+      return alphabet[Math.floor(Math.random() * alphabet.length)];
+    }
+
+    function randomDiphthong() {
+      return diphthongs[Math.floor(Math.random() * diphthongs.length)];
+    }
+
+    function randomWord() {
+      return words[Math.floor(Math.random() * words.length)];
+    }
+
+    function startExercise() {
+      numTimes = parseInt(document.getElementById("numTimes").value) || 5;
+      score = 0;
+      totalQuestions = 0;
+      document.getElementById("score").textContent = `Score: ${score}`;
+      document.getElementById("feedback").textContent = "";
+      document.getElementById("question").textContent = "Guess the correct answer based on pronunciation!";
+      document.getElementById("exerciseOptions").style.display = "block";
+      nextQuestion();
+    }
+
+    function nextQuestion() {
+      if (totalQuestions < numTimes) {
+        let question;
+        // Check for the selected exercise type and load the correct question
+        if (exerciseType === 'alphabet') {
+          question = randomAlphabet();
+        } else if (exerciseType === 'diphthong') {
+          question = randomDiphthong();
+        } else if (exerciseType === 'word') {
+          question = randomWord(); // Correctly handle word selection
+        }
+        
+        // If the question is valid, speak it and move on
+        if (question) {
+          speakGerman(question.name || question.glyph || question.word); // Speak the question
+          currentQuestion = question;
+          totalQuestions++;
+          generateOptions(); // Generate answer options for the question
+        } else {
+          // In case of no valid question, handle the error
+          console.error("No valid question generated for this exercise type.");
+        }
+      } else {
+        // If all questions are answered, show the final score
+        document.getElementById("question").textContent = `Exercise Complete! Final Score: ${score}`;
+        document.getElementById("exerciseOptions").style.display = "none"; // Hide options after exercise is complete
+      }
+    }
+
+    function generateOptions() {
+      let options = [];
+      let optionCount = 0;
+
+      // Add 3 random incorrect options
+      while (optionCount < 3) {
+        let randomOption;
+        if (exerciseType === 'alphabet') {
+          randomOption = randomAlphabet();
+        } else if (exerciseType === 'diphthong') {
+          randomOption = randomDiphthong();
+        } else if (exerciseType === 'word') {
+          randomOption = randomWord();
+        }
+
+        if (randomOption !== currentQuestion && !options.includes(randomOption)) {
+          options.push(randomOption);
+          optionCount++;
+        }
+      }
+
+      options.push(currentQuestion);  // Ensure the correct option is included
+      options.sort(() => Math.random() - 0.5);
+
+      const controls = document.querySelector("#exerciseOptions .options-grid");
+      controls.innerHTML = "";
+
+      options.forEach(option => {
+        const button = document.createElement("button");
+        button.className = "btn";
+        // Show both German word and English meaning in button text
+        button.textContent = `${option.word || option.glyph} (${option.english || option.cue || option.name})`;
+        button.onclick = () => checkAnswer(option);
+        controls.appendChild(button);
+      });
+    }
+
+    function checkAnswer(option) {
+      const feedback = document.getElementById("feedback");
+      if (option === currentQuestion) {
+        score++;
+        feedback.textContent = "Correct! Well done.";
+        feedback.style.color = "green";
+      } else {
+        feedback.textContent = `Incorrect! The correct answer was ${currentQuestion.name || currentQuestion.word}.`;
+        feedback.style.color = "red";
+      }
+      document.getElementById("score").textContent = `Score: ${score}`;
+      setTimeout(nextQuestion, 1000);
+    }
+
+    // Set exercise type based on button click and highlight the active button
+    document.getElementById("practiceAlphabet").addEventListener("click", () => {
+      exerciseType = 'alphabet';  // Set the exercise type to alphabet
+      highlightActiveButton('practiceAlphabet');  // Highlight the active button
+    });
+    document.getElementById("practiceDiphthongs").addEventListener("click", () => {
+      exerciseType = 'diphthong';  // Set the exercise type to diphthongs
+      highlightActiveButton('practiceDiphthongs');  // Highlight the active button
+    });
+    document.getElementById("practiceWords").addEventListener("click", () => {
+      exerciseType = 'word';  // Set the exercise type to words
+      highlightActiveButton('practiceWords');  // Highlight the active button
     });
 
-    qFeedback.innerHTML = '';
-  }
-
-  function handleAnswer(selectedOption, correctOption) {
-    if (selectedOption === correctOption) {
-      qFeedback.textContent = "Correct! Well done!";
-      qFeedback.style.color = "#3bd17d";
-    } else {
-      qFeedback.textContent = `Incorrect. The correct answer is ${correctOption.glyph}`;
-      qFeedback.style.color = "#ff7b7b";
+    // Highlight the active button
+    function highlightActiveButton(activeButtonId) {
+      const buttons = document.querySelectorAll('.btn');
+      buttons.forEach(button => {
+        if (button.id === activeButtonId) {
+          button.classList.add('active');
+        } else {
+          button.classList.remove('active');
+        }
+      });
     }
-    currentQuestion = (currentQuestion + 1) % totalQuestions;
-    setTimeout(nextQuestion, 1500); // Move to next question after 1.5 seconds
-  }
 
-  nextQuestion(); // Start the quiz
+    document.getElementById("startExercise").addEventListener("click", startExercise);
 
-  document.getElementById('qNext').addEventListener("click", nextQuestion);
+    document.getElementById("replayPronunciation").addEventListener("click", function() {
+      speakGerman(currentQuestion.name || currentQuestion.glyph || currentQuestion.word);
+    });
+  </script>
+
+  <script>
+  // Load Navbar
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+    });
+
+  // Load Footer
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
 </script>
 </body>
 </html>

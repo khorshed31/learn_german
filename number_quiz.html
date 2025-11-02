@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>German Number Exercise - Pronunciation Practice</title>
+    <link href="style.css" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        :root{
+            --bg-start: #0f1724;
+            --bg-end: #071029;
+            --card-glass: rgba(255,255,255,0.04);
+            --accent: #6ee7b7;
+            --accent-2: #60a5fa;
+            --muted: rgba(234,242,255,0.65);
+            --glass-border: rgba(255,255,255,0.06);
+        }
+
+        *{box-sizing:border-box}
+        html,body{
+            height:100%;
+            margin:0;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
+            color:#eaf2ff;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+
+        
+        .brand{
+            font-weight:700;
+            letter-spacing:0.2px;
+            color: var(--accent);
+        }
+
+        /* Page layout */
+        .page-wrapper{
+            padding: 3rem 1rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .hero{
+            display:flex;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+        .hero .title{
+            margin:0;
+            font-size: clamp(1.25rem, 2.8vw, 2rem);
+            color: var(--accent-2);
+            font-weight:700;
+        }
+        .hero .subtitle{
+            color: var(--muted);
+            margin-top: 6px;
+            font-size: 0.95rem;
+        }
+
+        /* Cards and glass style */
+        .card-glass{
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 1.25rem;
+            box-shadow: 0 6px 20px rgba(2,6,23,0.5);
+        }
+        .card-glass .card-title{
+            color: var(--accent);
+            font-weight:700;
+            margin-bottom:.5rem;
+        }
+        .muted{
+            color: var(--muted);
+            font-size: .95rem;
+        }
+
+        /* Range inputs styling */
+        .range-row{
+            display:flex;
+            gap: .75rem;
+            align-items:center;
+            width:100%;
+        }
+        .range-row .labels{
+            min-width:48px;
+            text-align:center;
+            color:var(--muted);
+            font-weight:600;
+        }
+        .form-range{
+            height: 8px;
+            background: rgba(255,255,255,0.04);
+        }
+
+        /* Exercise area */
+        #numberDisplay{
+            font-size: clamp(2rem, 6vw, 3.25rem);
+            font-weight:800;
+            color: var(--accent);
+            letter-spacing: .6px;
+        }
+        .play-btn{
+            font-size:1.05rem;
+            padding: .85rem 1.15rem;
+            border-radius: 12px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            border:none;
+            color:#04263b;
+            box-shadow: 0 6px 18px rgba(96,165,250,0.12), inset 0 -2px 6px rgba(0,0,0,0.12);
+        }
+        .play-btn:active{ transform: translateY(1px); }
+
+        .answer-input{
+            max-width: 260px;
+            border-radius: 10px;
+            padding: .6rem .75rem;
+            background: rgba(255,255,255,0.02);
+            border:1px solid rgba(255,255,255,0.04);
+            color:var(--text);
+        }
+
+        .feedback-message{
+            font-size: 1.05rem;
+            margin-top: .9rem;
+            font-weight:700;
+        }
+
+        /* Progress */
+        .progress {
+            height: 10px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.04);
+        }
+        .progress-bar {
+            background: linear-gradient(90deg,var(--accent),var(--accent-2));
+        }
+
+        /* Responsive */
+        @media (max-width: 767.98px){
+            .hero{flex-direction:column;align-items:flex-start;}
+            .page-wrapper{padding:1.5rem 1rem;}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Include the Navbar -->
+  <div id="navbar-placeholder">
+    <!-- Placeholder for Navbar -->
+  </div>
+    <main class="page-wrapper">
+
+        <div class="hero">
+            <div>
+                <h1 class="title">German Number Exercise</h1>
+                <p class="subtitle">Train your listening and number recognition — pronunciation played in native German (de-DE).</p>
+            </div>
+            <div class="d-flex gap-2 align-items-center">
+                <div class="text-end muted">Fast • Focused • Mobile-ready</div>
+            </div>
+        </div>
+
+        <div class="row gy-3">
+            <!-- Settings column -->
+            <div class="col-12 col-lg-6">
+                <div class="card-glass h-100">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div>
+                            <div class="card-title">Configure Exercise</div>
+                            <div class="muted">Choose range and number of questions.</div>
+                        </div>
+                        <div class="muted small">Voice: <strong>German (de-DE)</strong></div>
+                    </div>
+
+                    <div class="mt-3">
+                        <label class="small text-white">Minimum value</label>
+                        <div class="d-flex align-items-center gap-2">
+                            <input type="range" id="minRange" min="0" max="100" value="0" class="form-range" onchange="updateRangeLabel()">
+                            <div class="labels" aria-hidden="true"><span id="minRangeLabel">0</span></div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <label class="small text-white">Maximum value</label>
+                        <div class="d-flex align-items-center gap-2">
+                            <input type="range" id="maxRange" min="1" max="100" value="100" class="form-range" onchange="updateRangeLabel()">
+                            <div class="labels" aria-hidden="true"><span id="maxRangeLabel">100</span></div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <label class="small text-white">Number of questions</label>
+                        <div class="d-flex gap-2 align-items-center">
+                            <input type="number" id="numQuestions" class="answer-input" placeholder="Number of Questions" min="1" value="5" aria-label="Number of questions">
+                            <button class="btn play-btn ms-auto" onclick="startExercise()">Start Exercise</button>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <div class="muted small">Tips:</div>
+                        <ul class="muted small mb-0" style="margin-left:1rem;">
+                            <li>Use headphones for clearer pronunciation.</li>
+                            <li>Adjust range to practice specific difficulty levels.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercise column -->
+            <div class="col-12 col-lg-6" id="exerciseColumn" style="display:none;">
+                <div class="card-glass h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="card-title">Exercise</div>
+                        <div class="muted">Listen and type the number you hear in digits.</div>
+
+                        <div class="text-center my-4">
+                            <div id="numberDisplay" aria-live="polite">Press Start to Begin</div>
+                            <div class="d-flex justify-content-center gap-2 mt-3">
+                                <button class="btn play-btn" onclick="playPronunciation()" aria-label="Play pronunciation">🔊 Play</button>
+                                <button class="btn btn-outline-light" onclick="playPronunciation()" title="Play again">Repeat</button>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center gap-2 flex-wrap">
+                            <input type="number" id="userAnswer" class="answer-input" placeholder="Enter your answer" aria-label="Your answer">
+                            <button class="btn btn-primary" onclick="checkAnswer()">Check Answer</button>
+                            <button class="btn btn-secondary" onclick="refreshExercise()">Reset</button>
+                        </div>
+
+                        <p id="feedbackMessage" class="feedback-message text-center" style="display:none;"></p>
+                    </div>
+
+                    <div class="mt-3">
+                        <div class="d-flex justify-content-between align-items-center small muted mb-2">
+                            <div>Progress</div>
+                            <div id="progressText" class="text-end">0 / 0</div>
+                        </div>
+                        <div class="progress" role="progressbar" aria-label="Exercise progress">
+                            <div id="progressBar" class="progress-bar" style="width:0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder">
+      <!-- Footer content goes here -->
+    </div>
+
+    <script>
+        // Small helpers to keep labels and progress in sync on page load
+        document.addEventListener('DOMContentLoaded', function(){
+            const yearSpan = document.getElementById('year');
+            if(yearSpan) yearSpan.textContent = new Date().getFullYear();
+            // initialize labels
+            const min = document.getElementById('minRange');
+            const max = document.getElementById('maxRange');
+            const minLabel = document.getElementById('minRangeLabel');
+            const maxLabel = document.getElementById('maxRangeLabel');
+            if(min && minLabel) minLabel.textContent = min.value;
+            if(max && maxLabel) maxLabel.textContent = max.value;
+            // initialize progress info if elements exist
+            updateProgress(0,0);
+        });
+
+        // small function used by the rest of the page to update progress UI
+        function updateProgress(current, total){
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            if(!progressBar || !progressText) return;
+            const pct = (total === 0) ? 0 : Math.round((current/total)*100);
+            progressBar.style.width = pct + '%';
+            progressText.textContent = current + ' / ' + total;
+        }
+
+        // expose updateProgress to the later script by attaching to window
+        window.updateProgress = updateProgress;
+    </script>
+
+    <script>
+        let currentExercise = [];
+        let currentQuestionIndex = 0;
+
+        // Function to update range labels when user changes them
+        function updateRangeLabel() {
+            document.getElementById("minRangeLabel").innerText = document.getElementById("minRange").value;
+            document.getElementById("maxRangeLabel").innerText = document.getElementById("maxRange").value;
+        }
+
+        // Function to start the exercise based on input range and questions
+        function startExercise() {
+            const minRange = parseInt(document.getElementById("minRange").value);
+            const maxRange = parseInt(document.getElementById("maxRange").value);
+            const numQuestions = parseInt(document.getElementById("numQuestions").value);
+
+            // Generate random numbers for the exercise
+            currentExercise = [];
+            for (let i = 0; i < numQuestions; i++) {
+                let randomNum = Math.floor(Math.random() * (maxRange - minRange + 1)) + minRange;
+                currentExercise.push(randomNum);
+            }
+
+            // Show exercise section and hide configuration
+            document.getElementById('exerciseColumn').style.display = 'block';
+            document.querySelector('.input-container').style.display = 'none';
+
+            // Reset the question index and start with the first question
+            currentQuestionIndex = 0;
+            displayQuestion();
+            updateProgress(0, numQuestions);
+        }
+
+        // Function to display the current question
+        function displayQuestion() {
+            if (currentQuestionIndex < currentExercise.length) {
+                const number = currentExercise[currentQuestionIndex];
+                document.getElementById("numberDisplay").innerText = "Listen carefully!";
+                document.getElementById("userAnswer").value = ''; // Clear previous answer
+                document.getElementById("feedbackMessage").style.display = 'none'; // Hide feedback
+            } else {
+                document.getElementById("feedbackMessage").innerText = "Exercise Complete!";
+                document.getElementById("feedbackMessage").style.display = 'block'; // Show completion message
+            }
+        }
+
+        // Function to check if the user's answer is correct
+        function checkAnswer() {
+            const userAnswer = parseInt(document.getElementById("userAnswer").value);
+            const correctAnswer = currentExercise[currentQuestionIndex];
+            const feedbackMessage = document.getElementById("feedbackMessage");
+
+            if (userAnswer === correctAnswer) {
+                feedbackMessage.innerText = "Correct!";
+                feedbackMessage.style.color = 'green';
+            } else {
+                feedbackMessage.innerText = "Incorrect. The correct answer is " + correctAnswer;
+                feedbackMessage.style.color = 'red';
+            }
+
+            feedbackMessage.style.display = 'block'; // Show feedback message
+            currentQuestionIndex++; // Move to the next question
+            updateProgress(currentQuestionIndex, currentExercise.length);
+            setTimeout(displayQuestion, 1000); // After 1 second, show the next question
+        }
+
+        // Function to play the pronunciation of the current number
+        function playPronunciation() {
+            const number = currentExercise[currentQuestionIndex];
+            const germanNumber = getGermanNumber(number);
+            if ("speechSynthesis" in window) {
+                const u = new SpeechSynthesisUtterance(germanNumber);
+                u.lang = "de-DE"; // German Language
+                window.speechSynthesis.cancel();
+                window.speechSynthesis.speak(u);
+            } else {
+                alert("Speech Synthesis is not supported in your browser.");
+            }
+        }
+
+        // Function to convert number to German pronunciation
+        function getGermanNumber(number) {
+            const germanUnits = [
+                "Null", "Eins", "Zwei", "Drei", "Vier", "Fünf", "Sechs", "Sieben", "Acht", "Neun"
+            ];
+            const germanTeens = [
+                "Elf", "Zwölf", "Dreizehn", "Vierzehn", "Fünfzehn", "Sechzehn", "Siebzehn", "Achtzehn", "Neunzehn"
+            ];
+            const germanTens = [
+                "Zwanzig", "Dreißig", "Vierzig", "Fünfzig", "Sechzig", "Siebzig", "Achtzig", "Neunzig"
+            ];
+
+            if (number === 10) return "Zehn";
+            if (number >= 0 && number <= 9) return germanUnits[number];
+            if (number >= 11 && number <= 19) return germanTeens[number - 11];
+            if (number >= 20 && number <= 99) {
+                const unit = number % 10;
+                const ten = Math.floor(number / 10);
+                if (unit === 0) return germanTens[ten - 2];
+                return germanUnits[unit] + "und" + germanTens[ten - 2];
+            }
+            return "Number too large for this implementation";
+        }
+
+        // Function to refresh the exercise (reset everything)
+        function refreshExercise() {
+            document.querySelector('.input-container').style.display = 'flex'; // Show the input fields
+            document.getElementById('exerciseColumn').style.display = 'none'; // Hide the exercise
+            document.getElementById("minRange").value = 0;
+            document.getElementById("maxRange").value = 100;
+            document.getElementById("numQuestions").value = 5;
+            document.getElementById("minRangeLabel").innerText = 0;
+            document.getElementById("maxRangeLabel").innerText = 100;
+            document.getElementById("feedbackMessage").style.display = 'none'; // Hide feedback
+        }
+    </script>
+
+    <script>
+  // Load Navbar
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+    });
+
+  // Load Footer
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
+</body>
+</html>

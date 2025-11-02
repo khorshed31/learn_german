@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Learn German: Alphabet & Diphthongs</title>
+  <link href="style.css" rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    :root{--bg:#0b0f14;--card:#121821;--muted:#7e8aa0;--accent:#73d2ff;--accent-2:#a2ff9b;--text:#eaf2ff;--ring:#2a3a50}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;background:linear-gradient(180deg,#0a0e13,#0c1118 35%,#0a0e13);color:var(--text)}
+    header{max-width:1100px;margin:24px auto 8px;padding:0 16px}
+    .title{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+    .title h1{margin:0;font-size:clamp(22px,4vw,32px)}
+    .pill{background:rgba(115,210,255,.12);color:var(--accent);padding:6px 10px;border-radius:999px;border:1px solid rgba(115,210,255,.25);font-size:12px}
+    .howto{max-width:1100px;margin:8px auto 20px;padding:12px 16px;border:1px solid var(--ring);background:linear-gradient(180deg,#0f1621,#0e141c);border-radius:16px}
+    .howto h2{margin:4px 0 10px;font-size:16px;color:#cfe3ff}
+    .howto ol{margin:0;padding-left:18px}.howto li{margin:6px 0;color:#c9d6ea}
+    nav.tabs{max-width:1100px;margin:0 auto;padding:0 16px;display:flex;gap:8px;border-bottom:1px solid var(--ring)}
+    .tab{appearance:none;border:0;background:transparent;color:#cfe3ff;padding:10px 14px;cursor:pointer;border-radius:10px 10px 0 0;border:1px solid transparent;border-bottom:0;font-weight:600}
+    .tab[aria-selected="true"]{background:var(--card);border-color:var(--ring);border-bottom-color:var(--card);color:white}
+    .toolbar{max-width:1100px;margin:0 auto;padding:12px 16px 0;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+    .search{position:relative;flex:1 1 260px;max-width:420px}
+    .search input{width:100%;padding:12px 40px 12px 12px;border-radius:12px;border:1px solid var(--ring);background:#0c121a;color:#var(--text);outline:none}
+    .search .icon{position:absolute;right:10px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--muted);font-size:14px}
+    .voice-select{appearance:none;background:#0c121a;border:1px solid var(--ring);color:#var(--text);padding:10px 12px;border-radius:12px;min-width:200px}
+    .rate{display:flex;gap:8px;align-items:center;color:#cfe3ff;font-size:13px}.rate input{accent-color:var(--accent)}
+    .grid{max-width:1100px;margin:14px auto 40px;padding:0 16px;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+    .card{background:var(--card);border:1px solid var(--ring);border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:8px;position:relative;transition:transform .08s ease,box-shadow .2s ease,border-color .2s ease}
+    .card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.25);border-color:#2e425c}
+    .badge{position:absolute;top:10px;right:12px;font-size:11px;color:var(--muted)}
+    .glyph{font-size:34px;font-weight:800}
+    .ipa{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;color:#a7b7d4}
+    .example{font-size:14px;color:#d6e5ff}
+    .example em{font-style:normal;color:var(--accent-2);font-weight:600}
+    .hint{font-size:12px;color:#b9c7de}
+    .subhint{font-size:12px;color:#8fb3ff}
+    .list{margin:.25rem 0 .25rem 1rem;padding:0;color:#cfe3ff}
+    .controls{display:flex;gap:8px;margin-top:auto}
+    .btn{flex:1 1 auto;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 12px;border-radius:12px;border:1px solid var(--ring);background:#0c121a;color:#dfeaff;cursor:pointer;font-weight:600}
+    .btn.play{border-color:rgba(115,210,255,.4)}
+    .quiz{max-width:1100px;margin:-8px auto 40px;padding:0 16px}
+    .qbox{background:var(--card);border:1px solid var(--ring);border-radius:16px;padding:14px;display:grid;gap:12px}
+    .opt{display:grid;gap:8px}
+    .opt button{padding:10px 12px;border-radius:12px;border:1px solid var(--ring);background:#0c121a;color:#dfeaff;cursor:pointer}
+    .opt button.correct{outline:2px solid #3bd17d}
+    .opt button.wrong{outline:2px solid #ff7b7b}
+    .small{font-size:12px;color:var(--muted)}
+  </style>
+</head>
+<body>
+
+  <!-- Include the Navbar -->
+  <div id="navbar-placeholder">
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="title">
+      <h1>Learn German: Alphabet & Diphthongs</h1>
+      <span class="pill" id="voiceStatus">Checking German voice…</span>
+    </div>
+  </header>
+
+  <section class="howto">
+    <h2>How to use this site</h2>
+    <ol>
+      <li>Pick a tab (<b>Alphabet</b> or <b>Diphthongs</b>).</li>
+      <li>Click a tile to hear the <em>German</em> pronunciation and example words.</li>
+      <li>Use <b>Practice mode</b> in the Diphthongs tab to test yourself.</li>
+    </ol>
+    <p class="small">Speech uses your browser’s <b>German (de-DE)</b> voice.</p>
+  </section>
+
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button class="tab" role="tab" aria-selected="true" id="tab-letters" aria-controls="panel-letters">Alphabet</button>
+    <button class="tab" role="tab" aria-selected="false" id="tab-diph" aria-controls="panel-diph">Diphthongs</button>
+  </nav>
+
+  <div class="toolbar" aria-label="Controls">
+    <div class="search" role="search">
+      <input id="searchInput" type="search" placeholder="Search letter, sound, or example…" aria-label="Search" />
+      <div class="icon">⌕</div>
+    </div>
+    <div class="row" aria-label="Speech options">
+      <select id="voiceSelect" class="voice-select" aria-label="German voice"></select>
+      <label class="rate" for="rateRange">Speed <input id="rateRange" type="range" min="0.6" max="1.2" step="0.05" value="0.9" /></label>
+    </div>
+  </div>
+
+  <main id="content">
+    <!-- Alphabet -->
+    <section id="panel-letters" role="tabpanel" aria-labelledby="tab-letters">
+      <div id="grid-letters" class="grid"></div>
+    </section>
+
+    <!-- Diphthongs -->
+    <section id="panel-diph" role="tabpanel" aria-labelledby="tab-diph" hidden>
+      <div id="grid-diph" class="grid"></div>
+
+      <!-- Practice mode -->
+      <div class="quiz">
+        <div class="qbox">
+          <div>
+            <b>Practice mode</b> — Listen and choose the correct diphthong.
+            <div class="small">Tip: slow the speed if needed.</div>
+          </div>
+          <div class="controls">
+            <button id="qPlay" class="btn play">▶︎ Play sound</button>
+            <button id="qNext" class="btn">Next question</button>
+          </div>
+          <div class="opt" id="qOptions"></div>
+          <div class="small" id="qFeedback"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Include the Footer -->
+  <div id="footer-placeholder">
+    <!-- Paste your common footer code here -->
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+/* ===================== Data ===================== */
+const LETTERS = [
+  {glyph:"A a", name:"A", speak:"A", ipa:"[aː]", example:["Apfel","Apfel"]},
+  {glyph:"Ä ä", name:"Ä", speak:"Ä", ipa:"[ɛː]", example:["Mädchen","Mädchen"]},
+  {glyph:"B b", name:"Be", speak:"Be", ipa:"[beː]", example:["Bahn","Bahn"]},
+  {glyph:"C c", name:"Ce", speak:"Ce", ipa:"[tseː]", example:["Cent","Cent"]},
+  {glyph:"D d", name:"De", speak:"De", ipa:"[deː]", example:["Dorf","Dorf"]},
+  {glyph:"E e", name:"E", speak:"E", ipa:"[eː]", example:["Esel","Esel"]},
+  {glyph:"F f", name:"Ef", speak:"Ef", ipa:"[ɛf]", example:["Fisch","Fisch"]},
+  {glyph:"G g", name:"Ge", speak:"Ge", ipa:"[geː]", example:["Garten","Garten"]},
+  {glyph:"H h", name:"Ha", speak:"Ha", ipa:"[haː]", example:["Haus","Haus"]},
+  {glyph:"I i", name:"I", speak:"I", ipa:"[iː]", example:["Igel","Igel"]},
+  {glyph:"J j", name:"Jot", speak:"Jot", ipa:"[jɔt]", example:["Jahr","Jahr"]},
+  {glyph:"K k", name:"Ka", speak:"Ka", ipa:"[kaː]", example:["Karte","Karte"]},
+  {glyph:"L l", name:"El", speak:"El", ipa:"[ɛl]", example:["Lampe","Lampe"]},
+  {glyph:"M m", name:"Em", speak:"Em", ipa:"[ɛm]", example:["Milch","Milch"]},
+  {glyph:"N n", name:"En", speak:"En", ipa:"[ɛn]", example:["Nase","Nase"]},
+  {glyph:"O o", name:"O", speak:"O", ipa:"[oː]", example:["Ofen","Ofen"]},
+  {glyph:"Ö ö", name:"Ö", speak:"Ö", ipa:"[øː]", example:["Öl","Öl"]},
+  {glyph:"P p", name:"Pe", speak:"Pe", ipa:"[peː]", example:["Pferd","Pferd"]},
+  {glyph:"Q q", name:"Qu", speak:"Qu", ipa:"[kuː]", example:["Quelle","Quelle"]},
+  {glyph:"R r", name:"Er", speak:"Er", ipa:"[ɛʁ]", example:["Rose","Rose"]},
+  {glyph:"S s", name:"Es", speak:"Es", ipa:"[ɛs]", example:["Sonne","Sonne"]},
+  {glyph:"ß",   name:"Eszett", speak:"Eszett", ipa:"[ɛsˈtsɛt]", example:["Straße","Straße"]},
+  {glyph:"T t", name:"Te", speak:"Te", ipa:"[teː]", example:["Tisch","Tisch"]},
+  {glyph:"U u", name:"U", speak:"U", ipa:"[uː]", example:["Uhr","Uhr"]},
+  {glyph:"Ü ü", name:"Ü", speak:"Ü", ipa:"[yː]", example:["Tür","Tür"]},
+  {glyph:"V v", name:"Vau", speak:"Vau", ipa:"[faʊ̯]", example:["Vogel","Vogel"]},
+  {glyph:"W w", name:"We", speak:"We", ipa:"[veː]", example:["Wasser","Wasser"]},
+  {glyph:"X x", name:"Ix", speak:"Ix", ipa:"[ɪks]", example:["Xylophon","Xylophon"]},
+  {glyph:"Y y", name:"Ypsilon", speak:"Ypsilon", ipa:"[ˈʏpsilɔn]", example:["Yoga","Yoga"]},
+  {glyph:"Z z", name:"Zet", speak:"Zet", ipa:"[t͡sɛt]", example:["Zeit","Zeit"]}
+];
+
+/* ===== Diphthongs (split, matching your PDF contents) =====
+   - ei and ai separated
+   - eu and äu separated (same sound; PDF grouped them)
+*/
+const DIPHTHONGS = [
+  { glyph:"ei", ipa:"[aɪ̯]", cue:"EYE (আই)",  bnHint:"যদি শব্দের আগে পরে ও মাঝে থাকে, উচ্চারণ EYE-এর মত", examples:["nein","dein","ei","weil"] },
+  { glyph:"ai", ipa:"[aɪ̯]", cue:"EYE (আই)",  bnHint:"'ei' এর মতোই ধ্বনি",                           examples:["Mai"] },
+  { glyph:"ie", ipa:"[iː]",  cue:"EE (ইই)",   bnHint:"যদি শব্দের আগে পরে ও মাঝে থাকে, উচ্চারণ EE-এর মত", examples:["die","sie","nie","viel","viele"] },
+  { glyph:"au", ipa:"[aʊ̯]", cue:"ow (আউ)",   bnHint:"যদি শব্দের আগে পরে ও মাঝে থাকে, উচ্চারণ ow-এর মত", examples:["auch","aus","Auge","laufen"] },
+  { glyph:"eu", ipa:"[ɔʏ̯]", cue:"OY (অয়)",   bnHint:"যদি শব্দের আগে পরে ও মাঝে থাকে, উচ্চারণ OY-এর মত", examples:["neu","Europa","Euro","Leute"] },
+  // äü not separately exemplified in the PDF; keeping a separate tile per your request.
+  { glyph:"äu", ipa:"[ɔʏ̯]", cue:"OY (অয়)",   bnHint:"PDF এ এটি eu এর সাথে একত্রে দেওয়া — একই ধ্বনি",     examples:[] }
+];
+
+/* ================= Speech ================= */
+let voices=[], deVoices=[], currentVoice=null;
+const voiceSelect=document.querySelector("#voiceSelect");
+const rateRange=document.querySelector("#rateRange");
+const voiceStatus=document.querySelector("#voiceStatus");
+
+function populateVoices(){
+  voices = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+  deVoices = voices.filter(v => /de(-|_)DE/i.test(v.lang));
+  voiceSelect.innerHTML = "";
+  if(deVoices.length){
+    deVoices.forEach((v,i)=>{
+      const opt=document.createElement("option");
+      opt.value=i; opt.textContent=`${v.name} (${v.lang})`;
+      voiceSelect.appendChild(opt);
+    });
+    currentVoice=deVoices[0]; voiceSelect.selectedIndex=0;
+    voiceStatus.textContent="German voice ready";
+    voiceStatus.style.color="var(--accent-2)";
+  }else{
+    const opt=document.createElement("option"); opt.value=""; opt.textContent="No German voice found";
+    voiceSelect.appendChild(opt); currentVoice=null;
+    voiceStatus.textContent="No German voice—fallback active";
+    voiceStatus.style.color="#ffcc88";
+  }
+}
+if("speechSynthesis" in window){ populateVoices(); window.speechSynthesis.onvoiceschanged=populateVoices; }
+
+function speakGerman(text){
+  if(!("speechSynthesis" in window)) return alert("Speech Synthesis not supported.");
+  const u=new SpeechSynthesisUtterance(text); u.lang="de-DE"; if(currentVoice) u.voice=currentVoice;
+  u.rate=parseFloat(rateRange.value||"0.9");
+  window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+}
+
+/* ================ Renderers ================ */
+const $ = s=>document.querySelector(s);
+const gridLetters=$("#grid-letters");
+const gridDiph=$("#grid-diph");
+const searchInput=$("#searchInput");
+
+function cardLetter(L){
+  const el=document.createElement("article");
+  el.className="card"; el.tabIndex=0; el.setAttribute("role","button");
+  el.innerHTML=`
+    <span class="badge">Letter</span>
+    <div class="glyph">${L.glyph}</div>
+    <div class="ipa">${L.ipa}</div>
+    <div class="example">z. B.: <em>${L.example[0]}</em></div>
+    <div class="controls">
+      <button class="btn play">▶︎ Letter</button>
+      <button class="btn">🔊 Example</button>
+    </div>`;
+  const [b1,b2]=el.querySelectorAll("button");
+  b1.addEventListener("click",()=>speakGerman(L.name||L.speak||L.glyph));
+  b2.addEventListener("click",()=>speakGerman(L.example[0]));
+  el.addEventListener("click",e=>{ if(e.target.tagName!=="BUTTON") speakGerman(`${L.glyph}. ${L.example[0]}.`);});
+  return el;
+}
+
+function cardDiph(D){
+  const el=document.createElement("article");
+  el.className="card"; el.tabIndex=0; el.setAttribute("role","button");
+  const examplesList = (D.examples && D.examples.length)
+    ? `<ul class="list">${D.examples.map(w=>`<li><em>${w}</em></li>`).join("")}</ul>`
+    : `<div class="small">No PDF examples—same sound as <b>eu</b>.</div>`;
+  el.innerHTML=`
+    <span class="badge">Diphthong</span>
+    <div class="glyph">${D.glyph}</div>
+    <div class="ipa">${D.ipa}</div>
+    <div class="hint"><b>Sound:</b> ${D.cue}</div>
+    <div class="subhint">${D.bnHint||""}</div>
+    <div class="example"><b>Examples:</b>
+      ${examplesList}
+    </div>
+    <div class="controls">
+      <button class="btn play">▶︎ Say ${D.glyph}</button>
+      <button class="btn">🔊 Read all examples</button>
+    </div>`;
+  const [bSound,bAll]=el.querySelectorAll("button");
+  bSound.addEventListener("click",()=>speakGerman(D.glyph));
+  bAll.addEventListener("click",()=>{
+    if(D.examples && D.examples.length){ speakGerman(D.examples.join(", ")); }
+    else { speakGerman(D.glyph); }
+  });
+  el.addEventListener("click",e=>{
+    if(e.target.tagName!=="BUTTON"){
+      if(D.examples && D.examples.length) speakGerman(`${D.glyph}. ${D.examples.join(", ")}.`);
+      else speakGerman(D.glyph);
+    }
+  });
+  return el;
+}
+
+function matches(item,q){
+  if(!q) return true;
+  const hay=[item.glyph,item.name||"",item.ipa||"",item.cue||"",item.bnHint||"",...(item.examples||[])]
+    .join(" ").toLowerCase();
+  return hay.includes(q.toLowerCase());
+}
+
+function renderLetters(q=""){ gridLetters.innerHTML=""; LETTERS.filter(L=>matches(L,q)).forEach(L=>gridLetters.appendChild(cardLetter(L))); }
+function renderDiph(q=""){ gridDiph.innerHTML=""; DIPHTHONGS.filter(D=>matches(D,q)).forEach(D=>gridDiph.appendChild(cardDiph(D))); }
+
+/* ================ Tabs, Search, Init ================ */
+const tabLetters=$("#tab-letters"), tabDiph=$("#tab-diph");
+const panelLetters=$("#panel-letters"), panelDiph=$("#panel-diph");
+
+function selectTab(which){
+  const isLetters = which==="letters";
+  tabLetters.setAttribute("aria-selected",String(isLetters));
+  tabDiph.setAttribute("aria-selected",String(!isLetters));
+  panelLetters.hidden=!isLetters; panelDiph.hidden=isLetters;
+  localStorage.setItem("kd_german_tab", which);
+}
+
+tabLetters.addEventListener("click",()=>selectTab("letters"));
+tabDiph.addEventListener("click",()=>selectTab("diph"));
+searchInput.addEventListener("input",()=>{ const q=searchInput.value.trim(); renderLetters(q); renderDiph(q); });
+voiceSelect.addEventListener("change",()=>{ const i=parseInt(voiceSelect.value,10); currentVoice=deVoices[i]||null; });
+
+function init(){
+  renderLetters(); renderDiph();
+  const saved=localStorage.getItem("kd_german_tab"); selectTab(saved==="diph"?"diph":"letters");
+}
+document.addEventListener("DOMContentLoaded", init);
+
+/* ================= Practice Mode (Diphthongs) ================= */
+const qPlay=$("#qPlay"), qNext=$("#qNext"), qOptions=$("#qOptions"), qFeedback=$("#qFeedback");
+let currentQ=null;
+
+function newQuestion(){
+  const idx=Math.floor(Math.random()*DIPHTHONGS.length);
+  const correct=DIPHTHONGS[idx];
+  const pool=[...DIPHTHONGS.filter((_,i)=>i!==idx)];
+  const distractors=pool.sort(()=>Math.random()-0.5).slice(0,3);
+  const options=[correct,...distractors].sort(()=>Math.random()-0.5);
+
+  currentQ={correct, options, say: pickExample(correct)};
+  qOptions.innerHTML="";
+  options.forEach(opt=>{
+    const b=document.createElement("button");
+    b.textContent=opt.glyph;
+    b.addEventListener("click",()=>grade(opt, b));
+    qOptions.appendChild(b);
+  });
+  qFeedback.textContent="Click ▶︎ to hear a word, then choose the diphthong.";
+}
+
+function pickExample(d){
+  // If there are no PDF examples (e.g., "äu"), speak the glyph itself
+  if(!d.examples || d.examples.length===0){
+    return {glyph:d.glyph, ex:d.glyph};
+  }
+  const ex = d.examples[Math.floor(Math.random()*d.examples.length)];
+  return {glyph:d.glyph, ex};
+}
+
+function grade(choice, btn){
+  if(!currentQ) return;
+  const {correct}=currentQ;
+  [...qOptions.children].forEach(b=>b.disabled=true);
+  if(choice===correct){ btn.classList.add("correct"); qFeedback.textContent=`Correct! (${correct.glyph})`; }
+  else { btn.classList.add("wrong"); qFeedback.textContent=`Not quite. Correct answer: ${correct.glyph}.`; }
+}
+
+qPlay.addEventListener("click",()=>{
+  if(!currentQ) return;
+  speakGerman(currentQ.say.ex);
+});
+
+qNext.addEventListener("click",()=>newQuestion());
+
+// initialize first question when diphthongs tab is opened
+tabDiph.addEventListener("click",()=>{ if(!currentQ) newQuestion(); });
+</script>
+<script>
+  // Load Navbar
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+    });
+
+  // Load Footer
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
+</body>
+</html>
