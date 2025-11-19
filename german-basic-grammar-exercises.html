@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>German Basic Grammar – Exercises</title>
+
+  <link href="style.css" rel="stylesheet" />
+
+  <!-- Bootstrap & Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root{
+      --bg1:#0f1724;
+      --bg2:#050816;
+      --glass:rgba(255,255,255,0.04);
+      --glass-border:rgba(255,255,255,0.09);
+      --accent:#6ee7b7;
+      --accent-2:#60a5fa;
+      --text:#eaf6ff;
+      --muted:#9bb0d6;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background:radial-gradient(circle at top,var(--bg2) 0,var(--bg1) 45%,#020617 100%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .page-wrapper{
+      max-width:1100px;
+      margin:0 auto;
+      padding:2.5rem 1rem 3.5rem;
+    }
+
+    .hero-title{
+      font-size:clamp(1.7rem,3.2vw,2.4rem);
+      font-weight:800;
+      letter-spacing:-0.3px;
+      color:var(--accent);
+    }
+    .hero-subtitle{
+      color:var(--muted);
+      max-width:700px;
+    }
+    .hero-pill{
+      background:rgba(15,118,110,0.12);
+      border:1px solid rgba(45,212,191,0.35);
+      color:var(--accent);
+      padding:.3rem .7rem;
+      border-radius:999px;
+      font-size:.78rem;
+      text-transform:uppercase;
+      letter-spacing:.09em;
+      font-weight:600;
+    }
+
+    .card-glass{
+      background:linear-gradient(180deg,rgba(15,23,42,0.95),rgba(15,23,42,0.88));
+      border:1px solid var(--glass-border);
+      border-radius:18px;
+      padding:1.2rem 1.3rem;
+      box-shadow:0 15px 40px rgba(15,23,42,0.8);
+      backdrop-filter:blur(6px);
+    }
+
+    .section-title{
+      font-weight:700;
+      color:var(--accent-2);
+      margin-bottom:.3rem;
+      font-size:1.1rem;
+    }
+    .section-sub{
+      color:var(--muted);
+      font-size:.9rem;
+      margin-bottom:.5rem;
+    }
+
+    /* Mode tabs */
+    .mode-wrapper{
+      background:rgba(15,23,42,0.85);
+      border-radius:999px;
+      padding:.25rem;
+      border:1px solid rgba(148,163,184,0.3);
+      overflow-x:auto;
+      white-space:nowrap;
+    }
+    .nav-pills .nav-link{
+      border-radius:999px;
+      color:#cbd5f5;
+      font-size:.85rem;
+      padding:.35rem .9rem;
+      margin-right:.25rem;
+      background:transparent;
+    }
+    .nav-pills .nav-link.active{
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#021019;
+      font-weight:600;
+      box-shadow:0 6px 16px rgba(15,23,42,0.8);
+    }
+
+    .question-tag{
+      font-size:.75rem;
+      color:#a5b4fc;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-weight:600;
+    }
+    .question-text{
+      font-size:1.1rem;
+      font-weight:600;
+      margin-top:.35rem;
+    }
+
+    .answer-btn{
+      width:100%;
+      text-align:left;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,0.6);
+      background:rgba(15,23,42,0.9);
+      color:var(--text);
+      padding:.55rem .9rem;
+      font-size:.95rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:.5rem;
+      transition:.12s ease;
+    }
+    .answer-btn:hover{
+      border-color:var(--accent-2);
+      box-shadow:0 6px 18px rgba(15,23,42,0.9);
+      transform:translateY(-1px);
+    }
+    .answer-btn.correct{
+      border-color:#16a34a;
+      background:rgba(22,163,74,0.12);
+    }
+    .answer-btn.wrong{
+      border-color:#ef4444;
+      background:rgba(239,68,68,0.12);
+    }
+    .answer-letter{
+      width:26px;
+      height:26px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,0.7);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:.8rem;
+      flex-shrink:0;
+    }
+
+    .feedback{
+      font-size:.95rem;
+      margin-top:.6rem;
+    }
+    .feedback.correct{
+      color:#4ade80;
+    }
+    .feedback.wrong{
+      color:#fb7185;
+    }
+    .feedback-expl{
+      color:var(--muted);
+      font-size:.85rem;
+      margin-top:.2rem;
+    }
+
+    .progress{
+      height:10px;
+      border-radius:999px;
+      background:rgba(15,23,42,0.9);
+    }
+    .progress-bar{
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    }
+
+    @media(max-width:575.98px){
+      .page-wrapper{padding:1.7rem .9rem 2.5rem;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar placeholder -->
+<div id="navbar-placeholder"></div>
+
+<main class="page-wrapper">
+  <!-- Hero -->
+  <section class="mb-4">
+    <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+      <div>
+        <div class="hero-pill mb-2">Grammar practice</div>
+        <h1 class="hero-title">German Basic Grammar – Interactive Exercises</h1>
+        <p class="hero-subtitle mt-2">
+          Practice the most important beginner topics: articles &amp; gender, plurals, pronouns,
+          the verbs <strong>sein</strong> and <strong>haben</strong>, cases and word order.
+          Choose a mode, answer the questions, and check the explanations.
+        </p>
+      </div>
+      <div class="text-end">
+        <div class="small text-uppercase text-secondary">Level</div>
+        <div class="fw-semibold">Beginner (A1–A2)</div>
+      </div>
+    </div>
+
+    <div class="card-glass mb-3">
+      <div class="section-title mb-1">How to use</div>
+      <ul class="section-sub mb-0 ps-3">
+        <li>Select a mode (Mixed, Articles, Plurals, Verbs, Cases, Word order).</li>
+        <li>Click on an answer. You see immediately if it’s correct.</li>
+        <li>Use <strong>Show English</strong> if you want help, then click <strong>Next question</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Modes -->
+  <section>
+    <div class="mode-wrapper mb-3">
+      <ul class="nav nav-pills" id="modeTabs" role="tablist">
+        <li class="nav-item">
+          <button class="nav-link active" data-mode="mixed" type="button" role="tab">
+            Mixed (all topics)
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" data-mode="articles" type="button" role="tab">
+            Articles &amp; Gender
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" data-mode="plurals" type="button" role="tab">
+            Plurals
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" data-mode="pronouns" type="button" role="tab">
+            Pronouns &amp; du/Sie
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" data-mode="verbs" type="button" role="tab">
+            Verbs: sein / haben
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" data-mode="cases" type="button" role="tab">
+            Cases (Akk./Dat.)
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" data-mode="wordorder" type="button" role="tab">
+            Word order
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Exercise card -->
+    <div class="card-glass">
+      <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap gap-2">
+        <div>
+          <div class="question-tag" id="questionTopic">Topic: –</div>
+          <div class="section-sub mb-0" id="questionCounter">Question 0 / 0</div>
+        </div>
+        <div class="text-end">
+          <div class="section-sub mb-0">
+            Score: <span id="scoreValue">0</span> / <span id="scoreTotal">0</span>
+          </div>
+          <!-- English toggle -->
+          <div class="form-check form-switch small mt-1 d-flex justify-content-end align-items-center gap-1">
+            <input class="form-check-input" type="checkbox" id="toggleEnglish">
+            <label class="form-check-label text-secondary" for="toggleEnglish">Show English</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-text" id="questionText">
+        Choose a mode to start the exercise.
+      </div>
+
+      <div class="mt-3" id="answersContainer">
+        <!-- answer buttons injected here -->
+      </div>
+
+      <div id="feedbackBox" class="feedback mt-2" style="display:none;"></div>
+      <div id="feedbackExplanation" class="feedback-expl" style="display:none;"></div>
+
+      <div class="d-flex justify-content-between align-items-center mt-4 flex-wrap gap-2">
+        <button class="btn btn-outline-light btn-sm" id="btnRestart" type="button">
+          <i class="bi bi-arrow-clockwise me-1"></i>Restart mode
+        </button>
+        <button class="btn btn-primary btn-sm" id="btnNext" type="button">
+          Next question
+        </button>
+      </div>
+
+      <div class="mt-3">
+        <div class="d-flex justify-content-between align-items-center section-sub mb-1">
+          <span>Progress</span>
+          <span id="progressLabel">0%</span>
+        </div>
+        <div class="progress" role="progressbar" aria-label="Exercise progress">
+          <div class="progress-bar" id="progressBar" style="width:0%"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer placeholder -->
+<div id="footer-placeholder"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // ================== Question Data ==================
+  // topic: articles, plurals, pronouns, verbs, cases, wordorder
+  const QUESTIONS = [
+    // Articles & Gender
+    {
+      topic: "articles",
+      topicLabel: "Articles & Gender",
+      question: "Wähle den richtigen Artikel:",
+      sentence: "___ Tisch ist neu.",
+      enHelp: "Choose the correct article: ___ table is new.",
+      options: ["Der", "Die", "Das", "Ein"],
+      correctIndex: 0,
+      explanation: "„Tisch“ ist maskulin: der Tisch."
+    },
+    {
+      topic: "articles",
+      topicLabel: "Articles & Gender",
+      question: "Wähle den richtigen Artikel:",
+      sentence: "___ Lampe ist schön.",
+      enHelp: "Choose the correct article: ___ lamp is beautiful.",
+      options: ["Der", "Die", "Das", "Ein"],
+      correctIndex: 1,
+      explanation: "„Lampe“ ist feminin: die Lampe."
+    },
+    {
+      topic: "articles",
+      topicLabel: "Articles & Gender",
+      question: "Wähle den richtigen Artikel:",
+      sentence: "___ Haus ist groß.",
+      enHelp: "Choose the correct article: ___ house is big.",
+      options: ["Der", "Die", "Das", "Ein"],
+      correctIndex: 2,
+      explanation: "„Haus“ ist neutrum: das Haus."
+    },
+    {
+      topic: "articles",
+      topicLabel: "Articles & Gender",
+      question: "Wähle den richtigen Artikel:",
+      sentence: "Ich habe ___ Auto.",
+      enHelp: "Choose the correct article: I have ___ car.",
+      options: ["ein", "eine", "einen", "den"],
+      correctIndex: 0,
+      explanation: "„Auto“ ist neutrum im Akkusativ mit unbestimmtem Artikel: ein Auto."
+    },
+
+    // Plurals
+    {
+      topic: "plurals",
+      topicLabel: "Plurals",
+      question: "Welche Pluralform ist korrekt?",
+      sentence: "der Tisch → ?",
+      enHelp: "Which plural form is correct? “der Tisch” → ?",
+      options: ["die Tischs", "die Tische", "die Tischen", "die Tisch"],
+      correctIndex: 1,
+      explanation: "Plural von „der Tisch“ ist „die Tische“."
+    },
+    {
+      topic: "plurals",
+      topicLabel: "Plurals",
+      question: "Welche Pluralform ist korrekt?",
+      sentence: "das Buch → ?",
+      enHelp: "Which plural form is correct? “das Buch” → ?",
+      options: ["die Bücher", "die Bucher", "die Büchern", "die Buche"],
+      correctIndex: 0,
+      explanation: "Plural von „das Buch“ ist „die Bücher“ (mit Umlaut + -er)."
+    },
+    {
+      topic: "plurals",
+      topicLabel: "Plurals",
+      question: "Welche Pluralform ist korrekt?",
+      sentence: "die Lampe → ?",
+      enHelp: "Which plural form is correct? “die Lampe” → ?",
+      options: ["die Lampen", "die Lampe", "die Lampes", "die Lamp"],
+      correctIndex: 0,
+      explanation: "Plural von „die Lampe“ ist „die Lampen“."
+    },
+
+    // Pronouns & du / Sie
+    {
+      topic: "pronouns",
+      topicLabel: "Pronouns & du/Sie",
+      question: "Welche Form passt? (informal, zu einem Freund)",
+      sentence: "___ bist nett.",
+      enHelp: "Which form fits? (informal, to a friend) ___ are nice.",
+      options: ["Sie", "Du", "Ihr", "Wir"],
+      correctIndex: 1,
+      explanation: "Mit Freunden verwendet man „du“: Du bist nett."
+    },
+    {
+      topic: "pronouns",
+      topicLabel: "Pronouns & du/Sie",
+      question: "Welche Form ist höflich (formal)?",
+      sentence: "Wie geht es ___?",
+      enHelp: "Which form is polite (formal)? How are ___?",
+      options: ["du", "ihr", "Sie", "er"],
+      correctIndex: 2,
+      explanation: "Die Höflichkeitsform ist „Sie“: Wie geht es Ihnen?"
+    },
+    {
+      topic: "pronouns",
+      topicLabel: "Pronouns & du/Sie",
+      question: "Wähle das passende Pronomen:",
+      sentence: "___ kommen aus Deutschland. (Plural)",
+      enHelp: "Choose the correct pronoun: ___ come from Germany. (plural)",
+      options: ["Sie", "Wir", "Ihr", "Du"],
+      correctIndex: 2,
+      explanation: "„ihr“ = you (plural, informal): Ihr kommt aus Deutschland."
+    },
+
+    // Verbs: sein / haben
+    {
+      topic: "verbs",
+      topicLabel: "Verbs: sein / haben",
+      question: "Welche Form von „sein“ ist richtig?",
+      sentence: "Ich ___ müde.",
+      enHelp: "Which form of “sein” is correct? I ___ tired.",
+      options: ["bist", "bin", "seid", "sind"],
+      correctIndex: 1,
+      explanation: "1. Person Singular: ich bin."
+    },
+    {
+      topic: "verbs",
+      topicLabel: "Verbs: sein / haben",
+      question: "Welche Form von „sein“ ist richtig?",
+      sentence: "Sie (formal, Singular) ___ Lehrer.",
+      enHelp: "Which form of “sein” is correct? You (formal, singular) ___ a teacher.",
+      options: ["bist", "ist", "seid", "sind"],
+      correctIndex: 3,
+      explanation: "Höflichkeitsform „Sie“ nimmt die Pluralform: Sie sind Lehrer."
+    },
+    {
+      topic: "verbs",
+      topicLabel: "Verbs: sein / haben",
+      question: "Welche Form von „haben“ ist richtig?",
+      sentence: "Wir ___ Zeit.",
+      enHelp: "Which form of “haben” is correct? We ___ time.",
+      options: ["habt", "haben", "hat", "hast"],
+      correctIndex: 1,
+      explanation: "1. Person Plural: wir haben."
+    },
+    {
+      topic: "verbs",
+      topicLabel: "Verbs: sein / haben",
+      question: "Welche Form von „haben“ ist richtig?",
+      sentence: "Er ___ ein Auto.",
+      enHelp: "Which form of “haben” is correct? He ___ a car.",
+      options: ["habe", "haben", "hat", "hast"],
+      correctIndex: 2,
+      explanation: "3. Person Singular: er hat."
+    },
+
+    // Cases (Akkusativ / Dativ)
+    {
+      topic: "cases",
+      topicLabel: "Cases (Akk./Dat.)",
+      question: "Wähle den richtigen Artikel (Akkusativ, maskulin).",
+      sentence: "Ich sehe ___ Mann.",
+      enHelp: "Choose the correct article (accusative, masculine): I see ___ man.",
+      options: ["der", "den", "dem", "des"],
+      correctIndex: 1,
+      explanation: "Akkusativ maskulin: den Mann."
+    },
+    {
+      topic: "cases",
+      topicLabel: "Cases (Akk./Dat.)",
+      question: "Wähle den richtigen Artikel (Dativ, maskulin).",
+      sentence: "Ich helfe ___ Mann.",
+      enHelp: "Choose the correct article (dative, masculine): I help ___ man.",
+      options: ["der", "den", "dem", "des"],
+      correctIndex: 2,
+      explanation: "Dativ maskulin: dem Mann."
+    },
+    {
+      topic: "cases",
+      topicLabel: "Cases (Akk./Dat.)",
+      question: "Welche Form ist richtig? (Dativ)",
+      sentence: "Ich gehe mit ___ Freundin ins Kino.",
+      enHelp: "Which form is correct? (dative) I go to the cinema with ___ girlfriend.",
+      options: ["die", "der", "den", "dem"],
+      correctIndex: 1,
+      explanation: "Präposition „mit“ fordert Dativ: mit der Freundin."
+    },
+
+    // Word order
+    {
+      topic: "wordorder",
+      topicLabel: "Word order",
+      question: "Welche Satzstellung ist korrekt?",
+      sentence: "",
+      enHelp: "Which word order is correct in a normal statement?",
+      options: [
+        "Ich heute arbeite in Berlin.",
+        "Heute ich arbeite in Berlin.",
+        "Heute arbeite ich in Berlin.",
+        "Arbeite ich heute in Berlin."
+      ],
+      correctIndex: 2,
+      explanation: "Im Aussagesatz steht das Verb an 2. Position: Heute (1) arbeite (2) ich in Berlin."
+    },
+    {
+      topic: "wordorder",
+      topicLabel: "Word order",
+      question: "Welche Satzstellung ist korrekt?",
+      sentence: "",
+      enHelp: "Which word order is correct?",
+      options: [
+        "Ich lese ein Buch heute.",
+        "Ich lese heute ein Buch.",
+        "Lese ich ein Buch heute.",
+        "Heute ein Buch lese ich."
+      ],
+      correctIndex: 1,
+      explanation: "Neutrale Wortstellung: Subjekt – Verb – Zeit/Objekt: Ich lese heute ein Buch."
+    },
+    {
+      topic: "wordorder",
+      topicLabel: "Word order",
+      question: "Welche Kombination aus Haupt- und Nebensatz ist korrekt?",
+      sentence: "",
+      enHelp: "Which combination of main clause + 'weil' clause is correct?",
+      options: [
+        "Ich bleibe zu Hause, weil ich bin müde.",
+        "Ich bleibe zu Hause, weil ich müde bin.",
+        "Weil ich müde bin, ich bleibe zu Hause.",
+        "Ich, weil ich müde bin, bleibe zu Hause."
+      ],
+      correctIndex: 1,
+      explanation: "Im Nebensatz mit „weil“ steht das Verb am Ende: weil ich müde bin."
+    }
+  ];
+
+  // ================== State ==================
+  let currentMode = "mixed";
+  let currentPool = [];
+  let currentIndex = 0;
+  let score = 0;
+  let showEnglish = false;
+
+  const topicLabels = {
+    mixed: "Mixed (all topics)",
+    articles: "Articles & Gender",
+    plurals: "Plurals",
+    pronouns: "Pronouns & du/Sie",
+    verbs: "Verbs: sein / haben",
+    cases: "Cases (Akk./Dat.)",
+    wordorder: "Word order"
+  };
+
+  // ================== Helpers ==================
+  function shuffle(array){
+    const arr = array.slice();
+    for(let i = arr.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  function filterByMode(mode){
+    if(mode === "mixed") return QUESTIONS;
+    return QUESTIONS.filter(q => q.topic === mode);
+  }
+
+  function updateProgress(){
+    const total = currentPool.length;
+    const current = Math.min(currentIndex, total);
+    const pct = total === 0 ? 0 : Math.round((current / total) * 100);
+    document.getElementById("progressBar").style.width = pct + "%";
+    document.getElementById("progressLabel").textContent = pct + "%";
+  }
+
+  // ================== Rendering ==================
+  function renderQuestion(){
+    const questionTextEl = document.getElementById("questionText");
+    const answersContainer = document.getElementById("answersContainer");
+    const topicEl = document.getElementById("questionTopic");
+    const counterEl = document.getElementById("questionCounter");
+    const feedbackBox = document.getElementById("feedbackBox");
+    const feedbackExplanation = document.getElementById("feedbackExplanation");
+    const scoreValue = document.getElementById("scoreValue");
+    const scoreTotal = document.getElementById("scoreTotal");
+
+    feedbackBox.style.display = "none";
+    feedbackExplanation.style.display = "none";
+    feedbackBox.className = "feedback";
+
+    const total = currentPool.length;
+    scoreValue.textContent = score;
+    scoreTotal.textContent = total;
+
+    if(total === 0){
+      questionTextEl.textContent = "No questions found for this mode.";
+      answersContainer.innerHTML = "";
+      counterEl.textContent = "Question 0 / 0";
+      topicEl.textContent = "Topic: –";
+      updateProgress();
+      return;
+    }
+
+    if(currentIndex >= total){
+      questionTextEl.textContent = "Exercise finished. You can restart this mode or choose another one.";
+      answersContainer.innerHTML = "";
+      counterEl.textContent = `Question ${total} / ${total}`;
+      topicEl.textContent = "Topic: " + (topicLabels[currentMode] || "Mixed");
+      updateProgress();
+      return;
+    }
+
+    const q = currentPool[currentIndex];
+    topicEl.textContent = "Topic: " + (q.topicLabel || topicLabels[q.topic] || "–");
+    counterEl.textContent = `Question ${currentIndex + 1} / ${total}`;
+
+    let html = q.question;
+    if(q.sentence && q.sentence.length){
+      html += `<br/><span class="text-info fw-semibold">${q.sentence}</span>`;
+    }
+    if(showEnglish && q.enHelp){
+      html += `<div class="mt-1 text-secondary small">${q.enHelp}</div>`;
+    }
+    questionTextEl.innerHTML = html;
+
+    answersContainer.innerHTML = "";
+    const letters = ["A","B","C","D","E"];
+
+    q.options.forEach((opt, idx) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "answer-btn mb-2";
+      btn.dataset.index = idx.toString();
+      btn.innerHTML = `
+        <span>
+          <span class="answer-letter">${letters[idx] || ""}</span>
+          <span class="ms-2">${opt}</span>
+        </span>
+      `;
+      btn.addEventListener("click", () => handleAnswer(idx));
+      answersContainer.appendChild(btn);
+    });
+
+    updateProgress();
+  }
+
+  function handleAnswer(selectedIndex){
+    const feedbackBox = document.getElementById("feedbackBox");
+    const feedbackExplanation = document.getElementById("feedbackExplanation");
+    const answersContainer = document.getElementById("answersContainer");
+
+    const q = currentPool[currentIndex];
+    if(!q) return;
+
+    const buttons = answersContainer.querySelectorAll(".answer-btn");
+    buttons.forEach((btn, idx) => {
+      btn.disabled = true;
+      if(idx === q.correctIndex){
+        btn.classList.add("correct");
+      }
+      if(idx === selectedIndex && selectedIndex !== q.correctIndex){
+        btn.classList.add("wrong");
+      }
+    });
+
+    if(selectedIndex === q.correctIndex){
+      feedbackBox.textContent = "Correct!";
+      feedbackBox.classList.add("correct");
+      score++;
+    } else {
+      feedbackBox.textContent = "Not quite.";
+      feedbackBox.classList.add("wrong");
+    }
+    feedbackBox.style.display = "block";
+
+    feedbackExplanation.textContent = q.explanation || "";
+    feedbackExplanation.style.display = q.explanation ? "block" : "none";
+
+    document.getElementById("scoreValue").textContent = score;
+    document.getElementById("scoreTotal").textContent = currentPool.length;
+  }
+
+  function nextQuestion(){
+    const total = currentPool.length;
+    if(total === 0) return;
+    if(currentIndex < total){
+      currentIndex++;
+      renderQuestion();
+    }
+  }
+
+  function startMode(mode){
+    currentMode = mode;
+    const pool = filterByMode(mode);
+    currentPool = shuffle(pool);
+    currentIndex = 0;
+    score = 0;
+    renderQuestion();
+  }
+
+  // ================== Wiring ==================
+  document.addEventListener("DOMContentLoaded", () => {
+    // Mode buttons
+    const modeButtons = document.querySelectorAll("#modeTabs .nav-link");
+    modeButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        modeButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        const mode = btn.getAttribute("data-mode") || "mixed";
+        startMode(mode);
+      });
+    });
+
+    // English toggle
+    const toggle = document.getElementById("toggleEnglish");
+    if(toggle){
+      toggle.addEventListener("change", () => {
+        showEnglish = toggle.checked;
+        renderQuestion();
+      });
+    }
+
+    // Next & Restart
+    document.getElementById("btnNext").addEventListener("click", nextQuestion);
+    document.getElementById("btnRestart").addEventListener("click", () => startMode(currentMode));
+
+    // Initial mode
+    startMode("mixed");
+
+    // Load navbar & footer if present
+    fetch("navbar.html")
+      .then(r => r.ok ? r.text() : "")
+      .then(html => {
+        if(html) document.getElementById("navbar-placeholder").innerHTML = html;
+      }).catch(()=>{});
+
+    fetch("footer.html")
+      .then(r => r.ok ? r.text() : "")
+      .then(html => {
+        if(html) document.getElementById("footer-placeholder").innerHTML = html;
+      }).catch(()=>{});
+  });
+</script>
+</body>
+</html>

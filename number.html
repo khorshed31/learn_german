@@ -153,7 +153,7 @@
                 </div>
 
                 <div class="col-12 col-sm-5 text-sm-end">
-                    <button class="btn btn-accent btn-lg w-100 w-sm-auto" onclick="autoRandom()"><i class="bi bi-shuffle me-2"></i>Surprise Me</button>
+                    <!-- <button class="btn btn-accent btn-lg w-100 w-sm-auto" onclick="autoRandom()"><i class="bi bi-shuffle me-2"></i>Surprise Me</button> -->
                 </div>
 
                 <div id="searchResult" class="col-12" style="display:none;">
@@ -182,50 +182,174 @@
 
     </div>
 
-    <!-- Pronunciation Guide Modal -->
-    <div class="modal fade" id="guideModal" tabindex="-1" aria-labelledby="guideModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content bg-dark text-light">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title" id="guideModalLabel"><i class="bi bi-chat-left-quote me-2"></i>Pronunciation Guide</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="mb-2">Quick reference for common numbers. Use the audio buttons to hear native-like pronunciation.</p>
+    <!-- Pronunciation Guide Modal (UPDATED) -->
+<div class="modal fade" id="guideModal" tabindex="-1" aria-labelledby="guideModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="guideModalLabel">
+          <i class="bi bi-chat-left-quote me-2"></i>German Number Pronunciation Guide
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
 
-                    <div class="row g-3">
-                        <div class="col-12 col-md-6">
-                            <h6 class="mb-2">Basic (0–9)</h6>
-                            <ul class="list-unstyled mb-3">
-                                <li>0 — Null <button class="btn btn-sm btn-light ms-2" onclick="speakNumber('Null')"><i class="bi bi-volume-up"></i></button></li>
-                                <li>1 — Eins <button class="btn btn-sm btn-light ms-2" onclick="speakNumber('Eins')"><i class="bi bi-volume-up"></i></button></li>
-                                <li>2 — Zwei <button class="btn btn-sm btn-light ms-2" onclick="speakNumber('Zwei')"><i class="bi bi-volume-up"></i></button></li>
-                                <li>3 — Drei</li>
-                                <li>4 — Vier</li>
-                                <li>5 — Fünf</li>
-                            </ul>
-                        </div>
+      <div class="modal-body">
+        <p class="mb-3">
+          This guide shows you how to <strong>pronounce any German number</strong> using a few simple rules.  
+          Read the patterns, then use the <strong>Play</strong> buttons on this page to check your pronunciation.
+        </p>
 
-                        <div class="col-12 col-md-6">
-                            <h6 class="mb-2">Teens & Tens</h6>
-                            <ul class="list-unstyled mb-3">
-                                <li>11 — Elf</li>
-                                <li>12 — Zwölf</li>
-                                <li>21 — Einundzwanzig <button class="btn btn-sm btn-light ms-2" onclick="speakNumber('Einundzwanzig')"><i class="bi bi-volume-up"></i></button></li>
-                                <li>30 — Dreißig</li>
-                                <li>40 — Vierzig</li>
-                                <li>90 — Neunzig</li>
-                            </ul>
-                        </div>
-                    </div>
+        <!-- 1. Sound basics -->
+        <h6 class="mt-2 mb-2">1. Sound basics (don’t skip this)</h6>
+        <ul class="small mb-3">
+          <li><strong>z</strong> is pronounced like <strong>“ts”</strong> in <em>cats</em> (e.g. <code>zehn</code> ≈ “tsehn”).</li>
+          <li><strong>w</strong> sounds like English <strong>“v”</strong> (e.g. <code>zwei</code> ≈ “tsvai”).</li>
+          <li><strong>ei</strong> is like English <strong>“eye”</strong> (e.g. <code>eins</code>, <code>drei</code>, <code>zwei</code>).</li>
+          <li><strong>eu / äu</strong> sound like English <strong>“oy”</strong> in “boy” (e.g. <code>neun</code>, <code>euro</code>, <code>neunzig</code>).</li>
+          <li>At the end of many tens, <strong>-zig</strong> is roughly “tsig” (e.g. <code>zwanzig</code>, <code>neunzig</code>).</li>
+        </ul>
 
-                    <hr class="border-secondary">
-
-                    <p class="mb-0"><strong>Tip:</strong> German often writes combined numbers as one word. Use the pronunciation button to hear the correct word stress and flow.</p>
-                </div>
-            </div>
+        <!-- 2. Core numbers 0–12 -->
+        <h6 class="mt-3 mb-2">2. Core numbers (0–12)</h6>
+        <p class="small mb-2">
+          Memorise these first. Everything else is built from them.
+        </p>
+        <div class="row g-2">
+          <div class="col-12 col-md-6">
+            <ul class="list-unstyled small mb-2">
+              <li>0 — <strong>Null</strong> (nool)
+                <button class="btn btn-sm btn-light ms-2" onclick="speakNumber('Null')"><i class="bi bi-volume-up"></i></button>
+              </li>
+              <li>1 — <strong>Eins</strong> (eye-ns)
+                <button class="btn btn-sm btn-light ms-2" onclick="speakNumber('Eins')"><i class="bi bi-volume-up"></i></button>
+              </li>
+              <li>2 — <strong>Zwei</strong> (tsvai)
+                <button class="btn btn-sm btn-light ms-2" onclick="speakNumber('Zwei')"><i class="bi bi-volume-up"></i></button>
+              </li>
+              <li>3 — <strong>Drei</strong> (drai)
+                <button class="btn btn-sm btn-light ms-2" onclick="speakNumber('Drei')"><i class="bi bi-volume-up"></i></button>
+              </li>
+              <li>4 — <strong>Vier</strong> (feer)
+                <button class="btn btn-sm btn-light ms-2" onclick="speakNumber('Vier')"><i class="bi bi-volume-up"></i></button>
+              </li>
+              <li>5 — <strong>Fünf</strong> (foonf)
+                <button class="btn btn-sm btn-light ms-2" onclick="speakNumber('Fünf')"><i class="bi bi-volume-up"></i></button>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-6">
+            <ul class="list-unstyled small mb-2">
+              <li>6 — <strong>Sechs</strong> (zehks)</li>
+              <li>7 — <strong>Sieben</strong> (zee-ben)</li>
+              <li>8 — <strong>Acht</strong> (akht)</li>
+              <li>9 — <strong>Neun</strong> (noyn)</li>
+              <li>10 — <strong>Zehn</strong> (tsehn)</li>
+              <li>12 — <strong>Zwölf</strong> (tsvölf)</li>
+            </ul>
+          </div>
         </div>
+
+        <!-- 3. Teens 11–19 -->
+        <h6 class="mt-3 mb-2">3. Teens (11–19)</h6>
+        <p class="small mb-2">
+          From 13–19 you usually say <strong>“[base number] + zehn”</strong>, written together:
+          <code>drei + zehn → dreizehn</code>, <code>vier + zehn → vierzehn</code>.  
+          Two are a bit irregular: <strong>sechzehn</strong> (not “sechszehn”) and <strong>siebzehn</strong> (not “siebenzehn”). :contentReference[oaicite:8]{index=8}
+        </p>
+        <ul class="list-unstyled small mb-3">
+          <li>11 — <strong>Elf</strong></li>
+          <li>13 — <strong>Dreizehn</strong> (drai-tsehn)
+            <button class="btn btn-sm btn-light ms-2" onclick="speakNumber('Dreizehn')"><i class="bi bi-volume-up"></i></button>
+          </li>
+          <li>16 — <strong>Sechzehn</strong> (zehkh-tsehn)</li>
+          <li>17 — <strong>Siebzehn</strong> (zeeb-tsehn)</li>
+          <li>19 — <strong>Neunzehn</strong> (noyn-tsehn)</li>
+        </ul>
+
+        <!-- 4. Tens -->
+        <h6 class="mt-3 mb-2">4. Tens (20, 30, 40… 90)</h6>
+        <p class="small mb-2">
+          Tens are single words. Learn them once, then reuse them in all bigger numbers. :contentReference[oaicite:9]{index=9}
+        </p>
+        <div class="row g-2 small">
+          <div class="col-6 col-md-4">
+            20 — <strong>Zwanzig</strong> (tsvahn-tsig)
+            <button class="btn btn-sm btn-light ms-1" onclick="speakNumber('Zwanzig')"><i class="bi bi-volume-up"></i></button>
+          </div>
+          <div class="col-6 col-md-4">
+            30 — <strong>Dreißig</strong> (drai-ssig)
+            <button class="btn btn-sm btn-light ms-1" onclick="speakNumber('Dreißig')"><i class="bi bi-volume-up"></i></button>
+          </div>
+          <div class="col-6 col-md-4 mt-1 mt-md-0">
+            40 — <strong>Vierzig</strong> (feer-tsig)
+            <button class="btn btn-sm btn-light ms-1" onclick="speakNumber('Vierzig')"><i class="bi bi-volume-up"></i></button>
+          </div>
+          <div class="col-6 col-md-4 mt-1">
+            50 — <strong>Fünfzig</strong> (foonf-tsig)
+          </div>
+          <div class="col-6 col-md-4 mt-1">
+            60 — <strong>Sechzig</strong> (zehks-tsig)
+          </div>
+          <div class="col-6 col-md-4 mt-1">
+            70 — <strong>Siebzig</strong> (zeeb-tsig)
+          </div>
+          <div class="col-6 col-md-4 mt-1">
+            80 — <strong>Achtzig</strong> (akht-tsig)
+          </div>
+          <div class="col-6 col-md-4 mt-1">
+            90 — <strong>Neunzig</strong> (noyn-tsig)
+          </div>
+        </div>
+
+        <!-- 5. 21–99 pattern -->
+        <h6 class="mt-4 mb-2">5. 21–99: “unit + und + tens” (reverse of English)</h6>
+        <p class="small mb-2">
+          From 21 to 99, German puts the <strong>unit first</strong>, then <strong>und</strong> (“and”), then the tens:  
+          <strong>einundzwanzig</strong> = “one-and-twenty” (21),  
+          <strong>zweiunddreißig</strong> = “two-and-thirty” (32). :contentReference[oaicite:10]{index=10}
+        </p>
+        <ul class="list-unstyled small mb-3">
+          <li>21 — <strong>Einundzwanzig</strong> (eye-n-und-tsvahn-tsig)
+            <button class="btn btn-sm btn-light ms-2" onclick="speakNumber('Einundzwanzig')"><i class="bi bi-volume-up"></i></button>
+          </li>
+          <li>32 — <strong>Zweiunddreißig</strong> (tsvai-und-drai-ssig)</li>
+          <li>47 — <strong>Siebenundvierzig</strong> (zee-ben-und-feer-tsig)</li>
+          <li>58 — <strong>Achtundfünfzig</strong> (akht-und-foonf-tsig)</li>
+        </ul>
+        <p class="small mb-3">
+          Recipe: <strong>say it in your head as “unit + und + tens”</strong>, then hit the Play button on this site to copy the rhythm.
+        </p>
+
+        <!-- 6. Hundreds & thousands -->
+        <h6 class="mt-3 mb-2">6. Hundreds & thousands</h6>
+        <p class="small mb-2">
+          After 100, German just stacks the same pieces:  
+          <strong>hundert</strong> for hundreds, <strong>tausend</strong> for thousands. :contentReference[oaicite:11]{index=11}
+        </p>
+        <ul class="list-unstyled small mb-2">
+          <li>100 — <strong>Einhundert</strong> (“one hundred”)
+            <button class="btn btn-sm btn-light ms-2" onclick="speakNumber('Einhundert')"><i class="bi bi-volume-up"></i></button>
+          </li>
+          <li>101 — <strong>Einhunderteins</strong> (“one hundred one”)</li>
+          <li>245 — <strong>Zweihundertfünfundvierzig</strong> (= zwei·hundert + fünf·und·vierzig)</li>
+          <li>1 000 — <strong>Eintausend</strong> (“one thousand”)</li>
+          <li>1 250 — <strong>Eintausendzweihundertfünfzig</strong></li>
+        </ul>
+
+        <hr class="border-secondary mt-3 mb-3">
+
+        <p class="small mb-0">
+          <strong>How to use this page efficiently:</strong>  
+          1) Type any number in the search box.  
+          2) Let the site build the correct German word.  
+          3) Use this guide to understand <em>why</em> it looks like that.  
+          4) Press <strong>Play</strong> and repeat the word aloud until it feels natural.
+        </p>
+      </div>
     </div>
+  </div>
+</div>
+
 
     <!-- Footer placeholder (loaded dynamically) -->
     <div id="footer-placeholder"></div>

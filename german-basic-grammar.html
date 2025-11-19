@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>German Basic Grammar – Starter Guide</title>
+
+  <link href="style.css" rel="stylesheet" />
+
+  <!-- Bootstrap & Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root{
+      --bg1:#0f1724;
+      --bg2:#050816;
+      --glass:rgba(255,255,255,0.04);
+      --glass-border:rgba(255,255,255,0.09);
+      --accent:#6ee7b7;
+      --accent-2:#60a5fa;
+      --text:#eaf6ff;
+      --muted:#9bb0d6;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background:radial-gradient(circle at top,var(--bg2) 0,var(--bg1) 45%,#020617 100%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    .page-wrapper{
+      max-width:1100px;
+      margin:0 auto;
+      padding:2.5rem 1rem 3.5rem;
+    }
+    .hero-title{
+      font-size:clamp(1.7rem,3.2vw,2.4rem);
+      font-weight:800;
+      letter-spacing:-0.3px;
+      color:var(--accent);
+    }
+    .hero-subtitle{
+      color:var(--muted);
+      max-width:700px;
+    }
+    .hero-pill{
+      background:rgba(15,118,110,0.12);
+      border:1px solid rgba(45,212,191,0.35);
+      color:var(--accent);
+      padding:.3rem .7rem;
+      border-radius:999px;
+      font-size:.78rem;
+      text-transform:uppercase;
+      letter-spacing:.09em;
+      font-weight:600;
+    }
+    .card-glass{
+      background:linear-gradient(180deg,rgba(15,23,42,0.95),rgba(15,23,42,0.88));
+      border:1px solid var(--glass-border);
+      border-radius:18px;
+      padding:1.2rem 1.3rem;
+      box-shadow:0 15px 40px rgba(15,23,42,0.8);
+      backdrop-filter:blur(6px);
+    }
+    .section-title{
+      font-weight:700;
+      color:var(--accent-2);
+      margin-bottom:.4rem;
+      font-size:1.15rem;
+    }
+    .section-sub{
+      color:var(--muted);
+      font-size:.9rem;
+      margin-bottom:.6rem;
+    }
+
+    /* Tabs */
+    .tab-bar-wrapper{
+      background:rgba(15,23,42,0.85);
+      border-radius:999px;
+      padding:.25rem;
+      border:1px solid rgba(148,163,184,0.3);
+      overflow-x:auto;
+      white-space:nowrap;
+    }
+    .nav-pills .nav-link{
+      border-radius:999px;
+      color:#cbd5f5;
+      font-size:.85rem;
+      padding:.35rem .9rem;
+      margin-right:.25rem;
+      background:transparent;
+    }
+    .nav-pills .nav-link.active{
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#021019;
+      font-weight:600;
+      box-shadow:0 6px 16px rgba(15,23,42,0.8);
+    }
+
+    .grammar-table{
+      width:100%;
+      border-collapse:collapse;
+      font-size:.9rem;
+    }
+    .grammar-table th,
+    .grammar-table td{
+      border:1px solid rgba(148,163,184,0.4);
+      padding:.35rem .5rem;
+    }
+    .grammar-table th{
+      background:rgba(15,23,42,0.8);
+      font-weight:600;
+    }
+    .example-block{
+      background:rgba(15,23,42,0.9);
+      border-radius:10px;
+      padding:.55rem .7rem;
+      font-size:.9rem;
+      margin-bottom:.4rem;
+    }
+    .example-de{
+      font-weight:600;
+    }
+    .example-en{
+      color:var(--muted);
+      font-size:.85rem;
+    }
+    code{
+      color:#a5b4fc;
+      font-size:.85rem;
+    }
+    @media (max-width:575.98px){
+      .page-wrapper{padding:1.7rem .9rem 2.5rem;}
+      .grammar-table{font-size:.8rem;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar placeholder -->
+<div id="navbar-placeholder"></div>
+
+<main class="page-wrapper">
+  <!-- Hero -->
+  <section class="mb-4">
+    <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+      <div>
+        <div class="hero-pill mb-2">A1 grammar</div>
+        <h1 class="hero-title">German Basic Grammar – Clear & Simple</h1>
+        <p class="hero-subtitle mt-2">
+          Learn the most important building blocks of German: articles and gender, plurals, pronouns,
+          the verbs <strong>sein</strong> and <strong>haben</strong>, present tense, word order and the four cases.
+          Short explanations, many examples, no textbook pain.
+        </p>
+      </div>
+      <div class="text-end">
+        <div class="small text-uppercase text-secondary">Level</div>
+        <div class="fw-semibold">Beginner (A1–A2)</div>
+      </div>
+    </div>
+
+    <!-- Quick tip card -->
+    <div class="card-glass mb-3">
+      <div class="section-title mb-1">How to use this page</div>
+      <ul class="section-sub mb-0 ps-3">
+        <li>Pick a tab (Articles, Plurals, Verbs, Cases, Word order, etc.).</li>
+        <li>Read the rule, then copy the example patterns.</li>
+        <li>Try to say your own sentence by replacing the colored words.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Tabs -->
+  <section>
+    <div class="tab-bar-wrapper mb-3">
+      <ul class="nav nav-pills" id="grammarTabs" role="tablist">
+        <li class="nav-item">
+          <button class="nav-link active" id="tab-articles-tab" data-bs-toggle="pill"
+                  data-bs-target="#tab-articles" type="button" role="tab"
+                  aria-controls="tab-articles" aria-selected="true">
+            Articles &amp; Gender
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" id="tab-plurals-tab" data-bs-toggle="pill"
+                  data-bs-target="#tab-plurals" type="button" role="tab"
+                  aria-controls="tab-plurals" aria-selected="false">
+            Plurals
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" id="tab-pronouns-tab" data-bs-toggle="pill"
+                  data-bs-target="#tab-pronouns" type="button" role="tab"
+                  aria-controls="tab-pronouns" aria-selected="false">
+            Pronouns &amp; du / Sie
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" id="tab-verbs-tab" data-bs-toggle="pill"
+                  data-bs-target="#tab-verbs" type="button" role="tab"
+                  aria-controls="tab-verbs" aria-selected="false">
+            Verbs: sein &amp; haben + Präsens
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" id="tab-wordorder-tab" data-bs-toggle="pill"
+                  data-bs-target="#tab-wordorder" type="button" role="tab"
+                  aria-controls="tab-wordorder" aria-selected="false">
+            Word Order (Satzbau)
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" id="tab-cases-tab" data-bs-toggle="pill"
+                  data-bs-target="#tab-cases" type="button" role="tab"
+                  aria-controls="tab-cases" aria-selected="false">
+            Cases Overview
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-content" id="grammarTabContent">
+      <!-- Articles & Gender -->
+      <div class="tab-pane fade show active" id="tab-articles" role="tabpanel" aria-labelledby="tab-articles-tab">
+        <div class="card-glass">
+          <div class="section-title">Articles & Gender (der, die, das)</div>
+          <p class="section-sub">
+            Every German noun has a <strong>gender</strong>: masculine, feminine or neuter.  
+            You learn the noun together with its article: <strong>der</strong> (m), <strong>die</strong> (f), <strong>das</strong> (n). 
+          </p>
+
+          <h6 class="mt-2 mb-1">Definite articles – Nominative (subject form)</h6>
+          <div class="table-responsive mb-2">
+            <table class="grammar-table">
+              <thead>
+                <tr>
+                  <th>Gender</th>
+                  <th>Article</th>
+                  <th>Example</th>
+                  <th>Meaning</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Masculine</td>
+                  <td><strong>der</strong></td>
+                  <td>der Tisch</td>
+                  <td>the table</td>
+                </tr>
+                <tr>
+                  <td>Feminine</td>
+                  <td><strong>die</strong></td>
+                  <td>die Lampe</td>
+                  <td>the lamp</td>
+                </tr>
+                <tr>
+                  <td>Neuter</td>
+                  <td><strong>das</strong></td>
+                  <td>das Haus</td>
+                  <td>the house</td>
+                </tr>
+                <tr>
+                  <td>Plural</td>
+                  <td><strong>die</strong></td>
+                  <td>die Häuser</td>
+                  <td>the houses</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h6 class="mt-3 mb-1">Indefinite articles – Nominative</h6>
+          <div class="table-responsive mb-2">
+            <table class="grammar-table">
+              <thead>
+                <tr>
+                  <th>Gender</th>
+                  <th>Article</th>
+                  <th>Example</th>
+                  <th>Meaning</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Masculine</td>
+                  <td><strong>ein</strong></td>
+                  <td>ein Tisch</td>
+                  <td>a table</td>
+                </tr>
+                <tr>
+                  <td>Feminine</td>
+                  <td><strong>eine</strong></td>
+                  <td>eine Lampe</td>
+                  <td>a lamp</td>
+                </tr>
+                <tr>
+                  <td>Neuter</td>
+                  <td><strong>ein</strong></td>
+                  <td>ein Haus</td>
+                  <td>a house</td>
+                </tr>
+                <tr>
+                  <td>Plural</td>
+                  <td><em>no article</em></td>
+                  <td>Häuser</td>
+                  <td>houses</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h6 class="mt-3 mb-1">Useful learning tip</h6>
+          <p class="section-sub mb-2">
+            Always save nouns with their article: <strong>der</strong> Baum, <strong>die</strong> Tür,
+            <strong>das</strong> Buch. Don’t just learn <em>Baum</em>, learn <em>der Baum</em>.
+          </p>
+
+          <div class="example-block">
+            <div class="example-de">Der Tisch ist neu.</div>
+            <div class="example-en">The table is new.</div>
+          </div>
+          <div class="example-block">
+            <div class="example-de">Die Lampe ist schön.</div>
+            <div class="example-en">The lamp is beautiful.</div>
+          </div>
+          <div class="example-block mb-0">
+            <div class="example-de">Das Haus ist groß.</div>
+            <div class="example-en">The house is big.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plurals -->
+      <div class="tab-pane fade" id="tab-plurals" role="tabpanel" aria-labelledby="tab-plurals-tab">
+        <div class="card-glass">
+          <div class="section-title">Plurals – Mehrzahl</div>
+          <p class="section-sub">
+            There is no single plural ending in German. Common endings are
+            <strong>-e</strong>, <strong>-er</strong>, <strong>-en</strong>, <strong>-n</strong>, <strong>-s</strong>.
+            The article in plural is always <strong>die</strong>.
+          </p>
+
+          <h6 class="mt-2 mb-1">Very common plural patterns</h6>
+          <div class="table-responsive mb-2">
+            <table class="grammar-table">
+              <thead>
+                <tr>
+                  <th>Singular</th>
+                  <th>Plural</th>
+                  <th>Pattern</th>
+                  <th>Meaning</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>der Tisch</td>
+                  <td>die Tische</td>
+                  <td>-e</td>
+                  <td>table → tables</td>
+                </tr>
+                <tr>
+                  <td>das Buch</td>
+                  <td>die Bücher</td>
+                  <td>-er + Umlaut</td>
+                  <td>book → books</td>
+                </tr>
+                <tr>
+                  <td>die Lampe</td>
+                  <td>die Lampen</td>
+                  <td>-n / -en</td>
+                  <td>lamp → lamps</td>
+                </tr>
+                <tr>
+                  <td>das Auto</td>
+                  <td>die Autos</td>
+                  <td>-s</td>
+                  <td>car → cars</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h6 class="mt-3 mb-1">Example sentences</h6>
+          <div class="example-block">
+            <div class="example-de">Die Tische sind neu.</div>
+            <div class="example-en">The tables are new.</div>
+          </div>
+          <div class="example-block">
+            <div class="example-de">Die Bücher sind interessant.</div>
+            <div class="example-en">The books are interesting.</div>
+          </div>
+          <div class="example-block mb-0">
+            <div class="example-de">Die Autos sind teuer.</div>
+            <div class="example-en">The cars are expensive.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pronouns & du/Sie -->
+      <div class="tab-pane fade" id="tab-pronouns" role="tabpanel" aria-labelledby="tab-pronouns-tab">
+        <div class="card-glass">
+          <div class="section-title">Pronouns &amp; du / Sie</div>
+          <p class="section-sub">
+            Personal pronouns and the difference between <strong>du</strong> (informal “you”)
+            and <strong>Sie</strong> (formal “you”). 
+          </p>
+
+          <h6 class="mt-2 mb-1">Personal pronouns – Nominative</h6>
+          <div class="table-responsive mb-2">
+            <table class="grammar-table">
+              <thead>
+                <tr>
+                  <th>Person</th>
+                  <th>German</th>
+                  <th>English</th>
+                  <th>Use</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1st sg.</td>
+                  <td>ich</td>
+                  <td>I</td>
+                  <td>speaker</td>
+                </tr>
+                <tr>
+                  <td>2nd sg. informal</td>
+                  <td>du</td>
+                  <td>you</td>
+                  <td>friends, family</td>
+                </tr>
+                <tr>
+                  <td>2nd sg./pl. formal</td>
+                  <td>Sie</td>
+                  <td>you</td>
+                  <td>polite / strangers</td>
+                </tr>
+                <tr>
+                  <td>3rd sg.</td>
+                  <td>er / sie / es</td>
+                  <td>he / she / it</td>
+                  <td>people &amp; things</td>
+                </tr>
+                <tr>
+                  <td>1st pl.</td>
+                  <td>wir</td>
+                  <td>we</td>
+                  <td>group including speaker</td>
+                </tr>
+                <tr>
+                  <td>2nd pl. informal</td>
+                  <td>ihr</td>
+                  <td>you (plural)</td>
+                  <td>addressing a group</td>
+                </tr>
+                <tr>
+                  <td>3rd pl.</td>
+                  <td>sie</td>
+                  <td>they</td>
+                  <td>group of people/things</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h6 class="mt-3 mb-1">Example: du vs. Sie</h6>
+          <div class="example-block">
+            <div class="example-de">Wie geht es dir?</div>
+            <div class="example-en">How are you? (informal, to one person)</div>
+          </div>
+          <div class="example-block mb-0">
+            <div class="example-de">Wie geht es Ihnen?</div>
+            <div class="example-en">How are you? (formal)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Verbs: sein / haben + Präsens -->
+      <div class="tab-pane fade" id="tab-verbs" role="tabpanel" aria-labelledby="tab-verbs-tab">
+        <div class="card-glass">
+          <div class="section-title">Verbs: <em>sein</em>, <em>haben</em> &amp; Present Tense</div>
+          <p class="section-sub">
+            German verbs change their endings for each person. The most important verbs are
+            <strong>sein</strong> (to be) and <strong>haben</strong> (to have). 
+          </p>
+
+          <h6 class="mt-2 mb-1">Conjugation of <em>sein</em> (to be) – Präsens</h6>
+          <div class="table-responsive mb-2">
+            <table class="grammar-table">
+              <thead>
+                <tr>
+                  <th>Person</th>
+                  <th>Form</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ich</td>
+                  <td>bin</td>
+                  <td>Ich bin müde. – I am tired.</td>
+                </tr>
+                <tr>
+                  <td>du</td>
+                  <td>bist</td>
+                  <td>Du bist nett. – You are nice.</td>
+                </tr>
+                <tr>
+                  <td>er / sie / es</td>
+                  <td>ist</td>
+                  <td>Sie ist Lehrerin. – She is a teacher.</td>
+                </tr>
+                <tr>
+                  <td>wir</td>
+                  <td>sind</td>
+                  <td>Wir sind hier. – We are here.</td>
+                </tr>
+                <tr>
+                  <td>ihr</td>
+                  <td>seid</td>
+                  <td>Ihr seid laut. – You are loud.</td>
+                </tr>
+                <tr>
+                  <td>sie / Sie</td>
+                  <td>sind</td>
+                  <td>Sie sind müde. – They are tired. / You are tired. (formal)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h6 class="mt-3 mb-1">Conjugation of <em>haben</em> (to have) – Präsens</h6>
+          <div class="table-responsive mb-2">
+            <table class="grammar-table">
+              <thead>
+                <tr>
+                  <th>Person</th>
+                  <th>Form</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ich</td>
+                  <td>habe</td>
+                  <td>Ich habe Zeit. – I have time.</td>
+                </tr>
+                <tr>
+                  <td>du</td>
+                  <td>hast</td>
+                  <td>Du hast ein Auto. – You have a car.</td>
+                </tr>
+                <tr>
+                  <td>er / sie / es</td>
+                  <td>hat</td>
+                  <td>Er hat Hunger. – He is hungry.</td>
+                </tr>
+                <tr>
+                  <td>wir</td>
+                  <td>haben</td>
+                  <td>Wir haben Urlaub. – We have vacation.</td>
+                </tr>
+                <tr>
+                  <td>ihr</td>
+                  <td>habt</td>
+                  <td>Ihr habt Glück. – You are lucky.</td>
+                </tr>
+                <tr>
+                  <td>sie / Sie</td>
+                  <td>haben</td>
+                  <td>Sie haben Kinder. – They/You have children.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h6 class="mt-3 mb-1">Regular verb pattern in Präsens</h6>
+          <p class="section-sub mb-1">
+            Most verbs are regular: take the stem + endings <code>-e, -st, -t, -en, -t, -en</code>. 
+          </p>
+
+          <div class="table-responsive mb-2">
+            <table class="grammar-table">
+              <thead>
+                <tr>
+                  <th>Person</th>
+                  <th>machen (to do/make)</th>
+                  <th>Meaning</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>ich</td><td>mache</td><td>I do / make</td></tr>
+                <tr><td>du</td><td>machst</td><td>you do (informal)</td></tr>
+                <tr><td>er / sie / es</td><td>macht</td><td>he / she / it does</td></tr>
+                <tr><td>wir</td><td>machen</td><td>we do</td></tr>
+                <tr><td>ihr</td><td>macht</td><td>you (plural) do</td></tr>
+                <tr><td>sie / Sie</td><td>machen</td><td>they / you (formal) do</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Word Order -->
+      <div class="tab-pane fade" id="tab-wordorder" role="tabpanel" aria-labelledby="tab-wordorder-tab">
+        <div class="card-glass">
+          <div class="section-title">Word Order – Verb in 2nd Position</div>
+          <p class="section-sub">
+            In a normal main clause, the <strong>conjugated verb</strong> is always in the
+            <strong>2nd position</strong> in the sentence (V2 rule). 
+          </p>
+
+          <h6 class="mt-2 mb-1">Simple main clause (Subject – Verb – Object)</h6>
+          <div class="example-block">
+            <div class="example-de"><strong>Ich</strong> lese ein Buch.</div>
+            <div class="example-en">I read a book.</div>
+          </div>
+          <p class="section-sub mb-2">
+            Position 1: <strong>Ich</strong> (subject)  
+            Position 2: <strong>lese</strong> (verb)  
+            Rest: ein Buch (object)
+          </p>
+
+          <h6 class="mt-3 mb-1">Something else in first place</h6>
+          <p class="section-sub mb-1">
+            You can move time or place to position 1. The verb is still position 2, the subject moves behind the verb.
+          </p>
+          <div class="example-block">
+            <div class="example-de"><strong>Heute</strong> lese <strong>ich</strong> ein Buch.</div>
+            <div class="example-en">Today I am reading a book.</div>
+          </div>
+          <div class="example-block mb-2">
+            <div class="example-de"><strong>In Berlin</strong> arbeitet <strong>mein Freund</strong>.</div>
+            <div class="example-en">In Berlin my friend works.</div>
+          </div>
+
+          <h6 class="mt-3 mb-1">Subordinate clause – verb at the end</h6>
+          <p class="section-sub mb-1">
+            In a <strong>subordinate clause</strong> (introduced by words like <em>weil, dass, wenn</em>),
+            the conjugated verb often goes to the <strong>end</strong>.
+          </p>
+          <div class="example-block">
+            <div class="example-de">Ich bleibe zu Hause, <strong>weil ich müde bin</strong>.</div>
+            <div class="example-en">I stay at home because I am tired.</div>
+          </div>
+          <div class="example-block mb-0">
+            <div class="example-de">Ich glaube, <strong>dass er krank ist</strong>.</div>
+            <div class="example-en">I think that he is sick.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cases Overview -->
+      <div class="tab-pane fade" id="tab-cases" role="tabpanel" aria-labelledby="tab-cases-tab">
+        <div class="card-glass">
+          <div class="section-title">Cases Overview – Nominativ, Akkusativ, Dativ, Genitiv</div>
+          <p class="section-sub">
+            German has four cases. They show the function of nouns and pronouns in the sentence:
+            subject, direct object, indirect object, possession. 
+          </p>
+
+          <h6 class="mt-2 mb-1">Quick overview</h6>
+          <div class="table-responsive mb-2">
+            <table class="grammar-table">
+              <thead>
+                <tr>
+                  <th>Case</th>
+                  <th>Question</th>
+                  <th>Main use</th>
+                  <th>Example (short)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Nominativ</strong></td>
+                  <td>Wer? / Was?</td>
+                  <td>Subject</td>
+                  <td><em>Der Mann</em> liest.</td>
+                </tr>
+                <tr>
+                  <td><strong>Akkusativ</strong></td>
+                  <td>Wen? / Was?</td>
+                  <td>Direct object</td>
+                  <td>Ich sehe <em>den Mann</em>.</td>
+                </tr>
+                <tr>
+                  <td><strong>Dativ</strong></td>
+                  <td>Wem?</td>
+                  <td>Indirect object</td>
+                  <td>Ich gebe <em>dem Mann</em> das Buch.</td>
+                </tr>
+                <tr>
+                  <td><strong>Genitiv</strong></td>
+                  <td>Wessen?</td>
+                  <td>Possession</td>
+                  <td>Das ist das Auto <em>des Mannes</em>.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h6 class="mt-3 mb-1">Articles: Masculine singular (important pattern)</h6>
+          <div class="table-responsive mb-2">
+            <table class="grammar-table">
+              <thead>
+                <tr>
+                  <th>Case</th>
+                  <th>Definite</th>
+                  <th>Indefinite</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Nominativ</td>
+                  <td>der</td>
+                  <td>ein</td>
+                  <td>Der Mann schläft. – The man sleeps.</td>
+                </tr>
+                <tr>
+                  <td>Akkusativ</td>
+                  <td>den</td>
+                  <td>einen</td>
+                  <td>Ich sehe den Mann. – I see the man.</td>
+                </tr>
+                <tr>
+                  <td>Dativ</td>
+                  <td>dem</td>
+                  <td>einem</td>
+                  <td>Ich helfe dem Mann. – I help the man.</td>
+                </tr>
+                <tr>
+                  <td>Genitiv</td>
+                  <td>des</td>
+                  <td>eines</td>
+                  <td>Das Haus des Mannes. – The man’s house.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h6 class="mt-3 mb-1">Mini patterns you can copy</h6>
+          <div class="example-block">
+            <div class="example-de">Ich sehe <strong>den</strong> + Person/Sache (Akkusativ).</div>
+            <div class="example-en">I see the + person/thing.</div>
+          </div>
+          <div class="example-block">
+            <div class="example-de">Ich helfe <strong>dem</strong> + Person (Dativ).</div>
+            <div class="example-en">I help the + person.</div>
+          </div>
+          <div class="example-block mb-0">
+            <div class="example-de">Das ist das Auto <strong>des</strong> + Besitzers (Genitiv).</div>
+            <div class="example-en">That is the car of the + owner.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer placeholder -->
+<div id="footer-placeholder"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Load navbar & footer if present (same pattern as your other pages)
+  document.addEventListener("DOMContentLoaded", () => {
+    fetch("navbar.html")
+      .then(r => r.ok ? r.text() : "")
+      .then(html => {
+        if(html) document.getElementById("navbar-placeholder").innerHTML = html;
+      }).catch(()=>{});
+
+    fetch("footer.html")
+      .then(r => r.ok ? r.text() : "")
+      .then(html => {
+        if(html) document.getElementById("footer-placeholder").innerHTML = html;
+      }).catch(()=>{});
+  });
+</script>
+</body>
+</html>

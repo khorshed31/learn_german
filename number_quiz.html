@@ -168,7 +168,7 @@
 
         <div class="row gy-3">
             <!-- Settings column -->
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 input-container">
                 <div class="card-glass h-100">
                     <div class="d-flex justify-content-between align-items-start mb-2">
                         <div>
@@ -218,6 +218,7 @@
                     <div>
                         <div class="card-title">Exercise</div>
                         <div class="muted">Listen and type the number you hear in digits.</div>
+                        <div id="exerciseSettings" class="small muted mt-2"></div>
 
                         <div class="text-center my-4">
                             <div id="numberDisplay" aria-live="polite">Press Start to Begin</div>
@@ -302,22 +303,26 @@
             const maxRange = parseInt(document.getElementById("maxRange").value);
             const numQuestions = parseInt(document.getElementById("numQuestions").value);
 
-            // Generate random numbers for the exercise
+            // Generate numbers
             currentExercise = [];
             for (let i = 0; i < numQuestions; i++) {
                 let randomNum = Math.floor(Math.random() * (maxRange - minRange + 1)) + minRange;
                 currentExercise.push(randomNum);
             }
 
-            // Show exercise section and hide configuration
+            // Show selected settings inside the Exercise card
+            document.getElementById("exerciseSettings").innerText =
+                `Range: ${minRange} – ${maxRange}   •   Questions: ${numQuestions}`;
+
+            // Show exercise column
             document.getElementById('exerciseColumn').style.display = 'block';
             document.querySelector('.input-container').style.display = 'none';
 
-            // Reset the question index and start with the first question
             currentQuestionIndex = 0;
             displayQuestion();
             updateProgress(0, numQuestions);
         }
+
 
         // Function to display the current question
         function displayQuestion() {
@@ -392,15 +397,20 @@
 
         // Function to refresh the exercise (reset everything)
         function refreshExercise() {
-            document.querySelector('.input-container').style.display = 'flex'; // Show the input fields
-            document.getElementById('exerciseColumn').style.display = 'none'; // Hide the exercise
+            document.querySelector('.input-container').style.display = 'flex';
+            document.getElementById('exerciseColumn').style.display = 'none';
+
             document.getElementById("minRange").value = 0;
             document.getElementById("maxRange").value = 100;
             document.getElementById("numQuestions").value = 5;
-            document.getElementById("minRangeLabel").innerText = 0;
-            document.getElementById("maxRangeLabel").innerText = 100;
-            document.getElementById("feedbackMessage").style.display = 'none'; // Hide feedback
+
+            updateRangeLabel(); // keep labels in sync
+            document.getElementById("feedbackMessage").style.display = 'none';
+            currentExercise = [];
+            currentQuestionIndex = 0;
+            updateProgress(0, 0);
         }
+
     </script>
 
     <script>

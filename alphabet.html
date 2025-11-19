@@ -21,7 +21,14 @@
     nav.tabs{max-width:1100px;margin:0 auto;padding:0 16px;display:flex;gap:8px;border-bottom:1px solid var(--ring)}
     .tab{appearance:none;border:0;background:transparent;color:#cfe3ff;padding:10px 14px;cursor:pointer;border-radius:10px 10px 0 0;border:1px solid transparent;border-bottom:0;font-weight:600}
     .tab[aria-selected="true"]{background:var(--card);border-color:var(--ring);border-bottom-color:var(--card);color:white}
-    .toolbar{max-width:1100px;margin:0 auto;padding:12px 16px 0;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+
+    /* updated toolbar: let Bootstrap handle layout */
+    .toolbar{
+      max-width:1100px;
+      margin:0 auto;
+      padding:12px 16px 0;
+    }
+
     .search{position:relative;flex:1 1 260px;max-width:420px}
     .search input{width:100%;padding:12px 40px 12px 12px;border-radius:12px;border:1px solid var(--ring);background:#0c121a;color:#var(--text);outline:none}
     .search .icon{position:absolute;right:10px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--muted);font-size:14px}
@@ -48,6 +55,26 @@
     .opt button.correct{outline:2px solid #3bd17d}
     .opt button.wrong{outline:2px solid #ff7b7b}
     .small{font-size:12px;color:var(--muted)}
+
+    /* Small-screen tweaks */
+    @media (max-width: 576px){
+      header,
+      .howto,
+      nav.tabs,
+      .grid,
+      .quiz{
+        padding-left:12px;
+        padding-right:12px;
+      }
+      .title{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:6px;
+      }
+      .glyph{
+        font-size:28px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -79,14 +106,28 @@
     <button class="tab" role="tab" aria-selected="false" id="tab-diph" aria-controls="panel-diph">Diphthongs</button>
   </nav>
 
+  <!-- Responsive toolbar using Bootstrap grid -->
   <div class="toolbar" aria-label="Controls">
-    <div class="search" role="search">
-      <input id="searchInput" type="search" placeholder="Search letter, sound, or example…" aria-label="Search" />
-      <div class="icon">⌕</div>
-    </div>
-    <div class="row" aria-label="Speech options">
-      <select id="voiceSelect" class="voice-select" aria-label="German voice"></select>
-      <label class="rate" for="rateRange">Speed <input id="rateRange" type="range" min="0.6" max="1.2" step="0.05" value="0.9" /></label>
+    <div class="row g-2 align-items-center">
+      <div class="col-12 col-md-6">
+        <div class="search" role="search">
+          <input id="searchInput" type="search" class="w-100"
+                 placeholder="Search letter, sound, or example…" aria-label="Search" />
+          <div class="icon">⌕</div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 d-flex flex-wrap gap-2 align-items-center justify-content-md-end" aria-label="Speech options">
+        <select id="voiceSelect" class="voice-select text-white" aria-label="German voice"></select>
+        <label class="rate mb-0" for="rateRange">
+          Speed
+          <input id="rateRange" type="range" min="0.6" max="1.2" step="0.05" value="0.9" />
+        </label>
+      </div>
+      <div class="col-12 col-md-2 d-flex justify-content-md-end">
+        <button id="playAllLetters" class="btn play w-100 w-md-auto" type="button">
+          ▶︎ Play all letters
+        </button>
+      </div>
     </div>
   </div>
 
@@ -129,49 +170,46 @@
 <script>
 /* ===================== Data ===================== */
 const LETTERS = [
-  {glyph:"A a", name:"A", speak:"A", ipa:"[aː]", example:["Apfel","Apfel"]},
-  {glyph:"Ä ä", name:"Ä", speak:"Ä", ipa:"[ɛː]", example:["Mädchen","Mädchen"]},
-  {glyph:"B b", name:"Be", speak:"Be", ipa:"[beː]", example:["Bahn","Bahn"]},
-  {glyph:"C c", name:"Ce", speak:"Ce", ipa:"[tseː]", example:["Cent","Cent"]},
-  {glyph:"D d", name:"De", speak:"De", ipa:"[deː]", example:["Dorf","Dorf"]},
-  {glyph:"E e", name:"E", speak:"E", ipa:"[eː]", example:["Esel","Esel"]},
-  {glyph:"F f", name:"Ef", speak:"Ef", ipa:"[ɛf]", example:["Fisch","Fisch"]},
-  {glyph:"G g", name:"Ge", speak:"Ge", ipa:"[geː]", example:["Garten","Garten"]},
-  {glyph:"H h", name:"Ha", speak:"Ha", ipa:"[haː]", example:["Haus","Haus"]},
-  {glyph:"I i", name:"I", speak:"I", ipa:"[iː]", example:["Igel","Igel"]},
-  {glyph:"J j", name:"Jot", speak:"Jot", ipa:"[jɔt]", example:["Jahr","Jahr"]},
-  {glyph:"K k", name:"Ka", speak:"Ka", ipa:"[kaː]", example:["Karte","Karte"]},
-  {glyph:"L l", name:"El", speak:"El", ipa:"[ɛl]", example:["Lampe","Lampe"]},
-  {glyph:"M m", name:"Em", speak:"Em", ipa:"[ɛm]", example:["Milch","Milch"]},
-  {glyph:"N n", name:"En", speak:"En", ipa:"[ɛn]", example:["Nase","Nase"]},
-  {glyph:"O o", name:"O", speak:"O", ipa:"[oː]", example:["Ofen","Ofen"]},
-  {glyph:"Ö ö", name:"Ö", speak:"Ö", ipa:"[øː]", example:["Öl","Öl"]},
-  {glyph:"P p", name:"Pe", speak:"Pe", ipa:"[peː]", example:["Pferd","Pferd"]},
-  {glyph:"Q q", name:"Qu", speak:"Qu", ipa:"[kuː]", example:["Quelle","Quelle"]},
-  {glyph:"R r", name:"Er", speak:"Er", ipa:"[ɛʁ]", example:["Rose","Rose"]},
-  {glyph:"S s", name:"Es", speak:"Es", ipa:"[ɛs]", example:["Sonne","Sonne"]},
-  {glyph:"ß",   name:"Eszett", speak:"Eszett", ipa:"[ɛsˈtsɛt]", example:["Straße","Straße"]},
-  {glyph:"T t", name:"Te", speak:"Te", ipa:"[teː]", example:["Tisch","Tisch"]},
-  {glyph:"U u", name:"U", speak:"U", ipa:"[uː]", example:["Uhr","Uhr"]},
-  {glyph:"Ü ü", name:"Ü", speak:"Ü", ipa:"[yː]", example:["Tür","Tür"]},
-  {glyph:"V v", name:"Vau", speak:"Vau", ipa:"[faʊ̯]", example:["Vogel","Vogel"]},
-  {glyph:"W w", name:"We", speak:"We", ipa:"[veː]", example:["Wasser","Wasser"]},
-  {glyph:"X x", name:"Ix", speak:"Ix", ipa:"[ɪks]", example:["Xylophon","Xylophon"]},
-  {glyph:"Y y", name:"Ypsilon", speak:"Ypsilon", ipa:"[ˈʏpsilɔn]", example:["Yoga","Yoga"]},
-  {glyph:"Z z", name:"Zet", speak:"Zet", ipa:"[t͡sɛt]", example:["Zeit","Zeit"]}
+  {glyph:"A a", name:"A", ipa:"[aː]", example:["Apfel", "apple"]},
+  {glyph:"Ä ä", name:"Ä", ipa:"[ɛː]", example:["Mädchen", "girl"]},
+  {glyph:"B b", name:"Be", ipa:"[beː]", example:["Bahn", "train"]},
+  {glyph:"C c", name:"Ce", ipa:"[tseː]", example:["Cent", "cent"]},
+  {glyph:"D d", name:"De", ipa:"[deː]", example:["Dorf", "village"]},
+  {glyph:"E e", name:"E", ipa:"[eː]", example:["Esel", "donkey"]},
+  {glyph:"F f", name:"Ef", ipa:"[ɛf]", example:["Fisch", "fish"]},
+  {glyph:"G g", name:"Ge", ipa:"[geː]", example:["Garten", "garden"]},
+  {glyph:"H h", name:"Ha", ipa:"[haː]", example:["Haus", "house"]},
+  {glyph:"I i", name:"I", ipa:"[iː]", example:["Igel", "hedgehog"]},
+  {glyph:"J j", name:"Jot", ipa:"[jɔt]", example:["Jahr", "year"]},
+  {glyph:"K k", name:"Ka", ipa:"[kaː]", example:["Karte", "card"]},
+  {glyph:"L l", name:"El", ipa:"[ɛl]", example:["Lampe", "lamp"]},
+  {glyph:"M m", name:"Em", ipa:"[ɛm]", example:["Milch", "milk"]},
+  {glyph:"N n", name:"En", ipa:"[ɛn]", example:["Nase", "nose"]},
+  {glyph:"O o", name:"O", ipa:"[oː]", example:["Ofen", "oven"]},
+  {glyph:"Ö ö", name:"Ö", ipa:"[øː]", example:["Öl", "oil"]},
+  {glyph:"P p", name:"Pe", ipa:"[peː]", example:["Pferd", "horse"]},
+  {glyph:"Q q", name:"Qu", ipa:"[kuː]", example:["Quelle", "source"]},
+  {glyph:"R r", name:"Er", ipa:"[ɛʁ]", example:["Rose", "rose"]},
+  {glyph:"S s", name:"Es", ipa:"[ɛs]", example:["Sonne", "sun"]},
+  {glyph:"ß",   name:"Eszett", ipa:"[ɛsˈtsɛt]", example:["Straße", "street"]},
+  {glyph:"T t", name:"Te", ipa:"[teː]", example:["Tisch", "table"]},
+  {glyph:"U u", name:"U", ipa:"[uː]", example:["Uhr", "clock"]},
+  {glyph:"Ü ü", name:"Ü", ipa:"[yː]", example:["Tür", "door"]},
+  {glyph:"V v", name:"Vau", ipa:"[faʊ̯]", example:["Vogel", "bird"]},
+  {glyph:"W w", name:"We", ipa:"[veː]", example:["Wasser", "water"]},
+  {glyph:"X x", name:"Ix", ipa:"[ɪks]", example:["Xylophon", "xylophone"]},
+  {glyph:"Y y", name:"Ypsilon", ipa:"[ˈʏpsilɔn]", example:["Yoga", "yoga"]},
+  {glyph:"Z z", name:"Zet", ipa:"[t͡sɛt]", example:["Zeit", "time"]}
 ];
 
-/* ===== Diphthongs (split, matching your PDF contents) =====
-   - ei and ai separated
-   - eu and äu separated (same sound; PDF grouped them)
-*/
+
+/* ===== Diphthongs ===== */
 const DIPHTHONGS = [
   { glyph:"ei", ipa:"[aɪ̯]", cue:"EYE (আই)",  bnHint:"যদি শব্দের আগে পরে ও মাঝে থাকে, উচ্চারণ EYE-এর মত", examples:["nein","dein","ei","weil"] },
   { glyph:"ai", ipa:"[aɪ̯]", cue:"EYE (আই)",  bnHint:"'ei' এর মতোই ধ্বনি",                           examples:["Mai"] },
   { glyph:"ie", ipa:"[iː]",  cue:"EE (ইই)",   bnHint:"যদি শব্দের আগে পরে ও মাঝে থাকে, উচ্চারণ EE-এর মত", examples:["die","sie","nie","viel","viele"] },
   { glyph:"au", ipa:"[aʊ̯]", cue:"ow (আউ)",   bnHint:"যদি শব্দের আগে পরে ও মাঝে থাকে, উচ্চারণ ow-এর মত", examples:["auch","aus","Auge","laufen"] },
   { glyph:"eu", ipa:"[ɔʏ̯]", cue:"OY (অয়)",   bnHint:"যদি শব্দের আগে পরে ও মাঝে থাকে, উচ্চারণ OY-এর মত", examples:["neu","Europa","Euro","Leute"] },
-  // äü not separately exemplified in the PDF; keeping a separate tile per your request.
   { glyph:"äu", ipa:"[ɔʏ̯]", cue:"OY (অয়)",   bnHint:"PDF এ এটি eu এর সাথে একত্রে দেওয়া — একই ধ্বনি",     examples:[] }
 ];
 
@@ -210,6 +248,29 @@ function speakGerman(text){
   window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
 }
 
+function speakGermanQueued(text){
+  if(!("speechSynthesis" in window)) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "de-DE";
+  if(currentVoice) u.voice = currentVoice;
+  u.rate = parseFloat(rateRange.value || "0.9");
+  window.speechSynthesis.speak(u);
+}
+
+function playAllLetters(){
+  if(!("speechSynthesis" in window)) {
+    alert("Speech Synthesis not supported.");
+    return;
+  }
+  window.speechSynthesis.cancel();
+  LETTERS.forEach(L => {
+    const letterName = L.name || L.speak || L.glyph;
+    const example = L.example && L.example[0] ? L.example[0] : "";
+    const text = example ? `${letterName}. ${example}.` : letterName;
+    speakGermanQueued(text);
+  });
+}
+
 /* ================ Renderers ================ */
 const $ = s=>document.querySelector(s);
 const gridLetters=$("#grid-letters");
@@ -223,7 +284,10 @@ function cardLetter(L){
     <span class="badge">Letter</span>
     <div class="glyph">${L.glyph}</div>
     <div class="ipa">${L.ipa}</div>
-    <div class="example">z. B.: <em>${L.example[0]}</em></div>
+    <div class="example">
+  z. B.: <em>${L.example[0]}</em>
+  <span class="small" style="color:#9bb6d9">(${L.example[1]})</span>
+</div>
     <div class="controls">
       <button class="btn play">▶︎ Letter</button>
       <button class="btn">🔊 Example</button>
@@ -231,7 +295,12 @@ function cardLetter(L){
   const [b1,b2]=el.querySelectorAll("button");
   b1.addEventListener("click",()=>speakGerman(L.name||L.speak||L.glyph));
   b2.addEventListener("click",()=>speakGerman(L.example[0]));
-  el.addEventListener("click",e=>{ if(e.target.tagName!=="BUTTON") speakGerman(`${L.glyph}. ${L.example[0]}.`);});
+  el.addEventListener("click", e => {
+  if (e.target.tagName !== "BUTTON") {
+    const letterName = L.name || L.speak || L.glyph; // "A" instead of "A a"
+    speakGerman(`${letterName}. ${L.example[0]}.`);
+  }
+});
   return el;
 }
 
@@ -297,8 +366,15 @@ searchInput.addEventListener("input",()=>{ const q=searchInput.value.trim(); ren
 voiceSelect.addEventListener("change",()=>{ const i=parseInt(voiceSelect.value,10); currentVoice=deVoices[i]||null; });
 
 function init(){
-  renderLetters(); renderDiph();
-  const saved=localStorage.getItem("kd_german_tab"); selectTab(saved==="diph"?"diph":"letters");
+  renderLetters();
+  renderDiph();
+  const saved = localStorage.getItem("kd_german_tab");
+  selectTab(saved === "diph" ? "diph" : "letters");
+
+  const playAllBtn = document.getElementById("playAllLetters");
+  if (playAllBtn) {
+    playAllBtn.addEventListener("click", playAllLetters);
+  }
 }
 document.addEventListener("DOMContentLoaded", init);
 
@@ -325,7 +401,6 @@ function newQuestion(){
 }
 
 function pickExample(d){
-  // If there are no PDF examples (e.g., "äu"), speak the glyph itself
   if(!d.examples || d.examples.length===0){
     return {glyph:d.glyph, ex:d.glyph};
   }
@@ -348,18 +423,15 @@ qPlay.addEventListener("click",()=>{
 
 qNext.addEventListener("click",()=>newQuestion());
 
-// initialize first question when diphthongs tab is opened
 tabDiph.addEventListener("click",()=>{ if(!currentQ) newQuestion(); });
 </script>
 <script>
-  // Load Navbar
   fetch('navbar.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('navbar-placeholder').innerHTML = data;
     });
 
-  // Load Footer
   fetch('footer.html')
     .then(response => response.text())
     .then(data => {

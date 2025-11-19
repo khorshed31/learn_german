@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Basic German Phrases – Full Pack</title>
+
+  <link href="style.css" rel="stylesheet" />
+
+  <!-- Bootstrap & Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root{
+      --bg1:#0f1724;
+      --bg2:#050816;
+      --glass:rgba(255,255,255,0.04);
+      --glass-border:rgba(255,255,255,0.09);
+      --accent:#6ee7b7;
+      --accent-2:#60a5fa;
+      --text:#eaf6ff;
+      --muted:#9bb0d6;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background:radial-gradient(circle at top,var(--bg2) 0,var(--bg1) 45%,#020617 100%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .page-wrapper{
+      max-width:1100px;
+      margin:0 auto;
+      padding:2.5rem 1rem 3.5rem;
+    }
+
+    .hero-title{
+      font-size:clamp(1.7rem,3.2vw,2.4rem);
+      font-weight:800;
+      letter-spacing:-0.3px;
+      color:var(--accent);
+    }
+    .hero-subtitle{
+      color:var(--muted);
+      max-width:640px;
+    }
+
+    .hero-pill{
+      background:rgba(15,118,110,0.12);
+      border:1px solid rgba(45,212,191,0.35);
+      color:var(--accent);
+      padding:.3rem .7rem;
+      border-radius:999px;
+      font-size:.78rem;
+      text-transform:uppercase;
+      letter-spacing:.09em;
+      font-weight:600;
+    }
+
+    .card-glass{
+      background:linear-gradient(180deg,rgba(15,23,42,0.95),rgba(15,23,42,0.88));
+      border:1px solid var(--glass-border);
+      border-radius:18px;
+      padding:1.2rem 1.3rem;
+      box-shadow:0 15px 40px rgba(15,23,42,0.8);
+      backdrop-filter:blur(6px);
+    }
+
+    .phrase-section-title{
+      font-weight:700;
+      color:var(--accent-2);
+      margin-bottom:.25rem;
+      font-size:1.12rem;
+    }
+    .phrase-section-sub{
+      color:var(--muted);
+      font-size:.9rem;
+      margin-bottom:.8rem;
+    }
+
+    .phrase-card{
+      background:var(--glass);
+      border:1px solid var(--glass-border);
+      border-radius:14px;
+      padding:.75rem .9rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:.6rem;
+      transition:.16s ease;
+    }
+    .phrase-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 26px rgba(15,23,42,0.9);
+      border-color:rgba(148,163,184,0.5);
+    }
+
+    .phrase-text-de{
+      margin:0;
+      font-weight:650;
+      font-size:1rem;
+    }
+    .phrase-text-en{
+      margin:0;
+      font-size:.9rem;
+      color:var(--muted);
+    }
+    .phrase-meta{
+      font-size:.75rem;
+      color:rgba(148,163,184,0.9);
+      margin-top:.1rem;
+    }
+
+    .btn-play{
+      border:0;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#021019;
+      padding:.45rem .7rem;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:.95rem;
+      font-weight:600;
+      box-shadow:0 6px 14px rgba(37,99,235,0.35);
+      flex-shrink:0;
+    }
+    .btn-play i{margin-right:.2rem;}
+
+    .search-card{
+      margin-top:1.5rem;
+      margin-bottom:1.3rem;
+    }
+    .search-input{
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,0.5);
+      background:rgba(15,23,42,0.85);
+      color:var(--text);
+      padding:.65rem 1rem .65rem 2.4rem;
+      font-size:.95rem;
+    }
+    .search-input::placeholder{color:#6b7280;}
+    .search-icon{
+      position:absolute;
+      left:.9rem;
+      top:50%;
+      transform:translateY(-50%);
+      color:#6b7280;
+      font-size:.95rem;
+    }
+
+    .badge-category{
+      border-radius:999px;
+      padding:.1rem .55rem;
+      font-size:.72rem;
+      border:1px solid rgba(148,163,184,0.5);
+      color:#cbd5f5;
+    }
+
+    /* Tabs styling */
+    .tab-bar-wrapper{
+      background:rgba(15,23,42,0.85);
+      border-radius:999px;
+      padding:.25rem;
+      border:1px solid rgba(148,163,184,0.3);
+      overflow-x:auto;
+      white-space:nowrap;
+    }
+    .nav-pills .nav-link{
+      border-radius:999px;
+      color:#cbd5f5;
+      font-size:.85rem;
+      padding:.35rem .9rem;
+      margin-right:.25rem;
+      background:transparent;
+    }
+    .nav-pills .nav-link.active{
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#021019;
+      font-weight:600;
+      box-shadow:0 6px 16px rgba(15,23,42,0.8);
+    }
+
+    @media (max-width:575.98px){
+      .page-wrapper{padding:1.7rem .9rem 2.5rem;}
+      .phrase-card{flex-direction:column;align-items:flex-start;}
+      .btn-play{align-self:flex-end;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar placeholder -->
+<div id="navbar-placeholder"></div>
+
+<main class="page-wrapper">
+  <!-- Hero -->
+  <section class="mb-4">
+    <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+      <div>
+        <div class="hero-pill mb-2">Core A1 phrases</div>
+        <h1 class="hero-title">Basic German Phrases – Complete Starter Pack</h1>
+        <p class="hero-subtitle mt-2">
+          Essential German for greetings, travel, small talk, restaurants, shopping and emergencies.
+          Tap the speaker icon to hear natural <strong>German (de-DE)</strong> pronunciation.
+        </p>
+      </div>
+      <div class="text-end">
+        <div class="small text-uppercase text-secondary">Mode</div>
+        <div class="fw-semibold">Phrasebook &amp; Listening Practice</div>
+      </div>
+    </div>
+
+    <!-- Search (applies to "All" tab) -->
+    <div class="card-glass search-card">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-2">
+        <div class="fw-semibold">Search in all phrases</div>
+        <div class="small text-secondary">
+          Filter by German, English or category (e.g. <code>greeting</code>, <code>hotel</code>, <code>emergency</code>)
+        </div>
+      </div>
+      <div class="position-relative">
+        <i class="bi bi-search search-icon"></i>
+        <input
+          id="phraseSearch"
+          type="search"
+          class="form-control search-input"
+          placeholder="Type a word: hallo, airport, danke, hotel..."
+        />
+      </div>
+      <div class="small text-secondary mt-2">
+        Note: search affects only the <strong>All phrases</strong> tab. Category tabs show full lists.
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabs -->
+  <section>
+    <div class="tab-bar-wrapper mb-3">
+      <ul class="nav nav-pills" id="phraseTabs" role="tablist">
+        <!-- Tabs injected by JS -->
+      </ul>
+    </div>
+
+    <div class="tab-content" id="phraseTabContent">
+      <!-- Tab panes injected by JS -->
+    </div>
+  </section>
+</main>
+
+<!-- Footer placeholder -->
+<div id="footer-placeholder"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // ===== Phrase data (extended) =====
+  const PHRASES = [
+    // Greetings & Introductions
+    { de:"Hallo", en:"Hello", category:"Greetings / Introductions" },
+    { de:"Hi", en:"Hi", category:"Greetings / Introductions" },
+    { de:"Guten Morgen", en:"Good morning", category:"Greetings / Introductions" },
+    { de:"Guten Tag", en:"Good day / Hello", category:"Greetings / Introductions" },
+    { de:"Guten Abend", en:"Good evening", category:"Greetings / Introductions" },
+    { de:"Gute Nacht", en:"Good night", category:"Greetings / Introductions" },
+    { de:"Servus", en:"Hello / Hi (southern, informal)", category:"Greetings / Introductions" },
+    { de:"Moin", en:"Hi (northern, informal)", category:"Greetings / Introductions" },
+    { de:"Wie heißt du?", en:"What is your name? (informal)", category:"Greetings / Introductions" },
+    { de:"Wie heißen Sie?", en:"What is your name? (formal)", category:"Greetings / Introductions" },
+    { de:"Ich heiße …", en:"My name is …", category:"Greetings / Introductions" },
+    { de:"Schön, dich zu sehen.", en:"Nice to see you. (informal)", category:"Greetings / Introductions" },
+    { de:"Schön, Sie zu sehen.", en:"Nice to see you. (formal)", category:"Greetings / Introductions" },
+    { de:"Bis später.", en:"See you later.", category:"Greetings / Introductions" },
+    { de:"Bis bald.", en:"See you soon.", category:"Greetings / Introductions" },
+
+    // Politeness & Basic Reactions
+    { de:"Bitte", en:"Please / You’re welcome", category:"Politeness & Basics" },
+    { de:"Danke", en:"Thank you", category:"Politeness & Basics" },
+    { de:"Vielen Dank", en:"Thank you very much", category:"Politeness & Basics" },
+    { de:"Danke schön.", en:"Thanks a lot.", category:"Politeness & Basics" },
+    { de:"Gern geschehen.", en:"You’re welcome. (more formal)", category:"Politeness & Basics" },
+    { de:"Kein Problem.", en:"No problem.", category:"Politeness & Basics" },
+    { de:"Entschuldigung", en:"Excuse me / Sorry", category:"Politeness & Basics" },
+    { de:"Entschuldigen Sie, bitte.", en:"Excuse me, please. (formal)", category:"Politeness & Basics" },
+    { de:"Alles gut.", en:"It’s all good.", category:"Politeness & Basics" },
+    { de:"Ja", en:"Yes", category:"Politeness & Basics" },
+    { de:"Nein", en:"No", category:"Politeness & Basics" },
+    { de:"Vielleicht", en:"Maybe / Perhaps", category:"Politeness & Basics" },
+    { de:"Ich weiß nicht.", en:"I don’t know.", category:"Politeness & Basics" },
+    { de:"In Ordnung.", en:"Alright / Okay.", category:"Politeness & Basics" },
+
+    // Small Talk
+    { de:"Wie geht’s?", en:"How are you? (informal)", category:"Small Talk" },
+    { de:"Wie geht es Ihnen?", en:"How are you? (formal)", category:"Small Talk" },
+    { de:"Mir geht es gut, danke.", en:"I am fine, thank you.", category:"Small Talk" },
+    { de:"Es geht.", en:"I’m okay / so-so.", category:"Small Talk" },
+    { de:"Und dir?", en:"And you? (informal)", category:"Small Talk" },
+    { de:"Und Ihnen?", en:"And you? (formal)", category:"Small Talk" },
+    { de:"Woher kommst du?", en:"Where are you from? (informal)", category:"Small Talk" },
+    { de:"Woher kommen Sie?", en:"Where are you from? (formal)", category:"Small Talk" },
+    { de:"Ich komme aus …", en:"I am from …", category:"Small Talk" },
+    { de:"Wie alt bist du?", en:"How old are you? (informal)", category:"Small Talk" },
+    { de:"Was sind deine Hobbys?", en:"What are your hobbies? (informal)", category:"Small Talk" },
+    { de:"Was machst du in deiner Freizeit?", en:"What do you do in your free time?", category:"Small Talk" },
+    { de:"Das ist interessant.", en:"That is interesting.", category:"Small Talk" },
+    { de:"Wirklich?", en:"Really?", category:"Small Talk" },
+
+    // Help & Clarification
+    { de:"Können Sie mir helfen?", en:"Can you help me, please?", category:"Help & Clarification" },
+    { de:"Könntest du mir helfen?", en:"Could you help me? (informal)", category:"Help & Clarification" },
+    { de:"Ich spreche nur ein bisschen Deutsch.", en:"I only speak a little German.", category:"Help & Clarification" },
+    { de:"Können Sie das bitte wiederholen?", en:"Could you repeat that, please?", category:"Help & Clarification" },
+    { de:"Können Sie bitte langsamer sprechen?", en:"Could you please speak more slowly?", category:"Help & Clarification" },
+    { de:"Was bedeutet das?", en:"What does that mean?", category:"Help & Clarification" },
+    { de:"Wie sagt man das auf Deutsch?", en:"How do you say that in German?", category:"Help & Clarification" },
+    { de:"Können Sie das bitte aufschreiben?", en:"Could you write that down, please?", category:"Help & Clarification" },
+    { de:"Ich verstehe nicht.", en:"I don’t understand.", category:"Help & Clarification" },
+    { de:"Können Sie mir das erklären?", en:"Can you explain that to me?", category:"Help & Clarification" },
+
+    // Travel & Directions
+    { de:"Wo ist der Bahnhof?", en:"Where is the train station?", category:"Travel & Directions" },
+    { de:"Wo ist die U-Bahn-Station?", en:"Where is the subway station?", category:"Travel & Directions" },
+    { de:"Wo ist die Bushaltestelle?", en:"Where is the bus stop?", category:"Travel & Directions" },
+    { de:"Wie komme ich zum Flughafen?", en:"How do I get to the airport?", category:"Travel & Directions" },
+    { de:"Wie komme ich ins Stadtzentrum?", en:"How do I get to the city center?", category:"Travel & Directions" },
+    { de:"Ist es weit von hier?", en:"Is it far from here?", category:"Travel & Directions" },
+    { de:"Links", en:"Left", category:"Travel & Directions" },
+    { de:"Rechts", en:"Right", category:"Travel & Directions" },
+    { de:"Geradeaus", en:"Straight ahead", category:"Travel & Directions" },
+    { de:"Ich habe mich verlaufen.", en:"I am lost.", category:"Travel & Directions" },
+    { de:"Wann fährt der nächste Zug?", en:"When does the next train leave?", category:"Travel & Directions" },
+    { de:"Wo kann ich ein Ticket kaufen?", en:"Where can I buy a ticket?", category:"Travel & Directions" },
+    { de:"Gibt es hier in der Nähe eine Haltestelle?", en:"Is there a stop nearby?", category:"Travel & Directions" },
+
+    // Hotel & Accommodation
+    { de:"Ich habe eine Reservierung.", en:"I have a reservation.", category:"Hotel & Accommodation" },
+    { de:"Ich möchte ein Einzelzimmer.", en:"I would like a single room.", category:"Hotel & Accommodation" },
+    { de:"Ich möchte ein Doppelzimmer.", en:"I would like a double room.", category:"Hotel & Accommodation" },
+    { de:"Haben Sie ein freies Zimmer?", en:"Do you have a vacant room?", category:"Hotel & Accommodation" },
+    { de:"Für wie viele Nächte?", en:"For how many nights?", category:"Hotel & Accommodation" },
+    { de:"Ist das Frühstück inbegriffen?", en:"Is breakfast included?", category:"Hotel & Accommodation" },
+    { de:"Könnte ich bitte später auschecken?", en:"Could I check out later, please?", category:"Hotel & Accommodation" },
+    { de:"Gibt es WLAN im Zimmer?", en:"Is there Wi-Fi in the room?", category:"Hotel & Accommodation" },
+    { de:"Wo ist der Aufzug?", en:"Where is the elevator?", category:"Hotel & Accommodation" },
+    { de:"Mein Zimmer ist im ... Stock.", en:"My room is on the ... floor.", category:"Hotel & Accommodation" },
+
+    // Food & Drink
+    { de:"Ich möchte einen Tisch für zwei, bitte.", en:"I’d like a table for two, please.", category:"Food & Drink" },
+    { de:"Kann ich die Speisekarte sehen?", en:"May I see the menu?", category:"Food & Drink" },
+    { de:"Haben Sie vegetarische Gerichte?", en:"Do you have vegetarian dishes?", category:"Food & Drink" },
+    { de:"Ich bin hungrig.", en:"I am hungry.", category:"Food & Drink" },
+    { de:"Ich bin durstig.", en:"I am thirsty.", category:"Food & Drink" },
+    { de:"Ich habe eine Allergie gegen …", en:"I am allergic to …", category:"Food & Drink" },
+    { de:"Die Rechnung, bitte.", en:"The bill, please.", category:"Food & Drink" },
+    { de:"Es hat sehr gut geschmeckt.", en:"It tasted very good.", category:"Food & Drink" },
+    { de:"Noch ein Glas Wasser, bitte.", en:"Another glass of water, please.", category:"Food & Drink" },
+    { de:"Zum Mitnehmen, bitte.", en:"To take away / to go, please.", category:"Food & Drink" },
+    { de:"Ohne Zucker, bitte.", en:"Without sugar, please.", category:"Food & Drink" },
+
+    // Shopping & Money
+    { de:"Wieviel kostet das?", en:"How much does this cost?", category:"Shopping & Money" },
+    { de:"Ist das im Angebot?", en:"Is this on sale?", category:"Shopping & Money" },
+    { de:"Das ist zu teuer.", en:"That is too expensive.", category:"Shopping & Money" },
+    { de:"Haben Sie etwas Günstigeres?", en:"Do you have something cheaper?", category:"Shopping & Money" },
+    { de:"Kann ich mit Karte bezahlen?", en:"Can I pay by card?", category:"Shopping & Money" },
+    { de:"Nur Barzahlung?", en:"Cash only?", category:"Shopping & Money" },
+    { de:"Ich schaue mich nur um, danke.", en:"I’m just looking, thank you.", category:"Shopping & Money" },
+    { de:"Kann ich das anprobieren?", en:"Can I try this on?", category:"Shopping & Money" },
+    { de:"Wo sind die Umkleidekabinen?", en:"Where are the changing rooms?", category:"Shopping & Money" },
+    { de:"Können Sie mir einen Rabatt geben?", en:"Can you give me a discount?", category:"Shopping & Money" },
+
+    // Emergencies & Health
+    { de:"Hilfe!", en:"Help!", category:"Emergencies & Health" },
+    { de:"Rufen Sie bitte einen Krankenwagen!", en:"Please call an ambulance!", category:"Emergencies & Health" },
+    { de:"Rufen Sie bitte die Polizei!", en:"Please call the police!", category:"Emergencies & Health" },
+    { de:"Ich brauche einen Arzt.", en:"I need a doctor.", category:"Emergencies & Health" },
+    { de:"Wo ist die nächste Apotheke?", en:"Where is the nearest pharmacy?", category:"Emergencies & Health" },
+    { de:"Ich habe Schmerzen hier.", en:"I have pain here.", category:"Emergencies & Health" },
+    { de:"Ich habe eine Allergie.", en:"I have an allergy.", category:"Emergencies & Health" },
+    { de:"Ich habe meinen Pass verloren.", en:"I have lost my passport.", category:"Emergencies & Health" },
+    { de:"Ich wurde bestohlen.", en:"I have been robbed.", category:"Emergencies & Health" },
+    { de:"Ich fühle mich nicht gut.", en:"I don’t feel well.", category:"Emergencies & Health" },
+
+    // Time & Scheduling
+    { de:"Wie spät ist es?", en:"What time is it?", category:"Time & Scheduling" },
+    { de:"Um wie viel Uhr?", en:"At what time?", category:"Time & Scheduling" },
+    { de:"Heute", en:"Today", category:"Time & Scheduling" },
+    { de:"Morgen", en:"Tomorrow", category:"Time & Scheduling" },
+    { de:"Gestern", en:"Yesterday", category:"Time & Scheduling" },
+    { de:"Heute Abend", en:"This evening / tonight", category:"Time & Scheduling" },
+    { de:"Morgen Früh", en:"Tomorrow morning", category:"Time & Scheduling" },
+    { de:"Dieses Wochenende", en:"This weekend", category:"Time & Scheduling" },
+    { de:"Nächstes Wochenende", en:"Next weekend", category:"Time & Scheduling" },
+    { de:"Diese Woche", en:"This week", category:"Time & Scheduling" },
+    { de:"Nächste Woche", en:"Next week", category:"Time & Scheduling" },
+    { de:"Ich bin zu spät.", en:"I am late.", category:"Time & Scheduling" },
+    { de:"Ich komme gleich.", en:"I will be right there / I’m coming soon.", category:"Time & Scheduling" }
+  ];
+
+  // ===== Speech function =====
+  function speak(text){
+    if(!("speechSynthesis" in window)){
+      alert("Speech Synthesis is not supported in your browser.");
+      return;
+    }
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = "de-DE";
+    const voices = speechSynthesis.getVoices();
+    if(voices && voices.length){
+      const deVoice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith("de"));
+      if(deVoice) u.voice = deVoice;
+    }
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(u);
+  }
+
+  // ===== Helpers =====
+  function groupByCategory(items){
+    const map = new Map();
+    items.forEach(p => {
+      if(!map.has(p.category)) map.set(p.category, []);
+      map.get(p.category).push(p);
+    });
+    return map;
+  }
+
+  function toId(str){
+    return "tab-" + str.toLowerCase().replace(/[^a-z0-9]+/g,"-");
+  }
+
+  // Render ALL phrases (with grouping) in "All" tab
+  function renderAllPhrases(filterText=""){
+    const container = document.getElementById("tab-all-body");
+    if(!container) return;
+    container.innerHTML = "";
+
+    const term = filterText.trim().toLowerCase();
+    let filtered = PHRASES;
+
+    if(term){
+      filtered = PHRASES.filter(p => {
+        const hay = (p.de + " " + p.en + " " + p.category).toLowerCase();
+        return hay.includes(term);
+      });
+    }
+
+    const grouped = groupByCategory(filtered);
+
+    if(filtered.length === 0){
+      container.innerHTML = '<div class="card-glass text-center text-secondary small">No phrases found. Try another word.</div>';
+      return;
+    }
+
+    for(const [category, list] of grouped){
+      const section = document.createElement("section");
+      section.className = "card-glass mb-3";
+
+      const header = document.createElement("div");
+      header.className = "d-flex justify-content-between align-items-center mb-2 flex-wrap gap-1";
+      header.innerHTML = `
+        <div>
+          <div class="phrase-section-title">${category}</div>
+          <div class="phrase-section-sub">${list.length} phrase${list.length !== 1 ? "s" : ""}</div>
+        </div>
+        <div class="badge-category">${category}</div>
+      `;
+      section.appendChild(header);
+
+      const row = document.createElement("div");
+      row.className = "row g-2";
+
+      list.forEach(p => {
+        const col = document.createElement("div");
+        col.className = "col-12 col-md-6";
+
+        const card = document.createElement("div");
+        card.className = "phrase-card";
+
+        card.innerHTML = `
+          <div>
+            <p class="phrase-text-de">${p.de}</p>
+            <p class="phrase-text-en">${p.en}</p>
+            <div class="phrase-meta">Category: ${p.category}</div>
+          </div>
+          <button class="btn-play" type="button">
+            <i class="bi bi-volume-up"></i>
+            Play
+          </button>
+        `;
+        card.querySelector(".btn-play").addEventListener("click", () => speak(p.de));
+
+        col.appendChild(card);
+        row.appendChild(col);
+      });
+
+      section.appendChild(row);
+      container.appendChild(section);
+    }
+  }
+
+  // Render a single category in its own tab body
+  function renderCategoryPhrases(category, containerId){
+    const container = document.getElementById(containerId);
+    if(!container) return;
+    container.innerHTML = "";
+
+    const list = PHRASES.filter(p => p.category === category);
+    if(list.length === 0){
+      container.innerHTML = '<div class="card-glass text-center text-secondary small">No phrases in this category.</div>';
+      return;
+    }
+
+    const section = document.createElement("section");
+    section.className = "card-glass";
+
+    const header = document.createElement("div");
+    header.className = "d-flex justify-content-between align-items-center mb-2 flex-wrap gap-1";
+    header.innerHTML = `
+      <div>
+        <div class="phrase-section-title">${category}</div>
+        <div class="phrase-section-sub">${list.length} phrase${list.length !== 1 ? "s" : ""}</div>
+      </div>
+      <div class="badge-category">${category}</div>
+    `;
+    section.appendChild(header);
+
+    const row = document.createElement("div");
+    row.className = "row g-2";
+
+    list.forEach(p => {
+      const col = document.createElement("div");
+      col.className = "col-12 col-md-6";
+
+      const card = document.createElement("div");
+      card.className = "phrase-card";
+
+      card.innerHTML = `
+        <div>
+          <p class="phrase-text-de">${p.de}</p>
+          <p class="phrase-text-en">${p.en}</p>
+        </div>
+        <button class="btn-play" type="button">
+          <i class="bi bi-volume-up"></i>
+          Play
+        </button>
+      `;
+      card.querySelector(".btn-play").addEventListener("click", () => speak(p.de));
+
+      col.appendChild(card);
+      row.appendChild(col);
+    });
+
+    section.appendChild(row);
+    container.appendChild(section);
+  }
+
+  // Build tabs dynamically
+  document.addEventListener("DOMContentLoaded", () => {
+    const tabsUl = document.getElementById("phraseTabs");
+    const tabContent = document.getElementById("phraseTabContent");
+
+    const categories = Array.from(new Set(PHRASES.map(p => p.category)));
+
+    // ALL tab
+    {
+      const li = document.createElement("li");
+      li.className = "nav-item";
+      const btn = document.createElement("button");
+      btn.className = "nav-link active";
+      btn.id = "tab-all-tab";
+      btn.dataset.bsToggle = "pill";
+      btn.dataset.bsTarget = "#tab-all";
+      btn.type = "button";
+      btn.role = "tab";
+      btn.ariaControls = "tab-all";
+      btn.ariaSelected = "true";
+      btn.textContent = "All phrases";
+      li.appendChild(btn);
+      tabsUl.appendChild(li);
+
+      const pane = document.createElement("div");
+      pane.className = "tab-pane fade show active";
+      pane.id = "tab-all";
+      pane.role = "tabpanel";
+      pane.ariaLabelledby = "tab-all-tab";
+      pane.innerHTML = '<section id="tab-all-body"></section>';
+      tabContent.appendChild(pane);
+    }
+
+    // Category tabs
+    categories.forEach((cat, idx) => {
+      const id = toId(cat);
+      const li = document.createElement("li");
+      li.className = "nav-item";
+      const btn = document.createElement("button");
+      btn.className = "nav-link";
+      btn.id = id + "-tab";
+      btn.dataset.bsToggle = "pill";
+      btn.dataset.bsTarget = "#" + id;
+      btn.type = "button";
+      btn.role = "tab";
+      btn.ariaControls = id;
+      btn.ariaSelected = "false";
+      btn.textContent = cat;
+      li.appendChild(btn);
+      tabsUl.appendChild(li);
+
+      const pane = document.createElement("div");
+      pane.className = "tab-pane fade";
+      pane.id = id;
+      pane.role = "tabpanel";
+      pane.ariaLabelledby = id + "-tab";
+      pane.innerHTML = `<section id="${id}-body"></section>`;
+      tabContent.appendChild(pane);
+    });
+
+    // Initial render
+    renderAllPhrases();
+
+    // Render each category tab content once
+    categories.forEach(cat => {
+      const id = toId(cat) + "-body";
+      renderCategoryPhrases(cat, id);
+    });
+
+    // Search -> only affects "All phrases" tab
+    const search = document.getElementById("phraseSearch");
+    if(search){
+      search.addEventListener("input", () => {
+        renderAllPhrases(search.value);
+      });
+    }
+
+    // Preload voices once
+    if("speechSynthesis" in window){
+      if(window.speechSynthesis.getVoices().length === 0){
+        window.speechSynthesis.onvoiceschanged = function() {};
+      }
+    }
+
+    // Load navbar & footer if present
+    fetch("navbar.html")
+      .then(r => r.ok ? r.text() : "")
+      .then(html => {
+        if(html) document.getElementById("navbar-placeholder").innerHTML = html;
+      }).catch(()=>{});
+
+    fetch("footer.html")
+      .then(r => r.ok ? r.text() : "")
+      .then(html => {
+        if(html) document.getElementById("footer-placeholder").innerHTML = html;
+      }).catch(()=>{});
+  });
+</script>
+</body>
+</html>

@@ -57,6 +57,7 @@
       display:flex;
       gap:0.5rem;
       align-items:center;
+      flex-wrap:wrap;
     }
 
     /* Cards grid */
@@ -119,6 +120,7 @@
       display:flex;
       gap:0.5rem;
       align-items:center;
+      flex-wrap:wrap;
     }
 
     .btn-outline-accent{
@@ -139,7 +141,7 @@
     /* small devices tweak for hero layout */
     @media (max-width:540px){
       .hero{ flex-direction:column; align-items:stretch; padding:1rem; gap:0.6rem; }
-      .hero .cta{ justify-content:space-between; }
+      .hero .cta{ justify-content:flex-start; }
     }
   </style>
 </head>
@@ -157,6 +159,8 @@
       <div class="cta">
         <a class="btn btn-sm btn-outline-accent" href="alphabet_quiz.html">Start Alphabet</a>
         <a class="btn btn-sm btn-outline-light" href="number_quiz.html">Numbers</a>
+        <!-- NEW: link to grammar exercises page -->
+        <a class="btn btn-sm btn-outline-light" href="german-basic-grammar-exercises.html">Grammar Exercises</a>
       </div>
     </div>
 
@@ -174,7 +178,6 @@
           <p>Practice letters, diphthongs and pronunciation with interactive audio examples.</p>
           <div class="lesson-actions">
             <a href="alphabet_quiz.html" class="btn btn-sm btn-outline-accent" aria-label="Open Alphabet lesson">Start Lesson</a>
-            <!-- <a href="#" class="btn btn-sm btn-outline-light" aria-label="Preview Alphabet lesson">Preview</a> -->
           </div>
         </div>
       </article>
@@ -190,7 +193,6 @@
           <p>Count from 0 to 1,000 and practice listening drills to master pronunciation.</p>
           <div class="lesson-actions">
             <a href="number_quiz.html" class="btn btn-sm btn-outline-accent" aria-label="Open Numbers lesson">Start Lesson</a>
-            <!-- <a href="#" class="btn btn-sm btn-outline-light" aria-label="Preview Numbers lesson">Preview</a> -->
           </div>
         </div>
       </article>
@@ -205,8 +207,27 @@
           <h5 id="lesson-phrases">Basic German Phrases</h5>
           <p>Short dialogues and useful phrases for everyday conversations. Perfect for beginners.</p>
           <div class="lesson-actions">
-            <a href="#" class="btn btn-sm btn-outline-accent" aria-label="Open Phrases lesson">Start Lesson</a>
-            <a href="#" class="btn btn-sm btn-outline-light" aria-label="Preview Phrases lesson">Preview</a>
+            <!-- Update this href when your phrases page filename is fixed -->
+            <a href="basic-german-phrases.html" class="btn btn-sm btn-outline-accent" aria-label="Open Phrases lesson">Start Lesson</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- NEW: Basic Grammar Exercises card -->
+      <article class="lesson-card" role="article" aria-labelledby="lesson-grammar-ex">
+        <div class="lesson-icon" aria-hidden="true" style="background:linear-gradient(135deg,#6EE7B7,#60A5FA);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 4h14v4H5zM5 10h14v10H5z" stroke="#041018" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 14h6M9 17h4" stroke="#041018" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="lesson-body">
+          <h5 id="lesson-grammar-ex">Basic Grammar Exercises</h5>
+          <p>Practice articles, plurals, pronouns, verbs, cases and word order with smart multiple-choice questions.</p>
+          <div class="lesson-actions">
+            <a href="german-basic-grammar-exercises.html" class="btn btn-sm btn-outline-accent" aria-label="Open Basic Grammar Exercises lesson">
+              Start Lesson
+            </a>
           </div>
         </div>
       </article>
@@ -233,4 +254,4 @@
       .catch(()=>{ /* fail silently */ });
   </script>
 </body>
-</html></svg>
+</html>
