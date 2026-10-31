@@ -1,0 +1,1315 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>German Glossary • 250+ Nouns with Articles + Pronunciation</title>
+
+  <!-- Bootstrap (CDN) + offline fallback -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+    onerror="this.onerror=null; this.href='assets/bootstrap.min.css';"
+  />
+
+  <style>
+    :root{
+      --bg1:#060814;
+      --bg2:#0b1020;
+      --card: rgba(255,255,255,.06);
+      --border: rgba(255,255,255,.12);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.62);
+      --shadow: 0 18px 55px rgba(0,0,0,.40);
+      --radius: 18px;
+      --violet: rgba(124,58,237,.95);
+      --green: rgba(34,197,94,.92);
+      --amber: rgba(245,158,11,.95);
+      --blue: rgba(59,130,246,.92);
+    }
+
+    body{
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(124,58,237,.28), transparent 55%),
+        radial-gradient(1000px 650px at 75% 12%, rgba(34,197,94,.20), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2) 45%, var(--bg1));
+    }
+
+    .glass{
+      background: rgba(15, 20, 40, .55);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      backdrop-filter: blur(10px);
+    }
+
+    .card-soft{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+
+    .small-muted{ color: var(--muted); }
+    .divider{ height: 1px; background: rgba(255,255,255,.12); margin: 14px 0; }
+
+    .form-control, .form-select{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.16);
+      color: var(--text);
+    }
+    .form-control::placeholder{ color: rgba(255,255,255,.50); }
+    .form-control:focus, .form-select:focus{
+      box-shadow: 0 0 0 .2rem rgba(124,58,237,.25);
+      border-color: rgba(124,58,237,.45);
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+    }
+    .form-select option{ background:#0b1020; }
+
+    .pill{
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      border-radius: 999px;
+      padding: 8px 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: .9rem;
+      white-space: nowrap;
+    }
+    .dot{ width:10px; height:10px; border-radius:999px; display:inline-block; }
+    .dot.m{ background: var(--blue); }
+    .dot.f{ background: var(--amber); }
+    .dot.n{ background: var(--green); }
+    .dot.pl{ background: var(--violet); }
+
+    .tag{
+      font-weight: 900;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      display:inline-block;
+      font-size: .85rem;
+      letter-spacing: .2px;
+    }
+    .tag.m{ border-color: rgba(59,130,246,.40); background: rgba(59,130,246,.16); }
+    .tag.f{ border-color: rgba(245,158,11,.40); background: rgba(245,158,11,.16); }
+    .tag.n{ border-color: rgba(34,197,94,.40); background: rgba(34,197,94,.16); }
+    .tag.pl{ border-color: rgba(124,58,237,.45); background: rgba(124,58,237,.18); }
+
+    .topic-badge{
+      width: 28px;
+      height: 28px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      color: white;
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 10px 20px rgba(0,0,0,.25);
+      flex: 0 0 auto;
+    }
+
+    .table thead th{
+      background: rgba(255,255,255,.06) !important;
+      color: var(--text) !important;
+      border-color: rgba(255,255,255,.12) !important;
+    }
+    .table td, .table th{
+      border-color: rgba(255,255,255,.12) !important;
+      color: var(--text) !important;
+      vertical-align: middle;
+    }
+    .table tbody tr:hover td{ background: rgba(255,255,255,.04); }
+
+    .btn-outline-light{
+      border-color: rgba(255,255,255,.22);
+      color: rgba(255,255,255,.88);
+    }
+    .btn-outline-light:hover{
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.35);
+      color: #fff;
+    }
+
+    .kbd{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: .9rem;
+      padding: 2px 8px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.88);
+    }
+
+    .footer-note{ color: rgba(255,255,255,.55); font-size: .9rem; }
+
+    .accordion-button{
+      background: rgba(255,255,255,.06) !important;
+      color: rgba(255,255,255,.92) !important;
+      border-radius: 14px !important;
+    }
+    .accordion-item{
+      background: transparent !important;
+      border: 1px solid rgba(255,255,255,.10) !important;
+      border-radius: 16px !important;
+      overflow: hidden;
+    }
+    .accordion-button:not(.collapsed){
+      box-shadow: none !important;
+      border-bottom: 1px solid rgba(255,255,255,.12) !important;
+    }
+
+    .rowbtn{ cursor: pointer; }
+    .tap-target{ padding-top: 12px; padding-bottom: 12px; } /* easier tapping */
+    .icon-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+    .mono{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      letter-spacing: .2px;
+    }
+
+    /* Mobile tweaks */
+    .mobile-topbar{ position: sticky; top: 0; z-index: 1030; }
+    @media (max-width: 576px){
+      .hide-xs{ display: none !important; }
+      .navbar{ margin: .75rem !important; }
+      .container-xl{ padding-left: .75rem !important; padding-right: .75rem !important; }
+      .pill{ padding: 6px 10px; font-size: .85rem; }
+      .table td{ padding: .85rem .75rem; }
+    }
+
+    /* Word details bottom sheet (mobile) */
+    .sheet{
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+
+      /* make it app-like + scrollable */
+      height: min(80vh, calc(100vh - 80px));
+      display: flex;
+      flex-direction: column;
+
+      transform: translateY(110%);
+      transition: transform .22s ease;
+      z-index: 2050;
+
+      border-top-left-radius: 22px;
+      border-top-right-radius: 22px;
+      overflow: hidden;
+
+      background: rgba(15, 20, 40, .70);
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 18px 55px rgba(0,0,0,.55);
+      backdrop-filter: blur(12px);
+    }
+    .sheet.show{ transform: translateY(0%); }
+
+    .sheet-header{
+      flex: 0 0 auto; /* fixed header */
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      background: rgba(15, 20, 40, .82);
+    }
+
+    .sheet-body{
+      flex: 1 1 auto;     /* takes remaining height */
+      min-height: 0;      /* IMPORTANT: allows scrolling */
+      overflow: auto;     /* scroll here */
+      -webkit-overflow-scrolling: touch;
+      padding: 12px 12px 16px;
+    }
+    .sheet-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.55);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease;
+      z-index: 2040;
+    }
+    .sheet-backdrop.show{
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Desktop right panel hidden on mobile */
+    @media (max-width: 991.98px){
+      .desktop-side{ display:none !important; }
+    }
+    @media (min-width: 992px){
+      .sheet, .sheet-backdrop, .mobile-nav{ display:none !important; }
+    }
+
+    /* Mobile bottom nav (app-like) */
+    .mobile-nav{
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 1900;
+      padding: 10px 12px;
+      background: rgba(10, 14, 30, .72);
+      border-top: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(12px);
+    }
+    .mobile-nav .nav-inner{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+    }
+    .mobile-nav .navbtn{
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      border-radius: 16px;
+      padding: 10px 12px;
+      color: rgba(255,255,255,.92);
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 10px 22px rgba(0,0,0,.28);
+    }
+    .mobile-nav .navbtn:active{ transform: translateY(1px); }
+
+    /* Give space for mobile bottom nav */
+    @media (max-width: 991.98px){
+      body{ padding-bottom: 86px; }
+    }
+
+    /* Offcanvas styling (Quick Drill) */
+    .offcanvas.glass-offcanvas{
+      background: rgba(15, 20, 40, .78);
+      color: rgba(255,255,255,.92);
+      border-top-left-radius: 22px;
+      border-top-right-radius: 22px;
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 18px 55px rgba(0,0,0,.55);
+      backdrop-filter: blur(12px);
+    }
+    .offcanvas .offcanvas-header{
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+  </style>
+  <link rel="stylesheet" href="../assets/portfolio-theme.css">
+</head>
+
+<body>
+  <!-- Topbar -->
+  <nav class="navbar glass mx-3 mt-3 px-3 py-2 mobile-topbar">
+    <div class="container-fluid px-0">
+      <div class="d-flex align-items-center gap-3">
+        <div class="rounded-4 d-grid place-items-center"
+             style="width:44px;height:44px;background:linear-gradient(135deg, rgba(34,197,94,.92), rgba(124,58,237,.88)); box-shadow: 0 12px 30px rgba(0,0,0,.35);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7 17h10M7 12h10M7 7h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M5 20V4" stroke="white" stroke-opacity=".85" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="flex-grow-1">
+          <div class="fw-bold">German Glossary (A1) • 250+ nouns</div>
+          <div class="small-muted">Tap a word → pronunciation + meaning + example</div>
+        </div>
+
+        <!-- Mobile: open filters -->
+        <button class="btn btn-outline-light btn-sm d-lg-none" type="button"
+                data-bs-toggle="collapse" data-bs-target="#filters" aria-expanded="false" aria-controls="filters">
+          Filters
+        </button>
+      </div>
+
+      <!-- Filters: collapsible on mobile, always visible on desktop -->
+      <div id="filters" class="collapse d-lg-block mt-3">
+        <div class="d-flex flex-wrap gap-2">
+          <input id="search" class="form-control" style="min-width: 220px; flex: 1 1 220px;" type="search"
+                 placeholder="Search: Haus, Mutter, coffee..." aria-label="Search glossary" />
+          <select id="genderFilter" class="form-select" style="width: 210px; flex: 1 1 210px;" aria-label="Gender filter">
+            <option value="all">All articles</option>
+            <option value="m">Masculine (der)</option>
+            <option value="f">Feminine (die)</option>
+            <option value="n">Neuter (das)</option>
+            <option value="pl">Plural (die)</option>
+          </select>
+          <select id="topicFilter" class="form-select" style="width: 220px; flex: 1 1 220px;" aria-label="Topic filter">
+            <option value="all">All topics</option>
+          </select>
+          <select id="sort" class="form-select" style="width: 180px; flex: 1 1 180px;" aria-label="Sort">
+            <option value="topic">Sort: by topic</option>
+            <option value="az">Sort: A → Z</option>
+          </select>
+
+          <button id="expandAllBtn" class="btn btn-outline-light">Expand all</button>
+          <button id="collapseAllBtn" class="btn btn-outline-light">Collapse all</button>
+          <button id="resetBtn" class="btn btn-outline-light">Reset</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container-xl px-3 pb-5">
+    <div class="row g-3 mt-3">
+      <div class="col-lg-8">
+        <section class="glass p-3">
+          <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+            <div>
+              <h5 class="mb-1">Glossary (grouped)</h5>
+              <div class="small-muted">
+                Learn nouns with the article: <span class="kbd">der</span>, <span class="kbd">die</span>, <span class="kbd">das</span>.
+              </div>
+            </div>
+
+            <div class="d-flex gap-2 flex-wrap align-items-center">
+              <span class="pill"><span class="dot m"></span>Masculine</span>
+              <span class="pill"><span class="dot f"></span>Feminine</span>
+              <span class="pill"><span class="dot n"></span>Neuter</span>
+              <span class="pill"><span class="dot pl"></span>Plural</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <div class="small-muted" id="countLine">—</div>
+
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+              <div class="form-check form-switch m-0">
+                <input class="form-check-input" type="checkbox" role="switch" id="autoSpeak" checked>
+                <label class="form-check-label small-muted" for="autoSpeak">Auto pronounce</label>
+              </div>
+              <button id="stopSpeakBtn" class="btn btn-outline-light btn-sm">Stop</button>
+              <button id="testVoiceBtn" class="btn btn-outline-light btn-sm">Test voice</button>
+            </div>
+          </div>
+
+          <div class="card-soft p-3 mt-3">
+            <div class="d-flex justify-content-between align-items-center gap-2">
+              <div class="fw-bold">Beginner notes</div>
+              <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#notes" aria-expanded="true" aria-controls="notes">
+                Show/Hide
+              </button>
+            </div>
+            <div id="notes" class="collapse show mt-2">
+              <ul class="mb-0 small">
+                <li><b>Learn article + noun</b>: say <b>der Tisch</b> (not just Tisch).</li>
+                <li>This list shows the base article. Later, cases change it (der → den → dem).</li>
+                <li>Pronunciation uses your browser’s <b>German voice</b> (speech synthesis).</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="accordion" id="topicAccordion"></div>
+
+          <div class="divider"></div>
+
+          <div class="footer-note">
+            Offline mode: put Bootstrap files in <code>assets/</code>:
+            <code>bootstrap.min.css</code> and <code>bootstrap.bundle.min.js</code>.
+          </div>
+        </section>
+      </div>
+
+      <!-- Desktop right panel -->
+      <div class="col-lg-4 desktop-side">
+        <section class="glass p-3">
+          <div class="fw-bold mb-1">Word details</div>
+          <div class="small-muted">Click any word to view details here (desktop).</div>
+          <div class="divider"></div>
+          <div id="detailBox" class="card-soft p-3">
+            <div class="small-muted">Selected</div>
+            <div class="fs-5 fw-bold">—</div>
+            <div class="divider"></div>
+            <div class="small-muted">Pronunciation</div>
+            <div>—</div>
+            <div class="divider"></div>
+            <div class="small-muted">Meaning</div>
+            <div>—</div>
+            <div class="divider"></div>
+            <div class="small-muted">Example</div>
+            <div>—</div>
+            <div class="divider"></div>
+            <div class="small-muted">Memory tip</div>
+            <div class="small">Say it as one unit: <b>article + noun</b>.</div>
+          </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="glass p-3">
+          <div class="fw-bold mb-2">Quick drill (articles)</div>
+          <div class="small-muted mb-2">Pick the correct article for the noun.</div>
+          <div id="drillBox"></div>
+          <div class="d-flex gap-2 flex-wrap mt-2">
+            <button id="newDrillBtn" class="btn btn-outline-light btn-sm">New</button>
+            <button id="checkDrillBtn" class="btn btn-outline-light btn-sm">Check</button>
+          </div>
+          <div class="small-muted mt-2" id="drillScore"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Mobile: Word details bottom sheet (scrollable) -->
+  <div id="sheetBackdrop" class="sheet-backdrop" aria-hidden="true"></div>
+  <div id="detailSheet" class="sheet" role="dialog" aria-modal="true" aria-label="Word details">
+    <div class="sheet-header">
+      <div class="sheet-handle"></div>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="fw-bold">Word details</div>
+        <button id="closeSheetBtn" class="btn btn-outline-light btn-sm">Close</button>
+      </div>
+    </div>
+    <div class="sheet-body">
+      <div id="sheetContent" class="card-soft p-3">
+        <div class="small-muted">Selected</div>
+        <div class="fs-5 fw-bold">—</div>
+        <div class="divider"></div>
+        <div class="small-muted">Pronunciation</div>
+        <div>—</div>
+        <div class="divider"></div>
+        <div class="small-muted">Meaning</div>
+        <div>—</div>
+        <div class="divider"></div>
+        <div class="small-muted">Example</div>
+        <div>—</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile: Quick Drill as an app-like bottom panel (Offcanvas) -->
+  <div class="offcanvas offcanvas-bottom glass-offcanvas" tabindex="-1" id="drillOffcanvas" aria-labelledby="drillOffcanvasLabel"
+       style="height: 78vh;">
+    <div class="offcanvas-header">
+      <div>
+        <div class="fw-bold" id="drillOffcanvasLabel">Quick Drill (Articles)</div>
+        <div class="small-muted">Choose der / die / das</div>
+      </div>
+      <button type="button" class="btn btn-outline-light btn-sm" data-bs-dismiss="offcanvas" aria-label="Close">Close</button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="card-soft p-3">
+        <div id="drillBoxMobile"></div>
+        <div class="d-flex gap-2 flex-wrap mt-2">
+          <button id="newDrillBtnMobile" class="btn btn-outline-light btn-sm">New</button>
+          <button id="checkDrillBtnMobile" class="btn btn-outline-light btn-sm">Check</button>
+        </div>
+        <div class="small-muted mt-2" id="drillScoreMobile"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile app-like bottom nav -->
+  <div class="mobile-nav d-lg-none">
+    <div class="nav-inner">
+      <button class="navbtn" type="button" id="navTopBtn" aria-label="Go to glossary">
+        Glossary
+      </button>
+      <button class="navbtn" type="button" id="navStopBtn" aria-label="Stop speaking">
+        Stop
+      </button>
+      <button class="navbtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#drillOffcanvas" aria-controls="drillOffcanvas">
+        Quick Drill
+      </button>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (CDN) + offline fallback -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+    onerror="this.onerror=null; this.src='assets/bootstrap.bundle.min.js';"
+  ></script>
+
+  <script>
+    // CSS fallback (some browsers don’t fire onerror for <link>)
+    window.addEventListener("load", () => {
+      const probe = document.createElement("div");
+      probe.className = "d-none";
+      document.body.appendChild(probe);
+      const hasBootstrap = getComputedStyle(probe).display === "none";
+      probe.remove();
+
+      if (!hasBootstrap) {
+        const l = document.createElement("link");
+        l.rel = "stylesheet";
+        l.href = "assets/bootstrap.min.css";
+        document.head.appendChild(l);
+      }
+    });
+  </script>
+
+  <script>
+    // -------------------- Data (256 words) --------------------
+    // Format: topic|gender(m/f/n/pl)|German (with article)|English meaning
+    const RAW = `People|m|der Mann|man
+People|f|die Frau|woman
+People|n|das Kind|child
+People|m|der Junge|boy
+People|n|das Mädchen|girl
+People|m|der Vater|father
+People|f|die Mutter|mother
+People|m|der Bruder|brother
+People|f|die Schwester|sister
+People|m|der Sohn|son
+People|f|die Tochter|daughter
+People|m|der Freund|friend (male)
+People|f|die Freundin|friend (female)
+People|m|der Lehrer|teacher (male)
+People|f|die Lehrerin|teacher (female)
+People|m|der Student|student (male)
+Family & Relations|pl|die Eltern|parents
+Family & Relations|f|die Familie|family
+Family & Relations|m|der Opa|grandpa
+Family & Relations|f|die Oma|grandma
+Family & Relations|m|der Onkel|uncle
+Family & Relations|f|die Tante|aunt
+Family & Relations|m|der Cousin|cousin (male)
+Family & Relations|f|die Cousine|cousin (female)
+Family & Relations|m|der Ehemann|husband
+Family & Relations|f|die Ehefrau|wife
+Family & Relations|m|der Partner|partner (male)
+Family & Relations|f|die Partnerin|partner (female)
+Family & Relations|n|das Baby|baby
+Family & Relations|m|der Nachbar|neighbor (male)
+Family & Relations|f|die Nachbarin|neighbor (female)
+Family & Relations|m|der Gast|guest
+Home & Rooms|n|das Haus|house
+Home & Rooms|f|die Wohnung|apartment
+Home & Rooms|n|das Zimmer|room
+Home & Rooms|f|die Küche|kitchen
+Home & Rooms|n|das Bad|bathroom
+Home & Rooms|n|das Wohnzimmer|living room
+Home & Rooms|n|das Schlafzimmer|bedroom
+Home & Rooms|m|der Balkon|balcony
+Home & Rooms|m|der Garten|garden
+Home & Rooms|m|der Flur|hallway
+Home & Rooms|m|der Keller|basement
+Home & Rooms|m|der Dachboden|attic
+Home & Rooms|f|die Treppe|stairs
+Home & Rooms|f|die Tür|door
+Home & Rooms|n|das Fenster|window
+Home & Rooms|f|die Wand|wall
+Furniture & Household|m|der Tisch|table
+Furniture & Household|m|der Stuhl|chair
+Furniture & Household|n|das Bett|bed
+Furniture & Household|m|der Schrank|wardrobe/cabinet
+Furniture & Household|n|das Sofa|sofa
+Furniture & Household|f|die Lampe|lamp
+Furniture & Household|m|der Teppich|carpet
+Furniture & Household|m|der Spiegel|mirror
+Furniture & Household|f|die Dusche|shower
+Furniture & Household|f|die Toilette|toilet
+Furniture & Household|m|der Kühlschrank|fridge
+Furniture & Household|m|der Herd|stove
+Furniture & Household|m|der Ofen|oven
+Furniture & Household|f|die Waschmaschine|washing machine
+Furniture & Household|m|der Fernseher|TV
+Furniture & Household|f|die Steckdose|power outlet
+School & Study|f|die Schule|school
+School & Study|f|die Universität|university
+School & Study|f|die Klasse|class
+School & Study|m|der Kurs|course
+School & Study|f|die Prüfung|exam
+School & Study|f|die Aufgabe|task/homework
+School & Study|n|das Buch|book
+School & Study|n|das Heft|notebook
+School & Study|m|der Stift|pen
+School & Study|m|der Bleistift|pencil
+School & Study|m|der Radiergummi|eraser
+School & Study|n|das Lineal|ruler
+School & Study|m|der Rucksack|backpack
+School & Study|f|die Schultasche|school bag
+School & Study|m|der Ordner|binder/folder
+School & Study|n|das Papier|paper
+Work & Office|f|die Arbeit|work
+Work & Office|m|der Job|job
+Work & Office|f|die Firma|company
+Work & Office|n|das Büro|office
+Work & Office|m|der Chef|boss (male)
+Work & Office|f|die Chefin|boss (female)
+Work & Office|m|der Kollege|colleague (male)
+Work & Office|f|die Kollegin|colleague (female)
+Work & Office|m|der Mitarbeiter|employee (male)
+Work & Office|f|die Mitarbeiterin|employee (female)
+Work & Office|m|der Kunde|customer (male)
+Work & Office|f|die Kundin|customer (female)
+Work & Office|n|das Projekt|project
+Work & Office|f|die E-Mail|email
+Work & Office|f|die Rechnung|invoice/bill
+Work & Office|m|der Vertrag|contract
+City & Places|f|die Stadt|city
+City & Places|n|das Dorf|village
+City & Places|f|die Straße|street
+City & Places|m|der Platz|square
+City & Places|m|der Park|park
+City & Places|m|der Supermarkt|supermarket
+City & Places|m|der Markt|market
+City & Places|f|die Apotheke|pharmacy
+City & Places|n|das Krankenhaus|hospital
+City & Places|f|die Bank|bank
+City & Places|n|das Hotel|hotel
+City & Places|m|der Bahnhof|train station
+City & Places|m|der Flughafen|airport
+City & Places|f|die Post|post office
+City & Places|n|das Museum|museum
+City & Places|n|das Kino|cinema
+Transport|n|das Auto|car
+Transport|m|der Bus|bus
+Transport|f|die Bahn|train/rail
+Transport|m|der Zug|train
+Transport|f|die U-Bahn|subway
+Transport|f|die S-Bahn|suburban train
+Transport|n|das Fahrrad|bicycle
+Transport|n|das Motorrad|motorcycle
+Transport|n|das Taxi|taxi
+Transport|n|das Flugzeug|airplane
+Transport|n|das Schiff|ship
+Transport|f|die Haltestelle|stop/station
+Transport|n|das Ticket|ticket
+Transport|m|der Fahrer|driver
+Transport|f|die Ampel|traffic light
+Transport|m|der Parkplatz|parking spot
+Food & Drink|n|das Wasser|water
+Food & Drink|m|der Tee|tea
+Food & Drink|m|der Kaffee|coffee
+Food & Drink|f|die Milch|milk
+Food & Drink|m|der Saft|juice
+Food & Drink|n|das Brot|bread
+Food & Drink|n|das Brötchen|bread roll
+Food & Drink|m|der Käse|cheese
+Food & Drink|n|das Ei|egg
+Food & Drink|m|der Reis|rice
+Food & Drink|pl|die Nudeln|pasta/noodles
+Food & Drink|f|die Suppe|soup
+Food & Drink|m|der Salat|salad
+Food & Drink|m|der Apfel|apple
+Food & Drink|f|die Banane|banana
+Food & Drink|f|die Orange|orange
+Groceries & Cooking|n|das Gemüse|vegetables
+Groceries & Cooking|n|das Obst|fruit
+Groceries & Cooking|f|die Kartoffel|potato
+Groceries & Cooking|f|die Tomate|tomato
+Groceries & Cooking|f|die Zwiebel|onion
+Groceries & Cooking|m|der Knoblauch|garlic
+Groceries & Cooking|n|das Fleisch|meat
+Groceries & Cooking|m|der Fisch|fish
+Groceries & Cooking|n|das Hähnchen|chicken
+Groceries & Cooking|f|die Butter|butter
+Groceries & Cooking|m|der Zucker|sugar
+Groceries & Cooking|n|das Salz|salt
+Groceries & Cooking|m|der Pfeffer|pepper
+Groceries & Cooking|m|der Joghurt|yogurt
+Groceries & Cooking|m|der Honig|honey
+Groceries & Cooking|f|die Schokolade|chocolate
+Clothes & Accessories|f|die Kleidung|clothing
+Clothes & Accessories|n|das Hemd|shirt
+Clothes & Accessories|n|das T-Shirt|t-shirt
+Clothes & Accessories|f|die Hose|pants
+Clothes & Accessories|m|der Rock|skirt
+Clothes & Accessories|n|das Kleid|dress
+Clothes & Accessories|f|die Jacke|jacket
+Clothes & Accessories|m|der Mantel|coat
+Clothes & Accessories|m|der Pullover|sweater
+Clothes & Accessories|m|der Schuh|shoe
+Clothes & Accessories|pl|die Schuhe|shoes
+Clothes & Accessories|f|die Socke|sock
+Clothes & Accessories|f|die Mütze|cap/hat
+Clothes & Accessories|m|der Schal|scarf
+Clothes & Accessories|f|die Tasche|bag
+Clothes & Accessories|f|die Brille|glasses
+Body|m|der Kopf|head
+Body|n|das Gesicht|face
+Body|n|das Auge|eye
+Body|n|das Ohr|ear
+Body|f|die Nase|nose
+Body|m|der Mund|mouth
+Body|m|der Zahn|tooth
+Body|m|der Hals|neck/throat
+Body|m|der Arm|arm
+Body|f|die Hand|hand
+Body|m|der Finger|finger
+Body|n|das Bein|leg
+Body|m|der Fuß|foot
+Body|m|der Bauch|stomach/belly
+Body|m|der Rücken|back
+Body|n|das Herz|heart
+Health|f|die Gesundheit|health
+Health|f|die Krankheit|illness
+Health|m|der Arzt|doctor (male)
+Health|f|die Ärztin|doctor (female)
+Health|f|die Medizin|medicine
+Health|f|die Tablette|tablet/pill
+Health|n|das Rezept|prescription
+Health|f|die Praxis|clinic/practice
+Health|m|der Termin|appointment
+Health|n|das Fieber|fever
+Health|m|der Schmerz|pain
+Health|f|die Allergie|allergy
+Health|f|die Impfung|vaccination
+Health|f|die Operation|surgery/operation
+Health|m|der Verband|bandage
+Health|f|die Pflege|care/nursing
+Nature & Weather|f|die Natur|nature
+Nature & Weather|f|die Sonne|sun
+Nature & Weather|m|der Mond|moon
+Nature & Weather|m|der Himmel|sky
+Nature & Weather|f|die Wolke|cloud
+Nature & Weather|m|der Regen|rain
+Nature & Weather|m|der Wind|wind
+Nature & Weather|m|der Schnee|snow
+Nature & Weather|n|das Wetter|weather
+Nature & Weather|m|der Frühling|spring
+Nature & Weather|m|der Sommer|summer
+Nature & Weather|m|der Herbst|autumn
+Nature & Weather|m|der Winter|winter
+Nature & Weather|m|der Baum|tree
+Nature & Weather|f|die Blume|flower
+Nature & Weather|m|der Fluss|river
+Animals|m|der Hund|dog
+Animals|f|die Katze|cat
+Animals|n|das Pferd|horse
+Animals|f|die Kuh|cow
+Animals|n|das Schaf|sheep
+Animals|f|die Ziege|goat
+Animals|n|das Huhn|chicken (animal)
+Animals|m|der Vogel|bird
+Animals|f|die Maus|mouse
+Animals|m|der Frosch|frog
+Animals|f|die Schlange|snake
+Animals|f|die Spinne|spider
+Animals|f|die Biene|bee
+Animals|m|der Schmetterling|butterfly
+Animals|f|die Ameise|ant
+Animals|m|der Bär|bear
+Time|f|die Zeit|time
+Time|m|der Tag|day
+Time|f|die Woche|week
+Time|m|der Monat|month
+Time|n|das Jahr|year
+Time|f|die Stunde|hour
+Time|f|die Minute|minute
+Time|f|die Sekunde|second
+Time|m|der Morgen|morning
+Time|m|der Mittag|noon
+Time|m|der Nachmittag|afternoon
+Time|m|der Abend|evening
+Time|f|die Nacht|night
+Time|m|der Kalender|calendar
+Time|n|das Datum|date (calendar)
+Time|n|das Wochenende|weekend`;
+
+    const ALL = RAW.trim().split("\n").map((line, idx) => {
+      const [topic, gender, de, en] = line.split("|").map(s => s.trim());
+      return { id: `w${idx+1}`, topic, gender, de, en };
+    });
+
+    // -------------------- Helpers --------------------
+    const $ = (id) => document.getElementById(id);
+
+    function escapeHtml(s){
+      return String(s).replace(/[&<>"']/g, m => ({
+        "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"
+      }[m]));
+    }
+
+    function normalize(s){
+      return String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+    }
+
+    function shuffle(arr){
+      for(let i=arr.length-1;i>0;i--){
+        const j = Math.floor(Math.random()*(i+1));
+        [arr[i],arr[j]] = [arr[j],arr[i]];
+      }
+      return arr;
+    }
+
+    function sample(array, n){
+      const copy = [...array];
+      const out = [];
+      while(copy.length && out.length < n){
+        const i = Math.floor(Math.random() * copy.length);
+        out.push(copy.splice(i,1)[0]);
+      }
+      return out;
+    }
+
+    function genderTag(g){
+      if(g === "m") return `<span class="tag m">der</span>`;
+      if(g === "f") return `<span class="tag f">die</span>`;
+      if(g === "n") return `<span class="tag n">das</span>`;
+      return `<span class="tag pl">die (pl)</span>`;
+    }
+
+    function topicBadge(topic){
+      const letter = (topic || "?").trim().slice(0,1).toUpperCase();
+      const gradients = [
+        "linear-gradient(135deg, rgba(59,130,246,.95), rgba(124,58,237,.90))",
+        "linear-gradient(135deg, rgba(34,197,94,.92), rgba(59,130,246,.88))",
+        "linear-gradient(135deg, rgba(245,158,11,.95), rgba(239,68,68,.85))",
+        "linear-gradient(135deg, rgba(124,58,237,.95), rgba(236,72,153,.85))",
+        "linear-gradient(135deg, rgba(20,184,166,.92), rgba(59,130,246,.88))",
+        "linear-gradient(135deg, rgba(99,102,241,.92), rgba(34,197,94,.85))",
+      ];
+      let h = 0;
+      for (const ch of topic) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+      const bg = gradients[h % gradients.length];
+      return `<span class="topic-badge" style="background:${bg}">${escapeHtml(letter)}</span>`;
+    }
+
+    function exampleDe(item){
+      return item.gender === "pl" ? `${item.de} sind hier.` : `${item.de} ist hier.`;
+    }
+    function exampleEn(item){
+      return item.gender === "pl" ? `The ${item.en} are here.` : `The ${item.en} is here.`;
+    }
+
+    function stripArticle(de){
+      return de.replace(/^(der|die|das)\s+/i, "").trim();
+    }
+
+    // Pronunciation hint (rough beginner-friendly)
+    function phoneticHint(de){
+      const w = stripArticle(de).toLowerCase();
+      let s = w;
+      s = s.replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss");
+      s = s.replace(/sch/g, "sh");
+      s = s.replace(/sp/g, "shp");
+      s = s.replace(/st/g, "sht");
+      s = s.replace(/ie/g, "ee");
+      s = s.replace(/ei/g, "eye");
+      s = s.replace(/eu/g, "oy").replace(/äu/g, "oy");
+      s = s.replace(/au/g, "ow");
+      s = s.replace(/z/g, "ts");
+      s = s.replace(/w/g, "v");
+      s = s.replace(/j/g, "y");
+      s = s.replace(/v/g, "f");
+      s = s.replace(/ch/g, "kh");
+      return s.replace(/\s+/g, " ").trim();
+    }
+
+    // -------------------- Filters + topics --------------------
+    const TOPICS_ORIGINAL = Array.from(new Set(ALL.map(x => x.topic)));
+
+    function initTopicFilter(){
+      const tf = $("topicFilter");
+      TOPICS_ORIGINAL.forEach(t => {
+        const opt = document.createElement("option");
+        opt.value = t;
+        opt.textContent = t;
+        tf.appendChild(opt);
+      });
+    }
+
+    function matchesFilters(item){
+      const q = normalize($("search").value.trim());
+      const g = $("genderFilter").value;
+      const t = $("topicFilter").value;
+
+      const hay = normalize(`${item.de} ${item.en} ${item.topic}`);
+      const okQ = !q || hay.includes(q);
+      const okG = (g === "all" || item.gender === g);
+      const okT = (t === "all" || item.topic === t);
+
+      return okQ && okG && okT;
+    }
+
+    function groupByTopic(list){
+      const map = new Map();
+      list.forEach(it => {
+        if(!map.has(it.topic)) map.set(it.topic, []);
+        map.get(it.topic).push(it);
+      });
+      return map;
+    }
+
+    function sortWordsAZ(list){
+      return list.sort((a,b) => normalize(a.de).localeCompare(normalize(b.de)));
+    }
+    function sortTopicsAZ(topics){
+      return topics.slice().sort((a,b) => normalize(a).localeCompare(normalize(b)));
+    }
+
+    // -------------------- Speech synthesis --------------------
+    let cachedDeVoice = null;
+
+    function canSpeak(){
+      return "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
+    }
+
+    function pickGermanVoice(){
+      if(!canSpeak()) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      let v = voices.find(x => (x.lang || "").toLowerCase().startsWith("de-de"));
+      if(!v) v = voices.find(x => (x.lang || "").toLowerCase().startsWith("de"));
+      return v || null;
+    }
+
+    function speakDe(text, {rate=0.95, pitch=1.0} = {}){
+      if(!canSpeak()) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      const v = cachedDeVoice || pickGermanVoice();
+      if(v) u.voice = v;
+      u.lang = (v && v.lang) ? v.lang : "de-DE";
+      u.rate = rate;
+      u.pitch = pitch;
+      window.speechSynthesis.speak(u);
+    }
+
+    function stopSpeak(){
+      if(canSpeak()) window.speechSynthesis.cancel();
+    }
+
+    function refreshVoiceStatus(){
+      cachedDeVoice = pickGermanVoice();
+    }
+
+    if(canSpeak()){
+      window.speechSynthesis.onvoiceschanged = () => refreshVoiceStatus();
+    }
+
+    // -------------------- Mobile sheet helpers --------------------
+    function isMobile(){
+      return window.matchMedia("(max-width: 991.98px)").matches;
+    }
+
+    function openSheet(){
+      $("detailSheet").classList.add("show");
+      $("sheetBackdrop").classList.add("show");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeSheet(){
+      $("detailSheet").classList.remove("show");
+      $("sheetBackdrop").classList.remove("show");
+      document.body.style.overflow = "";
+    }
+
+    // -------------------- Rendering accordion --------------------
+    function renderAccordion(){
+      const filtered = ALL.filter(matchesFilters);
+      $("countLine").innerHTML = `Total words: <b>${ALL.length}</b> • Showing: <b>${filtered.length}</b>`;
+
+      const byTopic = groupByTopic(filtered);
+      const acc = $("topicAccordion");
+      const sortMode = $("sort").value;
+      const topicOrder = (sortMode === "az") ? sortTopicsAZ(TOPICS_ORIGINAL) : TOPICS_ORIGINAL.slice();
+
+      acc.innerHTML = topicOrder.map((topic, idx) => {
+        const items = sortWordsAZ((byTopic.get(topic) || []).slice());
+        const show = items.length ? "show" : "";
+        const disabled = items.length ? "" : "disabled";
+        const countBadge = `<span class="badge text-bg-secondary" style="background: rgba(255,255,255,.10)!important;border:1px solid rgba(255,255,255,.16);">${items.length}</span>`;
+
+        const table = items.length ? `
+          <div class="table-responsive">
+            <table class="table table-dark table-bordered align-middle mb-0">
+              <thead>
+                <tr>
+                  <th style="width: 240px;">Word</th>
+                  <th class="hide-xs" style="width: 220px;">Meaning</th>
+                  <th class="hide-xs">Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${items.map(it => `
+                  <tr class="rowbtn tap-target" data-id="${escapeHtml(it.id)}" title="Tap for pronunciation">
+                    <td>
+                      <div class="d-flex align-items-center gap-2 flex-wrap">
+                        ${genderTag(it.gender)}
+                        <div class="fw-bold">${escapeHtml(it.de)}</div>
+                      </div>
+                      <div class="d-sm-none small-muted mt-1">
+                        ${escapeHtml(it.en)}
+                      </div>
+                    </td>
+                    <td class="hide-xs">${escapeHtml(it.en)}</td>
+                    <td class="hide-xs">
+                      <div class="fw-semibold">${escapeHtml(exampleDe(it))}</div>
+                      <div class="small-muted">${escapeHtml(exampleEn(it))}</div>
+                    </td>
+                  </tr>
+                `).join("")}
+              </tbody>
+            </table>
+          </div>
+        ` : `<div class="small-muted">No matches in this topic.</div>`;
+
+        return `
+          <div class="accordion-item mb-2">
+            <h2 class="accordion-header" id="h${idx}">
+              <button class="accordion-button ${items.length ? "" : "collapsed"} ${disabled}"
+                      type="button" data-bs-toggle="collapse" data-bs-target="#c${idx}"
+                      aria-expanded="${items.length ? "true" : "false"}" aria-controls="c${idx}">
+                <div class="d-flex justify-content-between align-items-center w-100 pe-2">
+                  <div class="d-flex align-items-center gap-2">
+                    ${topicBadge(topic)}
+                    <div class="fw-bold">${escapeHtml(topic)}</div>
+                  </div>
+                  <div>${countBadge}</div>
+                </div>
+              </button>
+            </h2>
+            <div id="c${idx}" class="accordion-collapse collapse ${show}" aria-labelledby="h${idx}">
+              <div class="accordion-body">
+                ${table}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      acc.querySelectorAll(".rowbtn").forEach(row => {
+        row.addEventListener("click", () => showDetails(row.dataset.id));
+      });
+    }
+
+    // -------------------- Details + pronunciation --------------------
+    function buildDetailHTML(it){
+      const nounOnly = stripArticle(it.de);
+      const hint = phoneticHint(it.de);
+
+      return `
+        <div class="small-muted">Selected</div>
+        <div class="fs-5 fw-bold d-flex align-items-center gap-2 flex-wrap">
+          ${genderTag(it.gender)} <span>${escapeHtml(it.de)}</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="small-muted">Pronunciation</div>
+        <div class="d-flex gap-2 flex-wrap mt-1">
+          <button type="button" class="btn btn-outline-light btn-sm icon-btn" data-speak="${escapeHtml(it.de)}">
+            Speak: <span class="mono">${escapeHtml(it.de)}</span>
+          </button>
+          <button type="button" class="btn btn-outline-light btn-sm icon-btn" data-speak="${escapeHtml(nounOnly)}">
+            Speak noun: <span class="mono">${escapeHtml(nounOnly)}</span>
+          </button>
+        </div>
+        <div class="small-muted mt-2">
+          Hint (approx): <span class="mono">${escapeHtml(hint)}</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="small-muted">Topic</div>
+        <div class="d-flex align-items-center gap-2">${topicBadge(it.topic)} <span>${escapeHtml(it.topic)}</span></div>
+
+        <div class="divider"></div>
+
+        <div class="small-muted">Meaning</div>
+        <div>${escapeHtml(it.en)}</div>
+
+        <div class="divider"></div>
+
+        <div class="small-muted">Example</div>
+        <div class="fw-semibold">${escapeHtml(exampleDe(it))}</div>
+        <div class="small-muted">${escapeHtml(exampleEn(it))}</div>
+
+        <div class="divider"></div>
+
+        <div class="small-muted">Memory tip</div>
+        <div class="small">Repeat: <b>${escapeHtml(it.de)}</b> (article + noun together).</div>
+      `;
+    }
+
+    function wireSpeakButtons(container){
+      container.querySelectorAll("[data-speak]").forEach(btn => {
+        btn.addEventListener("click", () => speakDe(btn.getAttribute("data-speak")));
+      });
+    }
+
+    function showDetails(id){
+      const it = ALL.find(x => x.id === id);
+      if(!it) return;
+
+      const html = buildDetailHTML(it);
+
+      // Desktop panel
+      const desktopBox = document.getElementById("detailBox");
+      if(desktopBox){
+        desktopBox.innerHTML = html;
+        wireSpeakButtons(desktopBox);
+      }
+
+      // Mobile sheet
+      const sheetBox = document.getElementById("sheetContent");
+      if(sheetBox){
+        sheetBox.innerHTML = html;
+        wireSpeakButtons(sheetBox);
+      }
+
+      if($("autoSpeak").checked){
+        speakDe(it.de);
+      }
+
+      if(isMobile()){
+        openSheet();
+      }
+    }
+
+    // -------------------- Drill (desktop + mobile offcanvas) --------------------
+    function makeDrill(targetId, scoreId){
+      const pool = ALL.filter(matchesFilters);
+      const base = pool.length >= 10 ? pool : ALL;
+      const drillSet = sample(base, 10);
+
+      const box = document.getElementById(targetId);
+      const score = document.getElementById(scoreId);
+      if(!box) return;
+
+      box.innerHTML = drillSet.map((it, i) => {
+        const article = it.de.split(" ")[0].toLowerCase();
+        const nounOnly = it.de.split(" ").slice(1).join(" ");
+        const options = shuffle(["der","die","das"]);
+        return `
+          <div class="card-soft p-2 mb-2" data-a="${escapeHtml(article)}">
+            <div class="d-flex justify-content-between align-items-start gap-2">
+              <div>
+                <div class="fw-semibold">${i+1}. ___ ${escapeHtml(nounOnly)}</div>
+                <div class="small-muted">${escapeHtml(it.en)}</div>
+              </div>
+              <div>${genderTag(it.gender)}</div>
+            </div>
+            <div class="d-flex gap-2 flex-wrap mt-2">
+              ${options.map(o => `<button type="button" class="btn btn-sm btn-outline-light drill-choice" data-opt="${o}">${o}</button>`).join("")}
+            </div>
+            <div class="small-muted mt-2 drill-feedback"></div>
+          </div>
+        `;
+      }).join("");
+
+      box.querySelectorAll(".drill-choice").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const wrap = btn.closest("[data-a]");
+          wrap.dataset.chosen = btn.dataset.opt;
+
+          wrap.querySelectorAll(".drill-choice").forEach(b => {
+            b.classList.remove("btn-light","text-dark");
+            if(!b.classList.contains("btn-outline-light")) b.classList.add("btn-outline-light");
+          });
+
+          btn.classList.remove("btn-outline-light");
+          btn.classList.add("btn-light","text-dark");
+        });
+      });
+
+      if(score) score.textContent = "";
+    }
+
+    function checkDrill(targetId, scoreId){
+      const box = document.getElementById(targetId);
+      const scoreEl = document.getElementById(scoreId);
+      if(!box) return;
+
+      let score = 0, total = 0;
+
+      box.querySelectorAll("[data-a]").forEach(wrap => {
+        total++;
+        const answer = wrap.dataset.a;
+        const chosen = wrap.dataset.chosen || null;
+        const fb = wrap.querySelector(".drill-feedback");
+
+        if(!chosen){
+          fb.innerHTML = `<span class="badge text-bg-secondary">Not answered</span> Correct: <b>${escapeHtml(answer)}</b>`;
+          return;
+        }
+
+        if(chosen === answer){
+          score++;
+          fb.innerHTML = `<span class="badge text-bg-success">Correct</span>`;
+        } else {
+          fb.innerHTML = `<span class="badge text-bg-danger">Wrong</span> Correct: <b>${escapeHtml(answer)}</b>`;
+        }
+      });
+
+      if(scoreEl) scoreEl.innerHTML = `Score: <b>${score}</b> / <b>${total}</b>`;
+    }
+
+    // -------------------- Expand/Collapse all --------------------
+    function expandAll(){
+      document.querySelectorAll("#topicAccordion .accordion-collapse").forEach(el => el.classList.add("show"));
+      document.querySelectorAll("#topicAccordion .accordion-button").forEach(btn => {
+        btn.classList.remove("collapsed");
+        btn.setAttribute("aria-expanded","true");
+      });
+    }
+    function collapseAll(){
+      document.querySelectorAll("#topicAccordion .accordion-collapse").forEach(el => el.classList.remove("show"));
+      document.querySelectorAll("#topicAccordion .accordion-button").forEach(btn => {
+        btn.classList.add("collapsed");
+        btn.setAttribute("aria-expanded","false");
+      });
+    }
+
+    // -------------------- Events --------------------
+    ["search","genderFilter","topicFilter","sort"].forEach(id => {
+      document.getElementById(id).addEventListener(id === "search" ? "input" : "change", () => {
+        renderAccordion();
+        makeDrill("drillBox","drillScore");
+        makeDrill("drillBoxMobile","drillScoreMobile");
+      });
+    });
+
+    document.getElementById("expandAllBtn").addEventListener("click", expandAll);
+    document.getElementById("collapseAllBtn").addEventListener("click", collapseAll);
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      $("search").value = "";
+      $("genderFilter").value = "all";
+      $("topicFilter").value = "all";
+      $("sort").value = "topic";
+      renderAccordion();
+      makeDrill("drillBox","drillScore");
+      makeDrill("drillBoxMobile","drillScoreMobile");
+    });
+
+    document.getElementById("stopSpeakBtn").addEventListener("click", stopSpeak);
+    document.getElementById("testVoiceBtn").addEventListener("click", () => speakDe("Guten Tag. Ich spreche Deutsch."));
+
+    // Desktop drill buttons
+    const newDrillBtn = document.getElementById("newDrillBtn");
+    const checkDrillBtn = document.getElementById("checkDrillBtn");
+    if(newDrillBtn) newDrillBtn.addEventListener("click", () => makeDrill("drillBox","drillScore"));
+    if(checkDrillBtn) checkDrillBtn.addEventListener("click", () => checkDrill("drillBox","drillScore"));
+
+    // Mobile drill buttons (offcanvas)
+    document.getElementById("newDrillBtnMobile").addEventListener("click", () => makeDrill("drillBoxMobile","drillScoreMobile"));
+    document.getElementById("checkDrillBtnMobile").addEventListener("click", () => checkDrill("drillBoxMobile","drillScoreMobile"));
+
+    // Sheet close
+    document.getElementById("closeSheetBtn").addEventListener("click", closeSheet);
+    document.getElementById("sheetBackdrop").addEventListener("click", closeSheet);
+    window.addEventListener("keydown", (e) => { if(e.key === "Escape") closeSheet(); });
+
+    // Mobile bottom nav
+    document.getElementById("navTopBtn").addEventListener("click", () => {
+      closeSheet();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    document.getElementById("navStopBtn").addEventListener("click", stopSpeak);
+
+    // -------------------- Init --------------------
+    initTopicFilter();
+    renderAccordion();
+    refreshVoiceStatus();
+    makeDrill("drillBox","drillScore");
+    makeDrill("drillBoxMobile","drillScoreMobile");
+  </script>
+  <script src="../assets/portfolio-shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,1131 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>German Prefix Verbs • Trennbar vs Untrennbar (Dark UI)</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <style>
+    :root{
+      --bg1:#0b1220;
+      --bg2:#0f172a;
+    }
+    body{
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(59,130,246,.25), transparent 60%),
+                  radial-gradient(1200px 600px at 90% 0%, rgba(34,197,94,.18), transparent 60%),
+                  linear-gradient(180deg, var(--bg1), var(--bg2));
+      min-height: 100vh;
+    }
+    .glass{
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(10px);
+    }
+    .soft{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    .clickable{ cursor:pointer; }
+    .verb-word:hover{ text-decoration: underline; }
+    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    .small-note{ font-size: .95rem; color: rgba(255,255,255,.72); }
+    .muted2{ color: rgba(255,255,255,.60); }
+    .chip{
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      border-radius: 999px;
+      padding: .35rem .65rem;
+      font-size: .9rem;
+    }
+    .card-hover:hover{
+      transform: translateY(-2px);
+      transition: 140ms;
+      border-color: rgba(255,255,255,.18);
+    }
+    .kbd{
+      font-family: ui-monospace, Menlo, Monaco, Consolas, "Courier New", monospace;
+      padding: .1rem .35rem;
+      border: 1px solid rgba(255,255,255,.18);
+      border-bottom-width: 2px;
+      border-radius: .4rem;
+      background: rgba(255,255,255,.06);
+      font-size: .85rem;
+    }
+    .nav-tabs .nav-link{
+      border-color: rgba(255,255,255,.12);
+    }
+    .nav-tabs .nav-link.active{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.18);
+    }
+    .btn-ghost{
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+    }
+    .btn-ghost:hover{
+      background: rgba(255,255,255,.10);
+    }
+  </style>
+  <link rel="stylesheet" href="../assets/portfolio-theme.css">
+</head>
+
+<body>
+
+<!-- Top Navbar -->
+<nav class="navbar navbar-expand-lg glass sticky-top">
+  <div class="container py-2">
+    <div class="d-flex align-items-center gap-2">
+      <span class="badge text-bg-primary">DE</span>
+      <span class="navbar-brand mb-0 fw-semibold">Prefix Verbs Helper</span>
+      <span class="chip d-none d-md-inline">Trennbar • Untrennbar • Beginner friendly</span>
+    </div>
+
+    <div class="ms-auto d-flex align-items-center gap-2">
+      <button class="btn btn-ghost btn-sm" data-bs-toggle="modal" data-bs-target="#settingsModal">
+        ⚙️ Settings (Voice)
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="container my-4">
+
+  <!-- Intro -->
+  <div class="glass rounded-4 p-4">
+    <h2 class="fw-bold mb-2">👶 Super easy explanation (for beginners)</h2>
+    <p class="mb-2 small-note">
+      Some German verbs have a <b>prefix</b> (a small piece in front). Example:
+      <span class="badge text-bg-secondary">auf</span> + <b>stehen</b> → <b>aufstehen</b>
+    </p>
+
+    <div class="row g-3 mt-2">
+      <div class="col-lg-6">
+        <div class="soft rounded-4 p-3">
+          <h5 class="mb-1">✅ Trennbare Verben (Separable)</h5>
+          <div class="small-note mb-2">The prefix can <b>jump to the end</b> in a normal sentence.</div>
+          <div class="soft rounded-3 p-3">
+            <div class="fw-semibold">Ich stehe jeden Morgen um 7 Uhr <span class="text-info fw-bold">auf</span>.</div>
+            <div class="small-note">Bangla: আমি প্রতিদিন সকাল ৭টায় ঘুম থেকে উঠি।</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="soft rounded-4 p-3">
+          <h5 class="mb-1">✅ Untrennbare Verben (Inseparable)</h5>
+          <div class="small-note mb-2">The prefix <b>never jumps</b>. It stays together.</div>
+          <div class="soft rounded-3 p-3">
+            <div class="fw-semibold">Ich <span class="text-success fw-bold">verstehe</span> dich.</div>
+            <div class="small-note">Bangla: আমি তোমাকে বুঝি।</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-3 small-note">
+      🔊 Click any verb word (or speaker button) to hear German pronunciation.
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="glass rounded-4 p-3 mt-4">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tabLearn" type="button" role="tab">📚 Learn</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabList" type="button" role="tab">🧾 Verb List</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabQuiz" type="button" role="tab">🎯 Quiz</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabTips" type="button" role="tab">💡 Tips</button>
+      </li>
+    </ul>
+
+    <div class="tab-content pt-3">
+
+      <!-- Learn -->
+      <div class="tab-pane fade show active" id="tabLearn" role="tabpanel">
+        <div class="row g-3">
+          <div class="col-lg-7">
+            <div class="soft rounded-4 p-3">
+              <h4 class="fw-bold mb-2">1) Word order (very simple)</h4>
+
+              <div class="soft rounded-4 p-3 mb-3">
+                <div class="fw-semibold mb-1">✅ Trennbar (normal sentence)</div>
+                <div class="small-note mb-2">Pattern: Subject + verb(base) + ... + prefix(end)</div>
+                <div class="mono">Ich <b>stehe</b> jeden Morgen um 7 Uhr <b>auf</b>.</div>
+              </div>
+
+              <div class="soft rounded-4 p-3 mb-3">
+                <div class="fw-semibold mb-1">✅ With modal verb (no split)</div>
+                <div class="small-note mb-2">Modal verbs: können, müssen, wollen, dürfen, sollen, mögen</div>
+                <div class="mono">Ich <b>muss</b> früh <b>aufstehen</b>.</div>
+              </div>
+
+              <div class="soft rounded-4 p-3">
+                <div class="fw-semibold mb-1">✅ Untrennbar (never splits)</div>
+                <div class="mono">Ich <b>verstehe</b> dich.</div>
+              </div>
+
+              <hr class="border-white border-opacity-10 my-4"/>
+
+              <h4 class="fw-bold mb-2">2) Sentence Builder</h4>
+              <div class="row g-2 align-items-end">
+                <div class="col-md-4">
+                  <label class="form-label muted2">Sentence type</label>
+                  <select id="builderType" class="form-select">
+                    <option value="normal">Normal sentence</option>
+                    <option value="modal">With modal verb</option>
+                  </select>
+                </div>
+                <div class="col-md-5">
+                  <label class="form-label muted2">Choose a verb</label>
+                  <select id="builderVerb" class="form-select"></select>
+                </div>
+                <div class="col-md-3">
+                  <button id="btnBuild" class="btn btn-primary w-100">Build</button>
+                </div>
+              </div>
+
+              <div class="soft rounded-4 p-3 mt-3">
+                <div class="muted2">Result</div>
+                <div id="builderResult" class="fs-5 fw-semibold mt-1"></div>
+                <div id="builderMeaning" class="small-note mt-2"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="soft rounded-4 p-3">
+              <h4 class="fw-bold mb-2">3) Quick Search</h4>
+              <input id="searchBox" class="form-control" placeholder="Type: aufstehen / verstehen / verkaufen / an- ..." />
+
+              <div class="d-flex flex-wrap gap-2 mt-3">
+                <button class="btn btn-outline-light btn-sm" data-filter="all">All</button>
+                <button class="btn btn-outline-info btn-sm" data-filter="trennbar">Trennbar</button>
+                <button class="btn btn-outline-success btn-sm" data-filter="untrennbar">Untrennbar</button>
+                <button class="btn btn-outline-warning btn-sm" data-filter="ambivalent">Ambivalent</button>
+              </div>
+
+              <div class="mt-3 small-note">
+                Tip: Click the <span class="kbd">word</span> to listen. Click the card to open details.
+              </div>
+
+              <div id="quickResults" class="mt-3"></div>
+
+              <hr class="border-white border-opacity-10 my-4"/>
+
+              <h5 class="fw-semibold mb-2">Prefix cheat sheet</h5>
+              <div class="small-note">
+                <div class="mb-2"><b>Trennbar:</b> ab-, an-, auf-, aus-, ein-, mit-, nach-, vor-, weg-, zu-, zurück-, zusammen-</div>
+                <div class="mb-2"><b>Untrennbar:</b> be-, emp-, ent-, er-, ge-, miss-, ver-, zer-</div>
+                <div><b>Ambivalent:</b> durch-, über-, um-, unter-, wider- (meaning decides)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- List -->
+      <div class="tab-pane fade" id="tabList" role="tabpanel">
+        <div class="row g-3 align-items-end">
+          <div class="col-md-6">
+            <label class="form-label muted2 fw-semibold">Search verbs</label>
+            <input id="listSearch" class="form-control" placeholder="Search: einkaufen / besuchen / zerreißen ..." />
+          </div>
+          <div class="col-md-3">
+            <label class="form-label muted2 fw-semibold">Category</label>
+            <select id="listFilter" class="form-select">
+              <option value="all">All</option>
+              <option value="trennbar">Trennbar</option>
+              <option value="untrennbar">Untrennbar</option>
+              <option value="ambivalent">Ambivalent</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <button id="btnRender" class="btn btn-primary w-100">Show</button>
+          </div>
+        </div>
+
+        <div class="row g-3 mt-2" id="cardsContainer"></div>
+      </div>
+
+      <!-- Quiz -->
+      <div class="tab-pane fade" id="tabQuiz" role="tabpanel">
+        <div class="row g-3">
+          <div class="col-lg-7">
+            <div class="soft rounded-4 p-3">
+              <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <h4 class="fw-bold mb-0">🎴 Flashcard Quiz</h4>
+                <div class="d-flex gap-2">
+                  <span class="badge text-bg-success">Correct: <span id="scoreCorrect">0</span></span>
+                  <span class="badge text-bg-danger">Wrong: <span id="scoreWrong">0</span></span>
+                </div>
+              </div>
+
+              <div class="soft rounded-4 p-3 mt-3">
+                <div class="d-flex justify-content-between align-items-start gap-3 flex-wrap">
+                  <div>
+                    <div class="muted2">German verb (click to listen)</div>
+                    <div class="d-flex align-items-center gap-2">
+                      <div id="quizVerb" class="fs-2 fw-bold clickable verb-word" title="Click to hear German"></div>
+                      <button id="quizSpeakBtn" class="btn btn-ghost btn-sm">🔊</button>
+                    </div>
+                    <div id="quizPron" class="mono small-note mt-1"></div>
+                  </div>
+                  <span id="quizType" class="badge"></span>
+                </div>
+
+                <hr class="border-white border-opacity-10 my-3"/>
+
+                <div id="quizAnswer" class="d-none">
+                  <div class="muted2">Meaning</div>
+                  <div id="quizEN" class="fw-semibold"></div>
+                  <div id="quizBN" class="small-note"></div>
+
+                  <div class="muted2 mt-3">Example</div>
+                  <div id="quizExampleDE" class="fw-semibold"></div>
+                  <div id="quizExampleBN" class="small-note"></div>
+                </div>
+
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                  <button id="btnShowAnswer" class="btn btn-outline-info">Show Answer</button>
+                  <button id="btnNext" class="btn btn-primary">Next</button>
+                  <button id="btnCorrect" class="btn btn-success ms-lg-auto">✅ Correct</button>
+                  <button id="btnWrong" class="btn btn-danger">❌ Wrong</button>
+                  <button id="btnResetScore" class="btn btn-outline-light">Reset</button>
+                </div>
+
+                <div class="small-note mt-3">
+                  Tip: First try guessing. Then press <span class="kbd">Show Answer</span>.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="soft rounded-4 p-3">
+              <h5 class="fw-semibold">Mini Rules (remember fast)</h5>
+              <ul class="small-note mb-0">
+                <li><b>Trennbar</b>: prefix goes to the end in normal sentences.</li>
+                <li><b>Modal + Trennbar</b>: no split → infinitive stays together at end.</li>
+                <li><b>Untrennbar</b>: never splits.</li>
+                <li><b>Ambivalent</b>: meaning decides (e.g., <b>umfahren</b>).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tips -->
+      <div class="tab-pane fade" id="tabTips" role="tabpanel">
+        <div class="soft rounded-4 p-3">
+          <h4 class="fw-bold">💡 Tips & Tricks</h4>
+          <ol class="small-note">
+            <li><b>Memory trick:</b> Trennbar prefixes feel like “move / direction” → they like to move to the end.</li>
+            <li><b>Modal verbs</b> (können, müssen, wollen...) stop splitting: <b>Ich muss aufstehen.</b></li>
+            <li><b>Ambivalent prefixes</b> (um-, über-, unter-, durch-, wider-): meaning + stress changes everything.</li>
+            <li><b>Practice 5 minutes/day:</b> 5 verbs + 5 flashcards + 2 sentences.</li>
+          </ol>
+
+          <div class="soft rounded-4 p-3">
+            <div class="fw-semibold">Important note about audio 🔊</div>
+            <div class="small-note">
+              Pronunciation uses your browser voice. If you don’t hear anything:
+              open <b>Settings (Voice)</b> → choose a German voice (de/de-DE) → press “Test Voice”.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="mt-4 text-center small-note">
+    Built with Bootstrap + JavaScript • Works offline (voice depends on browser).
+  </footer>
+</div>
+
+<!-- Details Modal -->
+<div class="modal fade" id="detailsModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content glass">
+      <div class="modal-header border-white border-opacity-10">
+        <h5 class="modal-title">Verb Details</h5>
+        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <div class="d-flex justify-content-between align-items-start gap-3 flex-wrap">
+          <div>
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+              <div id="mVerb" class="fs-2 fw-bold clickable verb-word" title="Click to hear German"></div>
+              <button id="mSpeakBtn" class="btn btn-ghost btn-sm">🔊</button>
+            </div>
+            <div id="mPron" class="mono small-note"></div>
+          </div>
+          <div class="text-end">
+            <span id="mType" class="badge"></span>
+            <span id="mPrefix" class="badge text-bg-secondary ms-2"></span>
+          </div>
+        </div>
+
+        <hr class="border-white border-opacity-10"/>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="muted2">English meaning</div>
+            <div id="mEN" class="fw-semibold"></div>
+          </div>
+          <div class="col-md-6">
+            <div class="muted2">Bangla meaning</div>
+            <div id="mBN"></div>
+          </div>
+        </div>
+
+        <hr class="border-white border-opacity-10"/>
+
+        <div class="muted2">Example</div>
+        <div id="mExampleDE" class="fw-semibold"></div>
+        <div id="mExampleBN" class="small-note"></div>
+
+        <hr class="border-white border-opacity-10"/>
+
+        <div class="muted2">How it works</div>
+        <ul class="small-note mb-0" id="mRules"></ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Settings Modal -->
+<div class="modal fade" id="settingsModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content glass">
+      <div class="modal-header border-white border-opacity-10">
+        <h5 class="modal-title">⚙️ Voice Settings (German Pronunciation)</h5>
+        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <div class="soft rounded-4 p-3">
+          <div class="row g-3">
+            <div class="col-md-7">
+              <label class="form-label muted2 fw-semibold">Choose voice</label>
+              <select id="voiceSelect" class="form-select"></select>
+              <div class="small-note mt-2">
+                Prefer: <b>de-DE</b> or any <b>de</b> voice.
+              </div>
+            </div>
+
+            <div class="col-md-5">
+              <label class="form-label muted2 fw-semibold">Speed (rate)</label>
+              <input id="rateRange" type="range" min="0.6" max="1.1" step="0.05" class="form-range">
+              <div class="small-note">Current: <span id="rateLabel" class="mono"></span></div>
+            </div>
+          </div>
+
+          <div class="d-flex gap-2 flex-wrap mt-3">
+            <button id="btnTestVoice" class="btn btn-primary">🔊 Test Voice (“Hallo! Wie geht’s?”)</button>
+            <button id="btnReloadVoices" class="btn btn-outline-light">Reload voices</button>
+          </div>
+
+          <div class="small-note mt-3">
+            If your device has no German voice installed, install a German TTS voice in your OS settings.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index:1080">
+  <div id="appToast" class="toast glass" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header border-white border-opacity-10">
+      <strong class="me-auto">Message</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div id="toastBody" class="toast-body"></div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+/* =========================================================
+   DATA (from your PDFs: Trennbare + Untrennbare + Ambivalent)
+   Each item:
+   - type: trennbar | untrennbar | ambivalent
+   - prefix: prefix text (ab/an/auf... etc)
+   - verb: infinitive (German)
+   - pron: easy pronunciation (English letters) for beginners
+   - en: English meaning
+   - bn: Bangla meaning
+   - example_de / example_bn: simple examples
+   - builder: normal + modal sentence templates
+========================================================= */
+
+const VERBS = [
+  // --- Trennbar (PDF list + examples) ---
+  { type:"trennbar", prefix:"ab", verb:"abfahren", pron:"AP-fah-ren", en:"to depart / leave", bn:"যাত্রা করা, চলে যাওয়া",
+    example_de:"Der Zug fährt um 8 Uhr ab.", example_bn:"ট্রেনটি ৮টায় রওনা দেয়।",
+    builder:{ normal:"Der Zug fährt ab.", modal:"Der Zug muss abfahren." } },
+
+  { type:"trennbar", prefix:"an", verb:"ankommen", pron:"AN-kom-en", en:"to arrive", bn:"পৌঁছানো",
+    example_de:"Wir kommen um 6 Uhr an.", example_bn:"আমরা ৬টায় পৌঁছাই।",
+    builder:{ normal:"Wir kommen heute an.", modal:"Wir wollen heute ankommen." } },
+
+  { type:"trennbar", prefix:"auf", verb:"aufstehen", pron:"OWF-shtay-en", en:"to get up (wake up)", bn:"ঘুম থেকে ওঠা",
+    example_de:"Ich stehe jeden Morgen um 7 Uhr auf.", example_bn:"আমি প্রতিদিন সকাল ৭টায় ঘুম থেকে উঠি।",
+    builder:{ normal:"Ich stehe früh auf.", modal:"Ich muss früh aufstehen." } },
+
+  { type:"trennbar", prefix:"auf", verb:"aufmachen", pron:"OWF-mah-khen", en:"to open", bn:"খোলা",
+    example_de:"Mach bitte das Fenster auf.", example_bn:"দয়া করে জানালাটা খুলো।",
+    builder:{ normal:"Ich mache die Tür auf.", modal:"Ich kann die Tür aufmachen." } },
+
+  { type:"trennbar", prefix:"aus", verb:"ausgehen", pron:"OWS-gay-en", en:"to go out", bn:"বাইরে যাওয়া",
+    example_de:"Ich gehe heute Abend aus.", example_bn:"আমি আজ সন্ধ্যায় বাইরে যাই।",
+    builder:{ normal:"Ich gehe aus.", modal:"Ich will heute ausgehen." } },
+
+  { type:"trennbar", prefix:"aus", verb:"ausmachen", pron:"OWS-mah-khen", en:"to turn off / switch off", bn:"বন্ধ করা",
+    example_de:"Mach bitte das Licht aus.", example_bn:"দয়া করে লাইটটা বন্ধ করো।",
+    builder:{ normal:"Ich mache das Licht aus.", modal:"Ich muss das Licht ausmachen." } },
+
+  { type:"trennbar", prefix:"ein", verb:"einkaufen", pron:"INE-kow-fen", en:"to shop", bn:"কেনাকাটা করা",
+    example_de:"Ich kaufe im Supermarkt ein.", example_bn:"আমি সুপারমার্কেটে কেনাকাটা করি।",
+    builder:{ normal:"Ich kaufe ein.", modal:"Wir wollen einkaufen." } },
+
+  { type:"trennbar", prefix:"ein", verb:"einschlafen", pron:"INE-shlah-fen", en:"to fall asleep", bn:"ঘুমিয়ে পড়া",
+    example_de:"Das Baby schläft schnell ein.", example_bn:"বাচ্চাটি দ্রুত ঘুমিয়ে পড়ে।",
+    builder:{ normal:"Ich schlafe ein.", modal:"Ich kann nicht einschlafen." } },
+
+  { type:"trennbar", prefix:"mit", verb:"mitkommen", pron:"MIT-kom-en", en:"to come along", bn:"সাথে আসা",
+    example_de:"Kommst du mit?", example_bn:"তুমি কি সাথে আসবে?",
+    builder:{ normal:"Du kommst mit.", modal:"Du kannst mitkommen." } },
+
+  { type:"trennbar", prefix:"nach", verb:"nachdenken", pron:"NAKH-den-ken", en:"to think", bn:"চিন্তা করা",
+    example_de:"Ich denke darüber nach.", example_bn:"আমি এটা নিয়ে ভাবছি।",
+    builder:{ normal:"Ich denke nach.", modal:"Ich muss nachdenken." } },
+
+  { type:"trennbar", prefix:"vor", verb:"vorstellen", pron:"FOR-shteh-len", en:"to introduce", bn:"পরিচয় করিয়ে দেওয়া",
+    example_de:"Ich stelle meinen Freund vor.", example_bn:"আমি আমার বন্ধুকে পরিচয় করিয়ে দিই।",
+    builder:{ normal:"Ich stelle dich vor.", modal:"Ich möchte dich vorstellen." } },
+
+  { type:"trennbar", prefix:"weg", verb:"weggehen", pron:"VEK-gay-en", en:"to go away", bn:"চলে যাওয়া",
+    example_de:"Er geht jetzt weg.", example_bn:"সে এখন চলে যায়।",
+    builder:{ normal:"Er geht weg.", modal:"Er muss weggehen." } },
+
+  { type:"trennbar", prefix:"zu", verb:"zumachen", pron:"TSOO-mah-khen", en:"to close", bn:"বন্ধ করা",
+    example_de:"Mach die Tür zu.", example_bn:"দরজাটা বন্ধ করো।",
+    builder:{ normal:"Ich mache die Tür zu.", modal:"Ich muss die Tür zumachen." } },
+
+  { type:"trennbar", prefix:"zu", verb:"zuhören", pron:"TSOO-hur-en", en:"to listen carefully", bn:"মন দিয়ে শোনা",
+    example_de:"Hör bitte zu!", example_bn:"দয়া করে মন দিয়ে শোনো!",
+    builder:{ normal:"Du hörst zu.", modal:"Du musst zuhören." } },
+
+  { type:"trennbar", prefix:"zurück", verb:"zurückkommen", pron:"tsoo-ROOK-kom-en", en:"to come back", bn:"ফিরে আসা",
+    example_de:"Ich komme bald zurück.", example_bn:"আমি শিগগিরই ফিরে আসি।",
+    builder:{ normal:"Ich komme zurück.", modal:"Ich will zurückkommen." } },
+
+  { type:"trennbar", prefix:"zusammen", verb:"zusammenkommen", pron:"tsoo-ZAM-en-kom-en", en:"to come together", bn:"একসাথে হওয়া",
+    example_de:"Wir kommen zusammen.", example_bn:"আমরা একসাথে হই।",
+    builder:{ normal:"Wir kommen zusammen.", modal:"Wir können zusammenkommen." } },
+
+  { type:"trennbar", prefix:"an", verb:"anrufen", pron:"AN-roo-fen", en:"to call (phone)", bn:"ফোন করা",
+    example_de:"Er ruft dich später an.", example_bn:"সে পরে তোমাকে ফোন করবে।",
+    builder:{ normal:"Ich rufe dich an.", modal:"Kannst du mich anrufen?" } },
+
+  // --- Untrennbar (PDF list + examples) ---
+  { type:"untrennbar", prefix:"be", verb:"bekommen", pron:"beh-KOM-en", en:"to receive / get", bn:"পাওয়া/গ্রহণ করা",
+    example_de:"Ich bekomme ein Geschenk.", example_bn:"আমি একটি উপহার পাই।",
+    builder:{ normal:"Ich bekomme Hilfe.", modal:"Ich kann Hilfe bekommen." } },
+
+  { type:"untrennbar", prefix:"be", verb:"besuchen", pron:"beh-ZOO-khen", en:"to visit", bn:"দেখা করা/ভিজিট করা",
+    example_de:"Er besucht seine Großeltern.", example_bn:"সে তার দাদু-দাদিকে দেখতে যায়।",
+    builder:{ normal:"Wir besuchen Freunde.", modal:"Wir müssen unsere Großeltern besuchen." } },
+
+  { type:"untrennbar", prefix:"be", verb:"beschreiben", pron:"beh-SHRAI-ben", en:"to describe", bn:"বর্ণনা করা",
+    example_de:"Kannst du das beschreiben?", example_bn:"তুমি কি এটা বর্ণনা করতে পারবে?",
+    builder:{ normal:"Ich beschreibe das.", modal:"Ich kann das beschreiben." } },
+
+  { type:"untrennbar", prefix:"emp", verb:"empfehlen", pron:"emp-FAY-len", en:"to recommend", bn:"সুপারিশ করা",
+    example_de:"Ich empfehle dieses Buch.", example_bn:"আমি এই বইটি সুপারিশ করি।",
+    builder:{ normal:"Ich empfehle es.", modal:"Ich kann es empfehlen." } },
+
+  { type:"untrennbar", prefix:"emp", verb:"empfangen", pron:"emp-FAHNG-en", en:"to receive (guests/signal)", bn:"গ্রহণ করা",
+    example_de:"Wir empfangen Gäste.", example_bn:"আমরা অতিথি গ্রহণ করি।",
+    builder:{ normal:"Wir empfangen Gäste.", modal:"Wir wollen Gäste empfangen." } },
+
+  { type:"untrennbar", prefix:"emp", verb:"empfinden", pron:"emp-FIN-den", en:"to feel / sense", bn:"অনুভব করা",
+    example_de:"Ich empfinde das als unfair.", example_bn:"আমি এটা অন্যায় মনে করি।",
+    builder:{ normal:"Ich empfinde es so.", modal:"Ich kann das so empfinden." } },
+
+  { type:"untrennbar", prefix:"ent", verb:"entdecken", pron:"ent-DEK-en", en:"to discover", bn:"আবিষ্কার করা",
+    example_de:"Wir entdecken einen Fehler.", example_bn:"আমরা একটি ভুল আবিষ্কার করি।",
+    builder:{ normal:"Ich entdecke etwas.", modal:"Ich will etwas entdecken." } },
+
+  { type:"untrennbar", prefix:"ent", verb:"entkommen", pron:"ent-KOM-en", en:"to escape", bn:"পালিয়ে যাওয়া",
+    example_de:"Er entkommt der Polizei.", example_bn:"সে পুলিশের হাত থেকে পালায়।",
+    builder:{ normal:"Er entkommt.", modal:"Er kann entkommen." } },
+
+  { type:"untrennbar", prefix:"ent", verb:"entfernen", pron:"ent-FER-nen", en:"to remove", bn:"অপসারণ করা",
+    example_de:"Bitte entfernen Sie das.", example_bn:"অনুগ্রহ করে এটা সরান।",
+    builder:{ normal:"Ich entferne es.", modal:"Ich muss es entfernen." } },
+
+  { type:"untrennbar", prefix:"er", verb:"erklären", pron:"er-KLÄ-ren", en:"to explain", bn:"ব্যাখ্যা করা",
+    example_de:"Sie erklärt die Regeln.", example_bn:"সে নিয়মগুলো ব্যাখ্যা করে।",
+    builder:{ normal:"Ich erkläre das.", modal:"Ich kann das erklären." } },
+
+  { type:"untrennbar", prefix:"er", verb:"erreichen", pron:"er-RAI-khen", en:"to achieve / reach", bn:"পৌঁছানো/অর্জন করা",
+    example_de:"Wir erreichen das Ziel.", example_bn:"আমরা লক্ষ্য অর্জন করি।",
+    builder:{ normal:"Ich erreiche das.", modal:"Ich will das Ziel erreichen." } },
+
+  { type:"untrennbar", prefix:"er", verb:"erzählen", pron:"er-TSÄ-len", en:"to tell", bn:"বলা",
+    example_de:"Er erzählt eine Geschichte.", example_bn:"সে একটি গল্প বলে।",
+    builder:{ normal:"Ich erzähle es.", modal:"Ich will etwas erzählen." } },
+
+  { type:"untrennbar", prefix:"er", verb:"erkennen", pron:"er-KEN-en", en:"to recognize", bn:"চিনতে পারা",
+    example_de:"Ich erkenne ihn.", example_bn:"আমি তাকে চিনতে পারি।",
+    builder:{ normal:"Ich erkenne ihn.", modal:"Ich kann ihn erkennen." } },
+
+  { type:"untrennbar", prefix:"ge", verb:"gefallen", pron:"geh-FAL-en", en:"to please / to like", bn:"পছন্দ হওয়া",
+    example_de:"Das gefällt mir.", example_bn:"এটা আমার পছন্দ।",
+    builder:{ normal:"Das gefällt mir.", modal:"Das kann mir gefallen." } },
+
+  { type:"untrennbar", prefix:"ge", verb:"gehören", pron:"geh-HUR-en", en:"to belong to", bn:"অধীন হওয়া/অন্তর্ভুক্ত হওয়া",
+    example_de:"Das gehört mir.", example_bn:"এটা আমার।",
+    builder:{ normal:"Das gehört mir.", modal:"Das muss mir gehören." } },
+
+  { type:"untrennbar", prefix:"ge", verb:"gewinnen", pron:"geh-VIN-en", en:"to win", bn:"জেতা",
+    example_de:"Wir gewinnen das Spiel.", example_bn:"আমরা খেলাটি জিতি।",
+    builder:{ normal:"Wir gewinnen.", modal:"Wir wollen gewinnen." } },
+
+  { type:"untrennbar", prefix:"miss", verb:"missverstehen", pron:"miss-fer-SHTAY-en", en:"to misunderstand", bn:"ভুল বোঝা",
+    example_de:"Ich missverstehe dich.", example_bn:"আমি তোমাকে ভুল বুঝি।",
+    builder:{ normal:"Ich missverstehe es.", modal:"Man kann das missverstehen." } },
+
+  { type:"untrennbar", prefix:"miss", verb:"missbrauchen", pron:"miss-BROW-khen", en:"to abuse / misuse", bn:"অপব্যবহার করা",
+    example_de:"Man darf das nicht missbrauchen.", example_bn:"এটা অপব্যবহার করা যাবে না।",
+    builder:{ normal:"Er missbraucht es.", modal:"Er darf es nicht missbrauchen." } },
+
+  { type:"untrennbar", prefix:"ver", verb:"verstehen", pron:"fer-SHTAY-en", en:"to understand", bn:"বোঝা",
+    example_de:"Ich verstehe dich.", example_bn:"আমি তোমাকে বুঝি।",
+    builder:{ normal:"Ich verstehe dich.", modal:"Ich kann dich nicht verstehen." } },
+
+  { type:"untrennbar", prefix:"ver", verb:"vergessen", pron:"fer-GES-en", en:"to forget", bn:"ভুলে যাওয়া",
+    example_de:"Ich vergesse das nie.", example_bn:"আমি এটা কখনো ভুলে যাই না।",
+    builder:{ normal:"Ich vergesse es.", modal:"Ich darf das nicht vergessen." } },
+
+  { type:"untrennbar", prefix:"ver", verb:"verlieren", pron:"fer-LEE-ren", en:"to lose", bn:"হারানো",
+    example_de:"Ich verliere meinen Schlüssel.", example_bn:"আমি আমার চাবি হারাই।",
+    builder:{ normal:"Ich verliere es.", modal:"Ich kann es nicht verlieren." } },
+
+  { type:"untrennbar", prefix:"ver", verb:"verkaufen", pron:"fer-KOW-fen", en:"to sell", bn:"বিক্রি করা",
+    example_de:"Sie verkauft ein Auto.", example_bn:"সে একটি গাড়ি বিক্রি করে।",
+    builder:{ normal:"Ich verkaufe das.", modal:"Ich will es verkaufen." } },
+
+  { type:"untrennbar", prefix:"zer", verb:"zerstören", pron:"tser-SHTÖ-ren", en:"to destroy", bn:"ধ্বংস করা",
+    example_de:"Der Sturm zerstört das Haus.", example_bn:"ঝড়টি বাড়িটি ধ্বংস করে।",
+    builder:{ normal:"Er zerstört es.", modal:"Er kann es zerstören." } },
+
+  { type:"untrennbar", prefix:"zer", verb:"zerbrechen", pron:"tser-BREKH-en", en:"to break", bn:"ভেঙে যাওয়া",
+    example_de:"Das Glas zerbricht.", example_bn:"গ্লাসটি ভেঙে যায়।",
+    builder:{ normal:"Es zerbricht.", modal:"Es kann zerbrechen." } },
+
+  { type:"untrennbar", prefix:"zer", verb:"zerreißen", pron:"tser-RAI-sen", en:"to tear", bn:"ছিঁড়ে ফেলা",
+    example_de:"Er zerreißt das Papier.", example_bn:"সে কাগজটি ছিঁড়ে ফেলে।",
+    builder:{ normal:"Er zerreißt es.", modal:"Er kann es zerreißen." } },
+
+  // --- Ambivalent (PDF example) ---
+  { type:"ambivalent", prefix:"um", verb:"umfahren (separable)", pron:"UM-fah-ren (stress UM)", en:"to knock down / run into", bn:"ধাক্কা মেরে ফেলে দেওয়া",
+    example_de:"Der Bus fährt den Laternenpfahl um.", example_bn:"বাসটি ল্যাম্পপোস্টটিকে ধাক্কা মেরেছে।",
+    builder:{ normal:"Der Bus fährt ihn um.", modal:"Der Bus kann ihn umfahren (hit)." } },
+
+  { type:"ambivalent", prefix:"um", verb:"umfahren (inseparable)", pron:"um-FAH-ren (stress FAH)", en:"to drive around / avoid", bn:"এড়িয়ে যাওয়া / চারপাশ দিয়ে যাওয়া",
+    example_de:"Ich umfahre die Stadt.", example_bn:"আমি শহরটা এড়িয়ে যাই / শহরের চারপাশ দিয়ে যাই।",
+    builder:{ normal:"Ich umfahre die Stadt.", modal:"Ich will die Stadt umfahren (avoid)." } },
+];
+
+/* =========================================================
+   TOAST
+========================================================= */
+const toastEl = () => document.getElementById("appToast");
+function showToast(msg){
+  document.getElementById("toastBody").textContent = msg;
+  const t = bootstrap.Toast.getOrCreateInstance(toastEl(), { delay: 2600 });
+  t.show();
+}
+
+/* =========================================================
+   GERMAN PRONUNCIATION (TTS)
+========================================================= */
+let germanVoice = null;
+let speechRate = 0.90;
+
+function loadSettings(){
+  const savedRate = localStorage.getItem("deSpeechRate");
+  if(savedRate) speechRate = Number(savedRate);
+
+  const savedVoice = localStorage.getItem("deVoiceURI");
+  if(savedVoice) {
+    // we’ll set it after voices load
+  }
+}
+
+function saveRate(r){
+  localStorage.setItem("deSpeechRate", String(r));
+}
+
+function tryPickVoice(){
+  const voices = window.speechSynthesis.getVoices();
+  if(!voices || voices.length === 0) return;
+
+  const savedURI = localStorage.getItem("deVoiceURI");
+  if(savedURI){
+    const found = voices.find(v => v.voiceURI === savedURI);
+    if(found){ germanVoice = found; return; }
+  }
+
+  germanVoice =
+    voices.find(v => v.lang === "de-DE") ||
+    voices.find(v => (v.lang || "").toLowerCase().startsWith("de")) ||
+    null;
+}
+
+function populateVoiceSelect(){
+  const sel = document.getElementById("voiceSelect");
+  sel.innerHTML = "";
+
+  if(!("speechSynthesis" in window)){
+    sel.innerHTML = `<option>Speech not supported</option>`;
+    return;
+  }
+
+  const voices = window.speechSynthesis.getVoices();
+  if(!voices || voices.length === 0){
+    sel.innerHTML = `<option>Loading voices...</option>`;
+    return;
+  }
+
+  const germanVoices = voices.filter(v => (v.lang || "").toLowerCase().startsWith("de"));
+  const list = germanVoices.length ? germanVoices : voices;
+
+  list.forEach(v=>{
+    const opt = document.createElement("option");
+    opt.value = v.voiceURI;
+    opt.textContent = `${v.name} (${v.lang})`;
+    sel.appendChild(opt);
+  });
+
+  tryPickVoice();
+
+  // Select current
+  if(germanVoice){
+    sel.value = germanVoice.voiceURI;
+  } else {
+    // if no german voice, show warning but still allow speaking with default
+    showToast("No German voice found. You can still try, or install a German TTS voice.");
+  }
+
+  sel.onchange = ()=>{
+    const uri = sel.value;
+    const voicesAll = window.speechSynthesis.getVoices();
+    const v = voicesAll.find(x => x.voiceURI === uri);
+    if(v){
+      germanVoice = v;
+      localStorage.setItem("deVoiceURI", v.voiceURI);
+      showToast("Voice selected ✅");
+    }
+  };
+}
+
+function speakGerman(text){
+  if(!("speechSynthesis" in window)){
+    showToast("Speech synthesis not supported in this browser.");
+    return;
+  }
+  if(!text) return;
+
+  // Stop previous speech
+  window.speechSynthesis.cancel();
+
+  // Some browsers need voices loaded
+  tryPickVoice();
+
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "de-DE";
+  u.rate = speechRate;
+  u.pitch = 1.0;
+  if(germanVoice) u.voice = germanVoice;
+
+  // If speech fails silently, user can test in settings
+  window.speechSynthesis.speak(u);
+}
+
+/* =========================================================
+   UI HELPERS
+========================================================= */
+function typeLabel(t){
+  if(t==="trennbar") return {text:"Trennbar", cls:"text-bg-info"};
+  if(t==="untrennbar") return {text:"Untrennbar", cls:"text-bg-success"};
+  return {text:"Ambivalent", cls:"text-bg-warning"};
+}
+
+function escapeQuotes(s){
+  return s.replaceAll("\\","\\\\").replaceAll("'","\\'");
+}
+
+function normalizeStr(s){
+  return (s || "")
+    .toLowerCase()
+    .replaceAll("ß","ss")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, ""); // remove accents
+}
+
+function matchesQuery(v, q){
+  if(!q) return true;
+  const n = normalizeStr;
+  const qq = n(q);
+  return (
+    n(v.verb).includes(qq) ||
+    n(v.prefix).includes(qq) ||
+    n(v.en).includes(qq) ||
+    n(v.bn).includes(qq)
+  );
+}
+
+/* =========================================================
+   QUICK RESULTS (Learn tab)
+========================================================= */
+let currentQuickFilter = "all";
+
+function renderQuickResults(query="", filter="all"){
+  const box = document.getElementById("quickResults");
+  const q = query.trim();
+
+  const items = VERBS
+    .filter(v => (filter==="all" ? true : v.type===filter))
+    .filter(v => matchesQuery(v, q))
+    .slice(0, 7);
+
+  if(items.length===0){
+    box.innerHTML = `<div class="soft rounded-4 p-3 small-note">No results 😢 Try another word.</div>`;
+    return;
+  }
+
+  box.innerHTML = items.map(v=>{
+    const tl = typeLabel(v.type);
+    return `
+      <div class="soft rounded-4 p-3 mb-2 card-hover clickable" onclick="openDetails('${escapeQuotes(v.verb)}')">
+        <div class="d-flex justify-content-between align-items-start gap-3 flex-wrap">
+          <div>
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+              <span class="badge ${tl.cls}">${tl.text}</span>
+              <span class="badge text-bg-secondary">${v.prefix}-</span>
+            </div>
+            <div class="mt-2 d-flex align-items-center gap-2 flex-wrap">
+              <span class="fw-bold fs-5 clickable verb-word"
+                    onclick="event.stopPropagation(); speakGerman('${escapeQuotes(v.verb)}')">
+                ${v.verb}
+              </span>
+              <button class="btn btn-ghost btn-sm"
+                      onclick="event.stopPropagation(); speakGerman('${escapeQuotes(v.verb)}')">🔊</button>
+            </div>
+            <div class="small-note mono mt-1">${v.pron}</div>
+            <div class="small-note mt-2"><b>EN:</b> ${v.en} <span class="muted2">•</span> <b>BN:</b> ${v.bn}</div>
+          </div>
+          <div class="small-note">
+            <div class="muted2">Example</div>
+            <div class="fw-semibold">${v.example_de}</div>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+/* =========================================================
+   LIST TAB (cards)
+========================================================= */
+function renderCards(){
+  const search = document.getElementById("listSearch").value.trim();
+  const filter = document.getElementById("listFilter").value;
+  const container = document.getElementById("cardsContainer");
+  container.innerHTML = "";
+
+  const list = VERBS
+    .filter(v => (filter==="all" ? true : v.type===filter))
+    .filter(v => matchesQuery(v, search));
+
+  if(list.length===0){
+    container.innerHTML = `<div class="col-12"><div class="alert alert-warning">No verbs found. Try another search.</div></div>`;
+    return;
+  }
+
+  list.forEach(v=>{
+    const tl = typeLabel(v.type);
+    const col = document.createElement("div");
+    col.className = "col-md-6 col-xl-4";
+    col.innerHTML = `
+      <div class="soft rounded-4 p-3 h-100 card-hover clickable" onclick="openDetails('${escapeQuotes(v.verb)}')">
+        <div class="d-flex justify-content-between align-items-start gap-2">
+          <div>
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+              <span class="badge ${tl.cls}">${tl.text}</span>
+              <span class="badge text-bg-secondary">${v.prefix}-</span>
+            </div>
+
+            <div class="mt-2 d-flex align-items-center gap-2 flex-wrap">
+              <span class="fs-5 fw-bold clickable verb-word"
+                    onclick="event.stopPropagation(); speakGerman('${escapeQuotes(v.verb)}')">
+                ${v.verb}
+              </span>
+              <button class="btn btn-ghost btn-sm"
+                      onclick="event.stopPropagation(); speakGerman('${escapeQuotes(v.verb)}')">🔊</button>
+            </div>
+
+            <div class="mono small-note mt-1">${v.pron}</div>
+
+            <div class="small-note mt-2">
+              <div><b>EN:</b> ${v.en}</div>
+              <div><b>BN:</b> ${v.bn}</div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-white border-opacity-10 my-3"/>
+
+        <div class="small-note">
+          <div class="muted2">Example</div>
+          <div class="fw-semibold">${v.example_de}</div>
+        </div>
+      </div>
+    `;
+    container.appendChild(col);
+  });
+}
+
+/* =========================================================
+   DETAILS MODAL
+========================================================= */
+let currentModalVerb = null;
+
+function openDetails(verbName){
+  const v = VERBS.find(x => x.verb === verbName);
+  if(!v) return;
+  currentModalVerb = v;
+
+  const tl = typeLabel(v.type);
+
+  const mVerbEl = document.getElementById("mVerb");
+  mVerbEl.textContent = v.verb;
+  mVerbEl.onclick = ()=> speakGerman(v.verb);
+
+  document.getElementById("mPron").textContent = "Pron (easy): " + v.pron;
+
+  const mType = document.getElementById("mType");
+  mType.className = "badge " + tl.cls;
+  mType.textContent = tl.text;
+
+  document.getElementById("mPrefix").textContent = v.prefix + "-";
+  document.getElementById("mEN").textContent = v.en;
+  document.getElementById("mBN").textContent = v.bn;
+
+  document.getElementById("mExampleDE").textContent = v.example_de;
+  document.getElementById("mExampleBN").textContent = v.example_bn;
+
+  const rules = document.getElementById("mRules");
+  rules.innerHTML = "";
+
+  if(v.type==="trennbar"){
+    rules.innerHTML += `<li><b>Normal sentence:</b> prefix goes to the end (e.g. “stehe … auf”).</li>`;
+    rules.innerHTML += `<li><b>With modal:</b> no split → infinitive stays together at the end.</li>`;
+  } else if(v.type==="untrennbar"){
+    rules.innerHTML += `<li>Prefix <b>never</b> separates. Verb stays together.</li>`;
+    rules.innerHTML += `<li>With modal: infinitive stays together at the end.</li>`;
+  } else {
+    rules.innerHTML += `<li>Can be separable or inseparable. Meaning decides.</li>`;
+    rules.innerHTML += `<li>Stress changes meaning (UMfahren vs umFAHren).</li>`;
+  }
+
+  // Speak once on open (nice UX)
+  speakGerman(v.verb);
+
+  bootstrap.Modal.getOrCreateInstance(document.getElementById("detailsModal")).show();
+}
+
+/* =========================================================
+   SENTENCE BUILDER
+========================================================= */
+function fillBuilderVerbs(){
+  const sel = document.getElementById("builderVerb");
+  sel.innerHTML = "";
+  const common = ["aufstehen","einkaufen","anrufen","verstehen","besuchen","erklären","umfahren (separable)","umfahren (inseparable)"];
+  common.forEach(name=>{
+    const v = VERBS.find(x=>x.verb===name);
+    if(!v) return;
+    const opt = document.createElement("option");
+    opt.value = v.verb;
+    opt.textContent = `${v.verb} (${typeLabel(v.type).text})`;
+    sel.appendChild(opt);
+  });
+}
+
+function buildSentence(){
+  const type = document.getElementById("builderType").value; // normal | modal
+  const verbName = document.getElementById("builderVerb").value;
+  const v = VERBS.find(x=>x.verb===verbName);
+  if(!v) return;
+
+  const sentence = (type==="normal") ? v.builder.normal : v.builder.modal;
+  document.getElementById("builderResult").textContent = sentence;
+  document.getElementById("builderMeaning").innerHTML = `<div><b>EN:</b> ${v.en}</div><div><b>BN:</b> ${v.bn}</div>`;
+
+  // speak the verb
+  speakGerman(v.verb);
+}
+
+/* =========================================================
+   QUIZ
+========================================================= */
+let quizCurrent = null;
+let correct = 0;
+let wrong = 0;
+
+function updateScore(){
+  document.getElementById("scoreCorrect").textContent = correct;
+  document.getElementById("scoreWrong").textContent = wrong;
+}
+
+function pickRandomVerb(){
+  quizCurrent = VERBS[Math.floor(Math.random() * VERBS.length)];
+  showQuizCard();
+}
+
+function showQuizCard(){
+  const v = quizCurrent;
+  const tl = typeLabel(v.type);
+
+  const qVerb = document.getElementById("quizVerb");
+  qVerb.textContent = v.verb;
+  qVerb.onclick = ()=> speakGerman(v.verb);
+
+  document.getElementById("quizSpeakBtn").onclick = ()=> speakGerman(v.verb);
+
+  document.getElementById("quizPron").textContent = "Pron (easy): " + v.pron;
+
+  const qt = document.getElementById("quizType");
+  qt.className = "badge " + tl.cls;
+  qt.textContent = tl.text;
+
+  document.getElementById("quizAnswer").classList.add("d-none");
+  document.getElementById("quizEN").textContent = "";
+  document.getElementById("quizBN").textContent = "";
+  document.getElementById("quizExampleDE").textContent = "";
+  document.getElementById("quizExampleBN").textContent = "";
+
+  // Speak once for learning
+  speakGerman(v.verb);
+}
+
+function showQuizAnswer(){
+  const v = quizCurrent;
+  document.getElementById("quizEN").textContent = v.en;
+  document.getElementById("quizBN").textContent = v.bn;
+  document.getElementById("quizExampleDE").textContent = v.example_de;
+  document.getElementById("quizExampleBN").textContent = v.example_bn;
+  document.getElementById("quizAnswer").classList.remove("d-none");
+}
+
+/* =========================================================
+   EVENTS
+========================================================= */
+document.addEventListener("DOMContentLoaded", ()=>{
+
+  loadSettings();
+
+  // Voice settings UI
+  const rateRange = document.getElementById("rateRange");
+  const rateLabel = document.getElementById("rateLabel");
+  rateRange.value = speechRate;
+  rateLabel.textContent = speechRate.toFixed(2);
+
+  rateRange.addEventListener("input", ()=>{
+    speechRate = Number(rateRange.value);
+    rateLabel.textContent = speechRate.toFixed(2);
+    saveRate(speechRate);
+  });
+
+  document.getElementById("btnTestVoice").addEventListener("click", ()=>{
+    speakGerman("Hallo! Wie geht’s?");
+  });
+
+  document.getElementById("btnReloadVoices").addEventListener("click", ()=>{
+    populateVoiceSelect();
+    showToast("Voices reloaded.");
+  });
+
+  // Some browsers load voices async
+  if("speechSynthesis" in window){
+    window.speechSynthesis.onvoiceschanged = ()=> populateVoiceSelect();
+    // also try once now
+    populateVoiceSelect();
+  } else {
+    showToast("Speech synthesis is not supported in this browser.");
+  }
+
+  // Quick search
+  const searchBox = document.getElementById("searchBox");
+  renderQuickResults("", "all");
+
+  document.querySelectorAll("[data-filter]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      currentQuickFilter = btn.getAttribute("data-filter");
+      renderQuickResults(searchBox.value, currentQuickFilter);
+    });
+  });
+  searchBox.addEventListener("input", ()=>{
+    renderQuickResults(searchBox.value, currentQuickFilter);
+  });
+
+  // List tab
+  document.getElementById("btnRender").addEventListener("click", renderCards);
+  document.getElementById("listSearch").addEventListener("input", renderCards);
+  document.getElementById("listFilter").addEventListener("change", renderCards);
+  renderCards();
+
+  // Builder
+  fillBuilderVerbs();
+  document.getElementById("btnBuild").addEventListener("click", buildSentence);
+  buildSentence();
+
+  // Modal speak button
+  document.getElementById("mSpeakBtn").addEventListener("click", ()=>{
+    if(currentModalVerb) speakGerman(currentModalVerb.verb);
+  });
+
+  // Quiz
+  document.getElementById("btnShowAnswer").addEventListener("click", showQuizAnswer);
+  document.getElementById("btnNext").addEventListener("click", pickRandomVerb);
+  document.getElementById("btnCorrect").addEventListener("click", ()=>{ correct++; updateScore(); pickRandomVerb(); });
+  document.getElementById("btnWrong").addEventListener("click", ()=>{ wrong++; updateScore(); pickRandomVerb(); });
+  document.getElementById("btnResetScore").addEventListener("click", ()=>{ correct=0; wrong=0; updateScore(); });
+
+  pickRandomVerb();
+});
+</script>
+
+  <script src="../assets/portfolio-shell.js"></script>
+</body>
+</html>

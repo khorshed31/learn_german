@@ -1,0 +1,734 @@
+{
+  "version": 1,
+  "language": "de",
+  "themes": [
+    {
+      "id": "kennenlernen",
+      "title": "Kennenlernen (personal info)",
+      "desc": "Name, Herkunft, Wohnort, Alter, Sprachen, Buchstabieren.",
+      "part": 2,
+      "cards": [
+        {
+          "id": "kennenlernen_1",
+          "title": "Card 1 • Basics",
+          "items": [
+            {
+              "q": { "de": "Wie heißt du?", "en": "What is your name?", "pron": "vee hAIst doo?" },
+              "a": { "de": "Ich heiße Khorshed.", "en": "My name is Khorshed.", "pron": "ikh HAI-suh K-H-O-R-S-H-E-D." }
+            },
+            {
+              "q": { "de": "Woher kommst du?", "en": "Where are you from?", "pron": "voh-HAIR komst doo?" },
+              "a": { "de": "Ich komme aus Bangladesch.", "en": "I am from Bangladesh.", "pron": "ikh KOH-muh owss bang-lah-DESH." }
+            },
+            {
+              "q": { "de": "Wo wohnst du?", "en": "Where do you live?", "pron": "voh VOH-nst doo?" },
+              "a": { "de": "Ich wohne in Dhaka.", "en": "I live in Dhaka.", "pron": "ikh VOH-nuh in DAA-kah." }
+            }
+          ]
+        },
+        {
+          "id": "kennenlernen_2",
+          "title": "Card 2 • Age & Languages",
+          "items": [
+            {
+              "q": { "de": "Wie alt bist du?", "en": "How old are you?", "pron": "vee alt bist doo?" },
+              "a": { "de": "Ich bin zweiundzwanzig Jahre alt.", "en": "I am 22 years old.", "pron": "ikh bin TSVAI-unt-TSVAN-tsikh YAH-ruh alt." }
+            },
+            {
+              "q": { "de": "Welche Sprachen sprichst du?", "en": "Which languages do you speak?", "pron": "VEL-khuh SHPRAH-khen SHPRIKHST doo?" },
+              "a": { "de": "Ich spreche Deutsch und Englisch.", "en": "I speak German and English.", "pron": "ikh SHPRE-khuh doych oont EN-glish." }
+            },
+            {
+              "q": { "de": "Was machst du?", "en": "What do you do?", "pron": "vas makhst doo?" },
+              "a": { "de": "Ich bin Student.", "en": "I am a student.", "pron": "ikh bin shtoo-DENT." }
+            }
+          ]
+        },
+        {
+          "id": "kennenlernen_3",
+          "title": "Card 3 • Spelling & Contact",
+          "items": [
+            {
+              "q": { "de": "Wie schreibt man deinen Namen?", "en": "How do you spell your name?", "pron": "vee shrAIpt man DAI-nen NAH-men?" },
+              "a": { "de": "K-H-O-R-S-H-E-D.", "en": "K-H-O-R-S-H-E-D.", "pron": "kay-aitch-oh-are-ess-aitch-ee-dee." }
+            },
+            {
+              "q": { "de": "Wie ist deine Telefonnummer?", "en": "What is your phone number?", "pron": "vee ist DAI-nuh TEH-leh-fohn-noom-er?" },
+              "a": { "de": "Meine Telefonnummer ist 0176 123456.", "en": "My phone number is 0176 123456.", "pron": "MAI-nuh ... ist null-eins-sieben-sechs ..." }
+            },
+            {
+              "q": { "de": "Wie ist deine E-Mail-Adresse?", "en": "What is your email address?", "pron": "vee ist DAI-nuh EE-mail ah-DRES-uh?" },
+              "a": { "de": "Meine E-Mail-Adresse ist khorshed@example.com.", "en": "My email address is khorshed@example.com.", "pron": "MAI-nuh ... ist ..." }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "familie",
+      "title": "Familie",
+      "desc": "Familienmitglieder, Berufe, zusammen wohnen.",
+      "part": 2,
+      "cards": [
+        {
+          "id": "familie_1",
+          "title": "Card 1 • Family basics",
+          "items": [
+            {
+              "q": { "de": "Hast du Geschwister?", "en": "Do you have siblings?", "pron": "hast doo guh-SHVIS-ter?" },
+              "a": { "de": "Ja, ich habe einen Bruder.", "en": "Yes, I have a brother.", "pron": "yah, ikh HAH-buh EYE-nen BROO-der." }
+            },
+            {
+              "q": { "de": "Wie heißt deine Mutter?", "en": "What is your mother’s name?", "pron": "vee hAIst DAI-nuh MOO-ter?" },
+              "a": { "de": "Meine Mutter heißt Sara.", "en": "My mother’s name is Sara.", "pron": "MAI-nuh MOO-ter hAIst ZAH-rah." }
+            },
+            {
+              "q": { "de": "Wie viele Personen seid ihr?", "en": "How many people are in your family?", "pron": "vee FEE-luh pair-ZOH-nen zait eer?" },
+              "a": { "de": "Wir sind vier Personen.", "en": "We are four people.", "pron": "veer zint feer pair-ZOH-nen." }
+            }
+          ]
+        },
+        {
+          "id": "familie_2",
+          "title": "Card 2 • Jobs & living",
+          "items": [
+            {
+              "q": { "de": "Was macht dein Vater?", "en": "What does your father do?", "pron": "vas makht dain FAH-ter?" },
+              "a": { "de": "Er ist Lehrer.", "en": "He is a teacher.", "pron": "air ist LAY-rer." }
+            },
+            {
+              "q": { "de": "Wohnst du mit deiner Familie?", "en": "Do you live with your family?", "pron": "VOH-nst doo mit DAI-ner fah-MEE-lee-uh?" },
+              "a": { "de": "Ja, ich wohne mit meiner Familie.", "en": "Yes, I live with my family.", "pron": "yah, ikh VOH-nuh mit MAI-ner fah-MEE-lee-uh." }
+            },
+            {
+              "q": { "de": "Wie alt ist dein Bruder?", "en": "How old is your brother?", "pron": "vee alt ist dain BROO-der?" },
+              "a": { "de": "Er ist sechzehn Jahre alt.", "en": "He is 16 years old.", "pron": "air ist ZEKh-tsayn YAH-ruh alt." }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "wohnen",
+      "title": "Wohnen (housing)",
+      "desc": "Wohnung/Haus, Zimmer, Möbel, Adresse.",
+      "part": 2,
+      "cards": [
+        {
+          "id": "wohnen_1",
+          "title": "Card 1 • Home & rooms",
+          "items": [
+            {
+              "q": { "de": "Wohnst du in einer Wohnung oder in einem Haus?", "en": "Do you live in an apartment or a house?", "pron": "VOH-nst doo in AI-ner VOH-noong OH-der in AI-nem howss?" },
+              "a": { "de": "Ich wohne in einer Wohnung.", "en": "I live in an apartment.", "pron": "ikh VOH-nuh in AI-ner VOH-noong." }
+            },
+            {
+              "q": { "de": "Wie viele Zimmer hast du?", "en": "How many rooms do you have?", "pron": "vee FEE-luh TSIM-er hast doo?" },
+              "a": { "de": "Ich habe zwei Zimmer.", "en": "I have two rooms.", "pron": "ikh HAH-buh tsvai TSIM-er." }
+            },
+            {
+              "q": { "de": "Hast du einen Balkon?", "en": "Do you have a balcony?", "pron": "hast doo EYE-nen bal-KOHN?" },
+              "a": { "de": "Nein, ich habe keinen Balkon.", "en": "No, I don’t have a balcony.", "pron": "nain, ikh HAH-buh KAI-nen bal-KOHN." }
+            }
+          ]
+        },
+        {
+          "id": "wohnen_2",
+          "title": "Card 2 • Furniture",
+          "items": [
+            {
+              "q": { "de": "Was gibt es in deinem Zimmer?", "en": "What is in your room?", "pron": "vas gipt es in DAI-nem TSIM-er?" },
+              "a": { "de": "Es gibt ein Bett und einen Tisch.", "en": "There is a bed and a table.", "pron": "es gipt ain bet oont EYE-nen tish." }
+            },
+            {
+              "q": { "de": "Ist dein Zimmer groß?", "en": "Is your room big?", "pron": "ist dain TSIM-er grohs?" },
+              "a": { "de": "Nein, es ist klein, aber gemütlich.", "en": "No, it is small but cozy.", "pron": "nain, es ist klain, AH-ber guh-MÜT-likh." }
+            },
+            {
+              "q": { "de": "Wo ist die Küche?", "en": "Where is the kitchen?", "pron": "voh ist dee KÜ-khe?" },
+              "a": { "de": "Die Küche ist links.", "en": "The kitchen is on the left.", "pron": "dee KÜ-khe ist links." }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "alltag",
+      "title": "Alltag & Uhrzeit (daily routine)",
+      "desc": "Uhrzeit, Tagesablauf, Wochentage, Termine.",
+      "part": 2,
+      "cards": [
+        {
+          "id": "alltag_1",
+          "title": "Card 1 • Morning routine",
+          "items": [
+            {
+              "q": { "de": "Wann stehst du auf?", "en": "When do you get up?", "pron": "van shtaysht doo owf?" },
+              "a": { "de": "Ich stehe um sieben Uhr auf.", "en": "I get up at 7 o’clock.", "pron": "ikh SHTAY-uh oom ZEE-ben oor owf." }
+            },
+            {
+              "q": { "de": "Was machst du morgens?", "en": "What do you do in the morning?", "pron": "vas makhst doo MOR-gens?" },
+              "a": { "de": "Ich frühstücke und trinke Tee.", "en": "I have breakfast and drink tea.", "pron": "ikh FROO-shtük-uh oont TRIN-khuh tay." }
+            },
+            {
+              "q": { "de": "Wann beginnt der Unterricht?", "en": "When does class start?", "pron": "van buh-GINT dair OON-ter-rikht?" },
+              "a": { "de": "Der Unterricht beginnt um neun Uhr.", "en": "Class starts at 9 o’clock.", "pron": "dair OON-ter-rikht buh-GINT oom noin oor." }
+            }
+          ]
+        },
+        {
+          "id": "alltag_2",
+          "title": "Card 2 • Plans",
+          "items": [
+            {
+              "q": { "de": "Welcher Tag ist heute?", "en": "What day is today?", "pron": "VEL-kher tahk ist HOY-tuh?" },
+              "a": { "de": "Heute ist Montag.", "en": "Today is Monday.", "pron": "HOY-tuh ist MON-tahk." }
+            },
+            {
+              "q": { "de": "Hast du am Samstag Zeit?", "en": "Do you have time on Saturday?", "pron": "hast doo am ZAMS-tahk tsait?" },
+              "a": { "de": "Ja, am Nachmittag.", "en": "Yes, in the afternoon.", "pron": "yah, am NAKH-mit-tahk." }
+            },
+            {
+              "q": { "de": "Wann hast du Geburtstag?", "en": "When is your birthday?", "pron": "van hast doo guh-BURTS-tahk?" },
+              "a": { "de": "Ich habe am fünften Mai Geburtstag.", "en": "My birthday is on May 5th.", "pron": "ikh HAH-buh am FÜNF-ten mai guh-BURTS-tahk." }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "essen",
+      "title": "Essen & Trinken (restaurant/café)",
+      "desc": "Bestellen, Vorlieben, Rechnung.",
+      "part": 2,
+      "cards": [
+        {
+          "id": "essen_1",
+          "title": "Card 1 • Ordering",
+          "items": [
+            {
+              "q": { "de": "Was möchten Sie trinken?", "en": "What would you like to drink?", "pron": "vas MÖKH-ten zee TRIN-ken?" },
+              "a": { "de": "Ich möchte einen Kaffee, bitte.", "en": "I’d like a coffee, please.", "pron": "ikh MÖKH-tuh EYE-nen KAF-eh, BIT-uh." }
+            },
+            {
+              "q": { "de": "Was möchten Sie essen?", "en": "What would you like to eat?", "pron": "vas MÖKH-ten zee ES-en?" },
+              "a": { "de": "Ich möchte eine Suppe.", "en": "I’d like a soup.", "pron": "ikh MÖKH-tuh AI-nuh ZOOP-uh." }
+            },
+            {
+              "q": { "de": "Die Rechnung, bitte.", "en": "The bill, please.", "pron": "dee REKH-noong, BIT-uh." },
+              "a": { "de": "Ja, sofort.", "en": "Yes, right away.", "pron": "yah, zoh-FORT." }
+            }
+          ]
+        },
+        {
+          "id": "essen_2",
+          "title": "Card 2 • Likes",
+          "items": [
+            {
+              "q": { "de": "Was isst du gern?", "en": "What do you like to eat?", "pron": "vas ist doo gairn?" },
+              "a": { "de": "Ich esse gern Reis und Gemüse.", "en": "I like rice and vegetables.", "pron": "ikh ES-uh gairn RAIS oont guh-MÜ-zuh." }
+            },
+            {
+              "q": { "de": "Trinkst du gern Tee?", "en": "Do you like drinking tea?", "pron": "TRINKST doo gairn tay?" },
+              "a": { "de": "Ja, ich trinke gern Tee.", "en": "Yes, I like drinking tea.", "pron": "yah, ikh TRIN-khuh gairn tay." }
+            },
+            {
+              "q": { "de": "Schmeckt es dir?", "en": "Do you like it (taste)?", "pron": "shmekt es deer?" },
+              "a": { "de": "Ja, es schmeckt sehr gut.", "en": "Yes, it tastes very good.", "pron": "yah, es shmekt zair goot." }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "einkaufen",
+      "title": "Einkaufen (shopping)",
+      "desc": "Preis, Supermarkt, bezahlen.",
+      "part": 2,
+      "cards": [
+        {
+          "id": "einkaufen_1",
+          "title": "Card 1 • Price & Pay",
+          "items": [
+            {
+              "q": { "de": "Was kostet das?", "en": "How much does that cost?", "pron": "vas KOS-tet das?" },
+              "a": { "de": "Das kostet zehn Euro.", "en": "That costs 10 euros.", "pron": "das KOS-tet tsayn OY-roh." }
+            },
+            {
+              "q": { "de": "Kann ich mit Karte zahlen?", "en": "Can I pay by card?", "pron": "kan ikh mit KAR-tuh TSAH-len?" },
+              "a": { "de": "Ja, das geht.", "en": "Yes, that works.", "pron": "yah, das gate." }
+            },
+            {
+              "q": { "de": "Wo ist die Kasse?", "en": "Where is the cashier?", "pron": "voh ist dee KAS-uh?" },
+              "a": { "de": "Die Kasse ist vorne.", "en": "The cashier is at the front.", "pron": "dee KAS-uh ist FOR-nuh." }
+            }
+          ]
+        },
+        {
+          "id": "einkaufen_2",
+          "title": "Card 2 • In the supermarket",
+          "items": [
+            {
+              "q": { "de": "Wo finde ich das Brot?", "en": "Where can I find the bread?", "pron": "voh FIN-duh ikh das broht?" },
+              "a": { "de": "Das Brot ist dort.", "en": "The bread is there.", "pron": "das broht ist dort." }
+            },
+            {
+              "q": { "de": "Ich brauche zwei Äpfel.", "en": "I need two apples.", "pron": "ikh BROW-khuh tsvai EP-fel." },
+              "a": { "de": "Gern. Sonst noch etwas?", "en": "Sure. Anything else?", "pron": "gairn. zonst nokh ET-vas?" }
+            },
+            {
+              "q": { "de": "Haben Sie Kleingeld?", "en": "Do you have small change?", "pron": "HAH-ben zee KLAIN-gelt?" },
+              "a": { "de": "Ja, hier bitte.", "en": "Yes, here you go.", "pron": "yah, heer BIT-uh." }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "kleidung",
+      "title": "Kleidung (clothes)",
+      "desc": "Größe, Farbe, anprobieren.",
+      "part": 2,
+      "cards": [
+        {
+          "id": "kleidung_1",
+          "title": "Card 1 • Sizes",
+          "items": [
+            {
+              "q": { "de": "Welche Größe brauchst du?", "en": "What size do you need?", "pron": "VEL-khuh GRÖ-suh browkst doo?" },
+              "a": { "de": "Ich brauche Größe M.", "en": "I need size M.", "pron": "ikh BROW-khuh GRÖ-suh em." }
+            },
+            {
+              "q": { "de": "Kann ich das anprobieren?", "en": "Can I try it on?", "pron": "kan ikh das AN-proh-BEE-ren?" },
+              "a": { "de": "Ja, die Kabine ist dort.", "en": "Yes, the fitting room is there.", "pron": "yah, dee kah-BEE-nuh ist dort." }
+            },
+            {
+              "q": { "de": "Ist das zu teuer?", "en": "Is that too expensive?", "pron": "ist das tsoo TOY-er?" },
+              "a": { "de": "Nein, das ist okay.", "en": "No, that’s fine.", "pron": "nain, das ist oh-KAY." }
+            }
+          ]
+        },
+        {
+          "id": "kleidung_2",
+          "title": "Card 2 • Colors",
+          "items": [
+            {
+              "q": { "de": "Welche Farbe magst du?", "en": "Which color do you like?", "pron": "VEL-khuh FAR-buh mahkst doo?" },
+              "a": { "de": "Ich mag blau.", "en": "I like blue.", "pron": "ikh mahk blauw." }
+            },
+            {
+              "q": { "de": "Haben Sie das in Schwarz?", "en": "Do you have it in black?", "pron": "HAH-ben zee das in shvarts?" },
+              "a": { "de": "Ja, hier bitte.", "en": "Yes, here you go.", "pron": "yah, heer BIT-uh." }
+            },
+            {
+              "q": { "de": "Wie sieht es aus?", "en": "How does it look?", "pron": "vee zeet es owss?" },
+              "a": { "de": "Es sieht gut aus.", "en": "It looks good.", "pron": "es zeet goot owss." }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "weg",
+      "title": "Wegbeschreibung (directions)",
+      "desc": "Nach dem Weg fragen und erklären.",
+      "part": 2,
+      "cards": [
+        {
+          "id": "weg_1",
+          "title": "Card 1 • Bahnhof",
+          "items": [
+            {
+              "q": { "de": "Entschuldigung, wo ist der Bahnhof?", "en": "Excuse me, where is the station?", "pron": "ent-SHOOL-di-goong, voh ist dair BAHN-hohf?" },
+              "a": { "de": "Geradeaus und dann links.", "en": "Straight ahead and then left.", "pron": "guh-RAH-duh-owss oont dan links." }
+            },
+            {
+              "q": { "de": "Ist es weit?", "en": "Is it far?", "pron": "ist es vait?" },
+              "a": { "de": "Nein, nur fünf Minuten.", "en": "No, only five minutes.", "pron": "nain, noor füntf mee-NOO-ten." }
+            },
+            {
+              "q": { "de": "Wo ist die Toilette?", "en": "Where is the toilet?", "pron": "voh ist dee toy-LET-uh?" },
+              "a": { "de": "Hinten rechts.", "en": "Back right.", "pron": "HIN-ten rekhts." }
+            }
+          ]
+        },
+        {
+          "id": "weg_2",
+          "title": "Card 2 • Helpful phrases",
+          "items": [
+            {
+              "q": { "de": "Können Sie mir helfen?", "en": "Can you help me?", "pron": "KÖ-nen zee meer HEL-fen?" },
+              "a": { "de": "Ja, gern.", "en": "Yes, gladly.", "pron": "yah, gairn." }
+            },
+            {
+              "q": { "de": "Können Sie das wiederholen?", "en": "Can you repeat that?", "pron": "KÖ-nen zee das VEE-der-HOH-len?" },
+              "a": { "de": "Ja, natürlich.", "en": "Yes, of course.", "pron": "yah, nür-LIKH." }
+            },
+            {
+              "q": { "de": "Wie komme ich zum Supermarkt?", "en": "How do I get to the supermarket?", "pron": "vee KOH-muh ikh tsum ZOO-per-markt?" },
+              "a": { "de": "Gehen Sie geradeaus.", "en": "Go straight ahead.", "pron": "GAY-en zee guh-RAH-duh-owss." }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "reisen",
+      "title": "Reisen (travel)",
+      "desc": "Fahrkarte, Abfahrt, Hotel.",
+      "part": 2,
+      "cards": [
+        {
+          "id": "reisen_1",
+          "title": "Card 1 • Ticket",
+          "items": [
+            {
+              "q": { "de": "Ich brauche eine Fahrkarte.", "en": "I need a ticket.", "pron": "ikh BROW-khuh aine FAHR-kar-tuh." },
+              "a": { "de": "Einmal oder hin und zurück?", "en": "One-way or return?", "pron": "EYE-mal OH-der hin oont tsoo-RÜK?" }
+            },
+            {
+              "q": { "de": "Wie viel kostet das Ticket?", "en": "How much is the ticket?", "pron": "vee feel KOS-tet das TI-ket?" },
+              "a": { "de": "Das Ticket kostet zwölf Euro.", "en": "The ticket costs 12 euros.", "pron": "das TI-ket KOS-tet tsvölf OY-roh." }
+            },
+            {
+              "q": { "de": "Wann fährt der Zug?", "en": "When does the train leave?", "pron": "van fairt dair tsoog?" },
+              "a": { "de": "Der Zug fährt um neun Uhr.", "en": "The train leaves at 9 o’clock.", "pron": "dair tsoog fairt oom noin oor." }
+            }
+          ]
+        },
+        {
+          "id": "reisen_2",
+          "title": "Card 2 • Hotel",
+          "items": [
+            {
+              "q": { "de": "Haben Sie ein Zimmer frei?", "en": "Do you have a free room?", "pron": "HAH-ben zee aine TSIM-er frai?" },
+              "a": { "de": "Ja, für zwei Nächte.", "en": "Yes, for two nights.", "pron": "yah, für tsvai NEKH-teh." }
+            },
+            {
+              "q": { "de": "Gibt es Frühstück?", "en": "Is there breakfast?", "pron": "gipt es FROO-shtük?" },
+              "a": { "de": "Ja, von sieben bis zehn.", "en": "Yes, from 7 to 10.", "pron": "yah, fon ZEE-ben bis tsayn." }
+            },
+            {
+              "q": { "de": "Wo ist das Hotel?", "en": "Where is the hotel?", "pron": "voh ist das hoh-TEL?" },
+              "a": { "de": "Das Hotel ist in der Nähe.", "en": "The hotel is nearby.", "pron": "das hoh-TEL ist in dair NAY-uh." }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "wetter",
+      "title": "Wetter & Jahreszeiten",
+      "desc": "Wetter beschreiben und Pläne machen.",
+      "part": 2,
+      "cards": [
+        {
+          "id": "wetter_1",
+          "title": "Card 1 • Weather today",
+          "items": [
+            {
+              "q": { "de": "Wie ist das Wetter heute?", "en": "How is the weather today?", "pron": "vee ist das VET-er HOY-tuh?" },
+              "a": { "de": "Es ist kalt und windig.", "en": "It is cold and windy.", "pron": "es ist kalt oont VIN-dikh." }
+            },
+            {
+              "q": { "de": "Regnet es?", "en": "Is it raining?", "pron": "REG-net es?" },
+              "a": { "de": "Nein, heute regnet es nicht.", "en": "No, it is not raining today.", "pron": "nain, HOY-tuh REG-net es nikht." }
+            },
+            {
+              "q": { "de": "Gehst du heute spazieren?", "en": "Are you going for a walk today?", "pron": "gayst doo HOY-tuh shpah-TSIE-ren?" },
+              "a": { "de": "Ja, am Abend.", "en": "Yes, in the evening.", "pron": "yah, am AH-bent." }
+            }
+          ]
+        },
+        {
+          "id": "wetter_2",
+          "title": "Card 2 • Seasons",
+          "items": [
+            {
+              "q": { "de": "Welche Jahreszeit magst du?", "en": "Which season do you like?", "pron": "VEL-khuh YAH-res-tsait mahkst doo?" },
+              "a": { "de": "Ich mag den Sommer.", "en": "I like summer.", "pron": "ikh mahk den ZOM-er." }
+            },
+            {
+              "q": { "de": "Ist es heute warm?", "en": "Is it warm today?", "pron": "ist es HOY-tuh varm?" },
+              "a": { "de": "Nein, es ist kühl.", "en": "No, it is cool.", "pron": "nain, es ist kühl." }
+            },
+            {
+              "q": { "de": "Scheint die Sonne?", "en": "Is the sun shining?", "pron": "shaint dee ZON-uh?" },
+              "a": { "de": "Ja, die Sonne scheint.", "en": "Yes, the sun is shining.", "pron": "yah, dee ZON-uh shaint." }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "gesundheit",
+      "title": "Gesundheit & Arzt",
+      "desc": "Krank sein, Schmerzen, Termin.",
+      "part": 2,
+      "cards": [
+        {
+          "id": "gesundheit_1",
+          "title": "Card 1 • At the doctor",
+          "items": [
+            {
+              "q": { "de": "Wie geht es Ihnen?", "en": "How are you?", "pron": "vee gate es EE-nen?" },
+              "a": { "de": "Mir geht es nicht gut.", "en": "I am not well.", "pron": "meer gate es nikht goot." }
+            },
+            {
+              "q": { "de": "Was tut weh?", "en": "What hurts?", "pron": "vas toot vay?" },
+              "a": { "de": "Mein Kopf tut weh.", "en": "My head hurts.", "pron": "main kopf toot vay." }
+            },
+            {
+              "q": { "de": "Haben Sie Fieber?", "en": "Do you have fever?", "pron": "HAH-ben zee FEE-ber?" },
+              "a": { "de": "Ja, ich habe Fieber.", "en": "Yes, I have fever.", "pron": "yah, ikh HAH-buh FEE-ber." }
+            }
+          ]
+        },
+        {
+          "id": "gesundheit_2",
+          "title": "Card 2 • Appointment",
+          "items": [
+            {
+              "q": { "de": "Ich brauche einen Termin.", "en": "I need an appointment.", "pron": "ikh BROW-khuh EYE-nen tair-MEEN." },
+              "a": { "de": "Wann haben Sie Zeit?", "en": "When do you have time?", "pron": "van HAH-ben zee tsait?" }
+            },
+            {
+              "q": { "de": "Haben Sie heute Zeit?", "en": "Do you have time today?", "pron": "HAH-ben zee HOY-tuh tsait?" },
+              "a": { "de": "Ja, um drei Uhr.", "en": "Yes, at 3 o’clock.", "pron": "yah, oom drai oor." }
+            },
+            {
+              "q": { "de": "Nehmen Sie diese Tabletten.", "en": "Take these tablets.", "pron": "NAY-men zee DEE-zuh tah-BLET-en." },
+              "a": { "de": "Danke schön.", "en": "Thank you.", "pron": "DAN-kuh shern." }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "freizeit",
+      "title": "Freizeit & Hobbys",
+      "desc": "Hobbys, Freunde, Wochenende.",
+      "part": 2,
+      "cards": [
+        {
+          "id": "freizeit_1",
+          "title": "Card 1 • Hobby",
+          "items": [
+            {
+              "q": { "de": "Was machst du in deiner Freizeit?", "en": "What do you do in your free time?", "pron": "vas makhst doo in DAI-ner FRAI-tsait?" },
+              "a": { "de": "Ich spiele gern Fußball.", "en": "I like playing football.", "pron": "ikh SHPEE-luh gairn FOOS-bal." }
+            },
+            {
+              "q": { "de": "Gehst du gern ins Kino?", "en": "Do you like going to the cinema?", "pron": "gayst doo gairn ins KEE-noh?" },
+              "a": { "de": "Ja, sehr gern.", "en": "Yes, very much.", "pron": "yah, zair gairn." }
+            },
+            {
+              "q": { "de": "Hast du am Wochenende Zeit?", "en": "Do you have time on the weekend?", "pron": "hast doo am VOH-khen-en-duh tsait?" },
+              "a": { "de": "Ja, am Sonntag.", "en": "Yes, on Sunday.", "pron": "yah, am ZON-tahk." }
+            }
+          ]
+        },
+        {
+          "id": "freizeit_2",
+          "title": "Card 2 • Friends",
+          "items": [
+            {
+              "q": { "de": "Triffst du oft Freunde?", "en": "Do you often meet friends?", "pron": "trifst doo oft FROYN-duh?" },
+              "a": { "de": "Ja, am Abend.", "en": "Yes, in the evening.", "pron": "yah, am AH-bent." }
+            },
+            {
+              "q": { "de": "Was machst du mit Freunden?", "en": "What do you do with friends?", "pron": "vas makhst doo mit FROYN-duh?" },
+              "a": { "de": "Wir gehen ins Café.", "en": "We go to a café.", "pron": "veer GAY-en ins kah-FAY." }
+            },
+            {
+              "q": { "de": "Spielst du gern Spiele?", "en": "Do you like playing games?", "pron": "shpeelst doo gairn SHPEE-leh?" },
+              "a": { "de": "Ja, ich spiele gern.", "en": "Yes, I like playing.", "pron": "yah, ikh SHPEE-luh gairn." }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "telefon",
+      "title": "Telefon & Kommunikation",
+      "desc": "Anrufen, Nachricht, E-Mail.",
+      "part": 2,
+      "cards": [
+        {
+          "id": "telefon_1",
+          "title": "Card 1 • On the phone",
+          "items": [
+            {
+              "q": { "de": "Kann ich bitte Khorshed sprechen?", "en": "May I speak to Khorshed, please?", "pron": "kan ikh BIT-uh rah-FEED SHPRE-khen?" },
+              "a": { "de": "Ja, einen Moment bitte.", "en": "Yes, one moment please.", "pron": "yah, EYE-nen moh-MENT BIT-uh." }
+            },
+            {
+              "q": { "de": "Kannst du mir eine Nachricht schicken?", "en": "Can you send me a message?", "pron": "kanst doo meer AI-nuh NAKH-rikht SHI-ken?" },
+              "a": { "de": "Ja, ich schicke dir eine Nachricht.", "en": "Yes, I will send you a message.", "pron": "yah, ikh SHI-ke deer AI-nuh NAKH-rikht." }
+            },
+            {
+              "q": { "de": "Rufst du mich später an?", "en": "Will you call me later?", "pron": "roofst doo mikh SHPAY-ter an?" },
+              "a": { "de": "Ja, ich rufe dich später an.", "en": "Yes, I’ll call you later.", "pron": "yah, ikh ROO-fuh dikh SHPAY-ter an." }
+            }
+          ]
+        },
+        {
+          "id": "telefon_2",
+          "title": "Card 2 • Spelling",
+          "items": [
+            {
+              "q": { "de": "Kannst du das buchstabieren?", "en": "Can you spell that?", "pron": "kanst doo das BOOKH-shtah-BEE-ren?" },
+              "a": { "de": "Ja: A-N-N-A.", "en": "Yes: A-N-N-A.", "pron": "yah: ah-en-en-ah." }
+            },
+            {
+              "q": { "de": "Wie ist deine Adresse?", "en": "What is your address?", "pron": "vee ist DAI-nuh ah-DRES-uh?" },
+              "a": { "de": "Meine Adresse ist …", "en": "My address is …", "pron": "MAI-nuh ah-DRES-uh ist ..." }
+            },
+            {
+              "q": { "de": "Kannst du mir eine E-Mail schreiben?", "en": "Can you write me an email?", "pron": "kanst doo meer AI-nuh EE-mail SHRai-ben?" },
+              "a": { "de": "Ja, ich schreibe dir eine E-Mail.", "en": "Yes, I’ll write you an email.", "pron": "yah, ikh SHRai-buh deer AI-nuh EE-mail." }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "termine",
+      "title": "Termine & Verabredung",
+      "desc": "Treffen, Uhrzeit, Ort, verschieben.",
+      "part": 2,
+      "cards": [
+        {
+          "id": "termine_1",
+          "title": "Card 1 • Meeting",
+          "items": [
+            {
+              "q": { "de": "Wann treffen wir uns?", "en": "When do we meet?", "pron": "van TREF-en veer oons?" },
+              "a": { "de": "Wir treffen uns um vier Uhr.", "en": "We meet at 4 o’clock.", "pron": "veer TREF-en oons oom feer oor." }
+            },
+            {
+              "q": { "de": "Wo treffen wir uns?", "en": "Where do we meet?", "pron": "voh TREF-en veer oons?" },
+              "a": { "de": "Wir treffen uns vor dem Café.", "en": "We meet in front of the café.", "pron": "veer TREF-en oons for dem kah-FAY." }
+            },
+            {
+              "q": { "de": "Hast du morgen Zeit?", "en": "Do you have time tomorrow?", "pron": "hast doo MOR-gen tsait?" },
+              "a": { "de": "Ja, morgen habe ich Zeit.", "en": "Yes, I have time tomorrow.", "pron": "yah, MOR-gen HAH-buh ikh tsait." }
+            }
+          ]
+        },
+        {
+          "id": "termine_2",
+          "title": "Card 2 • Change plan",
+          "items": [
+            {
+              "q": { "de": "Können wir den Termin verschieben?", "en": "Can we postpone the appointment?", "pron": "KÖ-nen veer den tair-MEEN fair-SHEE-ben?" },
+              "a": { "de": "Ja, kein Problem.", "en": "Yes, no problem.", "pron": "yah, kain proh-BLEM." }
+            },
+            {
+              "q": { "de": "Wann passt es dir?", "en": "When does it suit you?", "pron": "van passt es deer?" },
+              "a": { "de": "Am Freitag passt es mir.", "en": "Friday works for me.", "pron": "am FRY-tahk passt es meer." }
+            },
+            {
+              "q": { "de": "Kommst du pünktlich?", "en": "Will you come on time?", "pron": "komst doo PÜNKTL-ikh?" },
+              "a": { "de": "Ja, ich komme pünktlich.", "en": "Yes, I’ll come on time.", "pron": "yah, ikh KOH-muh PÜNKTL-ikh." }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "bitten",
+      "title": "Bitten & Reagieren (Teil 3)",
+      "desc": "Sehr wichtig: Bitten + Reaktion (Goethe A1).",
+      "part": 3,
+      "cards": [
+        {
+          "id": "bitten_1",
+          "title": "Card 1 • Help / Repeat / Slow",
+          "items": [
+            {
+              "q": { "de": "Können Sie mir bitte helfen?", "en": "Can you help me, please?", "pron": "KÖ-nen zee meer BIT-uh HEL-fen?" },
+              "a": { "de": "Ja, gern.", "en": "Yes, gladly.", "pron": "yah, gairn." }
+            },
+            {
+              "q": { "de": "Können Sie das bitte wiederholen?", "en": "Can you repeat that, please?", "pron": "KÖ-nen zee das BIT-uh VEE-der-HOH-len?" },
+              "a": { "de": "Ja, natürlich.", "en": "Yes, of course.", "pron": "yah, nür-LIKH." }
+            },
+            {
+              "q": { "de": "Können Sie bitte langsam sprechen?", "en": "Can you speak slowly, please?", "pron": "KÖ-nen zee BIT-uh LANG-zahm SHPRE-khen?" },
+              "a": { "de": "Ja, ich spreche langsam.", "en": "Yes, I’ll speak slowly.", "pron": "yah, ikh SHPRE-khuh LANG-zahm." }
+            }
+          ]
+        },
+        {
+          "id": "bitten_2",
+          "title": "Card 2 • Borrow / Phone",
+          "items": [
+            {
+              "q": { "de": "Kann ich bitte deinen Stift haben?", "en": "Can I have your pen, please?", "pron": "kan ikh BIT-uh DAI-nen shtift HAH-ben?" },
+              "a": { "de": "Ja, hier bitte.", "en": "Yes, here you go.", "pron": "yah, heer BIT-uh." }
+            },
+            {
+              "q": { "de": "Kann ich bitte kurz dein Handy benutzen?", "en": "Can I use your phone briefly, please?", "pron": "kan ikh BIT-uh koorts dain HEN-dee buh-NOOT-sen?" },
+              "a": { "de": "Ja, aber nur kurz.", "en": "Yes, but only briefly.", "pron": "yah, AH-ber noor koorts." }
+            },
+            {
+              "q": { "de": "Kannst du mir bitte helfen?", "en": "Can you help me, please?", "pron": "kanst doo meer BIT-uh HEL-fen?" },
+              "a": { "de": "Ja, klar.", "en": "Yes, sure.", "pron": "yah, klahr." }
+            }
+          ]
+        },
+        {
+          "id": "bitten_3",
+          "title": "Card 3 • Window / Door",
+          "items": [
+            {
+              "q": { "de": "Können Sie bitte das Fenster öffnen?", "en": "Can you open the window, please?", "pron": "KÖ-nen zee BIT-uh das FEN-ster ÖF-nen?" },
+              "a": { "de": "Ja, sofort.", "en": "Yes, right away.", "pron": "yah, zoh-FORT." }
+            },
+            {
+              "q": { "de": "Können Sie bitte die Tür schließen?", "en": "Can you close the door, please?", "pron": "KÖ-nen zee BIT-uh dee tür SHLEE-sen?" },
+              "a": { "de": "Ja, natürlich.", "en": "Yes, of course.", "pron": "yah, nür-LIKH." }
+            },
+            {
+              "q": { "de": "Darf ich mich hier setzen?", "en": "May I sit here?", "pron": "darf ikh mikh heer ZET-sen?" },
+              "a": { "de": "Ja, gern.", "en": "Yes, gladly.", "pron": "yah, gairn." }
+            }
+          ]
+        },
+        {
+          "id": "bitten_4",
+          "title": "Card 4 • Water / Photo / Way",
+          "items": [
+            {
+              "q": { "de": "Könnte ich bitte Wasser bekommen?", "en": "Could I get water, please?", "pron": "KÖN-te ikh BIT-uh VAS-er buh-KOM-en?" },
+              "a": { "de": "Ja, bitte.", "en": "Yes, please.", "pron": "yah, BIT-uh." }
+            },
+            {
+              "q": { "de": "Kann ich bitte ein Foto machen?", "en": "Can I take a photo, please?", "pron": "kan ikh BIT-uh ain FOH-toh MAH-khen?" },
+              "a": { "de": "Ja, kein Problem.", "en": "Yes, no problem.", "pron": "yah, kain proh-BLEM." }
+            },
+            {
+              "q": { "de": "Können Sie mir bitte den Weg zeigen?", "en": "Can you show me the way, please?", "pron": "KÖ-nen zee meer BIT-uh den vayk TSAY-gen?" },
+              "a": { "de": "Ja, kommen Sie mit.", "en": "Yes, come with me.", "pron": "yah, KOH-men zee mit." }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

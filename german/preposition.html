@@ -1,0 +1,1170 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>German Prepositions (Beginner) • Examples + Practice + Quiz</title>
+
+  <!-- Bootstrap (CDN) with offline fallback -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+    onerror="this.onerror=null; this.href='assets/bootstrap.min.css';"
+  />
+
+  <style>
+    :root{
+      --bg1:#060814;
+      --bg2:#0b1020;
+      --card: rgba(255,255,255,.06);
+      --border: rgba(255,255,255,.12);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.62);
+      --shadow: 0 18px 55px rgba(0,0,0,.40);
+      --radius: 18px;
+    }
+
+    body{
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(124,58,237,.28), transparent 55%),
+        radial-gradient(1000px 650px at 75% 12%, rgba(34,197,94,.20), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2) 45%, var(--bg1));
+    }
+
+    .glass{
+      background: rgba(15, 20, 40, .55);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      backdrop-filter: blur(10px);
+    }
+
+    .small-muted{ color: var(--muted); }
+
+    .prep-card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+      cursor: pointer;
+      height: 100%;
+    }
+    .prep-card:hover{
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.075);
+    }
+    .prep-card.active{
+      border-color: rgba(124,58,237,.55);
+      background: rgba(124,58,237,.12);
+    }
+
+    .viz{
+      width: 100%;
+      max-width: 320px;
+      aspect-ratio: 13 / 8;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+      padding: 10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+    .viz img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display:block;
+      filter: drop-shadow(0 12px 18px rgba(0,0,0,.25));
+    }
+
+    .sticky-side{
+      position: sticky;
+      top: 16px;
+    }
+
+    .divider{
+      height: 1px;
+      background: rgba(255,255,255,.12);
+      margin: 14px 0;
+    }
+
+    .form-control, .form-select{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.16);
+      color: var(--text);
+    }
+    .form-control::placeholder{ color: rgba(255,255,255,.50); }
+    .form-control:focus, .form-select:focus{
+      box-shadow: 0 0 0 .2rem rgba(124,58,237,.25);
+      border-color: rgba(124,58,237,.45);
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+    }
+    .form-select option{ background:#0b1020; }
+
+    .list-group-item{
+      background: rgba(255,255,255,.05);
+      border-color: rgba(255,255,255,.12);
+      color: var(--text);
+    }
+
+    .badge-soft{
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      font-weight: 700;
+    }
+
+    .btn-outline-light{
+      border-color: rgba(255,255,255,.22);
+      color: rgba(255,255,255,.88);
+    }
+    .btn-outline-light:hover{
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.35);
+      color: #fff;
+    }
+
+    .hint{
+      font-size: .92rem;
+      color: rgba(255,255,255,.72);
+    }
+
+    .footer-note{
+      color: rgba(255,255,255,.55);
+      font-size: .9rem;
+    }
+  </style>
+  <link rel="stylesheet" href="../assets/portfolio-theme.css">
+</head>
+
+<body>
+  <!-- Top bar -->
+  <nav class="navbar navbar-expand-lg glass mx-3 mt-3 px-3 py-2">
+    <div class="container-fluid px-0">
+      <div class="d-flex align-items-center gap-3">
+        <div class="rounded-4 d-grid place-items-center" style="width:44px;height:44px;background:linear-gradient(135deg, rgba(124,58,237,.95), rgba(34,197,94,.85)); box-shadow: 0 12px 30px rgba(0,0,0,.35);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7 17h10M7 12h10M7 7h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M5 20V4" stroke="white" stroke-opacity=".85" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="fw-bold">German Prepositions for Beginners</div>
+          <div class="small-muted">Examples, visual meaning, practice, quiz. Works online and offline.</div>
+        </div>
+      </div>
+
+      <div class="d-flex gap-2 flex-wrap mt-3 mt-lg-0">
+        <input id="search" class="form-control" style="min-width: 240px;" type="search" placeholder="Search: in, on, under, with, from..." aria-label="Search prepositions">
+        <select id="filter" class="form-select" style="width: 220px;" aria-label="Filter by case">
+          <option value="all">All cases</option>
+          <option value="accusative">Accusative</option>
+          <option value="dative">Dative</option>
+          <option value="two">Two-way (Akk/Dativ)</option>
+        </select>
+        <button id="randomBtn" class="btn btn-outline-light">Random</button>
+        <button id="resetBtn" class="btn btn-outline-light">Reset</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container-xl px-3 pb-5">
+    <div class="row g-3 mt-3">
+      <!-- Left: Browser + Practice -->
+      <div class="col-lg-8">
+        <section class="glass p-3">
+          <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+            <div>
+              <h5 class="mb-1">1) Choose a preposition</h5>
+              <div class="hint">Click a card to see meaning, case, examples, and a clear visual.</div>
+            </div>
+            <div class="small-muted">
+              Tip: Two-way preps use <span class="badge text-bg-primary">Dative</span> for <b>where</b>, <span class="badge text-bg-warning">Accusative</span> for <b>to where</b>.
+            </div>
+          </div>
+
+          <ul class="nav nav-pills mt-3" id="setTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" data-set="core" type="button" role="tab">Core (Beginner)</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-set="two" type="button" role="tab">Two-way (Akk/Dativ)</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-set="time" type="button" role="tab">Time</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-set="travel" type="button" role="tab">Travel</button>
+            </li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <div id="preps" class="row g-2" aria-live="polite"></div>
+
+          <div class="divider"></div>
+
+          <!-- Detail panel -->
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="glass p-3" style="background: rgba(255,255,255,.04);">
+                <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap">
+                  <div>
+                    <div class="small-muted">Selected</div>
+                    <div id="selName" class="fs-5 fw-bold">Click a preposition</div>
+                  </div>
+                  <div id="selBadge"></div>
+                </div>
+
+                <div class="mt-2 small-muted" id="selMeta">Meaning and case will appear here.</div>
+
+                <div class="divider"></div>
+
+                <div class="small-muted mb-2">Examples (German → English)</div>
+                <div id="examples" class="small"></div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="glass p-3" style="background: rgba(255,255,255,.04);">
+                <div class="small-muted mb-2">Visual meaning</div>
+                <div class="d-flex gap-3 flex-wrap align-items-start">
+                  <div class="viz" id="vizBox" aria-hidden="true"></div>
+                  <div class="flex-grow-1" style="min-width: 220px;">
+                    <div class="small-muted mb-2">Mini rules</div>
+                    <ul id="rules" class="list-group list-group-flush"></ul>
+
+                    <div class="mt-3 small-muted mb-2">Legend</div>
+                    <div id="legendBox" class="d-grid gap-2"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Practice -->
+          <div class="glass p-3" style="background: rgba(255,255,255,.04);">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+              <div>
+                <h5 class="mb-1">2) Quick practice</h5>
+                <div class="hint">Tap the best preposition. You can try again until correct.</div>
+              </div>
+              <div class="d-flex gap-2 flex-wrap">
+                <button id="newPracticeBtn" class="btn btn-outline-light">New set</button>
+                <button id="clearPracticeBtn" class="btn btn-outline-light">Clear</button>
+              </div>
+            </div>
+
+            <div id="practice" class="mt-3"></div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right: Quiz + Cheat sheet -->
+      <div class="col-lg-4">
+        <div class="sticky-side">
+          <section class="glass p-3">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+              <div>
+                <h5 class="mb-1">3) Quiz</h5>
+                <div class="hint">Answer and submit. You’ll get score + explanations.</div>
+              </div>
+              <div class="d-flex gap-2 flex-wrap">
+                <button id="newQuizBtn" class="btn btn-outline-light">New quiz</button>
+                <button id="submitQuizBtn" class="btn btn-outline-light">Submit</button>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div id="quiz"></div>
+
+            <div class="divider"></div>
+
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <div class="small-muted">Score</div>
+                <div id="score" class="fs-4 fw-bold">0 / 0</div>
+              </div>
+              <div style="min-width: 160px;">
+                <div class="small-muted">Progress</div>
+                <div class="progress" style="height: 10px; background: rgba(255,255,255,.10);">
+                  <div id="scoreBar" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="glass p-3" style="background: rgba(255,255,255,.04);">
+              <div class="fw-bold mb-2">Cheat sheet</div>
+              <div class="small">
+                <div class="mb-2">
+                  <span class="badge text-bg-warning">Akkusativ</span>
+                  durch, für, gegen, ohne, um (DOGFU)
+                </div>
+                <div class="mb-2">
+                  <span class="badge text-bg-success">Dativ</span>
+                  aus, bei, mit, nach, seit, von, zu
+                </div>
+                <div>
+                  <span class="badge text-bg-primary">Two-way</span>
+                  an, auf, in, unter, über, vor, hinter, neben, zwischen
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-3 footer-note">
+              Offline tip: put Bootstrap files in <code>assets/</code>. The page will auto-fallback if CDN is unavailable.
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <noscript>
+    <div class="container-xl px-3">
+      <div class="alert alert-warning glass mt-3">
+        This page needs JavaScript for practice and quiz.
+      </div>
+    </div>
+  </noscript>
+
+  <!-- Bootstrap JS (CDN) with offline fallback -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+    onerror="this.onerror=null; this.src='assets/bootstrap.bundle.min.js';"
+  ></script>
+
+  <script>
+    // -------------------- Data --------------------
+    const PREPS = [
+      // Core
+      {
+        id:"mit", set:"core", en:"with", case:"dative",
+        meaning:"together / using",
+        rules:[
+          "Always Dative.",
+          "People/tools/transport: mit dem Freund, mit dem Bus."
+        ],
+        examples:[
+          ["Ich gehe mit meinem Freund.", "I go with my friend."],
+          ["Ich schreibe mit einem Stift.", "I write with a pen."]
+        ],
+        viz:"with"
+      },
+      {
+        id:"ohne", set:"core", en:"without", case:"accusative",
+        meaning:"not having / not using",
+        rules:["Always Accusative."],
+        examples:[
+          ["Ich trinke Kaffee ohne Milch.", "I drink coffee without milk."],
+          ["Ich gehe ohne Jacke.", "I go without a jacket."]
+        ],
+        viz:"without"
+      },
+      {
+        id:"für", set:"core", en:"for", case:"accusative",
+        meaning:"for (benefit/purpose)",
+        rules:[
+          "Always Accusative.",
+          "Often answers: for whom/what?"
+        ],
+        examples:[
+          ["Das Geschenk ist für dich.", "The gift is for you."],
+          ["Ich lerne Deutsch für die Prüfung.", "I learn German for the exam."]
+        ],
+        viz:"for"
+      },
+      {
+        id:"aus", set:"core", en:"from (out of)", case:"dative",
+        meaning:"origin (out of)",
+        rules:[
+          "Always Dative.",
+          "Origin/material: aus Deutschland, aus Holz."
+        ],
+        examples:[
+          ["Ich komme aus Bangladesh.", "I come from Bangladesh."],
+          ["Der Tisch ist aus Holz.", "The table is made of wood."]
+        ],
+        viz:"from"
+      },
+      {
+        id:"von", set:"core", en:"from (of)", case:"dative",
+        meaning:"from (source), of (possession)",
+        rules:[
+          "Always Dative.",
+          "From a person/place: von meinem Bruder, von der Arbeit."
+        ],
+        examples:[
+          ["Das ist ein Foto von meiner Familie.", "This is a photo of my family."],
+          ["Ich komme von der Arbeit.", "I come from work."]
+        ],
+        viz:"from"
+      },
+      {
+        id:"bei", set:"core", en:"at (near/with)", case:"dative",
+        meaning:"at, near, with someone",
+        rules:[
+          "Always Dative.",
+          "bei + person/company: bei meiner Mutter, bei einer Firma."
+        ],
+        examples:[
+          ["Ich bin bei meiner Mutter.", "I am at my mother's place."],
+          ["Ich arbeite bei einer Firma.", "I work at a company."]
+        ],
+        viz:"near"
+      },
+
+      // Two-way
+      {
+        id:"in", set:"two", en:"in/into", case:"two",
+        meaning:"in / into",
+        rules:[
+          "Two-way: Dative = where? (location), Accusative = to where? (movement).",
+          "in dem → im (Dative)."
+        ],
+        examples:[
+          ["Ich bin im Zimmer.", "I am in the room. (where? → Dative)"],
+          ["Ich gehe in das Zimmer.", "I go into the room. (to where? → Accusative)"]
+        ],
+        viz:"in"
+      },
+      {
+        id:"auf", set:"two", en:"on/onto", case:"two",
+        meaning:"on / onto",
+        rules:[
+          "Two-way: Dative = where?, Accusative = to where?",
+          "auf dem (Dative), auf den (Accusative masculine)."
+        ],
+        examples:[
+          ["Das Buch liegt auf dem Tisch.", "The book lies on the table."],
+          ["Ich lege das Buch auf den Tisch.", "I put the book onto the table."]
+        ],
+        viz:"on"
+      },
+      {
+        id:"unter", set:"two", en:"under", case:"two",
+        meaning:"under / to under",
+        rules:["Two-way: Dative = where?, Accusative = to where?"],
+        examples:[
+          ["Die Katze ist unter dem Tisch.", "The cat is under the table."],
+          ["Die Katze läuft unter den Tisch.", "The cat runs under the table."]
+        ],
+        viz:"under"
+      },
+      {
+        id:"über", set:"two", en:"over/about", case:"two",
+        meaning:"over / above, about",
+        rules:[
+          "Two-way in space.",
+          "Also topic: über Musik, über Deutsch."
+        ],
+        examples:[
+          ["Die Lampe hängt über dem Tisch.", "The lamp hangs above the table."],
+          ["Wir sprechen über Deutsch.", "We talk about German."]
+        ],
+        viz:"over"
+      },
+
+      // Time
+      {
+        id:"seit", set:"time", en:"since (time)", case:"dative",
+        meaning:"since (starting point in time)",
+        rules:[
+          "Always Dative.",
+          "Used with time: seit 2024, seit zwei Tagen."
+        ],
+        examples:[
+          ["Ich lerne seit einem Jahr Deutsch.", "I have been learning German for one year."],
+          ["Wir wohnen seit 2020 hier.", "We have lived here since 2020."]
+        ],
+        viz:"time"
+      },
+      {
+        id:"um", set:"time", en:"at (clock time)/around", case:"accusative",
+        meaning:"at (exact time) / around",
+        rules:[
+          "Always Accusative.",
+          "Exact clock time: um 8 Uhr."
+        ],
+        examples:[
+          ["Der Kurs beginnt um 9 Uhr.", "The course starts at 9 o'clock."],
+          ["Ich treffe dich um sieben.", "I meet you at seven."]
+        ],
+        viz:"clock"
+      },
+      {
+        id:"gegen", set:"time", en:"around/towards", case:"accusative",
+        meaning:"around (approx time), against",
+        rules:[
+          "Always Accusative.",
+          "Time estimate: gegen 18 Uhr."
+        ],
+        examples:[
+          ["Ich komme gegen 18 Uhr.", "I’ll come around 6 pm."],
+          ["Er spielt gegen Bayern.", "He plays against Bayern."]
+        ],
+        viz:"around"
+      },
+
+      // Travel
+      {
+        id:"zu", set:"travel", en:"to", case:"dative",
+        meaning:"to (person/place)",
+        rules:[
+          "Always Dative.",
+          "zu dem → zum, zu der → zur.",
+          "Use with people and many places: zum Arzt, zur Schule."
+        ],
+        examples:[
+          ["Ich gehe zum Arzt.", "I go to the doctor."],
+          ["Ich gehe zur Schule.", "I go to school."]
+        ],
+        viz:"to"
+      },
+      {
+        id:"nach", set:"travel", en:"to/after", case:"dative",
+        meaning:"to (cities/countries), after",
+        rules:[
+          "Always Dative.",
+          "nach + city/country (no article): nach Berlin, nach Deutschland.",
+          "Home: nach Hause (go home)."
+        ],
+        examples:[
+          ["Ich fahre nach Berlin.", "I travel to Berlin."],
+          ["Nach der Arbeit gehe ich nach Hause.", "After work I go home."]
+        ],
+        viz:"to"
+      }
+    ];
+
+    // -------------------- State & helpers --------------------
+    let activeSet = "core";
+    let activePrepId = null;
+
+    const $ = (id) => document.getElementById(id);
+
+    function escapeHtml(s){
+      return String(s).replace(/[&<>"']/g, m => ({
+        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+      }[m]));
+    }
+
+    function getPrepById(id){
+      return PREPS.find(p => p.id === id);
+    }
+
+    function caseBadgeHTML(c){
+      if(c === "accusative") return `<span class="badge text-bg-warning">Akkusativ</span>`;
+      if(c === "dative") return `<span class="badge text-bg-success">Dativ</span>`;
+      return `<span class="badge text-bg-primary">Two-way</span>`;
+    }
+
+    function shuffle(arr){
+      for(let i=arr.length-1;i>0;i--){
+        const j = Math.floor(Math.random()*(i+1));
+        [arr[i],arr[j]] = [arr[j],arr[i]];
+      }
+      return arr;
+    }
+
+    function sample(array, n){
+      const copy = [...array];
+      const out = [];
+      while(copy.length && out.length < n){
+        const i = Math.floor(Math.random() * copy.length);
+        out.push(copy.splice(i,1)[0]);
+      }
+      return out;
+    }
+
+    // -------------------- Professional Visuals as <img> --------------------
+    function svgToDataUri(svg){
+      const encoded = encodeURIComponent(svg)
+        .replace(/%0A/g, "")
+        .replace(/%09/g, " ")
+        .replace(/%20/g, " ");
+      return `data:image/svg+xml;charset=UTF-8,${encoded}`;
+    }
+
+    function renderViz(prep){
+      if(!prep) return "";
+      const svg = buildVizSvg(prep.viz || "generic", prep.case || "dative");
+      const alt = `Visual meaning for ${prep.id} (${prep.en})`;
+      return `<img alt="${escapeHtml(alt)}" src="${svgToDataUri(svg)}" />`;
+    }
+
+    function buildVizSvg(type, prepCase){
+      const defs = `
+      <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="rgba(255,255,255,0.10)"/>
+          <stop offset="1" stop-color="rgba(255,255,255,0.03)"/>
+        </linearGradient>
+
+        <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="rgba(255,255,255,0.10)"/>
+          <stop offset="1" stop-color="rgba(255,255,255,0.04)"/>
+        </linearGradient>
+
+        <radialGradient id="ball" cx="35%" cy="30%" r="65%">
+          <stop offset="0" stop-color="rgba(255,255,255,0.55)"/>
+          <stop offset="0.35" stop-color="rgba(124,58,237,0.95)"/>
+          <stop offset="1" stop-color="rgba(124,58,237,0.55)"/>
+        </radialGradient>
+
+        <radialGradient id="ball2" cx="35%" cy="30%" r="65%">
+          <stop offset="0" stop-color="rgba(255,255,255,0.55)"/>
+          <stop offset="0.35" stop-color="rgba(34,197,94,0.92)"/>
+          <stop offset="1" stop-color="rgba(34,197,94,0.55)"/>
+        </radialGradient>
+
+        <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="rgba(0,0,0,0.35)"/>
+        </filter>
+
+        <marker id="arrowHead" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+          <path d="M0,0 L10,5 L0,10 Z" fill="rgba(34,197,94,0.92)"/>
+        </marker>
+
+        <marker id="arrowHeadWarn" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+          <path d="M0,0 L10,5 L0,10 Z" fill="rgba(245,158,11,0.95)"/>
+        </marker>
+      </defs>`;
+
+      const frame = (content) => `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 160" width="260" height="160">
+        ${defs}
+        <rect x="1.5" y="1.5" width="257" height="157" rx="18" fill="url(#bg)" stroke="rgba(255,255,255,0.14)"/>
+        ${content}
+      </svg>`;
+
+      const scenePanel = (x, labelLine=false) => `
+        <g transform="translate(${x} 0)">
+          <rect x="16" y="18" width="112" height="124" rx="16" fill="url(#panel)" stroke="rgba(255,255,255,0.14)"/>
+          ${labelLine ? `<path d="M24 44H120" stroke="rgba(255,255,255,0.10)" stroke-width="3" stroke-linecap="round"/>` : ""}
+        </g>`;
+
+      const table = (x) => `
+        <g transform="translate(${x} 0)" filter="url(#soft)">
+          <rect x="34" y="86" width="76" height="16" rx="8" fill="rgba(255,255,255,0.11)" stroke="rgba(255,255,255,0.20)"/>
+          <rect x="42" y="102" width="10" height="26" rx="5" fill="rgba(255,255,255,0.07)"/>
+          <rect x="92" y="102" width="10" height="26" rx="5" fill="rgba(255,255,255,0.07)"/>
+        </g>`;
+
+      const boxContainer = (x) => `
+        <g transform="translate(${x} 0)" filter="url(#soft)">
+          <rect x="40" y="70" width="64" height="58" rx="12" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.22)"/>
+          <path d="M40 80h64" stroke="rgba(255,255,255,0.12)" stroke-width="3" />
+        </g>`;
+
+      const ballAt = (x,y, color="ball") => `
+        <circle cx="${x}" cy="${y}" r="12" fill="url(#${color})" stroke="rgba(255,255,255,0.22)" filter="url(#soft)"/>`;
+
+      const arrow = (x1,y1,x2,y2, warn=false) => `
+        <path d="M${x1} ${y1} L${x2} ${y2}"
+          stroke="rgba(${warn ? "245,158,11" : "34,197,94"},0.92)"
+          stroke-width="5" stroke-linecap="round"
+          marker-end="url(#${warn ? "arrowHeadWarn" : "arrowHead"})"/>`;
+
+      const cross = (cx,cy) => `
+        <path d="M${cx-18} ${cy-18}L${cx+18} ${cy+18}M${cx+18} ${cy-18}L${cx-18} ${cy+18}"
+          stroke="rgba(239,68,68,0.92)" stroke-width="6" stroke-linecap="round" />`;
+
+      const twoWaySplit = (leftContent, rightContent) => frame(`
+        ${scenePanel(0,true)}
+        ${scenePanel(132,true)}
+        <path d="M130 20V140" stroke="rgba(255,255,255,0.14)" stroke-width="2"/>
+        ${leftContent}
+        ${rightContent}
+      `);
+
+      // Two-way visuals
+      if(type === "in"){
+        return twoWaySplit(
+          `${boxContainer(0)} ${ballAt(72,102,"ball")}`,
+          `${boxContainer(132)} ${ballAt(186,102,"ball")} ${arrow(150,102,176,102,false)}`
+        );
+      }
+
+      if(type === "on"){
+        return twoWaySplit(
+          `${table(0)} ${ballAt(72,74,"ball")}`,
+          `${table(132)} ${ballAt(160,56,"ball")} ${arrow(160,56,186,74,false)}`
+        );
+      }
+
+      if(type === "under"){
+        return twoWaySplit(
+          `${table(0)} ${ballAt(72,120,"ball")}`,
+          `${table(132)} ${table(132)} ${ballAt(160,92,"ball")} ${arrow(160,92,186,120,false)}`
+        );
+      }
+
+      if(type === "over"){
+        return twoWaySplit(
+          `${table(0)} ${ballAt(72,52,"ball")}`,
+          `${table(132)} ${ballAt(160,52,"ball")} ${arrow(160,52,186,52,false)}`
+        );
+      }
+
+      // Single meaning visuals
+      if(type === "with"){
+        return frame(`
+          <g filter="url(#soft)">
+            <circle cx="92" cy="84" r="16" fill="url(#ball)" stroke="rgba(255,255,255,0.22)"/>
+            <circle cx="168" cy="84" r="16" fill="url(#ball2)" stroke="rgba(255,255,255,0.22)"/>
+            <path d="M124 84h12" stroke="rgba(255,255,255,0.24)" stroke-width="5" stroke-linecap="round"/>
+            <path d="M130 78v12" stroke="rgba(255,255,255,0.24)" stroke-width="5" stroke-linecap="round"/>
+          </g>
+          <rect x="40" y="118" width="180" height="16" rx="8" fill="rgba(255,255,255,0.05)"/>
+        `);
+      }
+
+      if(type === "without"){
+        return frame(`
+          <g filter="url(#soft)">
+            <circle cx="130" cy="84" r="18" fill="url(#ball)" stroke="rgba(255,255,255,0.22)"/>
+            ${cross(130,84)}
+          </g>
+          <rect x="40" y="118" width="180" height="16" rx="8" fill="rgba(255,255,255,0.05)"/>
+        `);
+      }
+
+      if(type === "near"){
+        return frame(`
+          <g filter="url(#soft)">
+            <rect x="54" y="66" width="70" height="54" rx="14" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.22)"/>
+            ${ballAt(160,96,"ball")}
+            <path d="M124 96h18" stroke="rgba(245,158,11,0.88)" stroke-width="5" stroke-linecap="round"/>
+          </g>
+          <rect x="40" y="118" width="180" height="16" rx="8" fill="rgba(255,255,255,0.05)"/>
+        `);
+      }
+
+      if(type === "from"){
+        return frame(`
+          <g filter="url(#soft)">
+            <rect x="70" y="64" width="80" height="60" rx="14" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.22)"/>
+            ${ballAt(92,94,"ball")}
+            ${arrow(92,94,44,94,false)}
+          </g>
+          <rect x="40" y="118" width="180" height="16" rx="8" fill="rgba(255,255,255,0.05)"/>
+        `);
+      }
+
+      if(type === "to"){
+        return frame(`
+          <g filter="url(#soft)">
+            ${ballAt(70,94,"ball")}
+            <rect x="160" y="60" width="50" height="64" rx="14" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.22)"/>
+            ${arrow(82,94,156,94,false)}
+            <circle cx="185" cy="78" r="6" fill="rgba(245,158,11,0.92)"/>
+          </g>
+          <rect x="40" y="118" width="180" height="16" rx="8" fill="rgba(255,255,255,0.05)"/>
+        `);
+      }
+
+      if(type === "for"){
+        return frame(`
+          <g filter="url(#soft)">
+            <rect x="62" y="72" width="56" height="44" rx="12" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.22)"/>
+            <path d="M62 86h56" stroke="rgba(255,255,255,0.12)" stroke-width="3"/>
+            <circle cx="172" cy="92" r="18" fill="url(#ball2)" stroke="rgba(255,255,255,0.22)"/>
+            ${arrow(120,94,150,94,true)}
+            <path d="M172 88c-5-7-16-3-16 5c0 10 16 18 16 18s16-8 16-18c0-8-11-12-16-5z"
+              fill="rgba(245,158,11,0.18)" stroke="rgba(245,158,11,0.55)"/>
+          </g>
+          <rect x="40" y="118" width="180" height="16" rx="8" fill="rgba(255,255,255,0.05)"/>
+        `);
+      }
+
+      if(type === "time"){
+        return frame(`
+          <g filter="url(#soft)">
+            <path d="M52 96H208" stroke="rgba(255,255,255,0.22)" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="78" cy="96" r="8" fill="rgba(34,197,94,0.88)"/>
+            ${arrow(90,96,200,96,false)}
+            <circle cx="78" cy="70" r="12" fill="url(#ball2)" stroke="rgba(255,255,255,0.22)"/>
+          </g>
+        `);
+      }
+
+      if(type === "clock"){
+        return frame(`
+          <g filter="url(#soft)">
+            <circle cx="130" cy="82" r="34" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.20)"/>
+            <path d="M130 82V60" stroke="rgba(245,158,11,0.95)" stroke-width="6" stroke-linecap="round"/>
+            <path d="M130 82l20 12" stroke="rgba(124,58,237,0.88)" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="130" cy="82" r="4" fill="rgba(255,255,255,0.35)"/>
+          </g>
+        `);
+      }
+
+      if(type === "around"){
+        return frame(`
+          <g filter="url(#soft)">
+            <circle cx="130" cy="82" r="34" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.20)"/>
+            <path d="M130 48a34 34 0 1 1 0 68a34 34 0 1 1 0-68"
+              stroke="rgba(34,197,94,0.75)" stroke-width="6" stroke-linecap="round" stroke-dasharray="8 10"/>
+            <circle cx="130" cy="82" r="8" fill="rgba(124,58,237,0.85)" stroke="rgba(255,255,255,0.22)"/>
+          </g>
+        `);
+      }
+
+      // Fallback
+      return frame(`
+        <g filter="url(#soft)">
+          <rect x="60" y="64" width="140" height="70" rx="16" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.20)"/>
+          ${ballAt(100,98,"ball")}
+          ${prepCase === "accusative" ? arrow(112,98,178,98,true) : ""}
+        </g>
+      `);
+    }
+
+    function legendFor(prep){
+      if(!prep) return "";
+      if(prep.case === "two"){
+        return `
+          <div class="glass p-2" style="background: rgba(255,255,255,.04);">
+            <div class="d-flex gap-2 align-items-start">
+              <span class="badge text-bg-primary">Two-way</span>
+              <div class="small">
+                <b>Where?</b> (location) → <b>Dative</b><br>
+                <b>To where?</b> (movement) → <b>Accusative</b>
+              </div>
+            </div>
+          </div>
+          <div class="glass p-2" style="background: rgba(255,255,255,.04);">
+            <div class="d-flex gap-2 align-items-start">
+              <span class="badge text-bg-success">Dative</span>
+              <div class="small">Left panel shows <b>location</b> (no movement).</div>
+            </div>
+          </div>
+          <div class="glass p-2" style="background: rgba(255,255,255,.04);">
+            <div class="d-flex gap-2 align-items-start">
+              <span class="badge text-bg-warning">Accusative</span>
+              <div class="small">Right panel shows <b>movement</b> with an arrow.</div>
+            </div>
+          </div>
+        `;
+      }
+      if(prep.case === "dative"){
+        return `
+          <div class="glass p-2" style="background: rgba(255,255,255,.04);">
+            <div class="d-flex gap-2 align-items-start">
+              <span class="badge text-bg-success">Dative</span>
+              <div class="small">This preposition always takes <b>Dative</b>.</div>
+            </div>
+          </div>
+        `;
+      }
+      return `
+        <div class="glass p-2" style="background: rgba(255,255,255,.04);">
+          <div class="d-flex gap-2 align-items-start">
+            <span class="badge text-bg-warning">Accusative</span>
+            <div class="small">This preposition always takes <b>Accusative</b>.</div>
+          </div>
+        </div>
+      `;
+    }
+
+    // -------------------- Rendering: Prepositions --------------------
+    function getVisiblePreps(){
+      const q = $("search").value.trim().toLowerCase();
+      const f = $("filter").value;
+      return PREPS
+        .filter(p => p.set === activeSet)
+        .filter(p => f === "all" ? true : p.case === f)
+        .filter(p => {
+          if(!q) return true;
+          const hay = (p.id + " " + p.en + " " + p.meaning).toLowerCase();
+          return hay.includes(q);
+        });
+    }
+
+    function renderPreps(){
+      const list = getVisiblePreps();
+      const box = $("preps");
+
+      if(list.length === 0){
+        box.innerHTML = `
+          <div class="col-12">
+            <div class="alert alert-secondary glass mb-0">
+              No matches. Clear search or change the filter.
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      box.innerHTML = list.map(p => `
+        <div class="col-12 col-sm-6 col-xl-4">
+          <div class="prep-card p-3 ${p.id === activePrepId ? "active" : ""}" data-id="${p.id}" tabindex="0" role="button" aria-label="Select ${p.id}">
+            <div class="d-flex justify-content-between align-items-start gap-2">
+              <div>
+                <div class="fw-bold fs-6">${escapeHtml(p.id)} <span class="small-muted">(${escapeHtml(p.en)})</span></div>
+                <div class="small-muted">${escapeHtml(p.meaning)}</div>
+              </div>
+              <div>${caseBadgeHTML(p.case)}</div>
+            </div>
+            <div class="mt-2 small">
+              <span class="badge badge-soft">${escapeHtml(p.examples[0][0])}</span>
+            </div>
+          </div>
+        </div>
+      `).join("");
+
+      box.querySelectorAll(".prep-card").forEach(card => {
+        card.addEventListener("click", () => setActivePrep(card.dataset.id));
+        card.addEventListener("keydown", (e) => {
+          if(e.key === "Enter" || e.key === " ") setActivePrep(card.dataset.id);
+        });
+      });
+    }
+
+    function clearDetail(){
+      activePrepId = null;
+      $("selName").textContent = "Click a preposition";
+      $("selBadge").innerHTML = "";
+      $("selMeta").textContent = "Meaning and case will appear here.";
+      $("examples").innerHTML = "";
+      $("vizBox").innerHTML = "";
+      $("rules").innerHTML = "";
+      $("legendBox").innerHTML = "";
+    }
+
+    function setActivePrep(id){
+      const p = getPrepById(id);
+      if(!p) return;
+      activePrepId = id;
+
+      $("selName").innerHTML = `${escapeHtml(p.id)} <span class="small-muted">(${escapeHtml(p.en)})</span>`;
+      $("selBadge").innerHTML = caseBadgeHTML(p.case);
+      $("selMeta").textContent = `Meaning: ${p.meaning}`;
+
+      $("vizBox").innerHTML = renderViz(p);
+
+      $("rules").innerHTML = p.rules.map(r => `
+        <li class="list-group-item">
+          <span class="badge badge-soft me-2">Rule</span>
+          ${escapeHtml(r)}
+        </li>
+      `).join("");
+
+      $("legendBox").innerHTML = legendFor(p);
+
+      $("examples").innerHTML = p.examples.map(([de,en]) => `
+        <div class="mb-2">
+          <div class="fw-semibold">${escapeHtml(de)}</div>
+          <div class="small-muted">${escapeHtml(en)}</div>
+        </div>
+      `).join("");
+
+      renderPreps();
+    }
+
+    function setActiveSet(setName){
+      activeSet = setName;
+      clearDetail();
+      renderPreps();
+    }
+
+    // -------------------- Practice --------------------
+    const PRACTICE_BANK = [
+      { sentence: "Ich gehe ___ Schule.", options:["zu","nach","mit"], answer:"zu", note:"Place with article: zu der Schule → zur Schule. We choose 'zu' here." },
+      { sentence: "Das Buch liegt ___ dem Tisch.", options:["auf","in","unter"], answer:"auf", note:"Location (where?) with 'auf' uses Dative: auf dem Tisch." },
+      { sentence: "Ich lege das Buch ___ den Tisch.", options:["auf","in","unter"], answer:"auf", note:"Movement (to where?) with 'auf' uses Accusative: auf den Tisch." },
+      { sentence: "Wir fahren ___ Berlin.", options:["nach","zu","aus"], answer:"nach", note:"Cities/countries (no article): nach Berlin." },
+      { sentence: "Ich komme ___ der Arbeit.", options:["von","aus","nach"], answer:"von", note:"From work/person: von der Arbeit." },
+      { sentence: "Ich trinke Tee ___ Zucker.", options:["ohne","mit","für"], answer:"ohne", note:"ohne always takes Accusative, meaning 'without'." },
+      { sentence: "Das Geschenk ist ___ dich.", options:["für","mit","bei"], answer:"für", note:"für always takes Accusative, meaning 'for'." },
+      { sentence: "Ich bin ___ meiner Mutter.", options:["bei","nach","von"], answer:"bei", note:"bei = at/with someone (Dative)." },
+      { sentence: "Ich komme ___ Bangladesh.", options:["aus","von","zu"], answer:"aus", note:"Origin/country: aus Bangladesh." },
+      { sentence: "Der Kurs beginnt ___ 9 Uhr.", options:["um","gegen","seit"], answer:"um", note:"Exact time: um 9 Uhr." },
+      { sentence: "Ich lerne Deutsch ___ einem Jahr.", options:["seit","um","gegen"], answer:"seit", note:"Starting point in time: seit einem Jahr." }
+    ];
+
+    let currentPractice = [];
+
+    function newPracticeSet(){
+      currentPractice = sample(PRACTICE_BANK, 6).map(q => ({...q, options: shuffle([...q.options])}));
+      renderPractice();
+    }
+
+    function renderPractice(){
+      const box = $("practice");
+      box.innerHTML = currentPractice.map((q, idx) => `
+        <div class="glass p-3 mb-2" style="background: rgba(255,255,255,.04);" data-idx="${idx}">
+          <div class="fw-semibold mb-2">${idx+1}. ${escapeHtml(q.sentence)}</div>
+          <div class="d-flex gap-2 flex-wrap">
+            ${q.options.map(o => `
+              <button type="button" class="btn btn-outline-light btn-sm practice-choice" data-opt="${escapeHtml(o)}">${escapeHtml(o)}</button>
+            `).join("")}
+          </div>
+          <div class="mt-2 small-muted practice-feedback" aria-live="polite"></div>
+        </div>
+      `).join("");
+
+      box.querySelectorAll(".practice-choice").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const wrap = btn.closest("[data-idx]");
+          const idx = Number(wrap.dataset.idx);
+          const q = currentPractice[idx];
+          const chosen = btn.dataset.opt;
+
+          // reset states for this question
+          wrap.querySelectorAll(".practice-choice").forEach(b => {
+            b.classList.remove("btn-success","btn-danger");
+            b.classList.add("btn-outline-light");
+          });
+
+          const fb = wrap.querySelector(".practice-feedback");
+          if(chosen === q.answer){
+            btn.classList.remove("btn-outline-light");
+            btn.classList.add("btn-success");
+            fb.innerHTML = `<span class="badge text-bg-success">Correct</span> ${escapeHtml(q.note)}`;
+          } else {
+            btn.classList.remove("btn-outline-light");
+            btn.classList.add("btn-danger");
+            fb.innerHTML = `<span class="badge text-bg-danger">Try again</span> ${escapeHtml(q.note)}`;
+          }
+        });
+      });
+    }
+
+    function clearPractice(){
+      $("practice").querySelectorAll(".practice-choice").forEach(b => {
+        b.classList.remove("btn-success","btn-danger");
+        b.classList.add("btn-outline-light");
+      });
+      $("practice").querySelectorAll(".practice-feedback").forEach(f => f.textContent = "");
+    }
+
+    // -------------------- Quiz --------------------
+    const QUIZ_BANK = [
+      { q:"Choose: Ich gehe ___ meinen Freund. (with my friend)", opts:["mit","für","ohne"], a:"mit", why:"mit = with, always Dative." },
+      { q:"Choose: Ich komme ___ Deutschland. (from Germany)", opts:["aus","nach","um"], a:"aus", why:"aus = from (origin), always Dative." },
+      { q:"Two-way: Das Handy ist ___ der Tasche. (where?)", opts:["in","zu","für"], a:"in", why:"Where? → Dative: in der Tasche." },
+      { q:"Two-way: Ich lege das Handy ___ die Tasche. (to where?)", opts:["in","bei","seit"], a:"in", why:"To where? → Accusative: in die Tasche." },
+      { q:"Time: Ich komme ___ 18 Uhr. (around 6pm)", opts:["gegen","um","seit"], a:"gegen", why:"gegen = around/approximately." },
+      { q:"Choose: Das Geschenk ist ___ dich.", opts:["für","mit","bei"], a:"für", why:"für always takes Accusative, meaning 'for'." },
+      { q:"Choose: Ich bin ___ meiner Mutter. (at my mother’s place)", opts:["bei","nach","von"], a:"bei", why:"bei = at/with someone (Dative)." },
+      { q:"Exact time: Der Kurs beginnt ___ 9 Uhr.", opts:["um","gegen","seit"], a:"um", why:"um is used for exact clock time." }
+    ];
+
+    let currentQuiz = [];
+
+    function newQuiz(){
+      currentQuiz = sample(QUIZ_BANK, 5).map(q => ({...q, opts: shuffle([...q.opts])}));
+      renderQuiz();
+      updateScore(0, currentQuiz.length);
+    }
+
+    function renderQuiz(){
+      const box = $("quiz");
+      box.innerHTML = currentQuiz.map((q, i) => `
+        <div class="glass p-3 mb-2" style="background: rgba(255,255,255,.04);" data-q="${i}">
+          <div class="fw-semibold">${i+1}. ${escapeHtml(q.q)}</div>
+          <div class="mt-2">
+            ${q.opts.map(o => `
+              <div class="form-check mt-1">
+                <input class="form-check-input" type="radio" name="q${i}" id="q${i}_${escapeHtml(o)}" value="${escapeHtml(o)}">
+                <label class="form-check-label" for="q${i}_${escapeHtml(o)}">${escapeHtml(o)}</label>
+              </div>
+            `).join("")}
+          </div>
+          <div class="mt-2 small-muted quiz-feedback"></div>
+        </div>
+      `).join("");
+    }
+
+    function updateScore(score, total){
+      $("score").textContent = `${score} / ${total}`;
+      const pct = total ? Math.round((score / total) * 100) : 0;
+      $("scoreBar").style.width = pct + "%";
+      $("scoreBar").className = "progress-bar " + (pct >= 80 ? "bg-success" : pct >= 50 ? "bg-warning" : "bg-danger");
+    }
+
+    function submitQuiz(){
+      let score = 0;
+
+      $("quiz").querySelectorAll("[data-q]").forEach(el => {
+        const i = Number(el.dataset.q);
+        const q = currentQuiz[i];
+        const chosen = el.querySelector(`input[name="q${i}"]:checked`)?.value || null;
+        const fb = el.querySelector(".quiz-feedback");
+
+        if(!chosen){
+          fb.innerHTML = `<span class="badge text-bg-secondary">Not answered</span> Correct: <b>${escapeHtml(q.a)}</b>. ${escapeHtml(q.why)}`;
+          return;
+        }
+        if(chosen === q.a){
+          score++;
+          fb.innerHTML = `<span class="badge text-bg-success">Correct</span> ${escapeHtml(q.why)}`;
+        } else {
+          fb.innerHTML = `<span class="badge text-bg-danger">Wrong</span> Correct: <b>${escapeHtml(q.a)}</b>. ${escapeHtml(q.why)}`;
+        }
+      });
+
+      updateScore(score, currentQuiz.length);
+    }
+
+    // -------------------- UI Events --------------------
+    $("search").addEventListener("input", renderPreps);
+    $("filter").addEventListener("change", renderPreps);
+
+    $("randomBtn").addEventListener("click", () => {
+      const list = getVisiblePreps();
+      if(!list.length) return;
+      const pick = list[Math.floor(Math.random() * list.length)];
+      setActivePrep(pick.id);
+    });
+
+    $("resetBtn").addEventListener("click", () => {
+      $("search").value = "";
+      $("filter").value = "all";
+      // reset active set to core
+      document.querySelectorAll("#setTabs .nav-link").forEach(btn => btn.classList.remove("active"));
+      document.querySelector('#setTabs .nav-link[data-set="core"]')?.classList.add("active");
+      setActiveSet("core");
+      newPracticeSet();
+      newQuiz();
+    });
+
+    document.querySelectorAll("#setTabs .nav-link").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("#setTabs .nav-link").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        setActiveSet(btn.dataset.set);
+      });
+    });
+
+    $("newPracticeBtn").addEventListener("click", newPracticeSet);
+    $("clearPracticeBtn").addEventListener("click", clearPractice);
+
+    $("newQuizBtn").addEventListener("click", newQuiz);
+    $("submitQuizBtn").addEventListener("click", submitQuiz);
+
+    // -------------------- Init --------------------
+    setActiveSet("core");
+    newPracticeSet();
+    newQuiz();
+  </script>
+  <script src="../assets/portfolio-shell.js"></script>
+</body>
+</html>

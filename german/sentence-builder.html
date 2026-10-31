@@ -1,0 +1,1029 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>German Sentence Builder (A1) — Examples + Quiz</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link href="style.css" rel="stylesheet" />
+
+  <style>
+    .wrap { max-width: 1100px; margin: 18px auto 110px; padding: 10px; }
+    .heroBox{
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+      padding: 26px;
+    }
+    .badgeSoft{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 6px 10px; border-radius: 999px;
+      background: linear-gradient(90deg, rgba(96,198,255,0.12), rgba(96,198,255,0.06));
+      color: var(--accent); font-weight: 700; font-size: .85rem;
+    }
+    .cardSoft{
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.45);
+    }
+    .muted { color: var(--muted); }
+    .miniTable th, .miniTable td { vertical-align: middle; }
+    .pillKey{
+      font-weight: 700; font-size: .85rem;
+      padding: 4px 10px; border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.88);
+      display:inline-block;
+    }
+
+    /* Word chips */
+    .wordBank { display:flex; flex-wrap:wrap; gap:10px; }
+    .wordChip{
+      cursor: pointer;
+      user-select:none;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      color: rgba(255,255,255,0.92);
+      font-weight: 800;
+    }
+    .wordChip:active{ transform: scale(.98); }
+    .dropZone{
+      min-height: 56px;
+      padding: 10px;
+      border-radius: 12px;
+      border: 1px dashed rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.03);
+      display:flex; flex-wrap:wrap; gap:10px;
+      align-items:center;
+    }
+    .dropZone .hint { font-weight:600; color: var(--muted); }
+    .ok { color: #6ee7b7; font-weight: 900; }
+    .bad { color: #fb7185; font-weight: 900; }
+  </style>
+  <link rel="stylesheet" href="../assets/portfolio-theme.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <main class="wrap">
+
+    <!-- HERO -->
+    <section class="heroBox mb-4">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div style="max-width: 740px;">
+          <div class="badgeSoft mb-2"><i class="bi bi-magic"></i> Sentence Builder (A1) + Quiz</div>
+          <h1 class="mb-2" style="font-size:1.8rem;line-height:1.12;">
+            Learn German sentence word order (A1) — with examples and practice.
+          </h1>
+          <p class="muted mb-0">
+            A1 focus: <strong>Statements</strong>, <strong>Questions</strong>, <strong>Imperative</strong>, <strong>Negation</strong>,
+            <strong>Modal verbs</strong>, <strong>Separable verbs</strong>, and easy <strong>weil</strong> sentences.
+          </p>
+        </div>
+
+        <div class="d-flex gap-2 flex-wrap">
+          <a href="#builder" class="btn btn-primary"><i class="bi bi-gear me-2"></i>Sentence Builder</a>
+          <a href="#quiz" class="btn btn-outline-light"><i class="bi bi-lightning-charge me-2"></i>Start Quiz</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK RULES -->
+    <section class="cardSoft p-3 p-md-4 mb-4">
+      <div class="d-flex flex-wrap gap-2 align-items-center mb-2">
+        <span class="pillKey">Main sentence</span>
+        <span class="muted">→ Verb is usually in position</span>
+        <span class="pillKey">2</span>
+        <span class="muted">(V2 rule)</span>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-dark table-bordered align-middle miniTable mb-0">
+          <thead>
+            <tr>
+              <th style="width:28%;">Type</th>
+              <th>Simple rule</th>
+              <th style="width:35%;">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td><strong>Statement</strong></td>
+                <td>Position 1 + <strong>Verb(2)</strong> + rest</td>
+                <td>Heute <strong>lerne</strong> ich Deutsch.</td>
+            </tr>
+
+            <tr>
+                <td><strong>Yes/No question</strong></td>
+                <td><strong>Verb(1)</strong> + subject + rest?</td>
+                <td><strong>Lernst</strong> du Deutsch?</td>
+            </tr>
+
+            <tr>
+                <td><strong>W-question</strong></td>
+                <td>W-word + <strong>Verb(2)</strong> + subject?</td>
+                <td>Wo <strong>wohnst</strong> du?</td>
+            </tr>
+
+            <tr>
+                <td><strong>Weil (easy)</strong></td>
+                <td>weil + subject + rest + <strong>Verb(last)</strong></td>
+                <td>…, weil ich müde <strong>bin</strong>.</td>
+            </tr>
+
+            <!-- ✅ More rows (A1) -->
+            <tr>
+                <td><strong>Imperative (command)</strong></td>
+                <td><strong>Verb(1)</strong> + (bitte) + rest!</td>
+                <td><strong>Komm</strong> bitte!</td>
+            </tr>
+
+            <tr>
+                <td><strong>Negation with “nicht”</strong></td>
+                <td>Normal order + <strong>nicht</strong> (often near end)</td>
+                <td>Ich komme <strong>nicht</strong>.</td>
+            </tr>
+
+            <tr>
+                <td><strong>Negation with “kein”</strong></td>
+                <td><strong>kein</strong> + noun (no / not a)</td>
+                <td>Ich habe <strong>kein</strong> Auto.</td>
+            </tr>
+
+            <tr>
+                <td><strong>Modal verb sentence</strong></td>
+                <td>Position 1 + modal <strong>Verb(2)</strong> + … + <strong>Infinitive(last)</strong></td>
+                <td>Ich <strong>kann</strong> Deutsch <strong>sprechen</strong>.</td>
+            </tr>
+
+            <tr>
+                <td><strong>Separable verb</strong></td>
+                <td>Verb(2) + … + <strong>prefix(last)</strong></td>
+                <td>Ich <strong>stehe</strong> um 7 Uhr <strong>auf</strong>.</td>
+            </tr>
+
+            <tr>
+                <td><strong>Time first (Topic in position 1)</strong></td>
+                <td><strong>Time(1)</strong> + Verb(2) + subject + rest</td>
+                <td>Morgen <strong>habe</strong> ich Zeit.</td>
+            </tr>
+
+            <tr>
+                <td><strong>Place first (Topic in position 1)</strong></td>
+                <td><strong>Place(1)</strong> + Verb(2) + subject + rest</td>
+                <td>In Berlin <strong>wohne</strong> ich.</td>
+            </tr>
+
+            <tr>
+                <td><strong>Two verbs (Perfekt preview A1+)</strong></td>
+                <td>Aux verb <strong>Verb(2)</strong> + … + <strong>Participle(last)</strong></td>
+                <td>Ich <strong>habe</strong> Deutsch <strong>gelernt</strong>.</td>
+            </tr>
+            </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- A1 LESSONS -->
+    <section class="cardSoft p-3 p-md-4 mb-4">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+        <h2 class="mb-0" style="font-size:1.25rem;">
+          <i class="bi bi-journal-text me-2"></i>A1 Sentence Types (easy examples)
+        </h2>
+        <a href="#quiz" class="btn btn-sm btn-outline-light"><i class="bi bi-lightning-charge me-1"></i>Practice</a>
+      </div>
+
+      <div class="accordion accordion-flush" id="accA1">
+
+        <div class="accordion-item bg-transparent text-white">
+          <h2 class="accordion-header" id="a1h1">
+            <button class="accordion-button collapsed bg-transparent text-white" type="button" data-bs-toggle="collapse" data-bs-target="#a1c1">
+              1) Statement (Aussagesatz) — Verb in position 2
+            </button>
+          </h2>
+          <div id="a1c1" class="accordion-collapse collapse" data-bs-parent="#accA1">
+            <div class="accordion-body">
+              <ul class="mb-2">
+                <li>Ich <strong>lerne</strong> Deutsch.</li>
+                <li>Heute <strong>lerne</strong> ich Deutsch.</li>
+                <li>In Berlin <strong>wohne</strong> ich.</li>
+              </ul>
+              <div class="alert alert-dark border-0 mb-0" style="background:rgba(255,255,255,0.04);">
+                Tip: position 1 can be Time/Place/Object. Verb stays position 2.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-transparent text-white">
+          <h2 class="accordion-header" id="a1h2">
+            <button class="accordion-button collapsed bg-transparent text-white" type="button" data-bs-toggle="collapse" data-bs-target="#a1c2">
+              2) Yes/No Question — Verb first
+            </button>
+          </h2>
+          <div id="a1c2" class="accordion-collapse collapse" data-bs-parent="#accA1">
+            <div class="accordion-body">
+              <ul class="mb-0">
+                <li><strong>Kommst</strong> du morgen?</li>
+                <li><strong>Hast</strong> du Zeit?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-transparent text-white">
+          <h2 class="accordion-header" id="a1h3">
+            <button class="accordion-button collapsed bg-transparent text-white" type="button" data-bs-toggle="collapse" data-bs-target="#a1c3">
+              3) W-Question — W-word + verb position 2
+            </button>
+          </h2>
+          <div id="a1c3" class="accordion-collapse collapse" data-bs-parent="#accA1">
+            <div class="accordion-body">
+              <ul class="mb-0">
+                <li><strong>Wie</strong> <strong>heißt</strong> du?</li>
+                <li><strong>Wo</strong> <strong>wohnst</strong> du?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-transparent text-white">
+          <h2 class="accordion-header" id="a1h4">
+            <button class="accordion-button collapsed bg-transparent text-white" type="button" data-bs-toggle="collapse" data-bs-target="#a1c4">
+              4) Imperative (command) — Verb first
+            </button>
+          </h2>
+          <div id="a1c4" class="accordion-collapse collapse" data-bs-parent="#accA1">
+            <div class="accordion-body">
+              <ul class="mb-2">
+                <li><strong>Komm</strong> bitte!</li>
+                <li><strong>Geh</strong> bitte!</li>
+              </ul>
+              <div class="alert alert-dark border-0 mb-0" style="background:rgba(255,255,255,0.04);">
+                Tip: “bitte” makes it polite.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-transparent text-white">
+          <h2 class="accordion-header" id="a1h5">
+            <button class="accordion-button collapsed bg-transparent text-white" type="button" data-bs-toggle="collapse" data-bs-target="#a1c5">
+              5) Negation — “nicht” vs “kein”
+            </button>
+          </h2>
+          <div id="a1c5" class="accordion-collapse collapse" data-bs-parent="#accA1">
+            <div class="accordion-body">
+              <ul class="mb-2">
+                <li>Ich habe <strong>kein</strong> Auto. (kein + noun)</li>
+                <li>Ich komme <strong>nicht</strong>. (nicht = not)</li>
+              </ul>
+              <div class="alert alert-dark border-0 mb-0" style="background:rgba(255,255,255,0.04);">
+                A1 tip: “nicht” often goes near the end.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-transparent text-white">
+          <h2 class="accordion-header" id="a1h6">
+            <button class="accordion-button collapsed bg-transparent text-white" type="button" data-bs-toggle="collapse" data-bs-target="#a1c6">
+              6) Modal verbs — infinitive at the end
+            </button>
+          </h2>
+          <div id="a1c6" class="accordion-collapse collapse" data-bs-parent="#accA1">
+            <div class="accordion-body">
+              <ul class="mb-0">
+                <li>Ich <strong>kann</strong> Deutsch <strong>sprechen</strong>.</li>
+                <li>Wir <strong>müssen</strong> heute <strong>lernen</strong>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-transparent text-white">
+          <h2 class="accordion-header" id="a1h7">
+            <button class="accordion-button collapsed bg-transparent text-white" type="button" data-bs-toggle="collapse" data-bs-target="#a1c7">
+              7) Separable verbs — prefix at the end
+            </button>
+          </h2>
+          <div id="a1c7" class="accordion-collapse collapse" data-bs-parent="#accA1">
+            <div class="accordion-body">
+              <ul class="mb-0">
+                <li>Ich <strong>stehe</strong> um 7 Uhr <strong>auf</strong>.</li>
+                <li>Er <strong>ruft</strong> mich <strong>an</strong>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-transparent text-white">
+          <h2 class="accordion-header" id="a1h8">
+            <button class="accordion-button collapsed bg-transparent text-white" type="button" data-bs-toggle="collapse" data-bs-target="#a1c8">
+              8) “weil” (easy) — verb at the end
+            </button>
+          </h2>
+          <div id="a1c8" class="accordion-collapse collapse" data-bs-parent="#accA1">
+            <div class="accordion-body">
+              <ul class="mb-2">
+                <li>Ich bleibe zu Hause, weil ich müde <strong>bin</strong>.</li>
+                <li>Ich lerne Deutsch, weil es wichtig <strong>ist</strong>.</li>
+              </ul>
+              <div class="alert alert-dark border-0 mb-0" style="background:rgba(255,255,255,0.04);">
+                A1 tip: After “weil”, verb goes to the end.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SENTENCE BUILDER -->
+    <section id="builder" class="cardSoft p-3 p-md-4 mb-4">
+      <h2 class="mb-2" style="font-size:1.25rem;">
+        <i class="bi bi-gear me-2"></i>Sentence Builder (A1)
+      </h2>
+      <p class="muted mb-3">Choose a type and build your sentence. (A1 vocabulary suggestions included)</p>
+
+      <div class="row g-3">
+        <div class="col-12 col-md-4">
+          <label class="form-label">Sentence type</label>
+          <select id="type" class="form-select">
+            <option value="statement">Statement (V2)</option>
+            <option value="yesno">Yes/No Question (Verb 1)</option>
+            <option value="wquestion">W-Question (W + V2)</option>
+            <option value="imperative">Imperative (Verb 1)</option>
+            <option value="weil">Weil sentence (verb last)</option>
+            <option value="modal">Modal (modal V2 + infinitive last)</option>
+            <option value="separable">Separable verb (prefix last)</option>
+          </select>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <label class="form-label">Position 1 / Topic (optional)</label>
+          <input id="topic" class="form-control" list="topics" placeholder="Heute / Morgen / In Berlin ..." />
+          <div class="form-text muted">For statements: position 1 can be time/place.</div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <label class="form-label">W-word / (weil)</label>
+          <input id="wconj" class="form-control" list="wwords" placeholder="Wie / Wo / Warum / weil" />
+          <div class="form-text muted">For W-questions use W-word. For weil-sentence use “weil”.</div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <label class="form-label">Subject</label>
+          <input id="subj" class="form-control" list="subjects" value="ich" placeholder="ich / du / er / wir ..." />
+        </div>
+
+        <div class="col-12 col-md-4">
+          <label class="form-label">Conjugated verb</label>
+          <input id="verb" class="form-control" list="verbs" value="lerne" placeholder="lerne / gehe / bin / habe / kann..." />
+        </div>
+
+        <div class="col-12 col-md-4">
+          <label class="form-label">Object / Rest</label>
+          <input id="rest" class="form-control" list="rests" value="Deutsch" placeholder="Deutsch / nach Hause / Zeit ..." />
+        </div>
+
+        <div class="col-12 col-md-4">
+          <label class="form-label">Time (optional)</label>
+          <input id="time" class="form-control" list="times" placeholder="heute / morgen / um 7 Uhr ..." />
+        </div>
+
+        <div class="col-12 col-md-4">
+          <label class="form-label">Place (optional)</label>
+          <input id="place" class="form-control" list="places" placeholder="zu Hause / in Berlin / zur Schule ..." />
+        </div>
+
+        <div class="col-12 col-md-4">
+          <label class="form-label">Infinitive (for modal)</label>
+          <input id="inf" class="form-control" list="infs" placeholder="lernen / sprechen / kommen ..." />
+        </div>
+
+        <div class="col-12 col-md-4">
+          <label class="form-label">Separable prefix (for separable)</label>
+          <input id="prefix" class="form-control" list="prefixes" placeholder="auf / an ..." />
+        </div>
+
+        <div class="col-12 d-flex gap-2 flex-wrap">
+          <button id="buildBtn" class="btn btn-primary">
+            <i class="bi bi-magic me-2"></i>Build Sentence
+          </button>
+          <button id="exampleBtn" class="btn btn-outline-light">
+            <i class="bi bi-stars me-2"></i>Load Example
+          </button>
+          <button id="clearBtn" class="btn btn-outline-light">
+            <i class="bi bi-eraser me-2"></i>Clear
+          </button>
+        </div>
+
+        <div class="col-12">
+          <div class="p-3 rounded-3" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);">
+            <div class="muted mb-1">Output</div>
+            <div id="output" style="font-weight:900;font-size:1.05rem;">—</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- A1 word suggestions -->
+      <datalist id="subjects">
+        <option value="ich"></option><option value="du"></option><option value="er"></option><option value="sie"></option>
+        <option value="wir"></option><option value="ihr"></option><option value="Sie"></option>
+      </datalist>
+
+      <datalist id="topics">
+        <option value="Heute"></option>
+        <option value="Morgen"></option>
+        <option value="Am Abend"></option>
+        <option value="In Berlin"></option>
+        <option value="Zu Hause"></option>
+      </datalist>
+
+      <datalist id="wwords">
+        <option value="Wie"></option>
+        <option value="Wo"></option>
+        <option value="Warum"></option>
+        <option value="Wann"></option>
+        <option value="Was"></option>
+        <option value="weil"></option>
+      </datalist>
+
+      <datalist id="verbs">
+        <option value="bin"></option><option value="habe"></option><option value="lerne"></option><option value="gehe"></option>
+        <option value="komme"></option><option value="wohne"></option><option value="heiße"></option><option value="spreche"></option>
+        <option value="esse"></option><option value="trinke"></option><option value="kann"></option><option value="muss"></option>
+        <option value="will"></option><option value="stehe"></option><option value="bleibe"></option>
+      </datalist>
+
+      <datalist id="rests">
+        <option value="Deutsch"></option>
+        <option value="ein Buch"></option>
+        <option value="Kaffee"></option>
+        <option value="Wasser"></option>
+        <option value="Zeit"></option>
+        <option value="nach Hause"></option>
+        <option value="zur Schule"></option>
+        <option value="zu Hause"></option>
+      </datalist>
+
+      <datalist id="times">
+        <option value="heute"></option>
+        <option value="morgen"></option>
+        <option value="um 7 Uhr"></option>
+        <option value="am Abend"></option>
+      </datalist>
+
+      <datalist id="places">
+        <option value="zu Hause"></option>
+        <option value="in Berlin"></option>
+        <option value="zur Schule"></option>
+        <option value="nach Hause"></option>
+      </datalist>
+
+      <datalist id="infs">
+        <option value="lernen"></option>
+        <option value="sprechen"></option>
+        <option value="kommen"></option>
+        <option value="gehen"></option>
+      </datalist>
+
+      <datalist id="prefixes">
+        <option value="auf"></option>
+        <option value="an"></option>
+      </datalist>
+
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="cardSoft p-3 p-md-4">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+        <h2 class="mb-0" style="font-size:1.25rem;">
+          <i class="bi bi-lightning-charge me-2"></i>A1 Quiz (25 Questions)
+        </h2>
+        <div class="d-flex gap-2 align-items-center">
+          <span class="muted">Best:</span>
+          <span id="best" class="pillKey">0</span>
+        </div>
+      </div>
+
+      <p class="muted mb-3">Quiz types: multiple choice, fill in the blank, and word order (tap or drag words).</p>
+
+      <div class="row g-3">
+        <div class="col-12 col-lg-7">
+          <div class="p-3 rounded-3" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <div class="pillKey">Question <span id="qNo">1</span>/<span id="qTotal">25</span></div>
+              <div class="muted">Score: <strong id="score">0</strong></div>
+            </div>
+
+            <h5 id="qText" class="mb-3"></h5>
+
+            <!-- MCQ -->
+            <div id="mcqBox" class="d-none">
+              <div id="mcqOptions" class="d-grid gap-2"></div>
+            </div>
+
+            <!-- FILL -->
+            <div id="fillBox" class="d-none">
+              <input id="fillInput" class="form-control" placeholder="Type your answer..." />
+              <button id="fillSubmit" class="btn btn-primary mt-2">Submit</button>
+            </div>
+
+            <!-- REORDER -->
+            <div id="reorderBox" class="d-none">
+              <div class="muted mb-2">Tap words (or drag) to build the sentence:</div>
+              <div id="bank" class="wordBank mb-3"></div>
+              <div id="zone" class="dropZone">
+                <span class="hint">Tap words to add here…</span>
+              </div>
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <button id="checkOrder" class="btn btn-primary">Check</button>
+                <button id="resetOrder" class="btn btn-outline-light">Reset</button>
+              </div>
+            </div>
+
+            <div id="feedback" class="mt-3"></div>
+
+            <div class="d-flex gap-2 flex-wrap mt-3">
+              <button id="nextBtn" class="btn btn-outline-light">Next</button>
+              <button id="restartBtn" class="btn btn-outline-light">Restart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-5">
+          <div class="p-3 rounded-3" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);">
+            <h6 class="mb-2"><i class="bi bi-info-circle me-2"></i>A1 Quick Tips</h6>
+            <ul class="muted mb-0">
+              <li>Statement: verb position <strong>2</strong>.</li>
+              <li>Yes/No question: verb position <strong>1</strong>.</li>
+              <li>W-question: W-word + verb position <strong>2</strong>.</li>
+              <li>Modal: infinitive at the <strong>end</strong>.</li>
+              <li>Separable: prefix at the <strong>end</strong>.</li>
+              <li>weil: verb at the <strong>end</strong>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Navbar/Footer loader
+    fetch('navbar.html').then(r => r.text()).then(html => {
+      document.getElementById('navbar-placeholder').innerHTML = html;
+    }).catch(console.error);
+
+    fetch('footer.html').then(r => r.text()).then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    }).catch(console.error);
+  </script>
+
+  <script>
+    // ---------------------------
+    // SENTENCE BUILDER (A1)
+    // ---------------------------
+    const $ = (id) => document.getElementById(id);
+
+    function clean(arr){
+      return arr.map(x => (x || "").trim()).filter(Boolean);
+    }
+
+    function buildSentence(){
+      const type = $('type').value;
+      const topic = $('topic').value.trim();
+      const wconj = $('wconj').value.trim();
+      const subj = $('subj').value.trim();
+      const verb = $('verb').value.trim();
+      const rest = $('rest').value.trim();
+      const time = $('time').value.trim();
+      const place = $('place').value.trim();
+      const inf = $('inf').value.trim();
+      const prefix = $('prefix').value.trim();
+
+      // A1 simple order: subject + verb + time + place + rest (or rest near end)
+      // We'll keep output natural and easy.
+
+      let out = "";
+
+      if(type === "statement"){
+        if(topic){
+          out = clean([topic, verb, subj, time, place, rest]).join(' ');
+        } else {
+          out = clean([subj, verb, time, place, rest]).join(' ');
+        }
+        out = out.trim() + ".";
+      }
+
+      if(type === "yesno"){
+        out = clean([verb, subj, time, place, rest]).join(' ').trim() + "?";
+      }
+
+      if(type === "wquestion"){
+        const w = wconj || "Wo";
+        out = clean([w, verb, subj, time, place, rest]).join(' ').trim() + "?";
+      }
+
+      if(type === "imperative"){
+        out = clean([verb, "bitte", time, place, rest]).join(' ').replace("bitte  ", "bitte ").trim() + "!";
+      }
+
+      if(type === "weil"){
+        const conj = (wconj && wconj.toLowerCase() === "weil") ? "weil" : "weil";
+        // weil + subject + time + place + rest + verb(last)
+        out = clean([conj, subj, time, place, rest, verb]).join(' ').trim() + ".";
+      }
+
+      if(type === "modal"){
+        // statement with modal: (topic) + modal V2 + subject + time + place + rest + infinitive(last)
+        if(topic){
+          out = clean([topic, verb, subj, time, place, rest, inf]).join(' ');
+        } else {
+          out = clean([subj, verb, time, place, rest, inf]).join(' ');
+        }
+        out = out.trim() + ".";
+      }
+
+      if(type === "separable"){
+        // statement with separable: (topic) + verb V2 + subject + time + place + rest + prefix(last)
+        if(topic){
+          out = clean([topic, verb, subj, time, place, rest, prefix]).join(' ');
+        } else {
+          out = clean([subj, verb, time, place, rest, prefix]).join(' ');
+        }
+        out = out.trim() + ".";
+      }
+
+      $('output').textContent = out || "—";
+    }
+
+    $('buildBtn').addEventListener('click', buildSentence);
+
+    $('clearBtn').addEventListener('click', () => {
+      ['topic','wconj','subj','verb','rest','time','place','inf','prefix'].forEach(id => $(id).value = "");
+      $('subj').value = "ich";
+      $('type').value = "statement";
+      $('verb').value = "lerne";
+      $('rest').value = "Deutsch";
+      $('output').textContent = "—";
+    });
+
+    $('exampleBtn').addEventListener('click', () => {
+      const type = $('type').value;
+
+      // Clear common fields first
+      ['topic','wconj','time','place','inf','prefix'].forEach(id => $(id).value = "");
+
+      if(type === "statement"){
+        $('topic').value = "Heute";
+        $('subj').value = "ich";
+        $('verb').value = "lerne";
+        $('rest').value = "Deutsch";
+      } else if(type === "yesno"){
+        $('subj').value = "du";
+        $('verb').value = "Lernst";
+        $('rest').value = "Deutsch";
+      } else if(type === "wquestion"){
+        $('wconj').value = "Wo";
+        $('subj').value = "du";
+        $('verb').value = "wohnst";
+        $('rest').value = "";
+        $('place').value = "in Berlin";
+      } else if(type === "imperative"){
+        $('verb').value = "Komm";
+        $('rest').value = "";
+      } else if(type === "weil"){
+        $('wconj').value = "weil";
+        $('subj').value = "ich";
+        $('rest').value = "müde";
+        $('verb').value = "bin";
+      } else if(type === "modal"){
+        $('topic').value = "Heute";
+        $('subj').value = "ich";
+        $('verb').value = "kann";
+        $('rest').value = "Deutsch";
+        $('inf').value = "sprechen";
+      } else if(type === "separable"){
+        $('subj').value = "ich";
+        $('verb').value = "stehe";
+        $('time').value = "um 7 Uhr";
+        $('prefix').value = "auf";
+        $('rest').value = "";
+      }
+      buildSentence();
+    });
+
+    // ---------------------------
+    // QUIZ ENGINE (A1 - 25)
+    // ---------------------------
+    const QUESTIONS = [
+      { type:"mcq", text:"Statement (Aussagesatz): Where is the conjugated verb?", options:["Position 1","Position 2","Last position"], answer:1, explain:"Main clause statement: verb is usually in position 2 (V2)." },
+      { type:"reorder", text:"Reorder: (Ich / lerne / Deutsch)", words:["Ich","lerne","Deutsch"], correct:"Ich lerne Deutsch", explain:"Statement: subject + verb + rest." },
+      { type:"reorder", text:"Reorder: (Heute / lerne / ich / Deutsch)", words:["Heute","lerne","ich","Deutsch"], correct:"Heute lerne ich Deutsch", explain:"Time can be position 1, verb stays position 2." },
+
+      { type:"mcq", text:"Yes/No question: which is correct?", options:["Verb + Subject + rest","Subject + Verb + rest","W-word + verb last"], answer:0, explain:"Yes/No question starts with the verb." },
+      { type:"fill", text:"Fill the verb: „____ du Deutsch?“ (lernen)", answer:"Lernst", explain:"Yes/No question: verb first → Lernst du...?" },
+      { type:"reorder", text:"Reorder: (Kommst / du / morgen)", words:["Kommst","du","morgen"], correct:"Kommst du morgen", explain:"Verb first: Kommst du morgen?" },
+
+      { type:"mcq", text:"W-question: which is correct?", options:["W-word + Subject + Verb","W-word + Verb + Subject","Verb + W-word + Subject"], answer:1, explain:"W-word position 1, verb position 2." },
+      { type:"fill", text:"Fill the W-word: „____ heißt du?“ (How)", answer:"Wie", explain:"‘Wie heißt du?’ = What is your name?" },
+      { type:"reorder", text:"Reorder: (Wo / wohnst / du)", words:["Wo","wohnst","du"], correct:"Wo wohnst du", explain:"W-word + verb + subject." },
+
+      { type:"mcq", text:"Imperative: where is the verb?", options:["Verb first","Verb last","Verb always position 2"], answer:0, explain:"Commands often start with the verb: Komm! Geh!" },
+      { type:"reorder", text:"Reorder: (Komm / bitte)", words:["Komm","bitte"], correct:"Komm bitte", explain:"Imperative + bitte is polite." },
+
+      { type:"mcq", text:"Choose: ‘I have no car.’", options:["Ich habe nicht Auto.","Ich habe kein Auto.","Ich habe keine nicht Auto."], answer:1, explain:"Use ‘kein’ to negate a noun: kein Auto." },
+      { type:"fill", text:"Fill: „Ich habe ____ Auto.“", answer:"kein", explain:"Noun negation: kein + noun." },
+      { type:"mcq", text:"Choose: ‘I’m not coming.’", options:["Ich komme kein.","Ich nicht komme.","Ich komme nicht."], answer:2, explain:"A1: ‘nicht’ often goes near the end: Ich komme nicht." },
+
+      { type:"mcq", text:"Modal sentence: where does the infinitive go?", options:["Right after subject","At the end","At the beginning"], answer:1, explain:"Modal: conjugated modal + ... + infinitive at the end." },
+      { type:"reorder", text:"Reorder (modal): (Ich / kann / Deutsch / sprechen)", words:["Ich","kann","Deutsch","sprechen"], correct:"Ich kann Deutsch sprechen", explain:"Modal verb conjugated, infinitive last." },
+      { type:"reorder", text:"Reorder (modal): (Wir / müssen / heute / lernen)", words:["Wir","müssen","heute","lernen"], correct:"Wir müssen heute lernen", explain:"Modal: infinitive at the end." },
+
+      { type:"mcq", text:"Separable verb: where does the prefix go?", options:["Before the verb","At the end","Always after subject"], answer:1, explain:"Separable prefix goes to the end: Ich stehe auf." },
+      { type:"reorder", text:"Reorder: (Ich / stehe / um 7 Uhr / auf)", words:["Ich","stehe","um 7 Uhr","auf"], correct:"Ich stehe um 7 Uhr auf", explain:"Prefix ‘auf’ at the end." },
+
+      { type:"mcq", text:"Choose the best A1 sentence:", options:["Ich gehe nach Hause heute.","Ich gehe heute nach Hause.","Heute ich gehe nach Hause."], answer:1, explain:"Common A1: subject + verb + time + place." },
+      { type:"reorder", text:"Reorder: (Ich / gehe / heute / nach Hause)", words:["Ich","gehe","heute","nach Hause"], correct:"Ich gehe heute nach Hause", explain:"Simple: Ich gehe heute nach Hause." },
+      { type:"reorder", text:"Reorder: (Morgen / habe / ich / Zeit)", words:["Morgen","habe","ich","Zeit"], correct:"Morgen habe ich Zeit", explain:"Time can be first, verb stays position 2." },
+
+      { type:"fill", text:"Fill (weil): „…, weil ich müde ____.“ (sein)", answer:"bin", explain:"After ‘weil’, verb goes to the end." },
+      { type:"mcq", text:"Choose the correct: ‘I stay home because I am tired.’", options:[
+        "Ich bleibe zu Hause, weil ich bin müde.",
+        "Ich bleibe zu Hause, weil ich müde bin.",
+        "Ich bleibe zu Hause, weil bin ich müde."
+      ], answer:1, explain:"weil-clause: verb at the end → … weil ich müde bin." },
+
+      { type:"reorder", text:"Reorder: (Heute / trinke / ich / Kaffee)", words:["Heute","trinke","ich","Kaffee"], correct:"Heute trinke ich Kaffee", explain:"Statement: topic + verb + subject." },
+      { type:"reorder", text:"Reorder (question): (Hast / du / Zeit)", words:["Hast","du","Zeit"], correct:"Hast du Zeit", explain:"Yes/No question: verb first." },
+      { type:"reorder", text:"Reorder (W-question): (Wann / kommst / du)", words:["Wann","kommst","du"], correct:"Wann kommst du", explain:"W-word + verb + subject." },
+    ];
+
+    let idx = 0;
+    let score = 0;
+    let locked = false;
+
+    const bestKey = "lg_sentence_best_a1";
+    const bestEl = $('best');
+    const qNo = $('qNo');
+    const qTotal = $('qTotal');
+    const scoreEl = $('score');
+    const qText = $('qText');
+    const feedback = $('feedback');
+
+    const mcqBox = $('mcqBox');
+    const mcqOptions = $('mcqOptions');
+
+    const fillBox = $('fillBox');
+    const fillInput = $('fillInput');
+    const fillSubmit = $('fillSubmit');
+
+    const reorderBox = $('reorderBox');
+    const bank = $('bank');
+    const zone = $('zone');
+    const checkOrder = $('checkOrder');
+    const resetOrder = $('resetOrder');
+
+    function loadBest(){
+      const best = Number(localStorage.getItem(bestKey) || 0);
+      bestEl.textContent = best;
+    }
+    loadBest();
+
+    function setMode(mode){
+      mcqBox.classList.add('d-none');
+      fillBox.classList.add('d-none');
+      reorderBox.classList.add('d-none');
+      if(mode === "mcq") mcqBox.classList.remove('d-none');
+      if(mode === "fill") fillBox.classList.remove('d-none');
+      if(mode === "reorder") reorderBox.classList.remove('d-none');
+    }
+
+    function showFeedback(ok, explain){
+      feedback.innerHTML = `
+        <div class="mt-2 ${ok ? 'ok' : 'bad'}">${ok ? 'Correct ✅' : 'Wrong ❌'}</div>
+        <div class="muted mt-1">${explain || ''}</div>
+      `;
+    }
+
+    function normalize(s){
+      return (s || "")
+        .toLowerCase()
+        .replace(/[?.!]/g,'')
+        .replace(/\s+/g,' ')
+        .trim();
+    }
+
+    function clearDropZoneHint(){
+      const hint = zone.querySelector('.hint');
+      if(hint) hint.remove();
+    }
+
+    function addWordToZone(word){
+      clearDropZoneHint();
+      const chip = document.createElement('div');
+      chip.className = "wordChip";
+      chip.textContent = word;
+      chip.draggable = true;
+
+      // Tap to move back
+      chip.addEventListener('click', () => {
+        if(locked) return;
+        chip.remove();
+        addWordToBank(word);
+        if(zone.querySelectorAll('.wordChip').length === 0){
+          zone.innerHTML = `<span class="hint">Tap words to add here…</span>`;
+        }
+      });
+
+      chip.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData('text/plain', word);
+        e.dataTransfer.effectAllowed = "move";
+        e.dataTransfer.setData('from', 'zone');
+      });
+
+      zone.appendChild(chip);
+    }
+
+    function addWordToBank(word){
+      const chip = document.createElement('div');
+      chip.className = "wordChip";
+      chip.textContent = word;
+      chip.draggable = true;
+
+      // Tap to add to zone
+      chip.addEventListener('click', () => {
+        if(locked) return;
+        chip.remove();
+        addWordToZone(word);
+      });
+
+      chip.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData('text/plain', word);
+        e.dataTransfer.effectAllowed = "move";
+        e.dataTransfer.setData('from', 'bank');
+      });
+
+      bank.appendChild(chip);
+    }
+
+    function render(){
+      locked = false;
+      feedback.innerHTML = "";
+      qTotal.textContent = QUESTIONS.length;
+      qNo.textContent = idx + 1;
+      scoreEl.textContent = score;
+
+      const q = QUESTIONS[idx];
+      qText.textContent = q.text;
+
+      if(q.type === "mcq"){
+        setMode("mcq");
+        mcqOptions.innerHTML = "";
+        q.options.forEach((opt, i) => {
+          const btn = document.createElement('button');
+          btn.className = "btn btn-outline-light text-start";
+          btn.innerHTML = `<i class="bi bi-circle me-2"></i>${opt}`;
+          btn.onclick = () => {
+            if(locked) return;
+            locked = true;
+            const ok = i === q.answer;
+            if(ok) score++;
+            scoreEl.textContent = score;
+            showFeedback(ok, q.explain);
+          };
+          mcqOptions.appendChild(btn);
+        });
+      }
+
+      if(q.type === "fill"){
+        setMode("fill");
+        fillInput.value = "";
+        fillSubmit.onclick = () => {
+          if(locked) return;
+          locked = true;
+          const ok = normalize(fillInput.value) === normalize(q.answer);
+          if(ok) score++;
+          scoreEl.textContent = score;
+          showFeedback(ok, q.explain);
+        };
+      }
+
+      if(q.type === "reorder"){
+        setMode("reorder");
+        bank.innerHTML = "";
+        zone.innerHTML = `<span class="hint">Tap words to add here…</span>`;
+
+        // shuffle
+        const shuffled = [...q.words].sort(() => Math.random() - 0.5);
+        shuffled.forEach(addWordToBank);
+
+        // override handlers (no stacking)
+        zone.ondragover = (e) => e.preventDefault();
+        bank.ondragover = (e) => e.preventDefault();
+
+        zone.ondrop = (e) => {
+          e.preventDefault();
+          if(locked) return;
+          const word = e.dataTransfer.getData('text/plain');
+          const from = e.dataTransfer.getData('from');
+          if(!word) return;
+
+          // remove from bank if it exists there
+          if(from === 'bank'){
+            const bchip = [...bank.querySelectorAll('.wordChip')].find(c => c.textContent === word);
+            if(bchip) bchip.remove();
+            addWordToZone(word);
+          }
+        };
+
+        bank.ondrop = (e) => {
+          e.preventDefault();
+          if(locked) return;
+          const word = e.dataTransfer.getData('text/plain');
+          const from = e.dataTransfer.getData('from');
+          if(!word) return;
+
+          if(from === 'zone'){
+            const zchip = [...zone.querySelectorAll('.wordChip')].find(c => c.textContent === word);
+            if(zchip) zchip.remove();
+            addWordToBank(word);
+            if(zone.querySelectorAll('.wordChip').length === 0){
+              zone.innerHTML = `<span class="hint">Tap words to add here…</span>`;
+            }
+          }
+        };
+
+        checkOrder.onclick = () => {
+          if(locked) return;
+          locked = true;
+
+          const built = [...zone.querySelectorAll('.wordChip')].map(x => x.textContent).join(' ');
+          const ok = normalize(built) === normalize(q.correct);
+          if(ok) score++;
+          scoreEl.textContent = score;
+
+          showFeedback(ok, `${q.explain}<br><span class="muted">Correct: <strong>${q.correct}</strong></span>`);
+        };
+
+        resetOrder.onclick = () => render();
+      }
+    }
+
+    function saveBest(){
+      const best = Number(localStorage.getItem(bestKey) || 0);
+      if(score > best){
+        localStorage.setItem(bestKey, String(score));
+        loadBest();
+      }
+    }
+
+    $('nextBtn').addEventListener('click', () => {
+      if(idx < QUESTIONS.length - 1){
+        idx++;
+        render();
+      } else {
+        saveBest();
+        feedback.innerHTML = `
+          <div class="ok mt-2">Done ✅</div>
+          <div class="muted mt-1">Final score: <strong>${score}/${QUESTIONS.length}</strong></div>
+        `;
+      }
+    });
+
+    $('restartBtn').addEventListener('click', () => {
+      idx = 0;
+      score = 0;
+      render();
+    });
+
+    // Start
+    render();
+  </script>
+  <script src="../assets/portfolio-shell.js"></script>
+</body>
+</html>

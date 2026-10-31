@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>German A1 — Line by Line + Pronunciation + Grammar</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../assets/portfolio-theme.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#">German A1 Trainer</a>
+
+      <div class="d-flex align-items-center gap-3">
+        <span class="navbar-text small d-none d-md-inline">
+          Line-by-line • Pronunciation • Grammar • Speak • Quiz • Satzbau
+        </span>
+
+        <div class="form-check form-switch mb-0">
+          <input class="form-check-input" type="checkbox" role="switch" id="themeToggle" />
+          <label class="form-check-label small" for="themeToggle">Dark</label>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-4">
+    <div class="row g-3 align-items-stretch">
+      <!-- LEFT -->
+      <div class="col-12 col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center">
+              <div>
+                <h1 class="h4 mb-1">Story: <span id="storyTitle">—</span></h1>
+                <p class="text-secondary mb-0">
+                  Hover grammar highlights for tips • Open a line for pronunciation + Satzbau.
+                </p>
+              </div>
+
+              <div class="d-flex flex-wrap gap-2 align-items-center">
+                <select id="storySelect" class="form-select form-select-sm" style="min-width: 260px;"></select>
+
+                <button id="toggleEnglishBtn" class="btn btn-sm btn-outline-primary">
+                  Hide English
+                </button>
+
+                <button id="expandAllBtn" class="btn btn-sm btn-outline-secondary">
+                  Expand all
+                </button>
+              </div>
+            </div>
+
+            <!-- PRACTICE BAR -->
+            <div class="row g-2 align-items-end mt-3">
+              <div class="col-12 col-md-auto">
+                <div class="btn-group btn-group-sm" role="group" aria-label="Autoplay">
+                  <button id="btnPlayAll" class="btn btn-outline-light">▶ Play all</button>
+                  <button id="btnPauseResume" class="btn btn-outline-light" disabled>⏸ Pause</button>
+                  <button id="btnStop" class="btn btn-outline-light" disabled>■ Stop</button>
+                </div>
+              </div>
+
+              <div class="col-6 col-md-auto">
+                <label class="form-label small text-secondary mb-1" for="ttsRate">Speed</label>
+                <select id="ttsRate" class="form-select form-select-sm">
+                  <option value="0.75">0.75x</option>
+                  <option value="0.85">0.85x</option>
+                  <option value="0.95" selected>0.95x</option>
+                  <option value="1.05">1.05x</option>
+                  <option value="1.15">1.15x</option>
+                </select>
+              </div>
+
+              <div class="col-6 col-md-auto">
+                <label class="form-label small text-secondary mb-1" for="quizToggle">Quiz</label>
+                <div class="form-check form-switch mb-0">
+                  <input class="form-check-input" type="checkbox" id="quizToggle" />
+                  <label class="form-check-label small" for="quizToggle">On</label>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-auto ms-md-auto text-secondary small">
+                <span id="quizScore">Quiz: 0/0</span>
+              </div>
+            </div>
+
+            <!-- QUIZ PANEL -->
+            <div id="quizPanel" class="box mt-3 d-none">
+              <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center">
+                <div>
+                  <div class="d-flex align-items-center gap-2 mb-1">
+                    <span class="tag tag-quiz">QUIZ</span>
+                    <span class="small text-secondary">Akkusativ or Dativ?</span>
+                  </div>
+                  <div id="quizSentence" class="fw-semibold"></div>
+                  <div id="quizQuestion" class="small text-secondary mt-1"></div>
+                </div>
+
+                <div class="d-flex flex-wrap gap-2">
+                  <button id="btnQuizAcc" class="btn btn-sm btn-outline-light">Akkusativ</button>
+                  <button id="btnQuizDat" class="btn btn-sm btn-outline-light">Dativ</button>
+                  <button id="btnQuizNext" class="btn btn-sm btn-outline-secondary" disabled>Next</button>
+                </div>
+              </div>
+
+              <div id="quizFeedback" class="small mt-2"></div>
+            </div>
+
+            <hr class="my-3" />
+
+            <div id="accordionLines" class="accordion"></div>
+
+            <div id="ttsNote" class="alert alert-warning mt-3 d-none" role="alert">
+              Text-to-speech is not supported in this browser. You can still read the pronunciation.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="col-12 col-lg-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h2 class="h6 mb-2">Color Guide</h2>
+            <div class="small">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="swatch swatch-de"></span>
+                <span class="text-de fw-semibold">German (DE)</span>
+              </div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="swatch swatch-pron"></span>
+                <span class="text-pron fw-semibold">Pronunciation</span>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <span class="swatch swatch-en"></span>
+                <span class="text-en fw-semibold">English (EN)</span>
+              </div>
+            </div>
+
+            <hr class="my-3" />
+
+            <h2 class="h6 mb-2">Grammar Colors</h2>
+            <div class="small">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="swatch swatch-acc"></span>
+                <span class="text-acc fw-semibold">Akkusativ</span>
+                <span class="text-secondary">= direction (wohin?) / direct object</span>
+              </div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="swatch swatch-dat"></span>
+                <span class="text-dat fw-semibold">Dativ</span>
+                <span class="text-secondary">= location (wo?) / with-to-at</span>
+              </div>
+            </div>
+
+            <hr class="my-3" />
+
+            <h2 class="h6 mb-2">Satzbau (Main clause)</h2>
+            <div class="small text-secondary">
+              <div class="mb-1"><b>Option A:</b> Subject first</div>
+              <div class="mb-2"><span class="key">Subjekt</span> + <span class="key">Verb (Position 2)</span> + Rest</div>
+              <div class="mb-1"><b>Option B:</b> Time/Place first</div>
+              <div><span class="key">Zeit/Ort (Position 1)</span> + <span class="key">Verb (Position 2)</span> + <span class="key">Subjekt</span> + Rest</div>
+              <div class="mt-2">Separable prefix goes to the <b>end</b>: <span class="key">steht … auf</span></div>
+            </div>
+
+            <hr class="my-3" />
+
+            <h2 class="h6 mb-2">Pronunciation Key (simple)</h2>
+            <ul class="small mb-0">
+              <li><span class="key">ch</span> ≈ “kh”</li>
+              <li><span class="key">ö</span> ≈ “ur”</li>
+              <li><span class="key">ü</span> ≈ “ew”</li>
+              <li><span class="key">ei</span> = “eye”</li>
+              <li><span class="key">ie</span> = “ee”</li>
+              <li><span class="key">sp / st</span> start ≈ “shp / sht”</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="container py-4 text-center small text-secondary">
+    A1 practice • Grammar + structure are simplified (best-effort).
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+  <script src="../assets/portfolio-shell.js"></script>
+</body>
+</html>

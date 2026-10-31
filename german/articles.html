@@ -1,0 +1,913 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>German Articles • Nominative, Accusative, Dative (Beginner)</title>
+
+  <!-- Bootstrap (CDN) + offline fallback -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+    onerror="this.onerror=null; this.href='assets/bootstrap.min.css';"
+  />
+
+  <style>
+    :root{
+      --bg1:#060814;
+      --bg2:#0b1020;
+      --card: rgba(255,255,255,.06);
+      --border: rgba(255,255,255,.12);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.62);
+      --shadow: 0 18px 55px rgba(0,0,0,.40);
+      --radius: 18px;
+
+      --violet: rgba(124,58,237,.95);
+      --green: rgba(34,197,94,.92);
+      --amber: rgba(245,158,11,.95);
+      --red: rgba(239,68,68,.92);
+      --blue: rgba(59,130,246,.92);
+    }
+
+    body{
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(124,58,237,.28), transparent 55%),
+        radial-gradient(1000px 650px at 75% 12%, rgba(34,197,94,.20), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2) 45%, var(--bg1));
+    }
+
+    .glass{
+      background: rgba(15, 20, 40, .55);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      backdrop-filter: blur(10px);
+    }
+
+    .card-soft{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+
+    .small-muted{ color: var(--muted); }
+
+    .divider{ height: 1px; background: rgba(255,255,255,.12); margin: 14px 0; }
+
+    .form-control, .form-select{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.16);
+      color: var(--text);
+    }
+    .form-control::placeholder{ color: rgba(255,255,255,.50); }
+    .form-control:focus, .form-select:focus{
+      box-shadow: 0 0 0 .2rem rgba(124,58,237,.25);
+      border-color: rgba(124,58,237,.45);
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+    }
+    .form-select option{ background:#0b1020; }
+
+    .pill{
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      border-radius: 999px;
+      padding: 8px 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: .9rem;
+    }
+    .dot{ width:10px; height:10px; border-radius:999px; display:inline-block; }
+    .dot.nom{ background: var(--green); }
+    .dot.akk{ background: var(--amber); }
+    .dot.dat{ background: var(--violet); }
+
+    .tag{
+      font-weight: 900;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      display:inline-block;
+      font-size: .85rem;
+      letter-spacing: .2px;
+    }
+    .tag.nom{ border-color: rgba(34,197,94,.35); background: rgba(34,197,94,.14); }
+    .tag.akk{ border-color: rgba(245,158,11,.35); background: rgba(245,158,11,.14); }
+    .tag.dat{ border-color: rgba(124,58,237,.40); background: rgba(124,58,237,.16); }
+    .tag.tip{ border-color: rgba(59,130,246,.40); background: rgba(59,130,246,.16); }
+
+    .table thead th{
+      background: rgba(255,255,255,.06) !important;
+      color: var(--text) !important;
+      border-color: rgba(255,255,255,.12) !important;
+    }
+    .table td, .table th{
+      border-color: rgba(255,255,255,.12) !important;
+      color: var(--text) !important;
+      vertical-align: middle;
+    }
+    .table tbody tr:hover td{ background: rgba(255,255,255,.04); }
+
+    .cell-hidden{ display:none !important; }
+
+    .sticky-side{ position: sticky; top: 16px; }
+
+    .mini-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 576px){
+      .mini-grid{ grid-template-columns: 1fr; }
+    }
+
+    .choice-btn{
+      border-color: rgba(255,255,255,.22);
+      color: rgba(255,255,255,.88);
+      background: rgba(255,255,255,.04);
+    }
+    .choice-btn:hover{
+      background: rgba(255,255,255,.09);
+      border-color: rgba(255,255,255,.32);
+      color: #fff;
+    }
+
+    .viz{
+      width: 100%;
+      max-width: 360px;
+      aspect-ratio: 13 / 8;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+      padding: 10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+    .viz img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+      filter: drop-shadow(0 12px 18px rgba(0,0,0,.25));
+    }
+
+    .kbd{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: .9rem;
+      padding: 2px 8px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.88);
+    }
+
+    .footer-note{ color: rgba(255,255,255,.55); font-size: .9rem; }
+  </style>
+  <link rel="stylesheet" href="../assets/portfolio-theme.css">
+</head>
+
+<body>
+  <!-- Top bar -->
+  <nav class="navbar glass mx-3 mt-3 px-3 py-2">
+    <div class="container-fluid px-0">
+      <div class="d-flex align-items-center gap-3">
+        <div class="rounded-4 d-grid place-items-center"
+             style="width:44px;height:44px;background:linear-gradient(135deg, rgba(34,197,94,.92), rgba(124,58,237,.88)); box-shadow: 0 12px 30px rgba(0,0,0,.35);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7 17h10M7 12h10M7 7h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M5 20V4" stroke="white" stroke-opacity=".85" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="fw-bold">German Articles for Beginners</div>
+          <div class="small-muted">Nominative, Accusative, Dative • Table + definitions + trainer + quiz</div>
+        </div>
+      </div>
+
+      <div class="d-flex gap-2 flex-wrap mt-3 mt-md-0">
+        <select id="gender" class="form-select" style="width: 220px;" aria-label="Gender">
+          <option value="all">All genders</option>
+          <option value="m">Masculine (der / ein)</option>
+          <option value="f">Feminine (die / eine)</option>
+          <option value="n">Neuter (das / ein)</option>
+          <option value="pl">Plural (die / —)</option>
+        </select>
+
+        <select id="caseFilter" class="form-select" style="width: 220px;" aria-label="Case">
+          <option value="all">All cases</option>
+          <option value="nom">Nominative</option>
+          <option value="akk">Accusative</option>
+          <option value="dat">Dative</option>
+        </select>
+
+        <button id="resetBtn" class="btn btn-outline-light">Reset</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container-xl px-3 pb-5">
+    <div class="row g-3 mt-3">
+      <!-- Left -->
+      <div class="col-lg-8">
+        <section class="glass p-3">
+          <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+            <div>
+              <h5 class="mb-1">1) Article table</h5>
+              <div class="small-muted">Articles change based on the noun’s job in the sentence (case).</div>
+            </div>
+            <div class="d-flex gap-2 flex-wrap align-items-center">
+              <span class="pill"><span class="dot nom"></span>Nominative (subject)</span>
+              <span class="pill"><span class="dot akk"></span>Accusative (direct object)</span>
+              <span class="pill"><span class="dot dat"></span>Dative (receiver / after many preps)</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="table-responsive">
+            <table class="table table-dark table-bordered align-middle mb-0" id="articleTable">
+              <thead>
+                <tr>
+                  <th style="width: 160px;">Case</th>
+                  <th data-g="m">Masculine</th>
+                  <th data-g="f">Feminine</th>
+                  <th data-g="n">Neuter</th>
+                  <th data-g="pl">Plural</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-case="nom">
+                  <th><span class="tag nom">Nominative</span></th>
+                  <td data-g="m"><div><b>der</b> / <b>ein</b></div><div class="small-muted">der Mann / ein Mann</div></td>
+                  <td data-g="f"><div><b>die</b> / <b>eine</b></div><div class="small-muted">die Frau / eine Frau</div></td>
+                  <td data-g="n"><div><b>das</b> / <b>ein</b></div><div class="small-muted">das Kind / ein Kind</div></td>
+                  <td data-g="pl"><div><b>die</b> / <b>—</b></div><div class="small-muted">die Kinder / —</div></td>
+                </tr>
+
+                <tr data-case="akk">
+                  <th><span class="tag akk">Accusative</span></th>
+                  <td data-g="m"><div><b>den</b> / <b>einen</b></div><div class="small-muted">den Mann / einen Mann</div></td>
+                  <td data-g="f"><div><b>die</b> / <b>eine</b></div><div class="small-muted">die Frau / eine Frau</div></td>
+                  <td data-g="n"><div><b>das</b> / <b>ein</b></div><div class="small-muted">das Kind / ein Kind</div></td>
+                  <td data-g="pl"><div><b>die</b> / <b>—</b></div><div class="small-muted">die Kinder / —</div></td>
+                </tr>
+
+                <tr data-case="dat">
+                  <th><span class="tag dat">Dative</span></th>
+                  <td data-g="m"><div><b>dem</b> / <b>einem</b></div><div class="small-muted">dem Mann / einem Mann</div></td>
+                  <td data-g="f"><div><b>der</b> / <b>einer</b></div><div class="small-muted">der Frau / einer Frau</div></td>
+                  <td data-g="n"><div><b>dem</b> / <b>einem</b></div><div class="small-muted">dem Kind / einem Kind</div></td>
+                  <td data-g="pl"><div><b>den</b> / <b>—</b></div><div class="small-muted">den Kindern (+n)</div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Beginner Definitions -->
+          <div class="card-soft p-3">
+            <div class="fw-bold mb-1">2) Beginner definitions: how to choose the case</div>
+            <div class="small-muted mb-3">
+              Articles are small words before nouns: <b>der / die / das</b> and <b>ein / eine</b>.
+              In German, the article changes because the noun changes its <b>role</b> in the sentence.
+            </div>
+
+            <div class="mini-grid">
+              <div class="glass p-3" style="background: rgba(255,255,255,.04);">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <span class="tag nom">Nominative</span>
+                  <span class="small-muted">subject</span>
+                </div>
+                <div class="small">
+                  <b>Who/what does the action?</b><br>
+                  <span class="small-muted">Der Mann</span> kommt.
+                </div>
+              </div>
+
+              <div class="glass p-3" style="background: rgba(255,255,255,.04);">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <span class="tag akk">Accusative</span>
+                  <span class="small-muted">direct object</span>
+                </div>
+                <div class="small">
+                  <b>Who/what is affected?</b><br>
+                  Ich sehe <span class="small-muted">den Mann</span>.
+                </div>
+              </div>
+
+              <div class="glass p-3" style="background: rgba(255,255,255,.04);">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <span class="tag dat">Dative</span>
+                  <span class="small-muted">receiver</span>
+                </div>
+                <div class="small">
+                  <b>To/for whom?</b><br>
+                  Ich gebe <span class="small-muted">dem Mann</span> das Buch.
+                </div>
+              </div>
+
+              <div class="glass p-3" style="background: rgba(255,255,255,.04);">
+                <div class="fw-bold mb-2">Fast method (beginner)</div>
+                <div class="small">
+                  1) Find the verb <span class="kbd">kommt / sehe / gebe</span><br>
+                  2) Ask <b>who?</b> → Nominative<br>
+                  3) Ask <b>what?</b> → Accusative<br>
+                  4) Ask <b>to/for whom?</b> → Dative
+                </div>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="mini-grid">
+              <div class="glass p-3" style="background: rgba(255,255,255,.04);">
+                <div class="fw-bold mb-2">Two rules to memorize</div>
+                <ul class="mb-0 small">
+                  <li><b>Masculine changes:</b> der → den → dem</li>
+                  <li><b>Plural dative often adds -n:</b> den Kindern</li>
+                </ul>
+              </div>
+
+              <div class="glass p-3" style="background: rgba(255,255,255,.04);">
+                <div class="fw-bold mb-2">Common dative triggers</div>
+                <div class="small">
+                  Many prepositions force dative: <b>mit, bei, aus, von, zu, nach, seit</b>.<br>
+                  Example: mit <b>dem</b> Freund, aus <b>dem</b> Haus.
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-3 small-muted" id="caseTipBox"></div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Visual + Examples -->
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="card-soft p-3">
+                <div class="fw-bold mb-1">3) Visual idea</div>
+                <div class="small-muted mb-2">One picture for each case.</div>
+                <div class="viz" id="vizBox"></div>
+                <div class="mt-3 small-muted" id="vizNote"></div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card-soft p-3">
+                <div class="fw-bold mb-2">4) Simple examples</div>
+                <div id="examplesBox"></div>
+
+                <div class="divider"></div>
+
+                <div class="small-muted">
+                  Quick memory:
+                  <ul class="mt-2 mb-0">
+                    <li><b>der → den → dem</b> (masculine)</li>
+                    <li><b>die</b> stays <b>die</b> in Nom/Akk (feminine)</li>
+                    <li><b>das</b> stays <b>das</b> in Nom/Akk (neuter)</li>
+                    <li>Plural Dative: <b>den</b> + noun often + <b>-n</b></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Mini Trainer: pick role -->
+          <div class="card-soft p-3">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+              <div>
+                <h5 class="mb-1">5) Mini trainer (super simple)</h5>
+                <div class="small-muted">Choose the role → see the correct masculine pattern immediately.</div>
+              </div>
+              <div class="small-muted">
+                Focus: <b>der/den/dem</b>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="glass p-3" style="background: rgba(255,255,255,.04);">
+              <div class="d-flex gap-2 flex-wrap">
+                <button class="btn btn-outline-light trainer-btn" data-case="nom">Subject (who?)</button>
+                <button class="btn btn-outline-light trainer-btn" data-case="akk">Direct object (what?)</button>
+                <button class="btn btn-outline-light trainer-btn" data-case="dat">Receiver (to whom?)</button>
+              </div>
+
+              <div class="mt-3">
+                <div class="small-muted">Result</div>
+                <div class="fs-5 fw-bold" id="trainerResult">Click a role</div>
+                <div class="small-muted mt-1" id="trainerExplain"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Practice -->
+          <div class="card-soft p-3">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+              <div>
+                <h5 class="mb-1">6) Quick practice</h5>
+                <div class="small-muted">Pick the correct article. Try until correct.</div>
+              </div>
+              <div class="d-flex gap-2 flex-wrap">
+                <button id="newPracticeBtn" class="btn btn-outline-light">New set</button>
+                <button id="clearPracticeBtn" class="btn btn-outline-light">Clear</button>
+              </div>
+            </div>
+
+            <div id="practice" class="mt-3"></div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right -->
+      <div class="col-lg-4">
+        <div class="sticky-side">
+          <section class="glass p-3">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+              <div>
+                <h5 class="mb-1">7) Quiz</h5>
+                <div class="small-muted">Submit for score + explanations.</div>
+              </div>
+              <div class="d-flex gap-2 flex-wrap">
+                <button id="newQuizBtn" class="btn btn-outline-light">New quiz</button>
+                <button id="submitQuizBtn" class="btn btn-outline-light">Submit</button>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="card-soft p-3 mb-3">
+              <div class="fw-bold mb-2">Core pattern to memorize</div>
+              <div class="small">
+                <div class="mb-2"><span class="tag nom">Nom</span> <b>der</b> Mann</div>
+                <div class="mb-2"><span class="tag akk">Akk</span> <b>den</b> Mann</div>
+                <div><span class="tag dat">Dat</span> <b>dem</b> Mann</div>
+              </div>
+              <div class="divider"></div>
+              <div class="small-muted">
+                If you can do <b>der/den/dem</b>, you unlock most beginner sentences.
+              </div>
+            </div>
+
+            <div id="quiz"></div>
+
+            <div class="divider"></div>
+
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <div class="small-muted">Score</div>
+                <div id="score" class="fs-4 fw-bold">0 / 0</div>
+              </div>
+              <div style="min-width: 160px;">
+                <div class="small-muted">Progress</div>
+                <div class="progress" style="height: 10px; background: rgba(255,255,255,.10);">
+                  <div id="scoreBar" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="footer-note">
+              Offline: keep Bootstrap files in <code>assets/</code> (bootstrap.min.css + bootstrap.bundle.min.js).
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bootstrap JS (CDN) + offline fallback -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+    onerror="this.onerror=null; this.src='assets/bootstrap.bundle.min.js';"
+  ></script>
+
+  <script>
+    // -------------------- Helpers --------------------
+    const $ = (id) => document.getElementById(id);
+
+    function escapeHtml(s){
+      return String(s).replace(/[&<>"']/g, m => ({
+        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+      }[m]));
+    }
+
+    function shuffle(arr){
+      for(let i=arr.length-1;i>0;i--){
+        const j = Math.floor(Math.random()*(i+1));
+        [arr[i],arr[j]] = [arr[j],arr[i]];
+      }
+      return arr;
+    }
+
+    function sample(array, n){
+      const copy = [...array];
+      const out = [];
+      while(copy.length && out.length < n){
+        const i = Math.floor(Math.random() * copy.length);
+        out.push(copy.splice(i,1)[0]);
+      }
+      return out;
+    }
+
+    // -------------------- Articles --------------------
+    const ARTICLES = {
+      def: {
+        nom: { m:"der", f:"die", n:"das", pl:"die" },
+        akk: { m:"den", f:"die", n:"das", pl:"die" },
+        dat: { m:"dem", f:"der", n:"dem", pl:"den" }
+      },
+      indef: {
+        nom: { m:"ein", f:"eine", n:"ein", pl:"—" },
+        akk: { m:"einen", f:"eine", n:"ein", pl:"—" },
+        dat: { m:"einem", f:"einer", n:"einem", pl:"—" }
+      }
+    };
+
+    const CASE_LABEL = { nom:"Nominative", akk:"Accusative", dat:"Dative" };
+
+    // -------------------- Visual as <img> --------------------
+    function svgToDataUri(svg){
+      const encoded = encodeURIComponent(svg)
+        .replace(/%0A/g, "")
+        .replace(/%09/g, " ")
+        .replace(/%20/g, " ");
+      return `data:image/svg+xml;charset=UTF-8,${encoded}`;
+    }
+
+    function buildCaseVizSvg(which){
+      const colors = {
+        nom: "rgba(34,197,94,0.92)",
+        akk: "rgba(245,158,11,0.95)",
+        dat: "rgba(124,58,237,0.90)"
+      };
+      const label = CASE_LABEL[which] || "Case";
+      const c = colors[which] || "rgba(255,255,255,0.8)";
+
+      return `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 160" width="260" height="160">
+        <defs>
+          <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="rgba(255,255,255,0.10)"/>
+            <stop offset="1" stop-color="rgba(255,255,255,0.03)"/>
+          </linearGradient>
+          <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="rgba(0,0,0,0.35)"/>
+          </filter>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="${c}"/>
+          </marker>
+        </defs>
+
+        <rect x="1.5" y="1.5" width="257" height="157" rx="18" fill="url(#bg)" stroke="rgba(255,255,255,0.14)"/>
+        <text x="18" y="28" fill="rgba(255,255,255,0.85)" font-size="14" font-family="ui-sans-serif, system-ui" font-weight="800">
+          ${label}
+        </text>
+
+        <!-- Subject -->
+        <g filter="url(#soft)">
+          <circle cx="70" cy="88" r="20" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.18)"/>
+          <circle cx="70" cy="88" r="12" fill="${c}" stroke="rgba(255,255,255,0.22)"/>
+          <text x="58" y="132" fill="rgba(255,255,255,0.70)" font-size="12" font-family="ui-sans-serif, system-ui" font-weight="800">SUBJECT</text>
+        </g>
+
+        <!-- Object -->
+        <g filter="url(#soft)">
+          <rect x="150" y="68" width="80" height="40" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)"/>
+          <text x="165" y="132" fill="rgba(255,255,255,0.70)" font-size="12" font-family="ui-sans-serif, system-ui" font-weight="800">OBJECT</text>
+        </g>
+
+        <!-- Recipient -->
+        <g filter="url(#soft)">
+          <circle cx="190" cy="44" r="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.16)"/>
+          <text x="160" y="52" fill="rgba(255,255,255,0.60)" font-size="10" font-family="ui-sans-serif, system-ui" font-weight="800">RECIPIENT</text>
+        </g>
+
+        ${which === "nom" ? `
+          <circle cx="70" cy="88" r="34" fill="rgba(34,197,94,0.10)" />
+          <circle cx="70" cy="88" r="46" fill="rgba(34,197,94,0.06)" />
+        ` : ""}
+
+        ${which === "akk" ? `
+          <path d="M92 88 L148 88" stroke="${c}" stroke-width="6" stroke-linecap="round" marker-end="url(#arrow)"/>
+        ` : ""}
+
+        ${which === "dat" ? `
+          <path d="M92 88 L148 88" stroke="rgba(255,255,255,0.18)" stroke-width="6" stroke-linecap="round" />
+          <path d="M92 88 C120 62, 145 52, 172 46" stroke="${c}" stroke-width="6" stroke-linecap="round" marker-end="url(#arrow)"/>
+          <circle cx="170" cy="88" r="6" fill="${c}"/>
+          <circle cx="170" cy="88" r="16" fill="rgba(124,58,237,0.10)"/>
+        ` : ""}
+      </svg>`;
+    }
+
+    function renderViz(which){
+      const svg = buildCaseVizSvg(which);
+      return `<img alt="Case visual" src="${svgToDataUri(svg)}" />`;
+    }
+
+    // -------------------- Definitions tips --------------------
+    function caseTip(which){
+      const tips = {
+        nom: `
+          <span class="tag tip">Beginner tip</span>
+          In simple sentences, the <b>subject</b> often comes before the verb.
+          If you ask <b>who?</b> and you get the answer, that noun is usually <b>Nominative</b>.
+        `,
+        akk: `
+          <span class="tag tip">Beginner tip</span>
+          Accusative is often the <b>thing/person</b> directly after the verb.
+          Ask <b>what?</b> (or who?) is affected by the action.
+        `,
+        dat: `
+          <span class="tag tip">Beginner tip</span>
+          Dative is the <b>receiver</b>.
+          If your sentence has verbs like <b>give, send, show, help, thank</b>, dative is common.
+          Also many prepositions force dative (mit, bei, aus, von, zu, nach, seit).
+        `
+      };
+      return tips[which] || tips.nom;
+    }
+
+    // -------------------- Examples --------------------
+    const EXAMPLES = {
+      nom: [
+        ["Der Mann kommt.", "The man comes. (subject)"],
+        ["Die Frau liest.", "The woman reads. (subject)"],
+        ["Das Kind schläft.", "The child sleeps. (subject)"]
+      ],
+      akk: [
+        ["Ich sehe den Mann.", "I see the man. (direct object)"],
+        ["Ich habe die Frau.", "I have the woman. (direct object)"],
+        ["Ich kenne das Kind.", "I know the child. (direct object)"]
+      ],
+      dat: [
+        ["Ich gebe dem Mann das Buch.", "I give the man the book. (receiver)"],
+        ["Ich helfe der Frau.", "I help the woman. (dative object)"],
+        ["Ich danke dem Kind.", "I thank the child. (dative object)"]
+      ]
+    };
+
+    function renderExamples(which){
+      const list = EXAMPLES[which] || EXAMPLES.nom;
+      return list.map(([de,en]) => `
+        <div class="mb-2">
+          <div class="fw-semibold">${escapeHtml(de)}</div>
+          <div class="small-muted">${escapeHtml(en)}</div>
+        </div>
+      `).join("");
+    }
+
+    // -------------------- Filtering the table --------------------
+    function applyTableFilters(){
+      const g = $("gender").value;      // all | m | f | n | pl
+      const c = $("caseFilter").value;  // all | nom | akk | dat
+
+      // show/hide case rows
+      document.querySelectorAll("#articleTable tbody tr").forEach(row => {
+        const rowCase = row.getAttribute("data-case");
+        row.style.display = (c === "all" || rowCase === c) ? "" : "none";
+      });
+
+      // show/hide gender cells (including header)
+      document.querySelectorAll("#articleTable thead th[data-g]").forEach(th => {
+        th.style.display = (g === "all" || th.getAttribute("data-g") === g) ? "" : "none";
+      });
+      document.querySelectorAll("#articleTable tbody tr td").forEach(td => {
+        const tdG = td.getAttribute("data-g");
+        td.style.display = (g === "all" || tdG === g) ? "" : "none";
+      });
+
+      // update viz + examples based on selected case (if all, default to nom)
+      const chosenCase = (c === "nom" || c === "akk" || c === "dat") ? c : "nom";
+      $("vizBox").innerHTML = renderViz(chosenCase);
+      $("examplesBox").innerHTML = renderExamples(chosenCase);
+
+      $("vizNote").innerHTML = ({
+        nom: "Nominative is usually the <b>subject</b> (who/what does the action).",
+        akk: "Accusative is often the <b>direct object</b> (who/what is affected).",
+        dat: "Dative is often the <b>receiver</b> (to/for whom)."
+      })[chosenCase];
+
+      $("caseTipBox").innerHTML = caseTip(chosenCase);
+    }
+
+    // -------------------- Mini Trainer --------------------
+    function trainerText(which){
+      if(which === "nom"){
+        return { head:"Nominative (subject)", result:"der Mann", explain:"Subject (who?) → masculine nominative definite = der." };
+      }
+      if(which === "akk"){
+        return { head:"Accusative (direct object)", result:"den Mann", explain:"Direct object (what?) → masculine accusative definite = den." };
+      }
+      return { head:"Dative (receiver)", result:"dem Mann", explain:"Receiver (to whom?) → masculine dative definite = dem." };
+    }
+
+    function initTrainer(){
+      document.querySelectorAll(".trainer-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const which = btn.dataset.case;
+          const t = trainerText(which);
+          $("trainerResult").innerHTML = `${escapeHtml(t.head)} → <span class="small-muted">${escapeHtml(t.result)}</span>`;
+          $("trainerExplain").textContent = t.explain;
+        });
+      });
+    }
+
+    // -------------------- Practice --------------------
+    const PRACTICE_BANK = [
+      { text:"___ Mann kommt. (definite, subject)", a:"der", why:"Masculine nominative definite = der." },
+      { text:"Ich sehe ___ Mann. (definite, direct object)", a:"den", why:"Masculine accusative definite = den." },
+      { text:"Ich helfe ___ Frau. (definite, dative)", a:"der", why:"Feminine dative definite = der." },
+      { text:"___ Kind schläft. (indefinite, subject)", a:"ein", why:"Neuter nominative indefinite = ein." },
+      { text:"Ich habe ___ Frau. (indefinite, direct object)", a:"eine", why:"Feminine accusative indefinite = eine." },
+      { text:"Ich gebe ___ Mann das Buch. (indefinite, dative)", a:"einem", why:"Masculine dative indefinite = einem." },
+      { text:"Wir sehen ___ Kinder. (definite, plural direct object)", a:"die", why:"Plural accusative definite = die." },
+      { text:"Ich gebe ___ Kindern ein Buch. (definite, plural dative)", a:"den", why:"Plural dative definite = den (noun often gets -n: Kindern)." }
+    ];
+
+    let currentPractice = [];
+
+    function makeOptions(correct){
+      const pool = ["der","die","das","den","dem","ein","eine","einen","einem","einer","—"];
+      const options = new Set([correct]);
+      while(options.size < 4){
+        options.add(pool[Math.floor(Math.random()*pool.length)]);
+      }
+      return shuffle([...options]);
+    }
+
+    function newPracticeSet(){
+      currentPractice = sample(PRACTICE_BANK, 6).map(q => ({...q, options: makeOptions(q.a)}));
+      renderPractice();
+    }
+
+    function renderPractice(){
+      const box = $("practice");
+      box.innerHTML = currentPractice.map((q, idx) => `
+        <div class="card-soft p-3 mb-2" data-idx="${idx}">
+          <div class="fw-semibold mb-2">${idx+1}. ${escapeHtml(q.text)}</div>
+          <div class="d-flex gap-2 flex-wrap">
+            ${q.options.map(o => `
+              <button type="button" class="btn btn-sm choice-btn practice-choice" data-opt="${escapeHtml(o)}">${escapeHtml(o)}</button>
+            `).join("")}
+          </div>
+          <div class="mt-2 small-muted practice-feedback" aria-live="polite"></div>
+        </div>
+      `).join("");
+
+      box.querySelectorAll(".practice-choice").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const wrap = btn.closest("[data-idx]");
+          const idx = Number(wrap.dataset.idx);
+          const q = currentPractice[idx];
+          const chosen = btn.dataset.opt;
+
+          wrap.querySelectorAll(".practice-choice").forEach(b => {
+            b.classList.remove("btn-success","btn-danger");
+            b.classList.add("choice-btn");
+          });
+
+          const fb = wrap.querySelector(".practice-feedback");
+          if(chosen === q.a){
+            btn.classList.remove("choice-btn");
+            btn.classList.add("btn-success");
+            fb.innerHTML = `<span class="badge text-bg-success">Correct</span> ${escapeHtml(q.why)}`;
+          } else {
+            btn.classList.remove("choice-btn");
+            btn.classList.add("btn-danger");
+            fb.innerHTML = `<span class="badge text-bg-danger">Try again</span> ${escapeHtml(q.why)}`;
+          }
+        });
+      });
+    }
+
+    function clearPractice(){
+      $("practice").querySelectorAll(".practice-choice").forEach(b => {
+        b.classList.remove("btn-success","btn-danger");
+        b.classList.add("choice-btn");
+      });
+      $("practice").querySelectorAll(".practice-feedback").forEach(f => f.textContent = "");
+    }
+
+    // -------------------- Quiz --------------------
+    const QUIZ_BANK = [
+      { q:"___ Mann kommt. (Nominative, masculine, definite)", opts:["der","den","dem","die"], a:"der", why:"Masculine nominative definite = der." },
+      { q:"Ich sehe ___ Mann. (Accusative, masculine, definite)", opts:["der","den","dem","das"], a:"den", why:"Masculine accusative definite = den." },
+      { q:"Ich helfe ___ Frau. (Dative, feminine, definite)", opts:["die","der","dem","den"], a:"der", why:"Feminine dative definite = der." },
+      { q:"___ Kind schläft. (Nominative, neuter, indefinite)", opts:["ein","eine","einen","einem"], a:"ein", why:"Neuter nominative indefinite = ein." },
+      { q:"Ich gebe ___ Mann das Buch. (Dative, masculine, indefinite)", opts:["einem","einen","ein","einer"], a:"einem", why:"Masculine dative indefinite = einem." },
+      { q:"Wir sehen ___ Kinder. (Accusative, plural, definite)", opts:["den","die","der","das"], a:"die", why:"Plural accusative definite = die." },
+      { q:"Ich gebe ___ Kindern ein Buch. (Dative, plural, definite)", opts:["die","den","dem","der"], a:"den", why:"Plural dative definite = den (noun often gets -n: Kindern)." }
+    ];
+
+    let currentQuiz = [];
+
+    function newQuiz(){
+      currentQuiz = sample(QUIZ_BANK, 5).map(q => ({...q, opts: shuffle([...q.opts])}));
+      renderQuiz();
+      updateScore(0, currentQuiz.length);
+    }
+
+    function renderQuiz(){
+      const box = $("quiz");
+      box.innerHTML = currentQuiz.map((q, i) => `
+        <div class="card-soft p-3 mb-2" data-q="${i}">
+          <div class="fw-semibold">${i+1}. ${escapeHtml(q.q)}</div>
+          <div class="mt-2">
+            ${q.opts.map(o => `
+              <div class="form-check mt-1">
+                <input class="form-check-input" type="radio" name="q${i}" id="q${i}_${escapeHtml(o)}" value="${escapeHtml(o)}">
+                <label class="form-check-label" for="q${i}_${escapeHtml(o)}">${escapeHtml(o)}</label>
+              </div>
+            `).join("")}
+          </div>
+          <div class="mt-2 small-muted quiz-feedback"></div>
+        </div>
+      `).join("");
+    }
+
+    function updateScore(score, total){
+      $("score").textContent = `${score} / ${total}`;
+      const pct = total ? Math.round((score / total) * 100) : 0;
+      $("scoreBar").style.width = pct + "%";
+      $("scoreBar").className = "progress-bar " + (pct >= 80 ? "bg-success" : pct >= 50 ? "bg-warning" : "bg-danger");
+    }
+
+    function submitQuiz(){
+      let score = 0;
+
+      $("quiz").querySelectorAll("[data-q]").forEach(el => {
+        const i = Number(el.dataset.q);
+        const q = currentQuiz[i];
+        const chosen = el.querySelector(`input[name="q${i}"]:checked`)?.value || null;
+        const fb = el.querySelector(".quiz-feedback");
+
+        if(!chosen){
+          fb.innerHTML = `<span class="badge text-bg-secondary">Not answered</span> Correct: <b>${escapeHtml(q.a)}</b>. ${escapeHtml(q.why)}`;
+          return;
+        }
+        if(chosen === q.a){
+          score++;
+          fb.innerHTML = `<span class="badge text-bg-success">Correct</span> ${escapeHtml(q.why)}`;
+        } else {
+          fb.innerHTML = `<span class="badge text-bg-danger">Wrong</span> Correct: <b>${escapeHtml(q.a)}</b>. ${escapeHtml(q.why)}`;
+        }
+      });
+
+      updateScore(score, currentQuiz.length);
+    }
+
+    // -------------------- Events --------------------
+    $("gender").addEventListener("change", applyTableFilters);
+    $("caseFilter").addEventListener("change", applyTableFilters);
+
+    $("newPracticeBtn").addEventListener("click", newPracticeSet);
+    $("clearPracticeBtn").addEventListener("click", clearPractice);
+
+    $("newQuizBtn").addEventListener("click", newQuiz);
+    $("submitQuizBtn").addEventListener("click", submitQuiz);
+
+    $("resetBtn").addEventListener("click", () => {
+      $("gender").value = "all";
+      $("caseFilter").value = "all";
+      applyTableFilters();
+      newPracticeSet();
+      newQuiz();
+      $("trainerResult").textContent = "Click a role";
+      $("trainerExplain").textContent = "";
+    });
+
+    // -------------------- Init --------------------
+    function init(){
+      applyTableFilters();
+      initTrainer();
+      newPracticeSet();
+      newQuiz();
+    }
+    init();
+  </script>
+  <script src="../assets/portfolio-shell.js"></script>
+</body>
+</html>

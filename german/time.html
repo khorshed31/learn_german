@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>German Time (A1) — Official + Unofficial + Pronunciation</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link href="style.css" rel="stylesheet" />
+
+  <style>
+    .wrap { max-width: 1100px; margin: 18px auto 110px; padding: 10px; }
+
+    .heroBox{
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+      padding: 26px;
+    }
+    .badgeSoft{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 6px 10px; border-radius: 999px;
+      background: linear-gradient(90deg, rgba(96,198,255,0.12), rgba(96,198,255,0.06));
+      color: var(--accent); font-weight: 700; font-size: .85rem;
+    }
+    .cardSoft{
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.45);
+    }
+    .muted { color: var(--muted); }
+
+    .pillKey{
+      font-weight: 700; font-size: .85rem;
+      padding: 4px 10px; border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.88);
+      display:inline-block;
+    }
+
+    /* Clock */
+    .clockWrap{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .clockCard{
+      width: 320px;
+      max-width: 100%;
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.03);
+    }
+    .clockSvg{
+      width: 100%;
+      height: auto;
+      display:block;
+      border-radius: 14px;
+    }
+    .outBox{
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .optBtn{ text-align:left; }
+    .ok { color:#6ee7b7; font-weight:900; }
+    .bad { color:#fb7185; font-weight:900; }
+
+    .miniTable th, .miniTable td { vertical-align: middle; }
+    .speakBtn{
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.05);
+      color: rgba(255,255,255,0.9);
+    }
+    .speakBtn:hover{ background: rgba(96,198,255,0.12); }
+  </style>
+  <link rel="stylesheet" href="../assets/portfolio-theme.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <main class="wrap">
+
+    <!-- HERO -->
+    <section class="heroBox mb-4">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div style="max-width:740px;">
+          <div class="badgeSoft mb-2"><i class="bi bi-clock"></i> German Time (A1)</div>
+          <h1 class="mb-2" style="font-size:1.8rem;line-height:1.12;">
+            Learn time in German — Official + Unofficial + Pronunciation.
+          </h1>
+          <p class="muted mb-0">
+            <strong>Unofficial:</strong> nach / vor / Viertel / halb •
+            <strong>Official:</strong> “sieben Uhr fünf” •
+            <strong>Digital:</strong> 07:05 Uhr •
+            <strong>🔊 Speak</strong> buttons included.
+          </p>
+        </div>
+        <div class="d-flex gap-2 flex-wrap">
+          <a href="#practice" class="btn btn-primary"><i class="bi bi-sliders me-2"></i>Practice</a>
+          <a href="#explain" class="btn btn-outline-light"><i class="bi bi-info-circle me-2"></i>Explain</a>
+          <a href="#quiz" class="btn btn-outline-light"><i class="bi bi-lightning-charge me-2"></i>Quiz</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPLANATION -->
+    <section id="explain" class="cardSoft p-3 p-md-4 mb-4">
+      <h2 class="mb-3" style="font-size:1.25rem;"><i class="bi bi-info-circle me-2"></i>Explanation (A1)</h2>
+
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <div class="outBox h-100">
+            <div class="pillKey mb-2">Unofficial (Umgangssprache)</div>
+            <ul class="muted mb-0">
+              <li><strong>Es ist 7 Uhr.</strong> = 07:00</li>
+              <li><strong>fünf nach sieben</strong> = 07:05</li>
+              <li><strong>Viertel nach sieben</strong> = 07:15</li>
+              <li><strong>halb acht</strong> = 07:30 ✅ (half to next hour)</li>
+              <li><strong>Viertel vor acht</strong> = 07:45</li>
+              <li><strong>fünf vor acht</strong> = 07:55</li>
+            </ul>
+            <div class="muted mt-2 small">
+              Tip: In German, <strong>halb 8</strong> means “half to 8” → <strong>7:30</strong>.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="outBox h-100">
+            <div class="pillKey mb-2">Official (Offiziell / spoken)</div>
+            <ul class="muted mb-0">
+              <li><strong>Es ist sieben Uhr.</strong> = 07:00</li>
+              <li><strong>Es ist sieben Uhr fünf.</strong> = 07:05</li>
+              <li><strong>Es ist sieben Uhr dreißig.</strong> = 07:30</li>
+              <li><strong>Es ist vierzehn Uhr zwanzig.</strong> = 14:20 (24h)</li>
+            </ul>
+            <div class="muted mt-2 small">
+              Tip: Official style is common in <strong>train stations</strong>, <strong>work</strong>, <strong>announcements</strong>.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Minute map -->
+      <div class="outBox mt-3">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+          <div class="pillKey">Minute Map (easy)</div>
+          <div class="muted small">Example hour: 7 → next hour: 8</div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-dark table-bordered miniTable mb-0">
+            <thead>
+              <tr>
+                <th style="width:16%;">Minute</th>
+                <th style="width:42%;">Unofficial</th>
+                <th>Official (spoken)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>00</td><td>Es ist <strong>sieben Uhr</strong>.</td><td>Es ist <strong>sieben Uhr</strong>.</td></tr>
+              <tr><td>05</td><td>Es ist <strong>fünf nach sieben</strong>.</td><td>Es ist <strong>sieben Uhr fünf</strong>.</td></tr>
+              <tr><td>10</td><td>Es ist <strong>zehn nach sieben</strong>.</td><td>Es ist <strong>sieben Uhr zehn</strong>.</td></tr>
+              <tr><td>15</td><td>Es ist <strong>Viertel nach sieben</strong>.</td><td>Es ist <strong>sieben Uhr fünfzehn</strong>.</td></tr>
+              <tr><td>20</td><td>Es ist <strong>zwanzig nach sieben</strong>.</td><td>Es ist <strong>sieben Uhr zwanzig</strong>.</td></tr>
+              <tr><td>25</td><td>Es ist <strong>fünf vor halb acht</strong>.</td><td>Es ist <strong>sieben Uhr fünfundzwanzig</strong>.</td></tr>
+              <tr><td>30</td><td>Es ist <strong>halb acht</strong>.</td><td>Es ist <strong>sieben Uhr dreißig</strong>.</td></tr>
+              <tr><td>35</td><td>Es ist <strong>fünf nach halb acht</strong>.</td><td>Es ist <strong>sieben Uhr fünfunddreißig</strong>.</td></tr>
+              <tr><td>40</td><td>Es ist <strong>zwanzig vor acht</strong>.</td><td>Es ist <strong>sieben Uhr vierzig</strong>.</td></tr>
+              <tr><td>45</td><td>Es ist <strong>Viertel vor acht</strong>.</td><td>Es ist <strong>sieben Uhr fünfundvierzig</strong>.</td></tr>
+              <tr><td>50</td><td>Es ist <strong>zehn vor acht</strong>.</td><td>Es ist <strong>sieben Uhr fünfzig</strong>.</td></tr>
+              <tr><td>55</td><td>Es ist <strong>fünf vor acht</strong>.</td><td>Es ist <strong>sieben Uhr fünfundfünfzig</strong>.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="muted mt-2 small">
+          Note: Unofficial phrases like <strong>fünf vor halb</strong> / <strong>fünf nach halb</strong> are common. If you want super simple: use “nach” and “vor”.
+        </div>
+      </div>
+
+      <!-- Pronunciation guide -->
+      <div class="outBox mt-3">
+        <div class="pillKey mb-2">Pronunciation (easy)</div>
+        <ul class="muted mb-0">
+          <li><strong>Uhr</strong> ≈ “oor”</li>
+          <li><strong>nach</strong> ≈ “nakh” (strong “kh” sound)</li>
+          <li><strong>vor</strong> ≈ “for”</li>
+          <li><strong>halb</strong> ≈ “halp”</li>
+          <li><strong>Viertel</strong> ≈ “feer-tel”</li>
+          <li><strong>fünf</strong> ≈ “fuinf”</li>
+          <li><strong>zwanzig</strong> ≈ “tsvants-ikh”</li>
+          <li><strong>dreißig</strong> ≈ “dry-sikh”</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PRACTICE -->
+    <section id="practice" class="cardSoft p-3 p-md-4 mb-4">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+        <h2 class="mb-0" style="font-size:1.25rem;"><i class="bi bi-sliders me-2"></i>Visual Practice</h2>
+        <div class="d-flex gap-2 flex-wrap">
+          <button id="toggleStep" class="btn btn-outline-light btn-sm"><i class="bi bi-wrench me-1"></i>Minute step: 5</button>
+          <button id="randomBtn" class="btn btn-outline-light btn-sm"><i class="bi bi-shuffle me-1"></i>Random Time</button>
+          <button id="nowBtn" class="btn btn-outline-light btn-sm"><i class="bi bi-clock-history me-1"></i>Now</button>
+        </div>
+      </div>
+
+      <div class="clockWrap">
+        <!-- CLOCK -->
+        <div class="clockCard">
+          <svg class="clockSvg" viewBox="0 0 220 220" aria-label="Analog clock">
+            <circle cx="110" cy="110" r="98" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.12)" stroke-width="4"/>
+
+            <g stroke="rgba(255,255,255,0.25)" stroke-width="4">
+              <line x1="110" y1="18" x2="110" y2="30"/>
+              <line x1="110" y1="190" x2="110" y2="202"/>
+              <line x1="18" y1="110" x2="30" y2="110"/>
+              <line x1="190" y1="110" x2="202" y2="110"/>
+            </g>
+
+            <g stroke="rgba(255,255,255,0.14)" stroke-width="2">
+              <g id="marks"></g>
+            </g>
+
+            <g>
+              <line id="hourHand" x1="110" y1="110" x2="110" y2="64" stroke="rgba(255,255,255,0.92)" stroke-width="6" stroke-linecap="round"/>
+              <line id="minHand"  x1="110" y1="110" x2="110" y2="42" stroke="rgba(96,198,255,0.95)" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="110" cy="110" r="6" fill="rgba(255,255,255,0.95)"/>
+            </g>
+
+            <g fill="rgba(255,255,255,0.85)" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="middle">
+              <text x="110" y="38">12</text>
+              <text x="160" y="52">1</text>
+              <text x="186" y="88">2</text>
+              <text x="190" y="110">3</text>
+              <text x="186" y="132">4</text>
+              <text x="160" y="168">5</text>
+              <text x="110" y="182">6</text>
+              <text x="60" y="168">7</text>
+              <text x="34" y="132">8</text>
+              <text x="30" y="110">9</text>
+              <text x="34" y="88">10</text>
+              <text x="60" y="52">11</text>
+            </g>
+          </svg>
+          <div class="muted mt-2 small">Minutes = blue hand • Hour = white hand</div>
+        </div>
+
+        <!-- CONTROLS + OUTPUT -->
+        <div style="flex: 1 1 420px; min-width: 280px;">
+          <div class="outBox mb-3">
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label class="form-label">Hour</label>
+                <input id="hour" type="range" class="form-range" min="0" max="23" value="7" />
+                <div class="d-flex justify-content-between muted small">
+                  <span>0</span><span id="hourVal" class="pillKey">7</span><span>23</span>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label class="form-label">Minute</label>
+                <input id="minute" type="range" class="form-range" min="0" max="59" step="5" value="0" />
+                <div class="d-flex justify-content-between muted small">
+                  <span>0</span><span id="minVal" class="pillKey">00</span><span>59</span>
+                </div>
+                <div class="form-text muted">Use step 1 when you are ready.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="outBox">
+            <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+              <div class="pillKey">Output</div>
+              <div class="muted">Digital: <strong id="digital">07:00</strong> <span class="muted">Uhr</span></div>
+            </div>
+
+            <div class="mb-3">
+              <div class="d-flex align-items-center justify-content-between gap-2">
+                <div class="muted small">Unofficial (Umgangssprache)</div>
+                <button id="speakUno" class="btn btn-sm speakBtn"><i class="bi bi-volume-up"></i></button>
+              </div>
+              <div id="deUnofficial" style="font-weight:900;font-size:1.05rem;"></div>
+              <div class="muted small mt-1" id="pronUno"></div>
+            </div>
+
+            <div class="mb-2">
+              <div class="d-flex align-items-center justify-content-between gap-2">
+                <div class="muted small">Official (Offiziell / spoken)</div>
+                <button id="speakOff" class="btn btn-sm speakBtn"><i class="bi bi-volume-up"></i></button>
+              </div>
+              <div id="deOfficialSpoken" style="font-weight:900;"></div>
+              <div class="muted small mt-1" id="pronOff"></div>
+            </div>
+
+            <div class="muted small mt-2" id="voiceNote"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="cardSoft p-3 p-md-4">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+        <h2 class="mb-0" style="font-size:1.25rem;"><i class="bi bi-lightning-charge me-2"></i>Quiz (Official or Unofficial)</h2>
+        <div class="d-flex gap-2 align-items-center">
+          <span class="muted">Best:</span>
+          <span id="best" class="pillKey">0</span>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-12 col-lg-7">
+          <div class="outBox">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-2">
+              <div class="pillKey">Question <span id="qNo">1</span>/10</div>
+              <div class="muted">Score: <strong id="score">0</strong></div>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+              <div class="muted">Time:</div>
+              <div class="pillKey" id="quizDigital">--:--</div>
+
+              <select id="quizMode" class="form-select form-select-sm" style="max-width:240px;">
+                <option value="unofficial">Unofficial (nach/vor/halb)</option>
+                <option value="official">Official (HH Uhr MM)</option>
+              </select>
+
+              <button id="startQuiz" class="btn btn-primary btn-sm"><i class="bi bi-play-fill me-1"></i>Start</button>
+              <button id="nextQ" class="btn btn-outline-light btn-sm" disabled>Next</button>
+              <button id="restartQuiz" class="btn btn-outline-light btn-sm"><i class="bi bi-arrow-repeat me-1"></i>Restart</button>
+            </div>
+
+            <div id="questionHint" class="muted mb-2"></div>
+            <div id="options" class="d-grid gap-2"></div>
+            <div id="feedback" class="mt-3"></div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-5">
+          <div class="outBox">
+            <h6 class="mb-2"><i class="bi bi-lightbulb me-2"></i>Quiz Tips</h6>
+            <ul class="muted mb-0">
+              <li>00 = <strong>Uhr</strong></li>
+              <li>05/10/20 = <strong>nach</strong></li>
+              <li>40/50/55 = <strong>vor</strong></li>
+              <li>15 = <strong>Viertel nach</strong></li>
+              <li>30 = <strong>halb</strong> (to next hour)</li>
+              <li>45 = <strong>Viertel vor</strong></li>
+              <li>Official: <strong>Es ist sieben Uhr fünf</strong>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Navbar/Footer loader
+    fetch('navbar.html').then(r => r.text()).then(html => {
+      document.getElementById('navbar-placeholder').innerHTML = html;
+    }).catch(console.error);
+
+    fetch('footer.html').then(r => r.text()).then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    }).catch(console.error);
+  </script>
+
+  <script>
+    // ------------- clock marks (5-min ticks) -------------
+    (function addMarks(){
+      const g = document.getElementById('marks');
+      for(let i=0;i<60;i+=5){
+        const angle = (i * 6) - 90;
+        if(i % 15 === 0) continue;
+        const line = document.createElementNS("http://www.w3.org/2000/svg","line");
+        line.setAttribute("x1","110");
+        line.setAttribute("y1","22");
+        line.setAttribute("x2","110");
+        line.setAttribute("y2","30");
+        line.setAttribute("transform", `rotate(${angle} 110 110)`);
+        g.appendChild(line);
+      }
+    })();
+
+    const $ = (id) => document.getElementById(id);
+    const pad2 = (n) => String(n).padStart(2,'0');
+
+    function to12(h){
+      const x = h % 12;
+      return x === 0 ? 12 : x;
+    }
+
+    function deNumber(n){
+      const ones = ["null","eins","zwei","drei","vier","fünf","sechs","sieben","acht","neun"];
+      const teens = ["zehn","elf","zwölf","dreizehn","vierzehn","fünfzehn","sechzehn","siebzehn","achtzehn","neunzehn"];
+      const tens = ["","", "zwanzig","dreißig","vierzig","fünfzig"];
+      if(n < 10) return ones[n];
+      if(n < 20) return teens[n-10];
+      const t = Math.floor(n/10);
+      const o = n % 10;
+      if(o === 0) return tens[t];
+      const oWord = (o === 1) ? "ein" : ones[o];
+      return `${oWord}und${tens[t]}`;
+    }
+
+    function deHourWord(h){ // for "ein Uhr" not "eins Uhr"
+      const h12 = to12(h);
+      if(h12 === 1) return "ein";
+      // 2..12
+      return deNumber(h12);
+    }
+    function deHourWord24(h){ // official uses 24h; "ein" for 1
+      if(h === 1) return "ein";
+      return deNumber(h);
+    }
+
+    // Unofficial (nach/vor/viertel/halb) with words
+    function unofficialTime(h, m){
+      const hWord = deHourWord(h);
+      const nextHWord = deHourWord(h + 1);
+
+      if(m === 0) return `Es ist ${hWord} Uhr.`;
+      if(m === 15) return `Es ist Viertel nach ${hWord}.`;
+      if(m === 30) return `Es ist halb ${nextHWord}.`;
+      if(m === 45) return `Es ist Viertel vor ${nextHWord}.`;
+
+      if(m < 30){
+        return `Es ist ${deNumber(m)} nach ${hWord}.`;
+      } else {
+        const left = 60 - m;
+        return `Es ist ${deNumber(left)} vor ${nextHWord}.`;
+      }
+    }
+
+    // Official spoken: HH Uhr MM with words (24-hour)
+    function officialSpokenTime(h, m){
+      const hw = deHourWord24(h);
+      if(m === 0) return `Es ist ${hw} Uhr.`;
+      return `Es ist ${hw} Uhr ${deNumber(m)}.`;
+    }
+
+    function digitalTime(h, m){
+      return `${pad2(h)}:${pad2(m)}`;
+    }
+
+    // Pronunciation helper (simple)
+    function pronHint(text){
+      return text
+        .toLowerCase()
+        .replaceAll("es ist", "ess ist")
+        .replaceAll("uhr", "oor")
+        .replaceAll("viertel", "feer-tel")
+        .replaceAll("nach", "nakh")
+        .replaceAll("vor", "for")
+        .replaceAll("halb", "halp")
+        .replaceAll("fünf", "fuinf")
+        .replaceAll("zwanzig", "tsvants-ikh")
+        .replaceAll("dreißig", "dry-sikh");
+    }
+
+    function setClockHands(h, m){
+      const minAngle = (m * 6) - 90;
+      const hourAngle = ((h % 12) * 30 + (m * 0.5)) - 90;
+      $('minHand').setAttribute('transform', `rotate(${minAngle} 110 110)`);
+      $('hourHand').setAttribute('transform', `rotate(${hourAngle} 110 110)`);
+    }
+
+    // Speech (browser)
+    let selectedVoice = null;
+
+    function pickGermanVoice(){
+      const voices = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+      // prefer de-DE
+      selectedVoice = voices.find(v => (v.lang || "").toLowerCase().startsWith("de")) || null;
+
+      const note = $('voiceNote');
+      if(!window.speechSynthesis){
+        note.textContent = "Your browser does not support speech (SpeechSynthesis).";
+        return;
+      }
+      if(selectedVoice){
+        note.textContent = `Voice: ${selectedVoice.name} (${selectedVoice.lang})`;
+      } else {
+        note.textContent = "No German voice found. Try Chrome/Edge or install German voice in system settings.";
+      }
+    }
+
+    function speakGerman(text){
+      if(!window.speechSynthesis) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      if(selectedVoice) u.voice = selectedVoice;
+      u.lang = selectedVoice ? selectedVoice.lang : "de-DE";
+      u.rate = 0.95;
+      u.pitch = 1.0;
+      window.speechSynthesis.speak(u);
+    }
+
+    // ------------- Practice state -------------
+    let minuteStep = 5;
+
+    function updateAll(){
+      const h = Number($('hour').value);
+      const m = Number($('minute').value);
+
+      $('hourVal').textContent = h;
+      $('minVal').textContent = pad2(m);
+
+      $('digital').textContent = digitalTime(h, m);
+
+      const uno = unofficialTime(h, m);
+      const off = officialSpokenTime(h, m);
+
+      $('deUnofficial').textContent = uno;
+      $('deOfficialSpoken').textContent = off;
+
+      $('pronUno').textContent = "Pronunciation: " + pronHint(uno);
+      $('pronOff').textContent = "Pronunciation: " + pronHint(off);
+
+      setClockHands(h, m);
+
+      // update speak buttons data
+      $('speakUno').dataset.say = uno;
+      $('speakOff').dataset.say = off;
+    }
+
+    $('hour').addEventListener('input', updateAll);
+    $('minute').addEventListener('input', updateAll);
+
+    $('toggleStep').addEventListener('click', () => {
+      minuteStep = (minuteStep === 5) ? 1 : 5;
+      $('minute').step = String(minuteStep);
+      $('toggleStep').innerHTML = `<i class="bi bi-wrench me-1"></i>Minute step: ${minuteStep}`;
+    });
+
+    $('randomBtn').addEventListener('click', () => {
+      const h = Math.floor(Math.random() * 24);
+      const steps = [0,5,10,15,20,25,30,35,40,45,50,55];
+      const m = (minuteStep === 5)
+        ? steps[Math.floor(Math.random() * steps.length)]
+        : Math.floor(Math.random() * 60);
+
+      $('hour').value = h;
+      $('minute').value = m;
+      updateAll();
+    });
+
+    $('nowBtn').addEventListener('click', () => {
+      const d = new Date();
+      const h = d.getHours();
+      const m = d.getMinutes();
+      const rounded = (minuteStep === 5) ? Math.round(m / 5) * 5 : m;
+      $('hour').value = h;
+      $('minute').value = (rounded >= 60 ? 59 : rounded);
+      updateAll();
+    });
+
+    $('speakUno').addEventListener('click', () => speakGerman($('speakUno').dataset.say || ""));
+    $('speakOff').addEventListener('click', () => speakGerman($('speakOff').dataset.say || ""));
+
+    // voices can load asynchronously
+    if(window.speechSynthesis){
+      window.speechSynthesis.onvoiceschanged = pickGermanVoice;
+      pickGermanVoice();
+    }
+
+    updateAll();
+
+    // ------------- QUIZ -------------
+    const bestKey = "lg_time_best_a1_both_plus";
+    const bestEl = $('best');
+    const qNoEl = $('qNo');
+    const scoreEl = $('score');
+    const optsEl = $('options');
+    const feedbackEl = $('feedback');
+    const quizDigital = $('quizDigital');
+    const nextQBtn = $('nextQ');
+    const modeEl = $('quizMode');
+    const hintEl = $('questionHint');
+
+    let quizOn = false;
+    let qIndex = 0;
+    let score = 0;
+    let correctText = "";
+    let currentH = 7, currentM = 0;
+
+    function loadBest(){
+      bestEl.textContent = Number(localStorage.getItem(bestKey) || 0);
+    }
+    loadBest();
+
+    function setQuizClock(h, m){
+      $('hour').value = h;
+      $('minute').value = m;
+      updateAll();
+      quizDigital.textContent = `${digitalTime(h, m)}`;
+    }
+
+    function makeDistractors(h, m, mode){
+      const steps = [0,5,10,15,20,25,30,35,40,45,50,55];
+      const ds = new Set();
+      while(ds.size < 3){
+        const dh = (Math.random() < 0.5) ? h : (h + (Math.random()<0.5?-1:1) + 24) % 24;
+        const dm = steps[Math.floor(Math.random() * steps.length)];
+        const txt = (mode === "official") ? officialSpokenTime(dh, dm) : unofficialTime(dh, dm);
+        if(txt !== correctText) ds.add(txt);
+      }
+      return [...ds];
+    }
+
+    function renderOptions(list){
+      optsEl.innerHTML = "";
+      feedbackEl.innerHTML = "";
+      list.forEach(text => {
+        const btn = document.createElement('button');
+        btn.className = "btn btn-outline-light optBtn";
+        btn.textContent = text;
+        btn.onclick = () => {
+          if(!quizOn) return;
+          quizOn = false;
+
+          const ok = text === correctText;
+          if(ok) score++;
+          scoreEl.textContent = score;
+
+          const uno = unofficialTime(currentH, currentM);
+          const off = officialSpokenTime(currentH, currentM);
+
+          feedbackEl.innerHTML = `
+            <div class="${ok ? 'ok' : 'bad'} mt-2">${ok ? 'Correct ✅' : 'Wrong ❌'}</div>
+            <div class="muted mt-2"><strong>Unofficial:</strong> ${uno}</div>
+            <div class="muted mt-1"><strong>Official:</strong> ${off}</div>
+            <div class="muted mt-1"><strong>Digital:</strong> ${digitalTime(currentH, currentM)} Uhr</div>
+            <div class="muted mt-2"><strong>Pronunciation (Unofficial):</strong> ${pronHint(uno)}</div>
+            <div class="muted mt-1"><strong>Pronunciation (Official):</strong> ${pronHint(off)}</div>
+            <div class="d-flex gap-2 flex-wrap mt-2">
+              <button class="btn btn-sm speakBtn" onclick="window.__speakQuizUno && window.__speakQuizUno()"><i class="bi bi-volume-up me-1"></i>Speak Unofficial</button>
+              <button class="btn btn-sm speakBtn" onclick="window.__speakQuizOff && window.__speakQuizOff()"><i class="bi bi-volume-up me-1"></i>Speak Official</button>
+            </div>
+          `;
+
+          window.__speakQuizUno = () => speakGerman(uno);
+          window.__speakQuizOff = () => speakGerman(off);
+
+          nextQBtn.disabled = false;
+        };
+        optsEl.appendChild(btn);
+      });
+    }
+
+    function nextQuestion(){
+      if(qIndex >= 10){
+        const best = Number(localStorage.getItem(bestKey) || 0);
+        if(score > best){
+          localStorage.setItem(bestKey, String(score));
+          loadBest();
+        }
+        feedbackEl.innerHTML = `
+          <div class="ok mt-2">Done ✅</div>
+          <div class="muted mt-1">Final score: <strong>${score}/10</strong></div>
+        `;
+        nextQBtn.disabled = true;
+        return;
+      }
+
+      const steps = [0,5,10,15,20,25,30,35,40,45,50,55];
+      currentH = Math.floor(Math.random() * 24);
+      currentM = steps[Math.floor(Math.random() * steps.length)];
+
+      setQuizClock(currentH, currentM);
+
+      const mode = modeEl.value;
+      hintEl.textContent = (mode === "official")
+        ? "Choose the OFFICIAL sentence (HH Uhr MM)."
+        : "Choose the UNOFFICIAL sentence (nach/vor/halb).";
+
+      correctText = (mode === "official")
+        ? officialSpokenTime(currentH, currentM)
+        : unofficialTime(currentH, currentM);
+
+      const distractors = makeDistractors(currentH, currentM, mode);
+      const options = [correctText, ...distractors].sort(() => Math.random() - 0.5);
+
+      qNoEl.textContent = String(qIndex + 1);
+      quizOn = true;
+      nextQBtn.disabled = true;
+      renderOptions(options);
+
+      qIndex++;
+    }
+
+    $('startQuiz').addEventListener('click', () => {
+      qIndex = 0;
+      score = 0;
+      scoreEl.textContent = "0";
+      nextQuestion();
+    });
+
+    nextQBtn.addEventListener('click', () => nextQuestion());
+
+    $('restartQuiz').addEventListener('click', () => {
+      qIndex = 0;
+      score = 0;
+      scoreEl.textContent = "0";
+      feedbackEl.innerHTML = "";
+      optsEl.innerHTML = "";
+      quizDigital.textContent = "--:--";
+      hintEl.textContent = "";
+      nextQBtn.disabled = true;
+      quizOn = false;
+      window.__speakQuizUno = null;
+      window.__speakQuizOff = null;
+    });
+  </script>
+  <script src="../assets/portfolio-shell.js"></script>
+</body>
+</html>
